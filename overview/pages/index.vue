@@ -8,7 +8,11 @@
         responsive 12-column grid.
         See: https://vuetifyjs.com/en/components/grids/
         -->
-         <!-- Jesse's note: since the desired output is a single column of text, images, etc. I don't believe including any columns is necessary <v-col cols="12" md="12">-->
+         <!-- Jesse's notes: 
+              1) I used this word to html website (https://wordhtml.com/) to save time + generate an outline in html of the text content, hence the sometimes slightly whacky formatting and inline styling font-weights.  I will adjust as needed.
+              2) since the desired output is a single column of text, images, etc. I don't believe including any columns is necessary <v-col cols="12" md="12">
+              3) I abandoned using v-row elements since the word2html service output line breaks differently and I'm not as familiar w v-row/v-col.  Path of least resistance and doesn't seem to compromise the result 
+            -->   
          <h1>COVID Watch</h1>
       </v-row>
       <div id="keyPoints" style="border:gray 1px solid; width:50%;">

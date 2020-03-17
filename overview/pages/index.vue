@@ -1,8 +1,8 @@
 <template>
   <!-- Hi Jesse. nuxt requires a single element under v-container (or at least it used to.)
     This is usually a v-container. -->
-  <v-container class="hijesse">
-    <v-row>
+  <v-container class="overviewContainer">
+
       <!-- Typically a v-container has a bunch of v-row elements under it.
         Each v-row usually has v-col elements, which are organized into a
         responsive 12-column grid.
@@ -13,27 +13,61 @@
               2) since the desired output is a single column of text, images, etc. I don't believe including any columns is necessary <v-col cols="12" md="12">
               3) I abandoned using v-row elements since the word2html service output line breaks differently and I'm not as familiar w v-row/v-col.  Path of least resistance and doesn't seem to compromise the result 
             -->   
-         <h1>COVID Watch</h1>
-      </v-row>
-      <div id="keyPoints" style="border:gray 1px solid; width:50%;">
+        <div class="mainTitle">
+            <h1>COVID Watch</h1>
+        </div>
 
+      <div id="keyPoints">
+          <div class="keyPointsContainer">
           <h2><span style="font-weight: 400;">Key Points:</span></h2>
 
             <ol>
-              <li style="font-weight: 400;"><span style="font-weight: 400;">Pandemic mitigation in the context of filtering and optimization: developing a tool to better filter the population for more effective interventions</span></li>
-              <li style="font-weight: 400;"><span style="font-weight: 400;">Epidemiological modeling and findings from China and South Korea: important parameters to influence are contact tracing accuracy, diagnosis speed, and base infection rate</span></li>
-              <li style="font-weight: 400;"><span style="font-weight: 400;">Proposed system (bluetooth, heatmap) and how it might affect key parameters&nbsp;</span></li>
-              <li style="font-weight: 400;"><span style="font-weight: 400;">Privacy requirements</span></li>
-              <li style="font-weight: 400;"><span style="font-weight: 400;">Implementation/progress details (bluetooth, GPS)</span></li>
-              <li style="font-weight: 400;"><span style="font-weight: 400;">Path to adoption: incentives for individuals and public health / support of tech companies</span></li>
-              <li style="font-weight: 400;"><span style="font-weight: 400;">Estimated impact: modeling results</span></li>
-              <li style="font-weight: 400;"><span style="font-weight: 400;">Next steps: what needs to be done and why it needs to be done quickly</span></li>
+              <li style="font-weight: 400;"><a href="#intro" style="font-weight: 400;">Pandemic mitigation in the context of filtering and optimization: developing a tool to better filter the population for more effective interventions</a></li>
+              <li style="font-weight: 400;"><a href="#keyParameters" style="font-weight: 400;">Epidemiological modeling and findings from China and South Korea: important parameters to influence are contact tracing accuracy, diagnosis speed, and base infection rate</a></li>
+              <li style="font-weight: 400;"><a href="#proposedSystem" style="font-weight: 400;">Proposed system (bluetooth, heatmap) and how it might affect key parameters&nbsp;</a></li>
+              <li style="font-weight: 400;"><a href="#privacyRequirements" style="font-weight: 400;">Privacy requirements</a></li>
+              <li style="font-weight: 400;"><a href="#implementationDetails" style="font-weight: 400;">Implementation/progress details (bluetooth, GPS)</a></li>
+              <li style="font-weight: 400;"><a href="#pathToAdoption" style="font-weight: 400;">Path to adoption: incentives for individuals and public health / support of tech companies</a></li>
+              <li style="font-weight: 400;"><a href="#estimatedImpact" style="font-weight: 400;">Estimated impact: modeling results</a></li>
+              <li style="font-weight: 400;"><a href="#conclusion" style="font-weight: 400;">Next steps: what needs to be done and why it needs to be done quickly</a></li>
             </ol>
+          </div>
       </div>
+
+        <d-byline class="byline-grid">
+          <div class="authors-affiliations grid">
+              <h4>Authors</h4>
+              <h4>Affiliations</h4>
+              <p class="author">
+                <a class="name" href="#">John Smith</a>
+              </p>
+              <p class="affiliation">
+                <a class="affiliation" href="#">Stanford</a>
+              </p>
+              
+              <p class="author">
+                <a class="name" href="#">Jane Doe</a>
+              </p>
+              <p class="affiliation">
+                <a class="affiliation" href="#">Univ of Waterloo</a>
+              </p>
+          </div>
+          <div class="published">
+            <h4>Published</h4>
+            <p>March 17, 2020</p>
+          </div>
+          <div class="doi">
+            <h4>DOI</h4>
+            <p> 
+              <a href="#"> 12345</a>
+            </p>
+          </div>
+        </d-byline>
+
           <p>&nbsp;</p>
-          <v-row>
-            <p><span style="font-weight: 400;">From a technical standpoint, pandemic mitigation is an optimization problem. The goal is to simultaneously minimize adverse health outcomes and economic impact. Non-pharmaceutical approaches to infectious disease control have the following components:</span></p>
-          </v-row>
+          <div id="intro" >
+            <p ><span style="font-weight: 400;">From a technical standpoint, pandemic mitigation is an optimization problem. The goal is to simultaneously minimize adverse health outcomes and economic impact. Non-pharmaceutical approaches to infectious disease control have the following components:</span></p>
+          </div>
           
           <ul>
           <li style="font-weight: 400;"><span style="font-weight: 400;">Filtering (picking a subset of the population)</span></li>
@@ -45,7 +79,7 @@
           <p><span style="font-weight: 400;">In this document a technological solution to the pandemic optimization problem is explored. We show how anonymous information gathered from mobile devices can be used to build a high quality filter, and how targeted interventions can be selected and implemented using this information. Using numerical models we demonstrate how in some parameter regimes this system could be used to prevent COVID-19 from becoming endemic. This document discusses what we would like to accomplish, how the technology works, how the technology can be used, and numerical estimates of the benefit gained by implementing this system.</span></p>
 
 
-          <h2><span style="font-weight: 400;">Contact Tracing: Key Parameters</span></h2>
+          <h2 id="keyParameters"><span style="font-weight: 400;">Contact Tracing: Key Parameters</span></h2>
             <p style="color:red;">this section doesn't appear to be fully written yet</p>
             <p><span style="font-weight: 400;">Non-pharmaceutical methods the only choice for COVID-19 currently</span></p>
             <p><span style="font-weight: 400;">Based around reducing contact between contagious and susceptible people&nbsp;</span></p>
@@ -74,7 +108,7 @@
           
           <p><br /><br /></p>
 
-          <h2><span style="font-weight: 400;">Proposed System</span></h2>
+          <h2 id="proposedSystem"><span style="font-weight: 400;">Proposed System</span></h2>
             <p><br /></p>
             <h3><span style="font-weight: 400;">Mobile App</span></h3>
             <p><span style="font-weight: 400;">Potential app functionality depending on time constraints and regulations:</span></p>
@@ -141,13 +175,13 @@
 
 
           <p>&nbsp;</p>
-          <h2><span style="font-weight: 400;">Privacy Requirements</span></h2>
+          <h2 id="privacyRequirements"><span style="font-weight: 400;">Privacy Requirements</span></h2>
             <p><span style="font-weight: 400;">As effective as these approaches are, they both involve significant personal information being released to the public. The challenge is to find an equally effective system that can be made to work in countries where stricter privacy laws and increased civil liberties make a number of such approaches nearly infeasible.</span></p>
             <p><span style="font-weight: 400;">Our solution is the use of a cryptographically secure system structured so that patient data is kept completely private.&nbsp;</span></p>
             <p><span style="font-weight: 400;">We can do this by building the system in a decentralized manner, and by using randomly generated &lsquo;contact event numbers&rsquo; instead of static IDs.&nbsp;</span></p>
 
 
-          <h2><span style="font-weight: 400;">Implementation Details</span></h2>
+          <h2 id="implementationDetails"><span style="font-weight: 400;">Implementation Details</span></h2>
             <h3><span style="font-weight: 400;">Private and Decentralized System for Contact Tracing&nbsp;</span></h3>
             <p><span style="font-weight: 400;">By generating a new random number for each contact event, the system is able to operate without storing or transmitting any personal information. This method is designed so that only the phones involved in a contact event are able to identify messages on a public database.</span></p>
 
@@ -209,7 +243,7 @@
             <p><br /></p>
           
           
-          <h2><span style="font-weight: 400;">Path to adoption</span></h2>
+          <h2 id="pathToAdoption"><span style="font-weight: 400;">Path to adoption</span></h2>
             <h3><span style="font-weight: 400;">Value-add for Health Authorities</span></h3>
             <ul>
               <li style="font-weight: 400;"><span style="font-weight: 400;">High accuracy, instantaneous contact tracing</span></li>
@@ -229,14 +263,14 @@
           <p>&nbsp;</p>
 
 
-          <h2><span style="font-weight: 400;">Epidemiological Modelling: Estimated Impact</span></h2>
+          <h2 id="estimatedImpact"><span style="font-weight: 400;">Epidemiological Modelling: Estimated Impact</span></h2>
           <p><span style="font-weight: 400;">This paper [</span><a href="https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(20)30074-7/fulltext"><span style="font-weight: 400;">https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(20)30074-7/fulltext</span></a><span style="font-weight: 400;">] analyzes the effectiveness of contact tracing as a method to contain COVID-19 at the beginning of an outbreak. Their findings are fairly promising: with 80% contact tracing accuracy and a mean detection time of 3.8 days after symptom onset, containment is very likely. We are working on a very similar model for a slightly different research question:</span></p>
           <p><strong>&ldquo;Can an effective contact tracing program reduce local transmission so that sustained local spread does not occur?&rdquo;</strong></p>
           <p><span style="font-weight: 400;">The answer seems to be yes. With a comprehensive testing program, high contact tracing accuracy, and self-isolation of diagnosed individuals, our models predict that each new case will likely cause on the order of 10 other cases before the outbreak is extinguished.&nbsp;</span></p>
           <p><span style="font-weight: 400;">Current&nbsp;</span></p>
           <p><br /><br /></p>
 
-          <h2><span style="font-weight: 400;">Conclusion</span></h2>
+          <h2 id="conclusion"><span style="font-weight: 400;">Conclusion</span></h2>
           <p><span style="font-weight: 400;">We believe that technology can be an important part of this solution. In order to remain operational for years, the contact tracing system must have a low social and economic cost. Mobile technologies can provide instantaneous and high accuracy contact tracing, even between strangers. Instead of requiring thousands of healthcare workers to do this manually (as is the current approach in China) the process will be essentially cost-free. Because the system will be so accurate, a majority of people can continue to live their lives without the need for increased social distancing.</span></p>
           <p><span style="font-weight: 400;">What we are developing is a high-quality filter to be used for the pandemic optimization problem. Combined with a comprehensive testing program, our filter may be powerful enough to protect our communities from COVID-19.</span></p>
           <!--</v-col>-->
@@ -251,12 +285,84 @@
   // FYI, there's a wrapper element with id="covid19riskapp", but that's outside
   // of this page, in the layout code. Don't worry about it.
 
-  .hijesse {
-    img.puppypic {
-      width: 100%;
-    }
+  .overviewContainer {
+    background-color: #ffffff;
+    color: rgba(0, 0, 0, 0.8);
+    font-family: Roboto;
   }
 }
+
+.mainTitle {
+  display: flex;
+  justify-content: center;
+  font-size: 24px;
+}
+
+#keyPoints {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 40px;
+
+  .keyPointsContainer {
+    border: gray 1px solid;
+    width: 70%;
+    padding: 10px;
+    border-radius: 4px;
+  }
+}
+
+#overviewContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+d-byline {
+    contain: style;
+    overflow: unset;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 0.8rem;
+    line-height: 1.8em;
+    padding: 1.5rem 0;
+    min-height: 1.8em;
+    // display: grid;
+    display: flex;
+    justify-content: space-evenly;
+    // justify-items: stretch;
+    // grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr [text-end page-end gutter-end kicker-end middle-end];
+    // this was original below modified from distill site.  Simplified above with no significant end result change - Jesse
+    // grid-template-columns: [screen-start] 8px [page-start kicker-start text-start gutter-start middle-start]  1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr [text-end page-end gutter-end kicker-end middle-end] 8px [screen-end];
+    // grid-column-gap: 80px;
+
+   .byline {
+    grid-template-columns: 1fr 1fr;
+    grid-column: text;
+  }
+
+  .grid {
+    display: grid;
+    grid-column-gap: 8px;
+  }
+
+  .authors-affiliations {
+    grid-column-end: span 2;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 1em;
+  }
+
+}
+
+
+
+
+
+
+
+
+
 </style>
 
 <script>

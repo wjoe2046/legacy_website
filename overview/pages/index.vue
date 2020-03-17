@@ -37,7 +37,7 @@
         <!-- <div class="byline-grid gridContainer">
           <div class="authors-affiliations grid"> -->
 
-        <v-container fluid="true">
+        <v-container>
           <v-row justify="center" align="center">
             <v-col cols="10" sm="9">
               <v-row>
@@ -188,7 +188,7 @@
         <p>&nbsp;</p>
 
         <h2>Use Case: Heatmap&nbsp;</h2>
-        <Heatmap style="width: 110%"></Heatmap>
+        <Heatmap class="heatMap"></Heatmap>
 
         <p>&nbsp;</p>
         <h2 id="privacyRequirements"><span class="titleLine">Privacy Requirements</span></h2>
@@ -457,13 +457,15 @@ img {
   }
 }
 @media screen and (min-width: 480px) {
-  .benefitsDisadvantages {
-    width: 60%;
-  }
-}
-@media screen and (min-width: 480px) {
   .overviewContainer {
     padding: 8%;
+  }
+  .heatMap {
+    margin-left: -8%;
+    margin-right: -8%;
+  }
+  .benefitsDisadvantages {
+    width: 60%;
   }
 }
 .container {

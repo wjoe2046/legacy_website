@@ -11,11 +11,14 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@nuxtjs/axios": "^5.9.5",
+    "@statnett/vue-plotly": "^0.3.2",
     "color-interpolate": "^1.0.5",
     "nuxt": "^2.0.0",
     "random-normal": "^1.0.0",
     "shuffle-array": "^1.0.1",
-    "throttle-debounce": "^2.1.0"
+    "throttle-debounce": "^2.1.0",
+    "vue2-google-maps": "^0.10.7"
   },
   "devDependencies": {
     "@nuxtjs/vuetify": "^1.0.0"

@@ -30,6 +30,8 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    { src: "@/plugins/google-maps", mode: "client" },
+    { src: "@/plugins/vue-plotly", mode: "client" }
   ],
   /*
   ** Nuxt.js dev-modules
@@ -38,10 +40,14 @@ export default {
     '@nuxtjs/vuetify',
   ],
   /*
-  ** Nuxt.js modules
-  */
+   ** Nuxt.js modules
+   */
   modules: [
+    // Doc: https://axios.nuxtjs.org/usage
+    "@nuxtjs/axios"
   ],
+  router: {
+  },
   /*
   ** vuetify module configuration
   ** https://github.com/nuxt-community/vuetify-module

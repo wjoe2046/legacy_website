@@ -48,10 +48,7 @@ export default {
     base: '/articles/'
   },
   axios: {
-    baseURL:
-      process.env.NODE_ENV === "production"
-        ? "http://staging.covid-watch.org/articles"
-        : "http://localhost:3000/articles"
+    baseURL: '/articles/'
   },
   /*
    ** vuetify module configuration

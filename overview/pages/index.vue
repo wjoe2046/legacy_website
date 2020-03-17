@@ -118,8 +118,8 @@
         <!-- in line styling for now just so the images aren't huge in rough draft -->
         <div class="centerImage">
 
-          <img style="width:200px;" src="../assets/images/001.png" alt="">
-          <img style="width:500px;" src="../assets/images/002.png" alt="">
+          <img style="width:30%;" src="../assets/images/001.png" alt="">
+          <img style="width:70%;" src="../assets/images/002.png" alt="">
         </div>
 
         <p><br /><br /></p>
@@ -203,45 +203,6 @@
         <p><span>By generating a new random number for each contact event, the system is able to operate without storing or transmitting any personal information. This method is designed so that only the phones involved in a contact event are able to identify messages on a public database.</span></p>
 
         <p><span>The method works as follows:</span></p>
-
-        <!-- <ul class="stepsVisual">
-      <li>
-        <span>1</span>
-        <p>Every time two phones are close they randomly generate a contact event number and share it privately. </p>
-        <img src="../assets/images/007.png" alt="">
-      </li>
-
-      <li>
-        <span>2</span>
-        <p>This number is saved locally on both phones.</p>
-        <img src="../assets/images/008.png" alt="">
-      </li>
-
-      <li>
-        <span>3</span>
-        <p>If one of the phone owners is diagnosed positive, they are given a permission number by health authorities.</p>
-        <img src="../assets/images/009.png" alt="">
-      </li>
-
-      <li>
-        <span>4</span>
-        <p>This person sends a packet to the public database with the permission number and their history of contact event numbers.</p>
-        <img src="../assets/images/010.png" alt="">
-      </li>
-
-      <li>
-        <span>5</span>
-        <p>If the permission number is valid the contact event numbers are stored in the database and transmitted to all other phones.</p>
-        <img src="../assets/images/011.png" alt="">
-      </li>
-
-      <li>
-        <span>6</span>
-        <p>Each phone compares the publicly posted contact event numbers against their own history. If there are any matches this means they were close to an infected individual and are given instructions on what to do next.</p>
-        <img src="../assets/images/012.png" alt="">
-      </li>
-
-    </ul> -->
 
         <v-container class="stepsVisual">
           <v-row align="center">
@@ -373,6 +334,10 @@
   }
 }
 
+img {
+  max-width: 100%;
+}
+
 .mainTitle {
   display: flex;
   justify-content: center;
@@ -441,6 +406,7 @@
 .centerImage {
   display: flex;
   justify-content: center;
+  max-width: 90%;
 }
 
 .stepsVisual {
@@ -474,11 +440,10 @@
     }
   }
 }
-
 .benefitsDisadvantages {
   border: 1px solid black;
   border-radius: 4px;
-  width: 60%;
+  width: 100%;
   display: flex;
   justify-content: center;
 
@@ -493,7 +458,11 @@
     border-right: 1px solid black;
   }
 }
-
+@media screen and (min-width: 480px) {
+  .benefitsDisadvantages {
+    width: 60%;
+  }
+}
 .container {
   // padding-right: 60px;
   // padding-left: 60px;

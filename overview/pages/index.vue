@@ -307,7 +307,7 @@
         <p>&nbsp;</p>
 
         <h2 id="estimatedImpact"><span class="titleLine">Epidemiological Modelling: Estimated Impact</span></h2>
-        <p><a href="https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(20)30074-7/fulltext" target="_blank">This paper</a> analyzes the effectiveness of contact tracing as a method to contain COVID-19 at the beginning of an outbreak. Their findings are fairly promising: with 80% contact tracing accuracy and a mean detection time of 3.8 days after symptom onset, containment is very likely. We are working on a very similar model for a slightly different research question:</span></p>
+        <p><a href="https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(20)30074-7/fulltext" target="_blank">This paper</a> analyzes the effectiveness of contact tracing as a method to contain COVID-19 at the beginning of an outbreak. Their findings are fairly promising: with 80% contact tracing accuracy and a mean detection time of 3.8 days after symptom onset, containment is very likely. We are working on a very similar model for a slightly different research question:</p>
         <p><strong>&ldquo;Can an effective contact tracing program reduce local transmission so that sustained local spread does not occur?&rdquo;</strong></p>
         <p><span>The answer seems to be yes. With a comprehensive testing program, high contact tracing accuracy, and self-isolation of diagnosed individuals, our models predict that each new case will likely cause on the order of 10 other cases before the outbreak is extinguished.&nbsp;</span></p>
         <p><span>Current&nbsp;</span></p>

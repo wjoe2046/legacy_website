@@ -11,7 +11,11 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "nuxt": "^2.0.0"
+    "color-interpolate": "^1.0.5",
+    "nuxt": "^2.0.0",
+    "random-normal": "^1.0.0",
+    "shuffle-array": "^1.0.1",
+    "throttle-debounce": "^2.1.0"
   },
   "devDependencies": {
     "@nuxtjs/vuetify": "^1.0.0"

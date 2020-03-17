@@ -463,6 +463,11 @@ img {
     width: 60%;
   }
 }
+@media screen and (min-width: 480px) {
+  .overviewContainer {
+    padding: 8%;
+  }
+}
 .container {
   // padding-right: 60px;
   // padding-left: 60px;

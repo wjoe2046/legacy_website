@@ -234,7 +234,7 @@
               </template>
             </v-data-table>
           </v-col>
-          <v-col style="position:relative; min-height:12em;">
+          <v-col style="position:relative; min-height:25em;">
             <div class="plotlyholder">
               <vue-plotly
                   ref="plotlygraph"

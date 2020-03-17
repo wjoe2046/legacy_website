@@ -180,10 +180,8 @@
 
 
           <h2>Use Case: Heatmap&nbsp;</h2>
-          <!-- @Mikhail: area for heatmap element to be placed below.  Just remove the p and img elements below  - Jesse -->
           <div class="centerImage">
-            <p style="color:red;">note: live heat map will go here</p>
-            <img style="width:1200px" src="../assets/images/006.png" alt="">
+            <Heatmap></Heatmap>
           </div>
 
 
@@ -462,7 +460,11 @@
 </style>
 
 <script>
-export default {
+import Heatmap from '~/components/Heatmap.vue';
 
+export default {
+  components: {
+    Heatmap
+  }
 }
 </script>

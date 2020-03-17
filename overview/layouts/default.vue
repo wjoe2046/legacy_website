@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app id="covid19app">
     <v-app-bar fixed app>
     </v-app-bar>
     <v-content>

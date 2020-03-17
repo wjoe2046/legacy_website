@@ -8,11 +8,11 @@
         responsive 12-column grid.
         See: https://vuetifyjs.com/en/components/grids/
         -->
-         <!-- Jesse's notes: 
+         <!-- Jesse's notes:
               1) I used this word to html website (https://wordhtml.com/) to save time + generate an outline in html of the text content, hence the sometimes slightly whacky formatting and inline styling font-weights.  I will adjust as needed.
               2) since the desired output is a single column of text, images, etc. I don't believe including any columns is necessary <v-col cols="12" md="12">
-              3) I abandoned using v-row elements since the word2html service output line breaks differently and I'm not as familiar w v-row/v-col.  Path of least resistance and doesn't seem to compromise the result 
-            -->   
+              3) I abandoned using v-row elements since the word2html service output line breaks differently and I'm not as familiar w v-row/v-col.  Path of least resistance and doesn't seem to compromise the result
+            -->
         <div class="mainTitle">
             <h1>COVID Watch</h1>
         </div>
@@ -46,7 +46,7 @@
               <p class="affiliation">
                 <a class="affiliation" href="#">Stanford</a>
               </p>
-              
+
               <p class="author">
                 <a class="name" href="#">Jane Doe</a>
               </p>
@@ -60,7 +60,7 @@
           </div>
           <div class="doi">
             <h4>DOI</h4>
-            <p> 
+            <p>
               <a href="#"> 12345</a>
             </p>
           </div>
@@ -70,7 +70,7 @@
           <div id="intro">
             <p ><span style="font-weight:bold; font-size: 18px;">From a technical standpoint, pandemic mitigation is an optimization problem.</span> The goal is to simultaneously minimize adverse health outcomes and economic impact. Non-pharmaceutical approaches to infectious disease control have the following components:</p>
           </div>
-          
+
           <ul>
           <li  ><span  >Filtering (picking a subset of the population)</span></li>
           <li  ><span  >Intervention (modifying the behaviour of these people)</span></li>
@@ -104,14 +104,14 @@
           <p><span  >China uses thousands of people to manually trace contacts, combined with a mobile app of unknown functionality.</span></p>
           <p>&nbsp;</p>
           <p><span  >South Korea publicizes a large amount of information collected from the cellphones of infected patients so that others can determine if they were in contact.</span></p>
-          
+
           <!-- in line styling for now just so the images aren't huge in rough draft -->
           <div class="centerImage">
-           
+
             <img style="width:200px;" src="../assets/images/001.png" alt="">
             <img style="width:500px;" src="../assets/images/002.png" alt="">
            </div>
-          
+
           <p><br /><br /></p>
 
           <h2 id="proposedSystem" ><span class="titleLine"  >Proposed System</span></h2>
@@ -129,9 +129,9 @@
             <li  ><span  >Can combine contact events with time spent in high risk areas to generate a risk score and customized set of instructions for what to do if users experience certain symptoms</span></li>
             </ul>
             </ul>
-            
+
             <p>&nbsp;</p>
-            
+
             <p><span  >Use mobile devices to:</span></p>
             <ul>
               <li  ><span  >Automatically trace contacts, increasing accuracy and scale of contact tracing efforts</span></li>
@@ -147,7 +147,7 @@
               <li  ><span  >Always on, always private contact tracing using cellphone Bluetooth&nbsp;</span></li>
               <li  ><span  >&lsquo;Contact Events&rsquo; are measured when two people with cellphones running our software are close to each other&nbsp;&nbsp;</span></li>
             </ul>
-            
+
             <div class="centerImage">
               <img src="../assets/images/004.png" alt="">
             </div>
@@ -180,10 +180,8 @@
 
 
           <h2>Use Case: Heatmap&nbsp;</h2>
-          <!-- @Mikhail: area for heatmap element to be placed below.  Just remove the p and img elements below  - Jesse -->
           <div class="centerImage">
-            <p style="color:red;">note: live heat map will go here</p>
-            <img style="width:1200px"src="../assets/images/006.png" alt="">
+            <Heatmap></Heatmap>
           </div>
 
 
@@ -212,7 +210,7 @@
                 <p>This number is saved locally on both phones.</p>
                 <img src="../assets/images/008.png" alt="">
               </li>
-              
+
               <li>
                 <span>3</span>
                 <p>If one of the phone owners is diagnosed positive, they are given a permission number by health authorities.</p>
@@ -248,7 +246,7 @@
           <h2><span  >Bluetooth Protocol: Background Processes on iOS and Android</span></h2>
             <p><span  >Contact Event Number shared privately between two phones</span></p>
             <p><span  >With this approach, a contact event number is only used once and it is only known by two phones. This could be implemented by temporarily linking nearby phones running our app and using Diffie-Hellman key exchange to establish an encrypted channel. The two phones could then collectively generate and store a contact event number. For example, each phone could generate a random number and the combined CEN could be formed by concatenating these two numbers.</span></p>
-            
+
             <br />
 
             <!-- in line styling to be replaced, just temporary for quick non-styled first draft  - Jesse -->
@@ -278,8 +276,8 @@
             <p><br /></p>
             <h3><span  >Heatmap Calculation</span></h3>
             <p><br /></p>
-          
-          
+
+
           <h2 id="pathToAdoption"><span   class="titleLine">Path to adoption</span></h2>
             <h3><span  >Value-add for Health Authorities</span></h3>
             <ul>
@@ -312,7 +310,6 @@
           <p><span  >What we are developing is a high-quality filter to be used for the pandemic optimization problem. Combined with a comprehensive testing program, our filter may be powerful enough to protect our communities from COVID-19.</span></p>
           <!--</v-col>-->
 
-    </v-row>
   </v-container>
 </template>
 
@@ -463,7 +460,11 @@
 </style>
 
 <script>
-export default {
+import Heatmap from '~/components/Heatmap.vue';
 
+export default {
+  components: {
+    Heatmap
+  }
 }
 </script>

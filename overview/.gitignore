@@ -88,3 +88,7 @@ sw.*
 
 # Vim swap files
 *.swp
+
+# Secret key files
+secret.json
+

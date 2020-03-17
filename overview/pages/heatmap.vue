@@ -1,5 +1,5 @@
 <template>
-  <v-layout column>
+  <v-layout column class="covid19heatmap">
     <v-row>
       <v-col cols="12" md="8" xl="6">
         <div class="map-container">
@@ -252,7 +252,7 @@
 </template>
 
 <style lang="scss">
-#covid19riskapp {
+.covid19heatmap {
   .map-container {
     background: #ccc;
     border: 1px solid #444;

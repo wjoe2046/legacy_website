@@ -297,7 +297,7 @@
     "valuetype": "float",
     "range_min": 0,
     "range_max": 1,
-    "default": 0.15,
+    "default": 0.05,
     "param_group": "Mobile App"
   },
   {

@@ -188,9 +188,7 @@
         <p>&nbsp;</p>
 
         <h2>Use Case: Heatmap&nbsp;</h2>
-        <div class="centerImage">
-          <Heatmap></Heatmap>
-        </div>
+        <Heatmap style="width: 110%"></Heatmap>
 
         <p>&nbsp;</p>
         <h2 id="privacyRequirements"><span class="titleLine">Privacy Requirements</span></h2>

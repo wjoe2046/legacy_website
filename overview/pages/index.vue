@@ -202,32 +202,38 @@
 
             <ul class="stepsVisual">
               <li>
-                <p><span>1</span>Every time two phones are close they randomly generate a contact event number and share it privately. </p>
+                <span>1</span>
+                <p>Every time two phones are close they randomly generate a contact event number and share it privately. </p>
                 <img src="../assets/images/007.png" alt="">
               </li>
 
               <li>
-                <p><span>2</span>This number is saved locally on both phones.</p>
+                <span>2</span>
+                <p>This number is saved locally on both phones.</p>
                 <img src="../assets/images/008.png" alt="">
               </li>
               
               <li>
-                <p><span>3</span>If one of the phone owners is diagnosed positive, they are given a permission number by health authorities.</p>
+                <span>3</span>
+                <p>If one of the phone owners is diagnosed positive, they are given a permission number by health authorities.</p>
                 <img src="../assets/images/009.png" alt="">
               </li>
 
               <li>
-                <p><span>4</span>This person sends a packet to the public database with the permission number and their history of contact event numbers.</p>
+                <span>4</span>
+                <p>This person sends a packet to the public database with the permission number and their history of contact event numbers.</p>
                 <img src="../assets/images/010.png" alt="">
               </li>
 
               <li>
-                <p><span>5</span>If the permission number is valid the contact event numbers are stored in the database and transmitted to all other phones.</p>
+                <span>5</span>
+                <p>If the permission number is valid the contact event numbers are stored in the database and transmitted to all other phones.</p>
                 <img src="../assets/images/011.png" alt="">
               </li>
 
               <li>
-                <p><span>6</span>Each phone compares the publicly posted contact event numbers against their own history. If there are any matches this means they were close to an infected individual and are given instructions on what to do next.</p>
+                <span>6</span>
+                <p>Each phone compares the publicly posted contact event numbers against their own history. If there are any matches this means they were close to an infected individual and are given instructions on what to do next.</p>
                 <img src="../assets/images/012.png" alt="">
               </li>
 
@@ -399,28 +405,30 @@
   list-style: none;
   flex-wrap: wrap;
   display: flex;
+  justify-content: space-between;
 
   li {
     display: flex;
-    width: 50%;
+    width: 40%;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
+    margin: 10px;
 
     span {
       font-weight: bold;
       font-size: 40px;
-      padding-top: 8px;
-      padding-right: 8px;
-      padding-left: 8px;
+      margin-right: 20px;
     }
 
     p {
-      width: 300px;
-      font-size: 20px;
+      // width: 300px;
+      width: 40%;
+      font-size: 18px;
     }
 
     img {
-      width: 300px;
+      width: 50%;
+      // width: 300px;
     }
   }
 
@@ -446,9 +454,9 @@
 }
 
 .container {
-  padding-right: 100px;
-  padding-left: 100px;
-  padding-bottom: 100px;
+  // padding-right: 60px;
+  // padding-left: 60px;
+  // padding-bottom: 100px;
 }
 
 

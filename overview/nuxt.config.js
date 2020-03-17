@@ -44,7 +44,9 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     "@nuxtjs/axios"
   ],
-  router: {},
+  router: {
+    base: '/articles/'
+  },
   axios: {
     baseURL:
       process.env.NODE_ENV === "production"

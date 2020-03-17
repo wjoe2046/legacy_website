@@ -204,42 +204,42 @@
 
         <v-container class="stepsVisual">
           <v-row align="center">
-            <v-col cols="12" sm="6">
+            <v-col cols="12" md="6">
               <li>
                 <span>1</span>
                 <p>Every time two phones are close they randomly generate a contact event number and share it privately. </p>
                 <img src="../assets/images/007.png" alt="">
               </li>
             </v-col>
-            <v-col cols="12" sm="6">
+            <v-col cols="12" md="6">
               <li>
                 <span>2</span>
                 <p>This number is saved locally on both phones.</p>
                 <img src="../assets/images/008.png" alt="">
               </li>
             </v-col>
-            <v-col cols="12" sm="6">
+            <v-col cols="12" md="6">
               <li>
                 <span>3</span>
                 <p>If one of the phone owners is diagnosed positive, they are given a permission number by health authorities.</p>
                 <img src="../assets/images/009.png" alt="">
               </li>
             </v-col>
-            <v-col cols="12" sm="6">
+            <v-col cols="12" md="6">
               <li>
                 <span>4</span>
                 <p>This person sends a packet to the public database with the permission number and their history of contact event numbers.</p>
                 <img src="../assets/images/010.png" alt="">
               </li>
             </v-col>
-            <v-col cols="12" sm="6">
+            <v-col cols="12" md="6">
               <li>
                 <span>5</span>
                 <p>If the permission number is valid the contact event numbers are stored in the database and transmitted to all other phones.</p>
                 <img src="../assets/images/011.png" alt="">
               </li>
             </v-col>
-            <v-col cols="12" sm="6">
+            <v-col cols="12" md="6">
               <li>
                 <span>6</span>
                 <p>Each phone compares the publicly posted contact event numbers against their own history. If there are any matches this means they were close to an infected individual and are given instructions on what to do next.</p>

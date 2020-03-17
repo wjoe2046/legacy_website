@@ -2,7 +2,8 @@
   <!-- Hi Jesse. nuxt requires a single element under v-container (or at least it used to.)
     This is usually a v-container. -->
   <v-container class="overviewContainer">
-
+    <v-row>
+       <v-col>
       <!-- Typically a v-container has a bunch of v-row elements under it.
         Each v-row usually has v-col elements, which are organized into a
         responsive 12-column grid.
@@ -308,8 +309,8 @@
           <h2 id="conclusion"><span   class="titleLine">Conclusion</span></h2>
           <p><span  >We believe that technology can be an important part of this solution. In order to remain operational for years, the contact tracing system must have a low social and economic cost. Mobile technologies can provide instantaneous and high accuracy contact tracing, even between strangers. Instead of requiring thousands of healthcare workers to do this manually (as is the current approach in China) the process will be essentially cost-free. Because the system will be so accurate, a majority of people can continue to live their lives without the need for increased social distancing.</span></p>
           <p><span  >What we are developing is a high-quality filter to be used for the pandemic optimization problem. Combined with a comprehensive testing program, our filter may be powerful enough to protect our communities from COVID-19.</span></p>
-          <!--</v-col>-->
-
+        </v-col>
+      </v-row>
   </v-container>
 </template>
 

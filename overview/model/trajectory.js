@@ -1,4 +1,3 @@
-
 // The trajectory model is responsible for loading, storing,
 // and managing Geolife trajectories, via a JSON format that
 // has been processed by the corresponding Jupyter Notebook.
@@ -27,14 +26,12 @@ const trajectoryModel = {
     this.seekUnixtime = 0;
   },
 
-
   get durationDataLoad() {
     if (!this.isDataLoaded) {
       return null;
     }
     return this.dataLoadTimeEnd - this.dataLoadTimeStart;
   },
-
 
   get trajectories() {
     if (!this.trajectoryData || !this.trajectoryData.trajectories) {
@@ -43,11 +40,9 @@ const trajectoryModel = {
     return this.trajectoryData.trajectories;
   },
 
-
   get trajectoryIds() {
     return [...Object.keys(this.trajectories)];
   },
-
 
   get gridparams() {
     if (!this.trajectoryData || !this.trajectoryData.gridparams) {
@@ -56,7 +51,6 @@ const trajectoryModel = {
     return this.trajectoryData.gridparams;
   },
 
-
   markDataLoadStart() {
     this.dataLoadTimeStart = new Date();
     this.dataLoadTimeEnd = null;
@@ -64,7 +58,6 @@ const trajectoryModel = {
     this.isDataLoaded = false;
     this.errorMsg = null;
   },
-
 
   markDataLoadComplete(error) {
     this.isDataLoading = false;
@@ -80,7 +73,6 @@ const trajectoryModel = {
     }
   },
 
-
   advanceTime(seconds) {
     Object.entries(this.trajectories).forEach(([trajId, trajectory]) => {
       const currentSeek = this.currentTrajSeeks[trajId];
@@ -88,9 +80,10 @@ const trajectoryModel = {
 
       let secondsRemaining = seconds;
       while (secondsRemaining > 0) {
-        const secondsToSpendInCurrentRecord =
-          Math.min(secondsRemaining,
-            currentSeek.secondsRequired - currentSeek.secondsConsumed);
+        const secondsToSpendInCurrentRecord = Math.min(
+          secondsRemaining,
+          currentSeek.secondsRequired - currentSeek.secondsConsumed
+        );
 
         currentSeek.secondsConsumed += secondsToSpendInCurrentRecord;
         if (currentSeek.secondsConsumed >= currentSeek.secondsRequired) {
@@ -119,36 +112,73 @@ const trajectoryModel = {
     });
   },
 
-
   load($axios, options) {
     this.markDataLoadStart();
 
-    const urlpath = 'data/trajectories_ghosts.json';
-    const p = $axios.get(urlpath).then(data => {
-      const trajectoryData = data.data;
+    const urlpath = "data/trajectories_ghosts.json";
+    const p = $axios
+      .get(urlpath)
+      .then(data => {
+        const trajectoryData = data.data;
 
-      if (options) {
-        if (options.dbgOnlyKeepFirstNTrajectories) {
-          const keysToKeep = [...Object.keys(trajectoryData.trajectories)].
-              slice(0, options.dbgOnlyKeepFirstNTrajectories);
-          const trajSlice = {};
-          keysToKeep.forEach(k => {trajSlice[k] = trajectoryData.trajectories[k]});
-          trajectoryData.trajectories = trajSlice;
+        if (options) {
+          if (options.dbgOnlyKeepFirstNTrajectories) {
+            const keysToKeep = [
+              ...Object.keys(trajectoryData.trajectories)
+            ].slice(0, options.dbgOnlyKeepFirstNTrajectories);
+            const trajSlice = {};
+            keysToKeep.forEach(k => {
+              trajSlice[k] = trajectoryData.trajectories[k];
+            });
+            trajectoryData.trajectories = trajSlice;
+          }
         }
-      }
 
-      // Convert the lat/long from fixed-point integer to floats.
-      const pow10 = Math.pow(10, trajectoryData.gridparams['fixed-point-precision']);
-      Object.values(trajectoryData.trajectories).forEach(trajectory => {
-        trajectory.forEach((trajRecord) => {
-          trajRecord[0] /= pow10;
-          trajRecord[1] /= pow10;
+        // Convert the lat/long from fixed-point integer to floats.
+        const pow10 = Math.pow(
+          10,
+          trajectoryData.gridparams["fixed-point-precision"]
+        );
+        Object.values(trajectoryData.trajectories).forEach(trajectory => {
+          trajectory.forEach(trajRecord => {
+            trajRecord[0] /= pow10;
+            trajRecord[1] /= pow10;
+          });
         });
+
+        this.currentTrajSeeks = {};
+        this.locations = {};
+        Object.entries(trajectoryData.trajectories).forEach(
+          ([trajId, trajectory]) => {
+            const firstRecord = trajectory[0];
+            this.currentTrajSeeks[trajId] = {
+              index: 0,
+              secondsConsumed: 0,
+              secondsRequired: firstRecord[2]
+            };
+            const currentLocation = {
+              lat: firstRecord[0],
+              lng: firstRecord[1]
+            };
+            this.locations[trajId] = currentLocation;
+          }
+        );
+
+        this.trajectoryData = trajectoryData;
+        this.markDataLoadComplete();
+      })
+      .catch(err => {
+        this.markDataLoadComplete(err);
       });
 
-      this.currentTrajSeeks = {};
-      this.locations = {};
-      Object.entries(trajectoryData.trajectories).forEach( ([trajId, trajectory]) => {
+    return p;
+  },
+
+  softReset() {
+    this.currentTrajSeeks = {};
+    this.locations = {};
+    Object.entries(this.trajectoryData.trajectories).forEach(
+      ([trajId, trajectory]) => {
         const firstRecord = trajectory[0];
         this.currentTrajSeeks[trajId] = {
           index: 0,
@@ -160,23 +190,13 @@ const trajectoryModel = {
           lng: firstRecord[1]
         };
         this.locations[trajId] = currentLocation;
-      });
+      }
+    );
 
-      this.trajectoryData = trajectoryData;
-      this.markDataLoadComplete();
-    })
-    .catch(err => {
-      this.markDataLoadComplete(err);
-    });
-
-    return p;
+    // this.trajectoryData = trajectoryData;
   }
 };
 
 trajectoryModel.reset();
 
 export default trajectoryModel;
-
-
-
-

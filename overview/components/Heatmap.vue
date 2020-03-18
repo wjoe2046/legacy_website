@@ -435,7 +435,9 @@ export default {
     },
 
     resetWithData() {
+      this.currentTime = 0;
       epidemiologyModel.reset();
+      trajectoryModel.softReset();
       epidemiologyModel.generateSimInfo(trajectoryModel.trajectoryIds);
       epidemiologyModel.infectPatientZeroes();
       epidemiologyModel.advanceTime(1);
@@ -454,7 +456,15 @@ export default {
           dbgOnlyKeepFirstNTrajectories: false
         })
         .then(() => {
-          this.resetWithData();
+          epidemiologyModel.generateSimInfo(trajectoryModel.trajectoryIds);
+          epidemiologyModel.infectPatientZeroes();
+          epidemiologyModel.advanceTime(1);
+
+          this.mapMarkersByTrajId = {};
+
+          if (this.heatmapObj) {
+            this.heatmapObj.setData([]);
+          }
 
           // We have to do this silly timeout trick because we can't
           // grab a reference to the mapRef element because it doesn't

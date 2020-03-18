@@ -23,10 +23,6 @@
                 </p>
               </v-alert>
 
-              <v-alert type="error" v-if="trajectoryModel.errorMsg">
-                {{trajectoryModel.errorMsg}}
-              </v-alert>
-
               <v-alert type="success" :dismissible="true" v-if="trajectoryModel.isDataLoaded">
                 <p>
                   Data loaded in
@@ -34,18 +30,8 @@
                 </p>
               </v-alert>
 
-              <v-alert type="info" v-if="hoverParam">
-                <h3>{{hoverParam.name}}</h3>
-                <p>
-                  {{hoverParam.description}}
-                </p>
-                <p>
-                  Range: {{hoverParam.range_min}} - {{hoverParam.range_max}}<br />
-                  Default value: {{hoverParam.default}}
-                </p>
-                <p>
-                  Current value: <strong>{{hoverParam.value}}</strong>
-                </p>
+              <v-alert type="error" v-if="trajectoryModel.errorMsg">
+                {{trajectoryModel.errorMsg}}
               </v-alert>
 
               <GmapMap ref="mapRef" v-if="trajectoryModel.isDataLoaded" :center="mapInitCenter" :zoom="11" map-type-id="roadmap" style="width: 100%; height: 100%">
@@ -146,7 +132,7 @@
         </v-tabs>
 
       </v-col>
-      <v-col cols="12" md="4">
+      <v-col cols="12" md="8" class="btns-and-info">
         <v-slider label="Playback speed" v-model="timeIncrement" :min="30 * 60" :max="6 * 60 * 60" :dense="true"></v-slider>
         <v-row v-if="!trajectoryModel.isDataLoaded">
           <v-btn color="primary" :loading="trajectoryModel.isDataLoading" @click="loadData()">
@@ -157,7 +143,6 @@
           <v-btn fab small class="mx-1" color="primary" v-if="!isPlaying" @click="resetWithData()">
             <v-icon>mdi-cached</v-icon>
           </v-btn>
-
           <v-btn fab small class="mx-1" color="primary" v-if="!isPlaying" @click="isPlaying=true; play()">
             <v-icon>mdi-play</v-icon>
           </v-btn>
@@ -168,8 +153,25 @@
             <v-icon>mdi-stop</v-icon>
           </v-btn>
         </v-row>
+
+        <v-row>
+          <v-alert type="info" v-if="hoverParam" class="slider-info">
+            <h3>{{hoverParam.name}}</h3>
+            <p>
+              {{hoverParam.description}}
+            </p>
+            <p>
+              Range: {{hoverParam.range_min}} - {{hoverParam.range_max}}<br />
+              Default value: {{hoverParam.default}}
+            </p>
+            <p>
+              Current value: <strong>{{hoverParam.value}}</strong>
+            </p>
+          </v-alert>
+        </v-row>
+
       </v-col>
-      <v-col cols="12" md="8">
+      <v-col cols="12" md="4">
         <v-container class="flex-grow-1 param-sliders">
           <v-row>
             <v-expansion-panels accordion>
@@ -231,13 +233,18 @@
       opacity: 0.9;
       border-radius: 1ex;
     }
+    .btns-and-info {
+      @media (min-width: 960px) {
+        min-height: 450px;
+      }
+    }
   }
 
   .param-sliders {
     position: relative;
     overflow: hidden;
     overflow-y: auto;
-    min-height: 10em;
+    min-height: 20em;
 
     & > .row {
       @media (min-width: 960px) {
@@ -253,6 +260,13 @@
     .v-messages {
       top: -6ex;
       left: 2ex;
+    }
+  }
+
+  .slider-info {
+    margin-top: 3vh;
+    @media (max-width: 960px) {
+      display: none;
     }
   }
 

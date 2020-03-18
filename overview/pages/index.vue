@@ -460,10 +460,7 @@ img {
   .overviewContainer {
     padding: 8%;
   }
-  .heatMap {
-    margin-left: -8%;
-    margin-right: -8%;
-  }
+
   .benefitsDisadvantages {
     width: 60%;
   }

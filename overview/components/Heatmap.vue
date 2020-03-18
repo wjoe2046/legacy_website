@@ -1,7 +1,18 @@
 <template>
   <v-layout column class="covid19heatmap">
     <v-row>
-      <v-col cols="12" md="8" xl="6">
+      <v-col cols="12">
+        <v-tabs>
+          <v-tab>
+            Map
+          </v-tab>
+          <v-tab>
+            Data
+          </v-tab>
+          <v-tab>
+            Plot
+          </v-tab>
+        </v-tabs>
         <div class="map-container">
           <v-alert type="info" :dismissible="true" v-if="!trajectoryModel.isDataLoading &&
                     !trajectoryModel.isDataLoaded">
@@ -59,41 +70,30 @@
           </div>
         </div>
       </v-col>
+      <v-col cols="12" md="4">
+        <v-slider label="Playback speed" v-model="timeIncrement" :min="30 * 60" :max="6 * 60 * 60" :dense="true"></v-slider>
+        <v-row v-if="!trajectoryModel.isDataLoaded">
+          <v-btn color="primary" :loading="trajectoryModel.isDataLoading" @click="loadData()">
+            Load Data
+          </v-btn>
+        </v-row>
+        <v-row v-if="trajectoryModel.isDataLoaded">
+          <v-btn fab small class="mx-1" color="primary" v-if="!isPlaying" @click="resetWithData()">
+            <v-icon>mdi-cached</v-icon>
+          </v-btn>
 
-      <v-col class="d-flex flex-column">
-        <v-container v-if="!trajectoryModel.isDataLoaded" class="flex-grow-0">
-          <v-row>
-            <v-btn color="primary" :loading="trajectoryModel.isDataLoading" @click="loadData()">
-              Load Data
-            </v-btn>
-          </v-row>
-        </v-container>
-
-        <v-container class="flex-grow-0" v-if="trajectoryModel.isDataLoaded">
-
-          <v-row>
-            <v-col>
-              <v-slider label="Playback speed" v-model="timeIncrement" :min="30 * 60" :max="6 * 60 * 60" :dense="true"></v-slider>
-            </v-col>
-          </v-row>
-
-          <v-row>
-            <v-btn fab small class="mx-1" color="primary" v-if="!isPlaying" @click="resetWithData()">
-              <v-icon>mdi-cached</v-icon>
-            </v-btn>
-
-            <v-btn fab small class="mx-1" color="primary" v-if="!isPlaying" @click="isPlaying=true; play()">
-              <v-icon>mdi-play</v-icon>
-            </v-btn>
-            <v-btn fab small class="mx-1" color="primary" v-if="!isPlaying" @click="advanceTime()">
-              <v-icon>mdi-play-pause</v-icon>
-            </v-btn>
-            <v-btn fab small class="mx-1" color="primary" v-if="isPlaying" @click="isPlaying=false">
-              <v-icon>mdi-stop</v-icon>
-            </v-btn>
-          </v-row>
-        </v-container>
-
+          <v-btn fab small class="mx-1" color="primary" v-if="!isPlaying" @click="isPlaying=true; play()">
+            <v-icon>mdi-play</v-icon>
+          </v-btn>
+          <v-btn fab small class="mx-1" color="primary" v-if="!isPlaying" @click="advanceTime()">
+            <v-icon>mdi-play-pause</v-icon>
+          </v-btn>
+          <v-btn fab small class="mx-1" color="primary" v-if="isPlaying" @click="isPlaying=false">
+            <v-icon>mdi-stop</v-icon>
+          </v-btn>
+        </v-row>
+      </v-col>
+      <v-col cols="12" md="8">
         <v-container class="flex-grow-1 param-sliders">
           <v-row>
             <v-expansion-panels accordion>

@@ -2,10 +2,10 @@
 
 #! chmod +x ./scripts/build.sh
 
-#!push to staging at http://staging.covid-watch.org/articles/index.html: 
+#!push to staging at http://staging.covid-watch.org/articles/index.html:
     #! ./scripts/build.sh staging default
 
-#!push to production at http://www.covid-watch.org/articles/index.html: 
+#!push to production at http://www.covid-watch.org/articles/index.html:
     #! ./scripts/build.sh live default
 
 
@@ -14,8 +14,11 @@ LIVE_OR_STAGING=$1
 AWSPROFILE=$2
 NOBUILD=$3
 
-
-
+if [ "$LIVE_OR_STAGING" = "staging"]; then
+  # Default invalidation ID is for the production environment.
+  # If staging is specified, it needs to be overridden.
+  CLOUDFRONT_INVALIDATION_ID=ERB7Y0Z7SNYIM
+fi
 
 argquit() {
   echo "Please run this script from the root development folder of the nuxt app."
@@ -91,9 +94,9 @@ fi
 
 
 S3_BUILDFOLDER_SUFFIX=`date +%s`
-S3_TARGET_URI="s3://$BUCKETNAME/$FOLDERNAME/" 
-S3_BUILD_URI="s3://$BUCKETNAME/$FOLDERNAME--build-$S3_BUILDFOLDER_SUFFIX/" 
-S3_DEPRECATE_URI="s3://$BUCKETNAME/$FOLDERNAME--deprecate-$S3_BUILDFOLDER_SUFFIX/" 
+S3_TARGET_URI="s3://$BUCKETNAME/$FOLDERNAME/"
+S3_BUILD_URI="s3://$BUCKETNAME/$FOLDERNAME--build-$S3_BUILDFOLDER_SUFFIX/"
+S3_DEPRECATE_URI="s3://$BUCKETNAME/$FOLDERNAME--deprecate-$S3_BUILDFOLDER_SUFFIX/"
 
 
 aws s3 --profile "$AWSPROFILE" cp --recursive dist/ "$S3_BUILD_URI" --acl public-read --cache-control max-age=31557600,public --metadata-directive REPLACE --expires 2034-01-01T00:00:00Z

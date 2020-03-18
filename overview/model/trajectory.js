@@ -177,7 +177,7 @@ const trajectoryModel = {
   softReset() {
     this.currentTrajSeeks = {};
     this.locations = {};
-    Object.entries(this.trajectoryData.trajectories).forEach(
+    Object.entries(this.trajectories).forEach(
       ([trajId, trajectory]) => {
         const firstRecord = trajectory[0];
         this.currentTrajSeeks[trajId] = {
@@ -192,8 +192,6 @@ const trajectoryModel = {
         this.locations[trajId] = currentLocation;
       }
     );
-
-    // this.trajectoryData = trajectoryData;
   }
 };
 

@@ -414,21 +414,7 @@ export default {
       this.currentTime = 0;
       this.mapInitCenter = { lat: 39.95, lng: 116.4 };
 
-      this.plotlydata = epidemiologyModel.INFECTION_STAGES_ORDER.map(k => {
-        const infectionStage = epidemiologyModel.INFECTION_STAGES[k];
-        return {
-          type: "scatter",
-          x: [],
-          y: [],
-          mode: "lines",
-          name: infectionStage.name,
-          infectionStageKey: k,
-          line: {
-            width: 2,
-            color: INFECTION_STAGE_COLORS[k]
-          }
-        };
-      });
+      this.plotlydata = [];
 
       trajectoryModel.reset();
       epidemiologyModel.reset();
@@ -447,6 +433,22 @@ export default {
       if (this.heatmapObj) {
         this.heatmapObj.setData([]);
       }
+
+      this.plotlydata = epidemiologyModel.INFECTION_STAGES_ORDER.map(k => {
+        const infectionStage = epidemiologyModel.INFECTION_STAGES[k];
+        return {
+          type: "scatter",
+          x: [],
+          y: [],
+          mode: "lines",
+          name: infectionStage.name,
+          infectionStageKey: k,
+          line: {
+            width: 2,
+            color: INFECTION_STAGE_COLORS[k]
+          }
+        };
+      });
     },
 
     loadData() {
@@ -456,15 +458,7 @@ export default {
           dbgOnlyKeepFirstNTrajectories: false
         })
         .then(() => {
-          epidemiologyModel.generateSimInfo(trajectoryModel.trajectoryIds);
-          epidemiologyModel.infectPatientZeroes();
-          epidemiologyModel.advanceTime(1);
-
-          this.mapMarkersByTrajId = {};
-
-          if (this.heatmapObj) {
-            this.heatmapObj.setData([]);
-          }
+          this.resetWithData();
 
           // We have to do this silly timeout trick because we can't
           // grab a reference to the mapRef element because it doesn't

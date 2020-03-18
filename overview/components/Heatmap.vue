@@ -8,6 +8,7 @@
           </v-tab>
           <v-tab-item :transition="false" :reverse-transition="false">
             <div class="map-container">
+              <v-progress-circular indeterminate color="primary" v-if="!trajectoryModel.isDataLoaded" class="circular-loader" size="55" width="5"></v-progress-circular>
               <GmapMap ref="mapRef" v-if="trajectoryModel.isDataLoaded" :center="mapInitCenter" :zoom="11" map-type-id="roadmap" style="width: 100%; height: 100%">
               </GmapMap>
             </div>
@@ -142,11 +143,9 @@
             </p>
           </v-alert>
 
-          <v-alert type="success" :dismissible="true" v-if="trajectoryModel.isDataLoaded">
-            <p>
-              Data loaded in
-              {{trajectoryModel.durationDataLoad}} ms
-            </p>
+          <v-alert type="success" :dismissible="true" v-if="trajectoryModel.isDataLoaded" class="slider-info">
+            Data loaded in
+            {{trajectoryModel.durationDataLoad}} ms
           </v-alert>
 
           <v-alert type="error" v-if="trajectoryModel.errorMsg">
@@ -197,10 +196,15 @@
 
 <style lang="scss">
 .covid19heatmap {
-  .v-tabs .v-item-group[role=tablist] {
+  .v-tabs .v-item-group[role="tablist"] {
     margin-left: 2em;
   }
 
+  .circular-loader {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
   .map-container {
     background: #ccc;
     border: 1px solid #444;

@@ -2,59 +2,21 @@
   <v-layout column class="covid19heatmap">
     <v-row>
       <v-col cols="12">
-        <v-tabs>
+        <v-tabs class="map-container-tabber">
           <v-tab>
             Map
           </v-tab>
-          <v-tab-item>
+          <v-tab-item :transition="false" :reverse-transition="false">
             <div class="map-container">
-              <v-alert type="info" :dismissible="true" v-if="!trajectoryModel.isDataLoading &&
-                    !trajectoryModel.isDataLoaded">
-                <p>
-                  The data file has not yet been loaded.
-                  The data comes as a JSON file approximately
-                  4 MB in size.
-                </p>
-                <p>
-                  NOTE: This is simulated data representing a theoretical epidemiological model.
-                  This simulation does not contain any actual COVID-19 transmission data
-                  nor the exact movements of any real individuals, and should
-                  not be used in place of studying actual real-world infection cases.
-                </p>
-              </v-alert>
-
-              <v-alert type="success" :dismissible="true" v-if="trajectoryModel.isDataLoaded">
-                <p>
-                  Data loaded in
-                  {{trajectoryModel.durationDataLoad}} ms
-                </p>
-              </v-alert>
-
-              <v-alert type="error" v-if="trajectoryModel.errorMsg">
-                {{trajectoryModel.errorMsg}}
-              </v-alert>
-
               <GmapMap ref="mapRef" v-if="trajectoryModel.isDataLoaded" :center="mapInitCenter" :zoom="11" map-type-id="roadmap" style="width: 100%; height: 100%">
               </GmapMap>
-
-              <div class="seektime" v-if="trajectoryModel.isDataLoaded">
-                <strong>
-                  Day {{Math.floor(currentTimeDayCount)}}:
-                  {{epidemiologyModel.infectedCount.healthy}} healthy,
-                  {{epidemiologyModel.infectedCount.infected}} infected,
-                  {{epidemiologyModel.infectedCount.dead}} dead.
-                  {{epidemiologyModel.infectedCount.quarantined}} quarantined.
-                </strong>
-                <br />
-                {{currentTimeDateObj}}
-              </div>
             </div>
           </v-tab-item>
 
           <v-tab>
             Data
           </v-tab>
-          <v-tab-item>
+          <v-tab-item :transition="false" :reverse-transition="false">
             <v-row>
               <v-container>
                 <v-data-table class="siminfotable" :headers="simInfoTableHeaders" :items="epidemiologyModel.simInfoList" :items-per-page="25" :dense="true" :footer-props="simInfoTableFooterProps" :options="{sortBy: ['daysInfected'], sortDesc:[true]}">
@@ -106,7 +68,7 @@
           <v-tab>
             Plot
           </v-tab>
-          <v-tab-item>
+          <v-tab-item :transition="false" :reverse-transition="false">
             <v-row>
               <v-container>
                 <v-row>
@@ -132,12 +94,22 @@
         </v-tabs>
 
       </v-col>
-      <v-col cols="12" md="8" class="btns-and-info">
-        <v-slider label="Playback speed" v-model="timeIncrement" :min="30 * 60" :max="6 * 60 * 60" :dense="true"></v-slider>
-        <v-row v-if="!trajectoryModel.isDataLoaded">
-          <v-btn color="primary" :loading="trajectoryModel.isDataLoading" @click="loadData()">
-            Load Data
-          </v-btn>
+      <v-col cols="12" md="6" class="btns-and-info">
+        <v-row class="seektime" v-if="trajectoryModel.isDataLoaded">
+          <div>
+            <strong>
+              Day {{Math.floor(currentTimeDayCount)}}:
+              {{epidemiologyModel.infectedCount.healthy}} healthy,
+              {{epidemiologyModel.infectedCount.infected}} infected,
+              {{epidemiologyModel.infectedCount.dead}} dead.
+              {{epidemiologyModel.infectedCount.quarantined}} quarantined.
+            </strong>
+          </div>
+          <div>
+            {{currentTimeDateObj}}
+          </div>
+
+          <v-slider label="Playback speed" v-model="timeIncrement" :min="30 * 60" :max="6 * 60 * 60" :dense="true"></v-slider>
         </v-row>
         <v-row v-if="trajectoryModel.isDataLoaded">
           <v-btn fab small class="mx-1" color="primary" v-if="!isPlaying" @click="resetWithData()">
@@ -155,6 +127,32 @@
         </v-row>
 
         <v-row>
+          <v-alert type="info" :dismissible="true" v-if="!trajectoryModel.isDataLoading &&
+                !trajectoryModel.isDataLoaded">
+            <p>
+              The data file has not yet been loaded.
+              The data comes as a JSON file approximately
+              4 MB in size.
+            </p>
+            <p>
+              NOTE: This is simulated data representing a theoretical epidemiological model.
+              This simulation does not contain any actual COVID-19 transmission data
+              nor the exact movements of any real individuals, and should
+              not be used in place of studying actual real-world infection cases.
+            </p>
+          </v-alert>
+
+          <v-alert type="success" :dismissible="true" v-if="trajectoryModel.isDataLoaded">
+            <p>
+              Data loaded in
+              {{trajectoryModel.durationDataLoad}} ms
+            </p>
+          </v-alert>
+
+          <v-alert type="error" v-if="trajectoryModel.errorMsg">
+            {{trajectoryModel.errorMsg}}
+          </v-alert>
+
           <v-alert type="info" v-if="hoverParam" class="slider-info">
             <h3>{{hoverParam.name}}</h3>
             <p>
@@ -171,7 +169,7 @@
         </v-row>
 
       </v-col>
-      <v-col cols="12" md="4">
+      <v-col>
         <v-container class="flex-grow-1 param-sliders">
           <v-row>
             <v-expansion-panels accordion>
@@ -199,16 +197,20 @@
 
 <style lang="scss">
 .covid19heatmap {
+  .v-tabs .v-item-group[role=tablist] {
+    margin-left: 2em;
+  }
+
   .map-container {
     background: #ccc;
     border: 1px solid #444;
     border-radius: 1em;
     overflow: hidden;
     width: 100%;
-    height: calc(100vh - 15em);
+    height: calc(100vh - 35em);
+    min-height: 20em;
     position: relative;
     @media (max-width: 960px) {
-      height: calc(100vh - 25em);
     }
 
     .v-alert {
@@ -220,24 +222,19 @@
       z-index: 1;
     }
 
-    .seektime {
-      position: absolute;
-      bottom: 1em;
-      left: 1em;
-      width: calc(65% - 2em);
-      background: white;
-      color: black;
-      font-family: monospace;
-      font-size: 80%;
-      padding: 1ex 1em;
-      opacity: 0.9;
-      border-radius: 1ex;
-    }
     .btns-and-info {
       @media (min-width: 960px) {
         min-height: 450px;
       }
     }
+  }
+
+  .seektime {
+    font-family: monospace;
+    font-size: 80%;
+    line-height: 1.25;
+    margin-bottom: 1ex;
+    padding-left: 1em;
   }
 
   .param-sliders {
@@ -638,6 +635,8 @@ export default {
     this.updateMapThrottled = throttle(200, () => {
       this.updateMap();
     });
+
+    this.loadData();
   }
 };
 </script>

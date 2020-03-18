@@ -6,69 +6,145 @@
           <v-tab>
             Map
           </v-tab>
+          <v-tab-item>
+            <div class="map-container">
+              <v-alert type="info" :dismissible="true" v-if="!trajectoryModel.isDataLoading &&
+                    !trajectoryModel.isDataLoaded">
+                <p>
+                  The data file has not yet been loaded.
+                  The data comes as a JSON file approximately
+                  4 MB in size.
+                </p>
+                <p>
+                  NOTE: This is simulated data representing a theoretical epidemiological model.
+                  This simulation does not contain any actual COVID-19 transmission data
+                  nor the exact movements of any real individuals, and should
+                  not be used in place of studying actual real-world infection cases.
+                </p>
+              </v-alert>
+
+              <v-alert type="error" v-if="trajectoryModel.errorMsg">
+                {{trajectoryModel.errorMsg}}
+              </v-alert>
+
+              <v-alert type="success" :dismissible="true" v-if="trajectoryModel.isDataLoaded">
+                <p>
+                  Data loaded in
+                  {{trajectoryModel.durationDataLoad}} ms
+                </p>
+              </v-alert>
+
+              <v-alert type="info" v-if="hoverParam">
+                <h3>{{hoverParam.name}}</h3>
+                <p>
+                  {{hoverParam.description}}
+                </p>
+                <p>
+                  Range: {{hoverParam.range_min}} - {{hoverParam.range_max}}<br />
+                  Default value: {{hoverParam.default}}
+                </p>
+                <p>
+                  Current value: <strong>{{hoverParam.value}}</strong>
+                </p>
+              </v-alert>
+
+              <GmapMap ref="mapRef" v-if="trajectoryModel.isDataLoaded" :center="mapInitCenter" :zoom="11" map-type-id="roadmap" style="width: 100%; height: 100%">
+              </GmapMap>
+
+              <div class="seektime" v-if="trajectoryModel.isDataLoaded">
+                <strong>
+                  Day {{Math.floor(currentTimeDayCount)}}:
+                  {{epidemiologyModel.infectedCount.healthy}} healthy,
+                  {{epidemiologyModel.infectedCount.infected}} infected,
+                  {{epidemiologyModel.infectedCount.dead}} dead.
+                  {{epidemiologyModel.infectedCount.quarantined}} quarantined.
+                </strong>
+                <br />
+                {{currentTimeDateObj}}
+              </div>
+            </div>
+          </v-tab-item>
+
           <v-tab>
             Data
           </v-tab>
+          <v-tab-item>
+            <v-row>
+              <v-container>
+                <v-data-table class="siminfotable" :headers="simInfoTableHeaders" :items="epidemiologyModel.simInfoList" :items-per-page="25" :dense="true" :footer-props="simInfoTableFooterProps" :options="{sortBy: ['daysInfected'], sortDesc:[true]}">
+                  <template v-slot:item.id="{ item }">
+                    <span :class="`siminfo-infectionstage-${item.infectionStage.name.toLowerCase()}`">
+                      {{item.id}}
+                    </span>
+                  </template>
+                  <template v-slot:item.complicationRisk="{ item }">
+                    <span class="siminfo-complicationrisk" :style="{color:gradientGreenYellowRed(item.complicationRisk)}">
+                      {{ Math.floor(item.complicationRisk * 100) }}%
+                    </span>
+                  </template>
+                  <template v-slot:item.infectionStage.name="{ item }">
+                    <span :class="`siminfo-infectionstage-${item.infectionStage.name.toLowerCase()}`">
+                      {{item.infectionStage.name}}
+                    </span>
+                  </template>
+                  <template v-slot:item.infectionStage.infected="{ item }">
+                    <span v-if="item.infectionStage.infected" class="siminfo-infected">
+                      <v-icon>mdi-biohazard</v-icon>
+                    </span>
+                  </template>
+                  <template v-slot:item.infectionStage.contagious="{ item }">
+                    <span v-if="item.infectionStage.contagious" class="siminfo-contagious">
+                      <v-icon>mdi-account-tie-voice</v-icon>
+                    </span>
+                  </template>
+                  <template v-slot:item.infectionStage.symptomatic="{ item }">
+                    <span v-if="item.infectionStage.symptomatic" class="siminfo-symptomatic">
+                      <v-icon>mdi-bed</v-icon>
+                    </span>
+                  </template>
+                  <template v-slot:item.isQuarantined="{ item }">
+                    <span v-if="item.isQuarantined" class="siminfo-quarantined">
+                      <v-icon>mdi-account-off</v-icon>
+                    </span>
+                  </template>
+                  <template v-slot:item.isAware="{ item }">
+                    <span v-if="item.isAware" class="siminfo-aware">
+                      <v-icon>mdi-alert-decagram</v-icon>
+                    </span>
+                  </template>
+                </v-data-table>
+              </v-container>
+            </v-row>
+          </v-tab-item>
+
           <v-tab>
             Plot
           </v-tab>
+          <v-tab-item>
+            <v-row>
+              <v-container>
+                <v-row>
+                  <v-col cols="12" md="6" lg="3">
+                    <v-data-table class="conditionreport-table" :headers="conditionReportHeaders" :items="epidemiologyModel.conditionReport" :items-per-page="25" :dense="true">
+                      <template v-slot:item.popfrac="{ item }">
+                        <span>
+                          {{ Math.floor(item.popfrac * 100) }}%
+                        </span>
+                      </template>
+                    </v-data-table>
+                  </v-col>
+                  <v-col style="position:relative; min-height:25em;">
+                    <div class="plotlyholder">
+                      <vue-plotly ref="plotlygraph" v-if="epidemiologyModel.totalSeconds > 0" :data="plotlydata" :layout="plotlylayout" :autoResize="true" :display-mode-bar="false"></vue-plotly>
+                    </div>
+                  </v-col>
+                </v-row>
+              </v-container>
+            </v-row>
+          </v-tab-item>
+
         </v-tabs>
-        <div class="map-container">
-          <v-alert type="info" :dismissible="true" v-if="!trajectoryModel.isDataLoading &&
-                    !trajectoryModel.isDataLoaded">
-            <p>
-              The data file has not yet been loaded.
-              The data comes as a JSON file approximately
-              4 MB in size.
-            </p>
-            <p>
-              NOTE: This is simulated data representing a theoretical epidemiological model.
-              This simulation does not contain any actual COVID-19 transmission data
-              nor the exact movements of any real individuals, and should
-              not be used in place of studying actual real-world infection cases.
-            </p>
-          </v-alert>
 
-          <v-alert type="error" v-if="trajectoryModel.errorMsg">
-            {{trajectoryModel.errorMsg}}
-          </v-alert>
-
-          <v-alert type="success" :dismissible="true" v-if="trajectoryModel.isDataLoaded">
-            <p>
-              Data loaded in
-              {{trajectoryModel.durationDataLoad}} ms
-            </p>
-          </v-alert>
-
-          <v-alert type="info" v-if="hoverParam">
-            <h3>{{hoverParam.name}}</h3>
-            <p>
-              {{hoverParam.description}}
-            </p>
-            <p>
-              Range: {{hoverParam.range_min}} - {{hoverParam.range_max}}<br />
-              Default value: {{hoverParam.default}}
-            </p>
-            <p>
-              Current value: <strong>{{hoverParam.value}}</strong>
-            </p>
-          </v-alert>
-
-          <GmapMap ref="mapRef" v-if="trajectoryModel.isDataLoaded" :center="mapInitCenter" :zoom="11" map-type-id="roadmap" style="width: 100%; height: 100%">
-          </GmapMap>
-
-          <div class="seektime" v-if="trajectoryModel.isDataLoaded">
-            <strong>
-              Day {{Math.floor(currentTimeDayCount)}}:
-              {{epidemiologyModel.infectedCount.healthy}} healthy,
-              {{epidemiologyModel.infectedCount.infected}} infected,
-              {{epidemiologyModel.infectedCount.dead}} dead.
-              {{epidemiologyModel.infectedCount.quarantined}} quarantined.
-            </strong>
-            <br />
-            {{currentTimeDateObj}}
-          </div>
-        </div>
       </v-col>
       <v-col cols="12" md="4">
         <v-slider label="Playback speed" v-model="timeIncrement" :min="30 * 60" :max="6 * 60 * 60" :dense="true"></v-slider>
@@ -116,73 +192,6 @@
       </v-col>
     </v-row>
 
-    <v-row v-if="trajectoryModel.isDataLoaded">
-      <v-container>
-        <v-data-table class="siminfotable" :headers="simInfoTableHeaders" :items="epidemiologyModel.simInfoList" :items-per-page="25" :dense="true" :footer-props="simInfoTableFooterProps" :options="{sortBy: ['daysInfected'], sortDesc:[true]}">
-          <template v-slot:item.id="{ item }">
-            <span :class="`siminfo-infectionstage-${item.infectionStage.name.toLowerCase()}`">
-              {{item.id}}
-            </span>
-          </template>
-          <template v-slot:item.complicationRisk="{ item }">
-            <span class="siminfo-complicationrisk" :style="{color:gradientGreenYellowRed(item.complicationRisk)}">
-              {{ Math.floor(item.complicationRisk * 100) }}%
-            </span>
-          </template>
-          <template v-slot:item.infectionStage.name="{ item }">
-            <span :class="`siminfo-infectionstage-${item.infectionStage.name.toLowerCase()}`">
-              {{item.infectionStage.name}}
-            </span>
-          </template>
-          <template v-slot:item.infectionStage.infected="{ item }">
-            <span v-if="item.infectionStage.infected" class="siminfo-infected">
-              <v-icon>mdi-biohazard</v-icon>
-            </span>
-          </template>
-          <template v-slot:item.infectionStage.contagious="{ item }">
-            <span v-if="item.infectionStage.contagious" class="siminfo-contagious">
-              <v-icon>mdi-account-tie-voice</v-icon>
-            </span>
-          </template>
-          <template v-slot:item.infectionStage.symptomatic="{ item }">
-            <span v-if="item.infectionStage.symptomatic" class="siminfo-symptomatic">
-              <v-icon>mdi-bed</v-icon>
-            </span>
-          </template>
-          <template v-slot:item.isQuarantined="{ item }">
-            <span v-if="item.isQuarantined" class="siminfo-quarantined">
-              <v-icon>mdi-account-off</v-icon>
-            </span>
-          </template>
-          <template v-slot:item.isAware="{ item }">
-            <span v-if="item.isAware" class="siminfo-aware">
-              <v-icon>mdi-alert-decagram</v-icon>
-            </span>
-          </template>
-        </v-data-table>
-      </v-container>
-    </v-row>
-
-    <v-row v-if="trajectoryModel.isDataLoaded">
-      <v-container>
-        <v-row>
-          <v-col cols="12" md="6" lg="3">
-            <v-data-table class="conditionreport-table" :headers="conditionReportHeaders" :items="epidemiologyModel.conditionReport" :items-per-page="25" :dense="true">
-              <template v-slot:item.popfrac="{ item }">
-                <span>
-                  {{ Math.floor(item.popfrac * 100) }}%
-                </span>
-              </template>
-            </v-data-table>
-          </v-col>
-          <v-col style="position:relative; min-height:25em;">
-            <div class="plotlyholder">
-              <vue-plotly ref="plotlygraph" v-if="epidemiologyModel.totalSeconds > 0" :data="plotlydata" :layout="plotlylayout" :autoResize="true" :display-mode-bar="false"></vue-plotly>
-            </div>
-          </v-col>
-        </v-row>
-      </v-container>
-    </v-row>
   </v-layout>
 </template>
 

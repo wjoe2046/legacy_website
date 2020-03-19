@@ -8,6 +8,7 @@
           </v-tab>
           <v-tab-item :transition="false" :reverse-transition="false">
             <div class="map-container">
+              <v-progress-circular indeterminate color="primary" v-if="!trajectoryModel.isDataLoaded" class="circular-loader" size="55" width="5"></v-progress-circular>
               <GmapMap ref="mapRef" v-if="trajectoryModel.isDataLoaded" :center="mapInitCenter" :zoom="11" map-type-id="roadmap" style="width: 100%; height: 100%">
               </GmapMap>
             </div>
@@ -142,11 +143,9 @@
             </p>
           </v-alert>
 
-          <v-alert type="success" :dismissible="true" v-if="trajectoryModel.isDataLoaded">
-            <p>
-              Data loaded in
-              {{trajectoryModel.durationDataLoad}} ms
-            </p>
+          <v-alert type="success" :dismissible="true" v-if="trajectoryModel.isDataLoaded" class="slider-info" style="display: none">
+            Data loaded in
+            {{trajectoryModel.durationDataLoad}} ms
           </v-alert>
 
           <v-alert type="error" v-if="trajectoryModel.errorMsg">
@@ -154,6 +153,7 @@
           </v-alert>
 
           <v-alert type="info" v-if="hoverParam" class="slider-info">
+            <a id="slider-info" style="position:absolute; top:-80px;"></a>
             <h3>{{hoverParam.name}}</h3>
             <p>
               {{hoverParam.description}}
@@ -181,8 +181,13 @@
                   </span>
                 </v-expansion-panel-header>
                 <v-expansion-panel-content>
-                  <div v-for="(param, iParam) in group.params" :key="iParam" @mouseover="hoverParam = param" @mouseout="hoverParam = null">
-                    <v-slider :hint="param.name" v-model="param.value" :min="param.range_min" :max="param.range_max" :persistent-hint="true" :dense="true" :thumb-label="true" :step="param.valuetype === 'integer' ? 1 : ((param.range_max - param.range_min) / 50)"></v-slider>
+                  <div v-for="(param, iParam) in group.params" :key="iParam">
+                    <v-row>
+                      <v-btn icon color="info" x-small @click="hoverParam = param" href="#slider-info">
+                        <v-icon>mdi-information</v-icon>
+                      </v-btn>
+                      <v-slider :hint="param.name" v-model="param.value" :min="param.range_min" :max="param.range_max" :persistent-hint="true" :dense="true" :thumb-label="true" :step="param.valuetype === 'integer' ? 1 : ((param.range_max - param.range_min) / 50)"></v-slider>
+                    </v-row>
                   </div>
                 </v-expansion-panel-content>
               </v-expansion-panel>
@@ -197,10 +202,15 @@
 
 <style lang="scss">
 .covid19heatmap {
-  .v-tabs .v-item-group[role=tablist] {
+  .v-tabs .v-item-group[role="tablist"] {
     margin-left: 2em;
   }
 
+  .circular-loader {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
   .map-container {
     background: #ccc;
     border: 1px solid #444;
@@ -221,12 +231,6 @@
       opacity: 0.9;
       z-index: 1;
     }
-
-    .btns-and-info {
-      @media (min-width: 960px) {
-        min-height: 450px;
-      }
-    }
   }
 
   .seektime {
@@ -241,7 +245,9 @@
     position: relative;
     overflow: hidden;
     overflow-y: auto;
-    min-height: 20em;
+    @media (min-width: 960px) {
+      min-height: 30em;
+    }
 
     & > .row {
       @media (min-width: 960px) {
@@ -262,9 +268,9 @@
 
   .slider-info {
     margin-top: 3vh;
-    @media (max-width: 960px) {
-      display: none;
-    }
+    // @media (max-width: 960px) {
+    //   // display: none;
+    // }
   }
 
   .siminfotable,
@@ -316,6 +322,10 @@
     width: 100%;
     height: 100%;
   }
+}
+
+html {
+  scroll-behavior: smooth;
 }
 </style>
 

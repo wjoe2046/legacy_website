@@ -97,7 +97,9 @@
       </v-col>
       <v-col cols="12" md="6" class="btns-and-info">
         <v-row class="seektime" v-if="trajectoryModel.isDataLoaded">
+
           <div>
+
             <strong>
               Day {{Math.floor(currentTimeDayCount)}}:
               {{epidemiologyModel.infectedCount.healthy}} healthy,
@@ -110,13 +112,17 @@
             {{currentTimeDateObj}}
           </div>
 
-          <v-slider label="Playback speed" v-model="timeIncrement" :min="30 * 60" :max="6 * 60 * 60" :dense="true"></v-slider>
+          <v-slider label="Playback speed" v-model="timeIncrement" :min="30 * 60" :max="6 * 60 * 60" :dense="true">
+
+          </v-slider>
         </v-row>
         <v-row v-if="trajectoryModel.isDataLoaded">
+
           <v-btn fab small class="mx-1" color="primary" v-if="!isPlaying" @click="resetWithData()">
             <v-icon>mdi-cached</v-icon>
           </v-btn>
           <v-btn fab small class="mx-1" color="primary" v-if="!isPlaying" @click="isPlaying=true; play()">
+            <a id="slide-here-on-info-click" style="position:absolute; top:-80px;"></a>
             <v-icon>mdi-play</v-icon>
           </v-btn>
           <v-btn fab small class="mx-1" color="primary" v-if="!isPlaying" @click="advanceTime()">
@@ -371,7 +377,7 @@ export default {
 
   data() {
     return {
-      hoverParam: null,
+      infoParam: null,
 
       paramsModel,
       trajectoryModel,

@@ -3,18 +3,19 @@
     <v-app-bar id="navBar" fixed app>
     <!-- this is the header that persists across pages -->
       <v-container class="navbarContainer">
-    <!-- coding first without vue approach first so not great w responsiveness yet - Jesse -->
+    <!-- if by using Vuetify we can improve the below somehow to be more responsive, etc. please let me know, I'm new to Vuetify and eager to learn! - Jesse -->
         <v-row class="navbarRow">
-          <v-column class="navbarColumn">
+          <v-col class="navbarColumn">
             <a class="logo" href="#"><img class="logoImg" src="../assets/images/logo/logo.png" alt=""></a>
             
             <ul class="navbarList">
-              <li>Get Involved</li>
-              <li>Donate</li>
-              <li>About Us</li>
+              <li><a target="_blank" class="link heatmapLink" href="https://www.covid19risk.com/heatmap/">Heatmap</a></li>
+              <li><a target="_blank" class="link" href="https://www.covid19risk.com/collaborate.html">Get Involved</a></li>
+              <li><a target="_blank" class="link" href="https://www.covid19risk.com/collaborate.html">Donate</a></li>
+              <li><a target="_blank" class="link" href="https://www.covid19risk.com/about.html">About</a></li>
               <li class="download">Download App</li>
             </ul>
-          </v-column>
+          </v-col>
         </v-row>
       </v-container>
     </v-app-bar>

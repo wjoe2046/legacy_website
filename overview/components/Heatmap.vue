@@ -182,7 +182,7 @@
                   >
                   </v-slider>
                 </v-row>
-                <v-row class="justify-center">
+                <v-row class="justify-center py-4">
                   <v-btn
                     fab
                     x-small
@@ -253,7 +253,7 @@
         </v-row>
       </v-col>
       <v-col py-0 cols="12">
-        <v-container class="flex-grow-1 param-sliders" py-0>
+        <v-container class=" param-sliders" py-0>
           <v-row>
             <v-tabs>
               <v-tab
@@ -265,6 +265,7 @@
               <v-tab-item
                 v-for="(group, iGroup) in paramsModel.groups"
                 :key="iGroup"
+                class="param-slider-tab-content"
               >
                 <v-row
                   v-for="(param, iParam) in group.params"
@@ -382,8 +383,6 @@
 
   .param-sliders {
     position: relative;
-    overflow: hidden;
-    overflow-y: auto;
     @media (min-width: 960px) {
       min-height: 20em;
     }
@@ -412,6 +411,12 @@
         width: 100%;
       }
     }
+  }
+  .param-slider-tab-content {
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 50vh;
+    min-height: 40vh;
   }
 
   .slider-minilabeled {

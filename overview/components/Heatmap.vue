@@ -142,29 +142,8 @@
               not be used in place of studying actual real-world infection cases.
             </p>
           </v-alert>
-
-          <v-alert type="success" :dismissible="true" v-if="trajectoryModel.isDataLoaded" class="slider-info" style="display: none">
-            Data loaded in
-            {{trajectoryModel.durationDataLoad}} ms
-          </v-alert>
-
           <v-alert type="error" v-if="trajectoryModel.errorMsg">
             {{trajectoryModel.errorMsg}}
-          </v-alert>
-
-          <v-alert type="info" v-if="hoverParam" class="slider-info">
-            <a id="slider-info" style="position:absolute; top:-80px;"></a>
-            <h3>{{hoverParam.name}}</h3>
-            <p>
-              {{hoverParam.description}}
-            </p>
-            <p>
-              Range: {{hoverParam.range_min}} - {{hoverParam.range_max}}<br />
-              Default value: {{hoverParam.default}}
-            </p>
-            <p>
-              Current value: <strong>{{hoverParam.value}}</strong>
-            </p>
           </v-alert>
         </v-row>
 
@@ -181,14 +160,41 @@
                   </span>
                 </v-expansion-panel-header>
                 <v-expansion-panel-content>
-                  <div v-for="(param, iParam) in group.params" :key="iParam">
-                    <v-row>
-                      <v-btn icon color="info" x-small @click="hoverParam = param" href="#slider-info">
-                        <v-icon>mdi-information</v-icon>
-                      </v-btn>
-                      <v-slider :hint="param.name" v-model="param.value" :min="param.range_min" :max="param.range_max" :persistent-hint="true" :dense="true" :thumb-label="true" :step="param.valuetype === 'integer' ? 1 : ((param.range_max - param.range_min) / 50)"></v-slider>
-                    </v-row>
-                  </div>
+                  <v-row v-for="(param, iParam) in group.params" :key="iParam" class="param-slider-row">
+                    <v-btn icon color="info" x-small
+                        @click="hoverParam===param ? hoverParam=null : hoverParam=param"
+                        class="param-info-button">
+                      <v-icon v-if="hoverParam===param">mdi-information-outline</v-icon>
+                      <v-icon v-else>mdi-information</v-icon>
+                    </v-btn>
+                    <v-slider
+                        :hint="param.name"
+                        v-model="param.value"
+                        :min="param.range_min"
+                        :max="param.range_max"
+                        :persistent-hint="true"
+                        :dense="true"
+                        :thumb-label="true"
+                        :step="param.valuetype === 'integer' ? 1 : ((param.range_max - param.range_min) / 200)"></v-slider>
+                    <v-alert
+                        type="info"
+                        :dense="true"
+                        :icon="false"
+                        v-if="hoverParam===param"
+                        class="param-slider-description">
+                      <p>
+                        {{param.description}}
+                      </p>
+                      <p>
+                        Model variable name: {{param.key}}<br/>
+                        Range: {{param.range_min}} - {{param.range_max}}<br />
+                        Default value: {{param.default}}
+                      </p>
+                      <p>
+                        Current value: <strong>{{param.value}}</strong>
+                      </p>
+                    </v-alert>
+                  </v-row>
                 </v-expansion-panel-content>
               </v-expansion-panel>
             </v-expansion-panels>
@@ -257,21 +263,30 @@
       }
     }
 
-    .v-input__slider {
-      cursor: pointer;
-    }
-    .v-messages {
-      top: -6ex;
-      left: 2ex;
+    .param-slider-row {
+      .param-info-button {
+        margin-top: 1em;
+      }
+      .v-input__slider {
+        cursor: pointer;
+        height: 1em;
+        margin-top: 1em;
+        margin-bottom: 1ex;
+      }
+      .v-messages {
+        top: -6ex;
+        left: 2ex;
+      }
+
+      .param-slider-description {
+        font-size: 80%;
+        margin-left: 3em;
+        padding: 1ex;
+        width: calc(100% - 4em);
+      }
     }
   }
 
-  .slider-info {
-    margin-top: 3vh;
-    // @media (max-width: 960px) {
-    //   // display: none;
-    // }
-  }
 
   .siminfotable,
   .conditionreport-table {

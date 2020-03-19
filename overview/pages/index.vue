@@ -14,8 +14,23 @@
               2) since the desired output is a single column of text, images, etc. I don't believe including any columns is necessary <v-col cols="12" md="12">
               3) I abandoned using v-row elements since the word2html service output line breaks differently and I'm not as familiar w v-row/v-col.  Path of least resistance and doesn't seem to compromise the result
             -->
+        <div class="TopSection">
+       
         <div class="mainTitle">
-          <h1>COVID Watch</h1>
+           <p> COVID Watch  </p>
+          <!-- <h4>COVID Watch</h4> -->
+        </div>
+
+         <div class="mainSubTitle">
+          <!-- <h4>Slowing the spread of infectious disease with crowdsourcing</h4> -->
+           <p> Slowing the spread of infectious disease with crowdsourcing  </p>
+        </div>
+
+         </div>
+
+          <p>&nbsp;</p>
+        <div id="intro">
+          <p><span style="font-size: 19px;">From a technical standpoint, pandemic mitigation is an optimization problem. We are a team of volunteer academics, epidemiologists, and technologists from around the world. Our goal is to simultaneously minimize the adverse health outcomes and economic impact of diseases like Covid19.</span>     </p>
         </div>
 
         <div id="keyPoints">
@@ -23,14 +38,14 @@
             <h2 class="titleLine">Key Points:</h2>
             <br />
             <ol>
-              <li><a href="#intro">Pandemic mitigation in the context of filtering and optimization: developing a tool to better filter the population for more effective interventions</a></li>
-              <li><a href="#keyParameters">Epidemiological modeling and findings from China and South Korea: important parameters to influence are contact tracing accuracy, diagnosis speed, and base infection rate</a></li>
-              <li><a href="#proposedSystem">Proposed system (bluetooth, heatmap) and how it might affect key parameters&nbsp;</a></li>
+              <li><a href="#intro">Pandemic mitigation</a> in the context of filtering and optimization: developing a tool to better filter the population for more effective interventions</li>
+              <li><a href="#keyParameters">Epidemiological modeling</a> and findings from China and South Korea: important parameters to influence are contact tracing accuracy, diagnosis speed, and base infection rate</li>
+              <li><a href="#proposedSystem">Proposed system</a> (bluetooth, heatmap) and how it might affect key parameters&nbsp;</li>
               <li><a href="#privacyRequirements">Privacy requirements</a></li>
-              <li><a href="#implementationDetails">Implementation/progress details (bluetooth, GPS)</a></li>
-              <li><a href="#pathToAdoption">Path to adoption: incentives for individuals and public health / support of tech companies</a></li>
-              <li><a href="#estimatedImpact">Estimated impact: modeling results</a></li>
-              <li><a href="#conclusion">Next steps: what needs to be done and why it needs to be done quickly</a></li>
+              <li><a href="#implementationDetails">Implementation details</a> - crowdsourcing with bluetooth and GPS</li>
+              <li><a href="#pathToAdoption">Path to adoption:</a> incentives for individuals and public health / support of tech companies</li>
+              <li><a href="#estimatedImpact">Estimated impact:</a> modeling results</li>
+              <li><a href="#conclusion">Next steps:</a> what needs to be done and why it needs to be done quickly</li>
             </ol>
           </div>
         </div>
@@ -77,9 +92,19 @@
 
         </v-container>
 
-        <p>&nbsp;</p>
+        <!-- <p>&nbsp;</p>
         <div id="intro">
           <p><span style="font-weight:bold; font-size: 18px;">From a technical standpoint, pandemic mitigation is an optimization problem.</span> The goal is to simultaneously minimize adverse health outcomes and economic impact. Non-pharmaceutical approaches to infectious disease control have the following components:</p>
+        </div> -->
+
+       <p>&nbsp;</p>
+       <h2 id="keyParameters"><span class="titleLine">Introduction</span></h2>
+
+        <p><span class="subTitleLine"> Current Approaches </span></p>
+
+       
+        <div id="intro">
+          <p> Non-pharmaceutical approaches to infectious disease control generally have the following two components:</p>
         </div>
 
         <ul>
@@ -89,14 +114,18 @@
         <p>&nbsp;</p>
         <p><span>For example, quarantining patients with a positive diagnosis applies a filter based on testing and then applies the quarantine intervention. Other examples include travel restrictions for at-risk areas, cancelling public events in a specific city, or encouraging more handwashing in an entire country.</span></p>
         <p><span>It has been shown [] that some of these interventions, especially self-isolation, are highly effective at preventing the transmission of infectious diseases like COVID-19. The downside is that they can also be costly to use. If the filtering process is not accurate this could result in a huge number of false positives, and therefore a huge cost incurred in the form of negative impact on peoples&rsquo; lives. In the short term it may be necessary to take aggressive action in the form of broad quarantines. If COVID-19 is not completely contained, medium and long term solutions must also be developed.&nbsp;</span></p>
+         <p><span class="subTitleLine"> Crowdsourcing for pandemics </span></p>
         <p><span>In this document a technological solution to the pandemic optimization problem is explored. We show how anonymous information gathered from mobile devices can be used to build a high quality filter, and how targeted interventions can be selected and implemented using this information. Using numerical models we demonstrate how in some parameter regimes this system could be used to prevent COVID-19 from becoming endemic. This document discusses what we would like to accomplish, how the technology works, how the technology can be used, and numerical estimates of the benefit gained by implementing this system.</span></p>
 
-        <h2 id="keyParameters"><span class="titleLine">Contact Tracing: Key Parameters</span></h2>
-        <p style="color:red;">this section doesn't appear to be fully written yet</p>
+        <p>&nbsp;</p>
+        <h2 id="keyParameters"><span class="titleLine">Contact Tracing</span></h2>
+        <p><span class="subTitleLine"> Objctive: Reducing contact between contagious people </span></p>
+        <!-- <p style="color:red;">this section doesn't appear to be fully written yet</p> -->
         <p><span>Non-pharmaceutical methods the only choice for COVID-19 currently</span></p>
         <p><span>Based around reducing contact between contagious and susceptible people&nbsp;</span></p>
         <p><span>Simplest form this can be achieved by reducing all social events and increasing precautions like handwashing</span></p>
         <p><span>Number of new infections roughly proportional to the number of contact events with infectious people, scaled by a factor relating to the degree of caution (masks, etc.)</span></p>
+        <p><span class="subTitleLine"> How it works </span></p>
         <p><span>A more targeted approach employed by many health agencies is contact tracing []. This system works by finding and monitoring contacts of patients that have been diagnosed.&nbsp;</span></p>
 
         <div class="centerImage">
@@ -125,8 +154,9 @@
         <p><br /><br /></p>
 
         <h2 id="proposedSystem"><span class="titleLine">Proposed System</span></h2>
-        <p><br /></p>
-        <h3><span>Mobile App</span></h3>
+        <!-- <p><br /></p> -->
+      
+          <p><span class="subTitleLine"> Mobile App </span></p>
         <p><span>Potential app functionality depending on time constraints and regulations:</span></p>
         <ul>
           <li><span>Logging contact events using Bluetooth when two people with the app are nearby</span></li>
@@ -141,16 +171,17 @@
         </ul>
 
         <p>&nbsp;</p>
-
-        <p><span>Use mobile devices to:</span></p>
+         <p><span class="subTitleLine"> Use mobile devices to </span></p>
+     
         <ul>
           <li><span>Automatically trace contacts, increasing accuracy and scale of contact tracing efforts</span></li>
           <li><span>Advise people of current risk so that they avoid dangerous areas and take additional precautions, reducing overall transmission rate</span></li>
           <li><span>Advise people that have a higher risk of infection to monitor for symptoms and get tested if they exceed a symptom threshold, increasing testing rate and reducing diagnosis time</span></li>
         </ul>
         <p>&nbsp;</p>
-
-        <h2><span>Use Case: Automated Contact Tracing&nbsp;</span></h2>
+       <p><span class="subTitleLine"> Automated Contact Tracing </span></p>
+      
+        <!-- <h2><span>Use Case: Automated Contact Tracing&nbsp;</span></h2> -->
         <ul>
           <li><span>Use direct contact measured with Bluetooth, general location data, and symptom threshold to give targeted advice about when to self isolate and when to get tested</span></li>
           <li><span>Always on, always private contact tracing using cellphone Bluetooth&nbsp;</span></li>
@@ -180,24 +211,31 @@
         </ul>
 
         <p>&nbsp;</p>
-        <h2><span>Use Case: Location-Specific Alerts and Advisories&nbsp;</span></h2>
+       <p><span class="subTitleLine"> Location-Specific Alerts and Advisories </span></p>
+       
         <ul>
           <li><span>List of location-specific instructions from health authorities, including what symptoms to look for, recommended social distancing methods, hand washing reminders, who to contact if needed</span></li>
           <li><span>Low resolution heatmap of infection density, instructions for individuals in high risk areas to be extra cautious. Instructions about social distancing and symptom monitoring when travelling from high risk area to low risk area</span></li>
         </ul>
         <p>&nbsp;</p>
+        <p><span class="subTitleLine"> Use Case: Heatmap </span></p>
 
-        <h2>Use Case: Heatmap&nbsp;</h2>
         <Heatmap class="heatMap"></Heatmap>
 
         <p>&nbsp;</p>
         <h2 id="privacyRequirements"><span class="titleLine">Privacy Requirements</span></h2>
+           <p><span class="subTitleLine"> Privacy preservation </span></p>
         <p><span>As effective as these approaches are, they both involve significant personal information being released to the public. The challenge is to find an equally effective system that can be made to work in countries where stricter privacy laws and increased civil liberties make a number of such approaches nearly infeasible.</span></p>
+        
+         <p><span class="subTitleLine"> Cryptographically secure system </span></p>
         <p><span>Our solution is the use of a cryptographically secure system structured so that patient data is kept completely private.&nbsp;</span></p>
         <p><span>We can do this by building the system in a decentralized manner, and by using randomly generated &lsquo;contact event numbers&rsquo; instead of static IDs.&nbsp;</span></p>
 
         <h2 id="implementationDetails"><span class="titleLine">Implementation Details</span></h2>
-        <h3><span>Private and Decentralized System for Contact Tracing&nbsp;</span></h3>
+        <p><span class="subTitleLine"> Private and Decentralized System for Contact Tracing </span></p>
+   
+
+        <!-- <h3><span>Private and Decentralized System for Contact Tracing&nbsp;</span></h3> -->
         <p><span>By generating a new random number for each contact event, the system is able to operate without storing or transmitting any personal information. This method is designed so that only the phones involved in a contact event are able to identify messages on a public database.</span></p>
 
         <p><span>The method works as follows:</span></p>
@@ -254,7 +292,8 @@
         <p><span>The contact event numbers are random and only known by the message recipient and the message sender, so the database can be made public without risk of sensitive information being discovered.&nbsp;</span></p>
         <p><br /></p>
 
-        <h2><span>Bluetooth Protocol: Background Processes on iOS and Android</span></h2>
+        <p><span class="subTitleLine"> Bluetooth Protocol: Background Processes on iOS and Android </span></p>
+      
         <p><span>Contact Event Number shared privately between two phones</span></p>
         <p><span>With this approach, a contact event number is only used once and it is only known by two phones. This could be implemented by temporarily linking nearby phones running our app and using Diffie-Hellman key exchange to establish an encrypted channel. The two phones could then collectively generate and store a contact event number. For example, each phone could generate a random number and the combined CEN could be formed by concatenating these two numbers.</span></p>
 
@@ -279,7 +318,8 @@
 
         <p><br /></p>
 
-        <h2><span>Database Implementation: Diagnosis Authentication and Bandwidth Estimates</span></h2>
+       <p><span class="subTitleLine"> Database Implementation: Diagnosis Authentication and Bandwidth Estimates </span></p>
+
         <h3><span>Database</span></h3>
         <p><span>The database will perform two functionalities: storing packets that are successfully authenticated, and transmitting contact event numbers to phones that request this information</span></p>
         <p><br /></p>
@@ -287,14 +327,16 @@
         <p><br /></p>
 
         <h2 id="pathToAdoption"><span class="titleLine">Path to adoption</span></h2>
-        <h3><span>Value-add for Health Authorities</span></h3>
+           <p><span class="subTitleLine"> Value add for health authorities </span></p>
+        <!-- <h3><span>Value-add for Health Authorities</span></h3> -->
         <ul>
           <li><span>High accuracy, instantaneous contact tracing</span></li>
           <li><span>Targeted interventions based on calculated risk and current health policy</span></li>
           <li><span>Public announcements and information</span></li>
         </ul>
         <p>&nbsp;</p>
-        <h3><span>Value-add for Individuals</span></h3>
+           <p><span class="subTitleLine"> Value add for individuals </span></p>
+        <!-- <h3><span>Value-add for Individuals</span></h3> -->
         <ul>
           <li><span>Information about how to avoid contracting the disease</span></li>
           <li><span>Early warning to protect friends and family if you do get sick</span></li>
@@ -313,6 +355,8 @@
 
         <h2 id="conclusion"><span class="titleLine">Conclusion</span></h2>
         <p><span>We believe that technology can be an important part of this solution. In order to remain operational for years, the contact tracing system must have a low social and economic cost. Mobile technologies can provide instantaneous and high accuracy contact tracing, even between strangers. Instead of requiring thousands of healthcare workers to do this manually (as is the current approach in China) the process will be essentially cost-free. Because the system will be so accurate, a majority of people can continue to live their lives without the need for increased social distancing.</span></p>
+      
+        <p><span class="subTitleLine"> Our solution </span></p>
         <p><span>What we are developing is a high-quality filter to be used for the pandemic optimization problem. Combined with a comprehensive testing program, our filter may be powerful enough to protect our communities from COVID-19.</span></p>
       </v-col>
     </v-row>
@@ -326,7 +370,8 @@
   // of this page, in the layout code. Don't worry about it.
 
   .overviewContainer {
-    background-color: #ffffff;
+    //background-color: #ffffff;
+    background-color: #779F98;
     color: rgba(0, 0, 0, 0.8);
     font-family: Roboto;
   }
@@ -336,16 +381,51 @@ img {
   max-width: 100%;
 }
 
+// .TopSection {
+//   background-color: #779F98;
+//   opacity: 0.5;
+// }
+
+
 .mainTitle {
   display: flex;
   justify-content: center;
-  font-size: 24px;
+  padding-bottom: 20Px;
+  //color: #8C1620;
+   color: #404040;
+  font-size: 50px;
 }
+
+.mainSubTitle {
+  display: flex;
+  justify-content: center;
+  color: #779F98;
+  font-size: 27px;
+  padding-bottom: 15Px;
+}
+
+.IntroSection {
+  display: flex;
+  justify-content: center;
+  //color: '#779F98';
+  font-size: 18px;
+  padding-bottom: 25Px;
+}
+
+.SmallerSubTitle {
+  display: flex;
+  justify-content: center;
+  color: #779F98;
+  font-size: 27px;
+  padding-bottom: 15Px;
+}
+
 
 #keyPoints {
   display: flex;
   justify-content: center;
   width: 100%;
+  padding-Top: 50px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   padding-bottom: 40px;
 
@@ -399,7 +479,27 @@ img {
 
 .titleLine {
   font-weight: bold;
+ // color: 'red';
+  font-size: 28px;
+  padding-top: 10px;
+  padding-bottom: 25px;
+  color: #779F98;
+ // #8C1620
+  //color: '#779F98'
 }
+
+.subTitleLine {
+ font-weight: bold;
+  font-size: 22px;
+ // color: 'red';
+  padding-top: 10px;
+  padding-bottom: 5px;
+  color: #404040;
+ // #8C1620
+  //color: '#779F98'
+} 
+
+
 
 .centerImage {
   display: flex;

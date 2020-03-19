@@ -8,8 +8,22 @@
           </v-tab>
           <v-tab-item :transition="false" :reverse-transition="false">
             <div class="map-container">
-              <v-progress-circular indeterminate color="primary" v-if="!trajectoryModel.isDataLoaded" class="circular-loader" size="55" width="5"></v-progress-circular>
-              <GmapMap ref="mapRef" v-if="trajectoryModel.isDataLoaded" :center="mapInitCenter" :zoom="11" map-type-id="roadmap" style="width: 100%; height: 100%">
+              <v-progress-circular
+                indeterminate
+                color="primary"
+                v-if="!trajectoryModel.isDataLoaded"
+                class="circular-loader"
+                size="55"
+                width="5"
+              ></v-progress-circular>
+              <GmapMap
+                ref="mapRef"
+                v-if="trajectoryModel.isDataLoaded"
+                :center="mapInitCenter"
+                :zoom="11"
+                map-type-id="roadmap"
+                style="width: 100%; height: 100%"
+              >
               </GmapMap>
             </div>
           </v-tab-item>
@@ -20,34 +34,64 @@
           <v-tab-item :transition="false" :reverse-transition="false">
             <v-row>
               <v-container>
-                <v-data-table class="siminfotable" :headers="simInfoTableHeaders" :items="epidemiologyModel.simInfoList" :items-per-page="25" :dense="true" :footer-props="simInfoTableFooterProps" :options="{sortBy: ['daysInfected'], sortDesc:[true]}">
+                <v-data-table
+                  class="siminfotable"
+                  :headers="simInfoTableHeaders"
+                  :items="epidemiologyModel.simInfoList"
+                  :items-per-page="25"
+                  :dense="true"
+                  :footer-props="simInfoTableFooterProps"
+                  :options="{ sortBy: ['daysInfected'], sortDesc: [true] }"
+                >
                   <template v-slot:item.id="{ item }">
-                    <span :class="`siminfo-infectionstage-${item.infectionStage.name.toLowerCase()}`">
-                      {{item.id}}
+                    <span
+                      :class="
+                        `siminfo-infectionstage-${item.infectionStage.name.toLowerCase()}`
+                      "
+                    >
+                      {{ item.id }}
                     </span>
                   </template>
                   <template v-slot:item.complicationRisk="{ item }">
-                    <span class="siminfo-complicationrisk" :style="{color:gradientGreenYellowRed(item.complicationRisk)}">
+                    <span
+                      class="siminfo-complicationrisk"
+                      :style="{
+                        color: gradientGreenYellowRed(item.complicationRisk)
+                      }"
+                    >
                       {{ Math.floor(item.complicationRisk * 100) }}%
                     </span>
                   </template>
                   <template v-slot:item.infectionStage.name="{ item }">
-                    <span :class="`siminfo-infectionstage-${item.infectionStage.name.toLowerCase()}`">
-                      {{item.infectionStage.name}}
+                    <span
+                      :class="
+                        `siminfo-infectionstage-${item.infectionStage.name.toLowerCase()}`
+                      "
+                    >
+                      {{ item.infectionStage.name }}
                     </span>
                   </template>
                   <template v-slot:item.infectionStage.infected="{ item }">
-                    <span v-if="item.infectionStage.infected" class="siminfo-infected">
+                    <span
+                      v-if="item.infectionStage.infected"
+                      class="siminfo-infected"
+                    >
                       <v-icon>mdi-biohazard</v-icon>
                     </span>
                   </template>
                   <template v-slot:item.infectionStage.contagious="{ item }">
-                    <span v-if="item.infectionStage.contagious" class="siminfo-contagious">
+                    <span
+                      v-if="item.infectionStage.contagious"
+                      class="siminfo-contagious"
+                    >
                       <v-icon>mdi-account-tie-voice</v-icon>
                     </span>
                   </template>
                   <template v-slot:item.infectionStage.symptomatic="{ item }">
-                    <span v-if="item.infectionStage.symptomatic" class="siminfo-symptomatic">
+                    <span
+                      v-if="item.infectionStage.symptomatic"
+                      class="siminfo-symptomatic"
+                    >
                       <v-icon>mdi-bed</v-icon>
                     </span>
                   </template>
@@ -74,143 +118,224 @@
               <v-container>
                 <v-row>
                   <v-col cols="12" md="6" lg="3">
-                    <v-data-table class="conditionreport-table" :headers="conditionReportHeaders" :items="epidemiologyModel.conditionReport" :items-per-page="25" :dense="true">
+                    <v-data-table
+                      class="conditionreport-table"
+                      :headers="conditionReportHeaders"
+                      :items="epidemiologyModel.conditionReport"
+                      :items-per-page="25"
+                      :dense="true"
+                    >
                       <template v-slot:item.popfrac="{ item }">
-                        <span>
-                          {{ Math.floor(item.popfrac * 100) }}%
-                        </span>
+                        <span> {{ Math.floor(item.popfrac * 100) }}% </span>
                       </template>
                     </v-data-table>
                   </v-col>
                   <v-col style="position:relative; min-height:25em;">
                     <div class="plotlyholder">
-                      <vue-plotly ref="plotlygraph" v-if="epidemiologyModel.totalSeconds > 0" :data="plotlydata" :layout="plotlylayout" :autoResize="true" :display-mode-bar="false"></vue-plotly>
+                      <vue-plotly
+                        ref="plotlygraph"
+                        v-if="epidemiologyModel.totalSeconds > 0"
+                        :data="plotlydata"
+                        :layout="plotlylayout"
+                        :autoResize="true"
+                        :display-mode-bar="false"
+                      ></vue-plotly>
                     </div>
                   </v-col>
                 </v-row>
               </v-container>
             </v-row>
           </v-tab-item>
-
         </v-tabs>
-
       </v-col>
-      <v-col cols="12" md="6" class="btns-and-info">
+      <v-col cols="12" class="btns-and-info py-0">
         <v-row class="seektime" v-if="trajectoryModel.isDataLoaded">
-
-          <div>
-
-            <strong>
-              Day {{Math.floor(currentTimeDayCount)}}:
-              {{epidemiologyModel.infectedCount.healthy}} healthy,
-              {{epidemiologyModel.infectedCount.infected}} infected,
-              {{epidemiologyModel.infectedCount.dead}} dead.
-              {{epidemiologyModel.infectedCount.quarantined}} quarantined.
-            </strong>
-          </div>
-          <div>
-            {{currentTimeDateObj}}
-          </div>
-
-          <v-slider label="Playback speed" v-model="timeIncrement" :min="30 * 60" :max="6 * 60 * 60" :dense="true">
-
-          </v-slider>
+          <v-col cols="12" md="8">
+            <v-row class="health-ticker">
+              <v-col>
+                <div>
+                  <strong>
+                    Day {{ Math.floor(currentTimeDayCount) }}:
+                    {{ epidemiologyModel.infectedCount.healthy }} healthy,
+                    {{ epidemiologyModel.infectedCount.infected }} infected,
+                    {{ epidemiologyModel.infectedCount.dead }} dead.
+                    {{ epidemiologyModel.infectedCount.quarantined }}
+                    quarantined.
+                  </strong>
+                </div>
+                <div>
+                  {{ currentTimeDateObj }}
+                </div>
+              </v-col>
+            </v-row>
+            <v-row>
+              <v-col>
+                <v-row class="justify-center">
+                  <v-slider
+                    class="slider-minilabeled"
+                    hint="Playback speed"
+                    :persistent-hint="true"
+                    v-model="timeIncrement"
+                    :min="30 * 60"
+                    :max="6 * 60 * 60"
+                    :dense="true"
+                  >
+                  </v-slider>
+                </v-row>
+                <v-row class="justify-center py-4">
+                  <v-btn
+                    fab
+                    x-small
+                    class="mx-1"
+                    color="primary"
+                    v-if="!isPlaying"
+                    @click="resetWithData()"
+                  >
+                    <v-icon>mdi-cached</v-icon>
+                  </v-btn>
+                  <v-btn
+                    fab
+                    x-small
+                    class="mx-1"
+                    color="primary"
+                    v-if="!isPlaying"
+                    @click="
+                      isPlaying = true;
+                      play();
+                    "
+                  >
+                    <a
+                      id="slide-here-on-info-click"
+                      style="position:absolute; top:-80px;"
+                    ></a>
+                    <v-icon>mdi-play</v-icon>
+                  </v-btn>
+                  <v-btn
+                    fab
+                    x-small
+                    class="mx-1"
+                    color="primary"
+                    v-if="!isPlaying"
+                    @click="advanceTime()"
+                  >
+                    <v-icon>mdi-play-pause</v-icon>
+                  </v-btn>
+                  <v-btn
+                    fab
+                    x-small
+                    class="mx-1"
+                    color="primary"
+                    v-if="isPlaying"
+                    @click="isPlaying = false"
+                  >
+                    <v-icon>mdi-stop</v-icon>
+                  </v-btn>
+                </v-row>
+              </v-col>
+            </v-row>
+          </v-col>
         </v-row>
-        <v-row v-if="trajectoryModel.isDataLoaded">
-
-          <v-btn fab small class="mx-1" color="primary" v-if="!isPlaying" @click="resetWithData()">
-            <v-icon>mdi-cached</v-icon>
-          </v-btn>
-          <v-btn fab small class="mx-1" color="primary" v-if="!isPlaying" @click="isPlaying=true; play()">
-            <a id="slide-here-on-info-click" style="position:absolute; top:-80px;"></a>
-            <v-icon>mdi-play</v-icon>
-          </v-btn>
-          <v-btn fab small class="mx-1" color="primary" v-if="!isPlaying" @click="advanceTime()">
-            <v-icon>mdi-play-pause</v-icon>
-          </v-btn>
-          <v-btn fab small class="mx-1" color="primary" v-if="isPlaying" @click="isPlaying=false">
-            <v-icon>mdi-stop</v-icon>
-          </v-btn>
+        <v-row class="justify-center">
+          <v-col cols="12" md="8" lg="6">
+            <v-alert type="info" :dismissible="true">
+              <p>
+                NOTE: This is simulated data representing a theoretical
+                epidemiological model. This simulation does not contain any
+                actual COVID-19 transmission data nor the exact movements of any
+                real individuals, and should not be used in place of studying
+                actual real-world infection cases.
+              </p>
+            </v-alert>
+            <v-alert type="error" v-if="trajectoryModel.errorMsg">
+              {{ trajectoryModel.errorMsg }}
+            </v-alert>
+          </v-col>
         </v-row>
-
-        <v-row>
-          <v-alert type="info" :dismissible="true" v-if="!trajectoryModel.isDataLoading &&
-                !trajectoryModel.isDataLoaded">
-            <p>
-              The data file has not yet been loaded.
-              The data comes as a JSON file approximately
-              4 MB in size.
-            </p>
-            <p>
-              NOTE: This is simulated data representing a theoretical epidemiological model.
-              This simulation does not contain any actual COVID-19 transmission data
-              nor the exact movements of any real individuals, and should
-              not be used in place of studying actual real-world infection cases.
-            </p>
-          </v-alert>
-
-          <v-alert type="success" :dismissible="true" v-if="trajectoryModel.isDataLoaded" class="slider-info" style="display: none">
-            Data loaded in
-            {{trajectoryModel.durationDataLoad}} ms
-          </v-alert>
-
-          <v-alert type="error" v-if="trajectoryModel.errorMsg">
-            {{trajectoryModel.errorMsg}}
-          </v-alert>
-
-          <v-alert type="info" v-if="infoParam" class="slider-info">
-            <h3>{{infoParam.name}}</h3>
-            <p>
-              {{infoParam.description}}
-            </p>
-            <p>
-              Range: {{infoParam.range_min}} - {{infoParam.range_max}}<br />
-              Default value: {{infoParam.default}}
-            </p>
-            <p>
-              Current value: <strong>{{infoParam.value}}</strong>
-            </p>
-          </v-alert>
-        </v-row>
-
       </v-col>
-      <v-col>
-        <v-container class="flex-grow-1 param-sliders">
+      <v-col py-0 cols="12">
+        <v-container class=" param-sliders" py-0>
           <v-row>
-            <v-expansion-panels accordion>
-              <v-expansion-panel v-for="(group,iGroup) in paramsModel.groups" :key="iGroup">
-                <v-expansion-panel-header>
-                  <span>
-                    <v-icon>mdi-tune</v-icon>
-                    {{group.name}}
-                  </span>
-                </v-expansion-panel-header>
-                <v-expansion-panel-content>
-                  <div v-for="(param, iParam) in group.params" :key="iParam">
-                    <v-row>
-                      <v-btn icon color="info" x-small @click="infoParam = param" href="#slide-here-on-info-click">
-                        <v-icon>mdi-information</v-icon>
-                      </v-btn>
-                      <v-slider :hint="param.name" v-model="param.value" :min="param.range_min" :max="param.range_max" :persistent-hint="true" :dense="true" :thumb-label="true" :step="param.valuetype === 'integer' ? 1 : ((param.range_max - param.range_min) / 50)"></v-slider>
-                    </v-row>
-                  </div>
-                </v-expansion-panel-content>
-              </v-expansion-panel>
-            </v-expansion-panels>
+            <v-tabs>
+              <v-tab
+                v-for="(group, iGroup) in paramsModel.groups"
+                :key="iGroup"
+              >
+                {{ group.name }}
+              </v-tab>
+              <v-tab-item
+                v-for="(group, iGroup) in paramsModel.groups"
+                :key="iGroup"
+                class="param-slider-tab-content"
+              >
+                <v-row
+                  v-for="(param, iParam) in group.params"
+                  :key="iParam"
+                  class="param-slider-row"
+                >
+                  <v-btn
+                    icon
+                    color="info"
+                    x-small
+                    @click="
+                      infoParam === param
+                        ? (infoParam = null)
+                        : (infoParam = param)
+                    "
+                    class="param-info-button"
+                  >
+                    <v-icon v-if="infoParam === param"
+                      >mdi-information-outline</v-icon
+                    >
+                    <v-icon v-else>mdi-information</v-icon>
+                  </v-btn>
+
+                  <v-slider
+                    class="slider-minilabeled"
+                    :hint="param.name"
+                    v-model="param.value"
+                    :min="param.range_min"
+                    :max="param.range_max"
+                    :persistent-hint="true"
+                    :dense="true"
+                    :thumb-label="true"
+                    :step="
+                      param.valuetype === 'integer'
+                        ? 1
+                        : (param.range_max - param.range_min) / 200
+                    "
+                  ></v-slider>
+
+                  <v-alert
+                    type="info"
+                    :dense="true"
+                    :icon="false"
+                    v-if="infoParam === param"
+                    class="param-slider-description"
+                  >
+                    <p>
+                      {{ param.description }}
+                    </p>
+                    <p>
+                      Model variable name: {{ param.key }}<br />
+                      Range: {{ param.range_min }} - {{ param.range_max }}<br />
+                      Default value: {{ param.default }}
+                    </p>
+                    <p>
+                      Current value: <strong>{{ param.value }}</strong>
+                    </p>
+                  </v-alert>
+                </v-row>
+              </v-tab-item>
+            </v-tabs>
           </v-row>
         </v-container>
       </v-col>
     </v-row>
-
   </v-layout>
 </template>
 
 <style lang="scss">
 .covid19heatmap {
-  .v-tabs .v-item-group[role="tablist"] {
-    margin-left: 2em;
-  }
-
   .circular-loader {
     left: 50%;
     top: 50%;
@@ -225,8 +350,6 @@
     height: calc(100vh - 35em);
     min-height: 20em;
     position: relative;
-    @media (max-width: 960px) {
-    }
 
     .v-alert {
       position: absolute;
@@ -244,14 +367,24 @@
     line-height: 1.25;
     margin-bottom: 1ex;
     padding-left: 1em;
+    justify-content: center;
+  }
+
+  .health-ticker {
+    justify-content: center;
+    margin-left: 12%;
+  }
+  .v-tab {
+    font-size: 80%;
+    @media (max-width: 960px) {
+      font-size: 50%;
+    }
   }
 
   .param-sliders {
     position: relative;
-    overflow: hidden;
-    overflow-y: auto;
     @media (min-width: 960px) {
-      min-height: 30em;
+      min-height: 20em;
     }
 
     & > .row {
@@ -262,20 +395,40 @@
       }
     }
 
-    .v-input__slider {
-      cursor: pointer;
-    }
-    .v-messages {
-      top: -6ex;
-      left: 2ex;
+    .param-slider-row {
+      .param-info-button {
+        margin-top: 1em;
+        margin-left: 5%;
+      }
+      .v-input__slider {
+        cursor: pointer;
+      }
+
+      .param-slider-description {
+        font-size: 80%;
+        margin: 0 15% 0 14.25%;
+        padding: 1ex;
+        width: 100%;
+      }
     }
   }
+  .param-slider-tab-content {
+    overflow-y: auto;
+    overflow-x: hidden;
+    min-height: 40vh;
+    max-height: 300px;
+  }
 
-  .slider-info {
-    margin-top: 3vh;
-    // @media (max-width: 960px) {
-    //   // display: none;
-    // }
+  .slider-minilabeled {
+    height: 1em;
+    margin-top: 1em;
+    margin-bottom: 1ex;
+    max-width: 75%;
+
+    .v-messages {
+      top: -6.5ex;
+      left: 2ex;
+    }
   }
 
   .siminfotable,
@@ -331,6 +484,14 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+.v-tabs-bar--is-mobile {
+  width: 100%;
+  margin: 0;
+}
+.v-slide-group__prev--disabled {
+  display: none !important;
 }
 </style>
 

@@ -14,7 +14,7 @@ LIVE_OR_STAGING=$1
 AWSPROFILE=$2
 NOBUILD=$3
 
-if [ "$LIVE_OR_STAGING" = "staging"]; then
+if [ "$LIVE_OR_STAGING" = "staging" ]; then
   # Default invalidation ID is for the production environment.
   # If staging is specified, it needs to be overridden.
   CLOUDFRONT_INVALIDATION_ID=ERB7Y0Z7SNYIM

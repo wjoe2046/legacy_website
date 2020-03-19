@@ -148,10 +148,10 @@
           </v-tab-item>
         </v-tabs>
       </v-col>
-      <v-col cols="12" md="6" class="btns-and-info">
+      <v-col cols="12" class="btns-and-info py-0">
         <v-row class="seektime" v-if="trajectoryModel.isDataLoaded">
-          <v-col>
-            <v-row>
+          <v-col cols="12" md="8">
+            <v-row class="health-ticker">
               <div>
                 <strong>
                   Day {{ Math.floor(currentTimeDayCount) }}:
@@ -179,7 +179,7 @@
                   >
                   </v-slider>
                 </v-row>
-                <v-row class="mt-1 justify-center">
+                <v-row style="margin-top: 5vh; margin-bottom: 0;">
                   <v-btn
                     fab
                     x-small
@@ -247,81 +247,80 @@
           </v-alert>
         </v-row>
       </v-col>
-      <v-col>
-        <v-container class="flex-grow-1 param-sliders">
+      <v-col py-0 cols="12">
+        <v-container class="flex-grow-1 param-sliders" py-0>
           <v-row>
-            <v-expansion-panels accordion>
-              <v-expansion-panel
+            <v-tabs>
+              <v-tab
                 v-for="(group, iGroup) in paramsModel.groups"
                 :key="iGroup"
               >
-                <v-expansion-panel-header>
-                  <span>
-                    <v-icon>mdi-tune</v-icon>
-                    {{ group.name }}
-                  </span>
-                </v-expansion-panel-header>
-                <v-expansion-panel-content>
-                  <v-row
-                    v-for="(param, iParam) in group.params"
-                    :key="iParam"
-                    class="param-slider-row"
+                {{ group.name }}
+              </v-tab>
+              <v-tab-item
+                v-for="(group, iGroup) in paramsModel.groups"
+                :key="iGroup"
+              >
+                <v-row
+                  v-for="(param, iParam) in group.params"
+                  :key="iParam"
+                  class="param-slider-row"
+                >
+                  <v-btn
+                    icon
+                    color="info"
+                    x-small
+                    @click="
+                      infoParam === param
+                        ? (infoParam = null)
+                        : (infoParam = param)
+                    "
+                    class="param-info-button"
                   >
-                    <v-btn
-                      icon
-                      color="info"
-                      x-small
-                      @click="
-                        infoParam === param
-                          ? (infoParam = null)
-                          : (infoParam = param)
-                      "
-                      class="param-info-button"
+                    <v-icon v-if="infoParam === param"
+                      >mdi-information-outline</v-icon
                     >
-                      <v-icon v-if="infoParam === param"
-                        >mdi-information-outline</v-icon
-                      >
-                      <v-icon v-else>mdi-information</v-icon>
-                    </v-btn>
-                    <v-slider
-                      class="slider-minilabeled"
-                      :hint="param.name"
-                      v-model="param.value"
-                      :min="param.range_min"
-                      :max="param.range_max"
-                      :persistent-hint="true"
-                      :dense="true"
-                      :thumb-label="true"
-                      :step="
-                        param.valuetype === 'integer'
-                          ? 1
-                          : (param.range_max - param.range_min) / 200
-                      "
-                    ></v-slider>
-                    <v-alert
-                      type="info"
-                      :dense="true"
-                      :icon="false"
-                      v-if="infoParam === param"
-                      class="param-slider-description"
-                    >
-                      <p>
-                        {{ param.description }}
-                      </p>
-                      <p>
-                        Model variable name: {{ param.key }}<br />
-                        Range: {{ param.range_min }} - {{ param.range_max
-                        }}<br />
-                        Default value: {{ param.default }}
-                      </p>
-                      <p>
-                        Current value: <strong>{{ param.value }}</strong>
-                      </p>
-                    </v-alert>
-                  </v-row>
-                </v-expansion-panel-content>
-              </v-expansion-panel>
-            </v-expansion-panels>
+                    <v-icon v-else>mdi-information</v-icon>
+                  </v-btn>
+
+                  <v-slider
+                    class="slider-minilabeled"
+                    :hint="param.name"
+                    v-model="param.value"
+                    :min="param.range_min"
+                    :max="param.range_max"
+                    :persistent-hint="true"
+                    :dense="true"
+                    :thumb-label="true"
+                    :step="
+                      param.valuetype === 'integer'
+                        ? 1
+                        : (param.range_max - param.range_min) / 200
+                    "
+                  ></v-slider>
+
+                  <v-alert
+                    type="info"
+                    :dense="true"
+                    :icon="false"
+                    v-if="infoParam === param"
+                    class="param-slider-description"
+                  >
+                    <p>
+                      {{ param.description }}
+                    </p>
+                    <p>
+                      Model variable name: {{ param.key }}<br />
+                      Range: {{ param.range_min }} - {{ param.range_max }}<br />
+                      Default value: {{ param.default }}
+                    </p>
+                    <p>
+                      Current value: <strong>{{ param.value }}</strong>
+                    </p>
+                  </v-alert>
+                </v-row>
+              </v-tab-item>
+            </v-tabs>
           </v-row>
         </v-container>
       </v-col>
@@ -331,10 +330,6 @@
 
 <style lang="scss">
 .covid19heatmap {
-  .v-tabs .v-item-group[role="tablist"] {
-    margin-left: 2em;
-  }
-
   .circular-loader {
     left: 50%;
     top: 50%;
@@ -349,8 +344,6 @@
     height: calc(100vh - 35em);
     min-height: 20em;
     position: relative;
-    @media (max-width: 960px) {
-    }
 
     .v-alert {
       position: absolute;
@@ -368,6 +361,17 @@
     line-height: 1.25;
     margin-bottom: 1ex;
     padding-left: 1em;
+    justify-content: center;
+  }
+
+  .health-ticker {
+    justify-content: center;
+  }
+  .v-tab {
+    font-size: 80%;
+    @media (max-width: 960px) {
+      font-size: 50%;
+    }
   }
 
   .param-sliders {
@@ -375,7 +379,7 @@
     overflow: hidden;
     overflow-y: auto;
     @media (min-width: 960px) {
-      min-height: 30em;
+      min-height: 20em;
     }
 
     & > .row {
@@ -396,9 +400,12 @@
 
       .param-slider-description {
         font-size: 80%;
-        margin-left: 3em;
+        // margin-left: 3em;
+        margin: 0 15% 0 14.25%;
         padding: 1ex;
-        width: calc(100% - 4em);
+        // width: calc(100% - 4em);
+        width: 100%;
+        // text-align: center;
       }
     }
   }
@@ -407,6 +414,7 @@
     height: 1em;
     margin-top: 1em;
     margin-bottom: 1ex;
+    max-width: 75%;
 
     .v-messages {
       top: -6.5ex;
@@ -467,6 +475,14 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+.v-tabs-bar--is-mobile {
+  width: 100%;
+  margin: 0;
+}
+.v-slide-group__prev--disabled {
+  display: none;
 }
 </style>
 

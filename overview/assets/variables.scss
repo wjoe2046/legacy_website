@@ -2,3 +2,67 @@
 //
 // The variables you want to modify
 // $font-size-root: 20px;
+
+
+#navBar {
+
+    .navbarContainer {
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+     .navbarColumn {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo {
+        width: 50px;
+        display: flex;
+        align-items: center;
+    }
+
+    .logoImg {
+        width: 100%;
+    }
+
+    .navbarList {
+        list-style: none;
+        display: flex;
+        margin-right: 100px;
+        width: 30%;
+        justify-content: space-evenly;
+
+
+        li {
+            cursor: pointer;
+            padding:0.35em 1em;
+            border-radius: 4px;
+            font-weight: 400;
+            font-size: 1em;
+            margin:0.3em 0 0.3em 0;
+        }
+
+        li:hover {
+            color: #779F98;
+            transition: color 0.5s;
+        }
+
+        .download {
+            color: white;
+            background-color:#BF3F4A;
+            font-weight: 500;
+        }
+
+        .download:hover {
+            color: white;
+            background-color:#F26D78;
+            transition: background-color 0.5s;
+            
+        }
+    }
+
+}

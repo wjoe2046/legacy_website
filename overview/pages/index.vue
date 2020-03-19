@@ -378,7 +378,8 @@
 }
 
 .v-application a {
-  color: #BF3F4A;
+  // this color gets overridden somewhere else.  needs to be assigned elsewhere.  not even sure if this red shade looks that good tbh - Jesse
+  // color: #BF3F4A;
   text-decoration: none;
   }
 

@@ -159,7 +159,8 @@
                     {{ epidemiologyModel.infectedCount.healthy }} healthy,
                     {{ epidemiologyModel.infectedCount.infected }} infected,
                     {{ epidemiologyModel.infectedCount.dead }} dead.
-                    {{ epidemiologyModel.infectedCount.quarantined }} quarantined.
+                    {{ epidemiologyModel.infectedCount.quarantined }}
+                    quarantined.
                   </strong>
                 </div>
                 <div>
@@ -239,10 +240,10 @@
             <v-alert type="info" :dismissible="true">
               <p>
                 NOTE: This is simulated data representing a theoretical
-                epidemiological model. This simulation does not contain any actual
-                COVID-19 transmission data nor the exact movements of any real
-                individuals, and should not be used in place of studying actual
-                real-world infection cases.
+                epidemiological model. This simulation does not contain any
+                actual COVID-19 transmission data nor the exact movements of any
+                real individuals, and should not be used in place of studying
+                actual real-world infection cases.
               </p>
             </v-alert>
             <v-alert type="error" v-if="trajectoryModel.errorMsg">
@@ -398,6 +399,7 @@
     .param-slider-row {
       .param-info-button {
         margin-top: 1em;
+        margin-left: 5%;
       }
       .v-input__slider {
         cursor: pointer;
@@ -405,12 +407,9 @@
 
       .param-slider-description {
         font-size: 80%;
-        // margin-left: 3em;
         margin: 0 15% 0 14.25%;
         padding: 1ex;
-        // width: calc(100% - 4em);
         width: 100%;
-        // text-align: center;
       }
     }
   }
@@ -487,7 +486,7 @@ html {
   margin: 0;
 }
 .v-slide-group__prev--disabled {
-  display: none;
+  display: none !important;
 }
 </style>
 

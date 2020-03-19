@@ -152,22 +152,24 @@
         <v-row class="seektime" v-if="trajectoryModel.isDataLoaded">
           <v-col cols="12" md="8">
             <v-row class="health-ticker">
-              <div>
-                <strong>
-                  Day {{ Math.floor(currentTimeDayCount) }}:
-                  {{ epidemiologyModel.infectedCount.healthy }} healthy,
-                  {{ epidemiologyModel.infectedCount.infected }} infected,
-                  {{ epidemiologyModel.infectedCount.dead }} dead.
-                  {{ epidemiologyModel.infectedCount.quarantined }} quarantined.
-                </strong>
-              </div>
-              <div>
-                {{ currentTimeDateObj }}
-              </div>
+              <v-col>
+                <div>
+                  <strong>
+                    Day {{ Math.floor(currentTimeDayCount) }}:
+                    {{ epidemiologyModel.infectedCount.healthy }} healthy,
+                    {{ epidemiologyModel.infectedCount.infected }} infected,
+                    {{ epidemiologyModel.infectedCount.dead }} dead.
+                    {{ epidemiologyModel.infectedCount.quarantined }} quarantined.
+                  </strong>
+                </div>
+                <div>
+                  {{ currentTimeDateObj }}
+                </div>
+              </v-col>
             </v-row>
             <v-row>
               <v-col>
-                <v-row>
+                <v-row class="justify-center">
                   <v-slider
                     class="slider-minilabeled"
                     hint="Playback speed"
@@ -179,7 +181,7 @@
                   >
                   </v-slider>
                 </v-row>
-                <v-row style="margin-top: 5vh; margin-bottom: 0;">
+                <v-row class="justify-center">
                   <v-btn
                     fab
                     x-small
@@ -232,19 +234,21 @@
             </v-row>
           </v-col>
         </v-row>
-        <v-row>
-          <v-alert type="info" :dismissible="true">
-            <p>
-              NOTE: This is simulated data representing a theoretical
-              epidemiological model. This simulation does not contain any actual
-              COVID-19 transmission data nor the exact movements of any real
-              individuals, and should not be used in place of studying actual
-              real-world infection cases.
-            </p>
-          </v-alert>
-          <v-alert type="error" v-if="trajectoryModel.errorMsg">
-            {{ trajectoryModel.errorMsg }}
-          </v-alert>
+        <v-row class="justify-center">
+          <v-col cols="12" md="8" lg="6">
+            <v-alert type="info" :dismissible="true">
+              <p>
+                NOTE: This is simulated data representing a theoretical
+                epidemiological model. This simulation does not contain any actual
+                COVID-19 transmission data nor the exact movements of any real
+                individuals, and should not be used in place of studying actual
+                real-world infection cases.
+              </p>
+            </v-alert>
+            <v-alert type="error" v-if="trajectoryModel.errorMsg">
+              {{ trajectoryModel.errorMsg }}
+            </v-alert>
+          </v-col>
         </v-row>
       </v-col>
       <v-col py-0 cols="12">
@@ -366,6 +370,7 @@
 
   .health-ticker {
     justify-content: center;
+    margin-left: 12%;
   }
   .v-tab {
     font-size: 80%;

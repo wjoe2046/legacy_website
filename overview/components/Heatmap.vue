@@ -8,6 +8,7 @@
           </v-tab>
           <v-tab-item :transition="false" :reverse-transition="false">
             <div class="map-container">
+              <v-progress-circular indeterminate color="primary" v-if="!trajectoryModel.isDataLoaded" class="circular-loader" size="55" width="5"></v-progress-circular>
               <GmapMap ref="mapRef" v-if="trajectoryModel.isDataLoaded" :center="mapInitCenter" :zoom="11" map-type-id="roadmap" style="width: 100%; height: 100%">
               </GmapMap>
             </div>
@@ -96,7 +97,9 @@
       </v-col>
       <v-col cols="12" md="6" class="btns-and-info">
         <v-row class="seektime" v-if="trajectoryModel.isDataLoaded">
+
           <div>
+
             <strong>
               Day {{Math.floor(currentTimeDayCount)}}:
               {{epidemiologyModel.infectedCount.healthy}} healthy,
@@ -109,13 +112,17 @@
             {{currentTimeDateObj}}
           </div>
 
-          <v-slider label="Playback speed" v-model="timeIncrement" :min="30 * 60" :max="6 * 60 * 60" :dense="true"></v-slider>
+          <v-slider label="Playback speed" v-model="timeIncrement" :min="30 * 60" :max="6 * 60 * 60" :dense="true">
+
+          </v-slider>
         </v-row>
         <v-row v-if="trajectoryModel.isDataLoaded">
+
           <v-btn fab small class="mx-1" color="primary" v-if="!isPlaying" @click="resetWithData()">
             <v-icon>mdi-cached</v-icon>
           </v-btn>
           <v-btn fab small class="mx-1" color="primary" v-if="!isPlaying" @click="isPlaying=true; play()">
+            <a id="slide-here-on-info-click" style="position:absolute; top:-80px;"></a>
             <v-icon>mdi-play</v-icon>
           </v-btn>
           <v-btn fab small class="mx-1" color="primary" v-if="!isPlaying" @click="advanceTime()">
@@ -142,28 +149,26 @@
             </p>
           </v-alert>
 
-          <v-alert type="success" :dismissible="true" v-if="trajectoryModel.isDataLoaded">
-            <p>
-              Data loaded in
-              {{trajectoryModel.durationDataLoad}} ms
-            </p>
+          <v-alert type="success" :dismissible="true" v-if="trajectoryModel.isDataLoaded" class="slider-info" style="display: none">
+            Data loaded in
+            {{trajectoryModel.durationDataLoad}} ms
           </v-alert>
 
           <v-alert type="error" v-if="trajectoryModel.errorMsg">
             {{trajectoryModel.errorMsg}}
           </v-alert>
 
-          <v-alert type="info" v-if="hoverParam" class="slider-info">
-            <h3>{{hoverParam.name}}</h3>
+          <v-alert type="info" v-if="infoParam" class="slider-info">
+            <h3>{{infoParam.name}}</h3>
             <p>
-              {{hoverParam.description}}
+              {{infoParam.description}}
             </p>
             <p>
-              Range: {{hoverParam.range_min}} - {{hoverParam.range_max}}<br />
-              Default value: {{hoverParam.default}}
+              Range: {{infoParam.range_min}} - {{infoParam.range_max}}<br />
+              Default value: {{infoParam.default}}
             </p>
             <p>
-              Current value: <strong>{{hoverParam.value}}</strong>
+              Current value: <strong>{{infoParam.value}}</strong>
             </p>
           </v-alert>
         </v-row>
@@ -181,8 +186,13 @@
                   </span>
                 </v-expansion-panel-header>
                 <v-expansion-panel-content>
-                  <div v-for="(param, iParam) in group.params" :key="iParam" @mouseover="hoverParam = param" @mouseout="hoverParam = null">
-                    <v-slider :hint="param.name" v-model="param.value" :min="param.range_min" :max="param.range_max" :persistent-hint="true" :dense="true" :thumb-label="true" :step="param.valuetype === 'integer' ? 1 : ((param.range_max - param.range_min) / 50)"></v-slider>
+                  <div v-for="(param, iParam) in group.params" :key="iParam">
+                    <v-row>
+                      <v-btn icon color="info" x-small @click="infoParam = param" href="#slide-here-on-info-click">
+                        <v-icon>mdi-information</v-icon>
+                      </v-btn>
+                      <v-slider :hint="param.name" v-model="param.value" :min="param.range_min" :max="param.range_max" :persistent-hint="true" :dense="true" :thumb-label="true" :step="param.valuetype === 'integer' ? 1 : ((param.range_max - param.range_min) / 50)"></v-slider>
+                    </v-row>
                   </div>
                 </v-expansion-panel-content>
               </v-expansion-panel>
@@ -197,10 +207,15 @@
 
 <style lang="scss">
 .covid19heatmap {
-  .v-tabs .v-item-group[role=tablist] {
+  .v-tabs .v-item-group[role="tablist"] {
     margin-left: 2em;
   }
 
+  .circular-loader {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
   .map-container {
     background: #ccc;
     border: 1px solid #444;
@@ -221,12 +236,6 @@
       opacity: 0.9;
       z-index: 1;
     }
-
-    .btns-and-info {
-      @media (min-width: 960px) {
-        min-height: 450px;
-      }
-    }
   }
 
   .seektime {
@@ -241,7 +250,9 @@
     position: relative;
     overflow: hidden;
     overflow-y: auto;
-    min-height: 20em;
+    @media (min-width: 960px) {
+      min-height: 30em;
+    }
 
     & > .row {
       @media (min-width: 960px) {
@@ -262,9 +273,9 @@
 
   .slider-info {
     margin-top: 3vh;
-    @media (max-width: 960px) {
-      display: none;
-    }
+    // @media (max-width: 960px) {
+    //   // display: none;
+    // }
   }
 
   .siminfotable,
@@ -317,6 +328,10 @@
     height: 100%;
   }
 }
+
+html {
+  scroll-behavior: smooth;
+}
 </style>
 
 <script>
@@ -346,7 +361,7 @@ export default {
 
   data() {
     return {
-      hoverParam: null,
+      infoParam: null,
 
       paramsModel,
       trajectoryModel,

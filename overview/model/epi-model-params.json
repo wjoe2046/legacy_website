@@ -281,19 +281,19 @@
     "disabled": true
   },
   {
-    "key": "MEAN_AGE_APP_INSTALLED",
-    "name": "Average age of app installation",
-    "description": "This determines the average age at which sims install the app. App installation peaks at this age.",
+    "key": "MEAN_AGE_POPULATION",
+    "name": "Average age of the population",
+    "description": "This is a demographic statistic that describes the mean age of the population.",
     "valuetype": "float",
     "range_min": 4,
     "range_max": 120,
     "default": 35,
-    "param_group": "Mobile App"
+    "param_group": "Population characteristics"
   },
   {
     "key": "PROB_APP_INSTALLED",
     "name": "Probability of app installation",
-    "description": "This is the probability that a human of the average age of installation has the app installed on their phone. For example, if the average age of installation is 30, and this value is set to .06, then it means that 6% of all 25-year-olds have the app installed on their phones.",
+    "description": "This is the probability that a sim has the app installed on their phone.",
     "valuetype": "float",
     "range_min": 0,
     "range_max": 1,
@@ -301,14 +301,14 @@
     "param_group": "Mobile App"
   },
   {
-    "key": "STDEV_AGE_APP_INSTALLED",
-    "name": "Standard deviation of app installation age",
-    "description": "This is the standard deviation of the adoption rate of the app based on age. Increasing this means a wider variety of ages are likely to install the app.",
+    "key": "STDEV_AGE_POPULATION",
+    "name": "Standard deviation of the population's age",
+    "description": "This is a demographic statistic that describes the standard deviation of the age of the people in the population.",
     "valuetype": "float",
     "range_min": 0,
     "range_max": 100,
     "default": 15,
-    "param_group": "Mobile App"
+    "param_group": "Population characteristics"
   },
   {
     "key": "PROB_LUNCH_OUT",

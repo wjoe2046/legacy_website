@@ -9,11 +9,11 @@
             <a class="logo" href="#"><img class="logoImg" src="../assets/images/logo/logo.png" alt=""></a>
             
             <ul class="navbarList">
-              <li><a target="_blank" class="link heatmapLink" href="https://www.covid19risk.com/heatmap/">Heatmap</a></li>
-              <li><a target="_blank" class="link" href="https://www.covid19risk.com/collaborate.html">Get Involved</a></li>
-              <li><a target="_blank" class="link" href="https://www.covid19risk.com/collaborate.html">Donate</a></li>
-              <li><a target="_blank" class="link" href="https://www.covid19risk.com/about.html">About</a></li>
-              <li class="download">Download App</li>
+              <li><a target="_blank" class="link heatmapLink text-no-wrap" href="https://www.covid19risk.com/heatmap/">Heatmap</a></li>
+              <li><a target="_blank" class="link text-no-wrap" href="https://www.covid19risk.com/collaborate.html">Get Involved</a></li>
+              <li><a target="_blank" class="link text-no-wrap" href="https://www.covid19risk.com/collaborate.html">Donate</a></li>
+              <li><a target="_blank" class="link text-no-wrap" href="https://www.covid19risk.com/about.html">About</a></li>
+              <li class="download text-no-wrap">Download App</li>
             </ul>
           </v-col>
         </v-row>

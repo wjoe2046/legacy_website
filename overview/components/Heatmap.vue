@@ -168,9 +168,9 @@
                 <v-expansion-panel-content>
                   <v-row v-for="(param, iParam) in group.params" :key="iParam" class="param-slider-row">
                     <v-btn icon color="info" x-small
-                        @click="hoverParam===param ? hoverParam=null : hoverParam=param"
+                        @click="infoParam===param ? infoParam=null : infoParam=param"
                         class="param-info-button">
-                      <v-icon v-if="hoverParam===param">mdi-information-outline</v-icon>
+                      <v-icon v-if="infoParam===param">mdi-information-outline</v-icon>
                       <v-icon v-else>mdi-information</v-icon>
                     </v-btn>
                     <v-slider
@@ -186,7 +186,7 @@
                         type="info"
                         :dense="true"
                         :icon="false"
-                        v-if="hoverParam===param"
+                        v-if="infoParam===param"
                         class="param-slider-description">
                       <p>
                         {{param.description}}

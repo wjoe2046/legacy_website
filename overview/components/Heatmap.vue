@@ -150,187 +150,199 @@
       </v-col>
       <v-col cols="12" class="btns-and-info py-0">
         <v-row class="seektime" v-if="trajectoryModel.isDataLoaded">
-          <v-col cols="12" md="8">
-            <v-row class="health-ticker">
-              <v-col>
-                <div>
-                  <strong>
-                    Day {{ Math.floor(currentTimeDayCount) }}:
-                    {{ epidemiologyModel.infectedCount.healthy }} healthy,
-                    {{ epidemiologyModel.infectedCount.infected }} infected,
-                    {{ epidemiologyModel.infectedCount.dead }} dead.
-                    {{ epidemiologyModel.infectedCount.quarantined }}
-                    quarantined.
-                  </strong>
-                </div>
-                <div>
-                  {{ currentTimeDateObj }}
-                </div>
-              </v-col>
-            </v-row>
-            <v-row>
-              <v-col>
-                <v-row class="justify-center">
-                  <v-slider
-                    class="slider-minilabeled"
-                    hint="Playback speed"
-                    :persistent-hint="true"
-                    v-model="timeIncrement"
-                    :min="30 * 60"
-                    :max="6 * 60 * 60"
-                    :dense="true"
-                  >
-                  </v-slider>
-                </v-row>
-                <v-row class="justify-center py-4">
-                  <v-btn
-                    fab
-                    x-small
-                    class="mx-1"
-                    color="primary"
-                    v-if="!isPlaying"
-                    @click="resetWithData()"
-                  >
-                    <v-icon>mdi-cached</v-icon>
-                  </v-btn>
-                  <v-btn
-                    fab
-                    x-small
-                    class="mx-1"
-                    color="primary"
-                    v-if="!isPlaying"
-                    @click="
-                      isPlaying = true;
-                      play();
-                    "
-                  >
-                    <a
-                      id="slide-here-on-info-click"
-                      style="position:absolute; top:-80px;"
-                    ></a>
-                    <v-icon>mdi-play</v-icon>
-                  </v-btn>
-                  <v-btn
-                    fab
-                    x-small
-                    class="mx-1"
-                    color="primary"
-                    v-if="!isPlaying"
-                    @click="advanceTime()"
-                  >
-                    <v-icon>mdi-play-pause</v-icon>
-                  </v-btn>
-                  <v-btn
-                    fab
-                    x-small
-                    class="mx-1"
-                    color="primary"
-                    v-if="isPlaying"
-                    @click="isPlaying = false"
-                  >
-                    <v-icon>mdi-stop</v-icon>
-                  </v-btn>
-                </v-row>
-              </v-col>
-            </v-row>
+          <v-col cols="12" sm="6"
+              class="health-ticker py-0 d-flex flex-column justify-center">
+            <div>
+              <strong>
+                Day {{ Math.floor(currentTimeDayCount) }}:
+                {{ epidemiologyModel.infectedCount.healthy }} healthy,
+                {{ epidemiologyModel.infectedCount.infected }} infected,
+                {{ epidemiologyModel.infectedCount.dead }} dead.
+                {{ epidemiologyModel.infectedCount.quarantined }}
+                quarantined.
+              </strong>
+            </div>
+            <div>
+              {{ currentTimeDateObj }}
+            </div>
           </v-col>
-        </v-row>
-        <v-row class="justify-center">
-          <v-col cols="12" md="8" lg="6">
-            <v-alert type="info" :dismissible="true">
-              <p>
-                NOTE: This is simulated data representing a theoretical
-                epidemiological model. This simulation does not contain any
-                actual COVID-19 transmission data nor the exact movements of any
-                real individuals, and should not be used in place of studying
-                actual real-world infection cases.
-              </p>
-            </v-alert>
-            <v-alert type="error" v-if="trajectoryModel.errorMsg">
-              {{ trajectoryModel.errorMsg }}
-            </v-alert>
+          <v-col class="py-0">
+            <v-row class="justify-center">
+              <v-slider
+                class="slider-minilabeled"
+                hint="Playback speed"
+                :persistent-hint="true"
+                v-model="timeIncrement"
+                :min="30 * 60"
+                :max="6 * 60 * 60"
+                :dense="true"
+              >
+              </v-slider>
+            </v-row>
+            <v-row class="justify-center py-4">
+              <v-btn
+                fab
+                x-small
+                class="mx-1"
+                color="primary"
+                v-if="!isPlaying"
+                @click="resetWithData()"
+              >
+                <v-icon>mdi-cached</v-icon>
+              </v-btn>
+              <v-btn
+                fab
+                x-small
+                class="mx-1"
+                color="primary"
+                v-if="!isPlaying"
+                @click="
+                  isPlaying = true;
+                  play();
+                "
+              >
+                <a
+                  id="slide-here-on-info-click"
+                  style="position:absolute; top:-80px;"
+                ></a>
+                <v-icon>mdi-play</v-icon>
+              </v-btn>
+              <v-btn
+                fab
+                x-small
+                class="mx-1"
+                color="primary"
+                v-if="!isPlaying"
+                @click="advanceTime()"
+              >
+                <v-icon>mdi-play-pause</v-icon>
+              </v-btn>
+              <v-btn
+                fab
+                x-small
+                class="mx-1"
+                color="primary"
+                v-if="isPlaying"
+                @click="isPlaying = false"
+              >
+                <v-icon>mdi-stop</v-icon>
+              </v-btn>
+            </v-row>
           </v-col>
         </v-row>
       </v-col>
-      <v-col py-0 cols="12">
-        <v-container class=" param-sliders" py-0>
+      <v-col class="py-0" cols="12">
+        <v-container class="param-sliders" py-0>
           <v-row>
-            <v-tabs>
+            <v-tabs
+                centered icons-and-text
+                show-arrows
+            >
               <v-tab
                 v-for="(group, iGroup) in paramsModel.groups"
                 :key="iGroup"
               >
-                {{ group.name }}
+                <span class="param-slider-group-name param-slider-group-name-tab">
+                  {{group.name}}
+                </span>
+                <v-icon>{{group.icon}}</v-icon>
               </v-tab>
               <v-tab-item
                 v-for="(group, iGroup) in paramsModel.groups"
                 :key="iGroup"
                 class="param-slider-tab-content"
+                :transition="false"
+                :reverse-transition="false"
               >
-                <v-row
-                  v-for="(param, iParam) in group.params"
-                  :key="iParam"
-                  class="param-slider-row"
-                >
-                  <v-btn
-                    icon
-                    color="info"
-                    x-small
-                    @click="
-                      infoParam === param
-                        ? (infoParam = null)
-                        : (infoParam = param)
-                    "
-                    class="param-info-button"
+                <v-container>
+                  <v-row class="param-slider-group-description">
+                    <div class="param-slider-group-name param-slider-group-name-desc">
+                      {{group.name}}
+                    </div>
+                    {{ group.description }}
+                  </v-row>
+                  <v-row
+                    v-for="(param, iParam) in group.params"
+                    :key="iParam"
+                    class="param-slider-row"
                   >
-                    <v-icon v-if="infoParam === param"
-                      >mdi-information-outline</v-icon
+                    <v-btn
+                      icon
+                      color="info"
+                      x-small
+                      @click="
+                        infoParam === param
+                          ? (infoParam = null)
+                          : (infoParam = param)
+                      "
+                      class="param-info-button"
                     >
-                    <v-icon v-else>mdi-information</v-icon>
-                  </v-btn>
+                      <v-icon v-if="infoParam === param"
+                        >mdi-information-outline</v-icon
+                      >
+                      <v-icon v-else>mdi-information</v-icon>
+                    </v-btn>
 
-                  <v-slider
-                    class="slider-minilabeled"
-                    :hint="param.name"
-                    v-model="param.value"
-                    :min="param.range_min"
-                    :max="param.range_max"
-                    :persistent-hint="true"
-                    :dense="true"
-                    :thumb-label="true"
-                    :step="
-                      param.valuetype === 'integer'
-                        ? 1
-                        : (param.range_max - param.range_min) / 200
-                    "
-                  ></v-slider>
+                    <v-slider
+                      class="slider-minilabeled"
+                      :hint="param.name"
+                      v-model="param.value"
+                      :min="param.range_min"
+                      :max="param.range_max"
+                      :persistent-hint="true"
+                      :dense="true"
+                      :thumb-label="true"
+                      :step="
+                        param.valuetype === 'integer'
+                          ? 1
+                          : (param.range_max - param.range_min) / 200
+                      "
+                    ></v-slider>
 
-                  <v-alert
-                    type="info"
-                    :dense="true"
-                    :icon="false"
-                    v-if="infoParam === param"
-                    class="param-slider-description"
-                  >
-                    <p>
-                      {{ param.description }}
-                    </p>
-                    <p>
-                      Model variable name: {{ param.key }}<br />
-                      Range: {{ param.range_min }} - {{ param.range_max }}<br />
-                      Default value: {{ param.default }}
-                    </p>
-                    <p>
-                      Current value: <strong>{{ param.value }}</strong>
-                    </p>
-                  </v-alert>
-                </v-row>
+                    <v-alert
+                      type="info"
+                      :dense="true"
+                      :icon="false"
+                      v-if="infoParam === param"
+                      class="param-slider-description"
+                    >
+                      <p>
+                        {{ param.description }}
+                      </p>
+                      <p>
+                        Model variable name: {{ param.key }}<br />
+                        Range: {{ param.range_min }} - {{ param.range_max }}<br />
+                        Default value: {{ param.default }}
+                      </p>
+                      <p>
+                        Current value: <strong>{{ param.value }}</strong>
+                      </p>
+                    </v-alert>
+                  </v-row>
+                </v-container>
               </v-tab-item>
             </v-tabs>
           </v-row>
         </v-container>
       </v-col>
     </v-row>
+    <v-row class="justify-center">
+      <v-col cols="12" md="8" lg="6">
+        <v-alert type="info" :dismissible="true">
+          <p>
+            NOTE: This is simulated data representing a theoretical
+            epidemiological model. This simulation does not contain any
+            actual COVID-19 transmission data nor the exact movements of any
+            real individuals, and should not be used in place of studying
+            actual real-world infection cases.
+          </p>
+        </v-alert>
+        <v-alert type="error" v-if="trajectoryModel.errorMsg">
+          {{ trajectoryModel.errorMsg }}
+        </v-alert>
+      </v-col>
+    </v-row>
+
   </v-layout>
 </template>
 
@@ -341,6 +353,13 @@
     top: 50%;
     transform: translate(-50%, -50%);
   }
+
+  .map-container-tabber {
+    .v-item-group[role=tablist] {
+      margin-left: 1em;
+    }
+  }
+
   .map-container {
     background: #ccc;
     border: 1px solid #444;
@@ -370,35 +389,61 @@
     justify-content: center;
   }
 
-  .health-ticker {
-    justify-content: center;
-    margin-left: 12%;
-  }
   .v-tab {
     font-size: 80%;
-    @media (max-width: 960px) {
-      font-size: 50%;
-    }
   }
 
   .param-sliders {
     position: relative;
-    @media (min-width: 960px) {
-      min-height: 20em;
+    padding-right: 5em;
+    @media(max-width: 800px) {
+      padding-right: unset;
+
+      .param-slider-group-name-tab {
+        display: none;
+      }
+      .param-slider-group-name-desc {
+        display: unset;
+      }
     }
 
-    & > .row {
-      @media (min-width: 960px) {
-        position: absolute;
-        top: 0;
-        left: 0;
+    .param-slider-group-name-desc {
+      font-style: normal;
+      font-variant: small-caps;
+      font-weight: bold;
+      font-size: 130%;
+      display: none;
+    }
+
+    .param-slider-tab-content {
+      overflow-y: auto;
+      overflow-x: hidden;
+      height: 40vh;
+      max-height: 16em;
+    }
+
+    .param-slider-group-description {
+      width: 75%;
+      margin: auto;
+      margin-bottom: .5ex;
+      color: #2196f3;
+      font-style: italic;
+
+      @media(max-width: 800px) {
+        font-size: 80%;
       }
     }
 
     .param-slider-row {
+      justify-content: center;
+
       .param-info-button {
         margin-top: 1em;
         margin-left: 5%;
+
+        @media (max-width: 800px) {
+          margin-left: 0;
+        }
       }
       .v-input__slider {
         cursor: pointer;
@@ -406,17 +451,11 @@
 
       .param-slider-description {
         font-size: 80%;
-        margin: 0 15% 0 14.25%;
+        margin: 0 15% 0 20%;
         padding: 1ex;
         width: 100%;
       }
     }
-  }
-  .param-slider-tab-content {
-    overflow-y: auto;
-    overflow-x: hidden;
-    min-height: 40vh;
-    max-height: 300px;
   }
 
   .slider-minilabeled {
@@ -424,6 +463,9 @@
     margin-top: 1em;
     margin-bottom: 1ex;
     max-width: 75%;
+    @media (max-width: 800px) {
+      max-width: 100%;
+    }
 
     .v-messages {
       top: -6.5ex;

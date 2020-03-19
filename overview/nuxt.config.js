@@ -45,17 +45,20 @@ export default {
     "@nuxtjs/axios"
   ],
   router: {
-    base: '/articles/'
+    base: "/articles/"
   },
   axios: {
-    baseURL: '/articles/'
+    baseURL: "/articles/"
   },
   /*
    ** vuetify module configuration
    ** https://github.com/nuxt-community/vuetify-module
    */
   vuetify: {
-    customVariables: ["~/assets/variables.scss"]
+    customVariables: ["~/assets/variables.scss"],
+    defaultAssets: {
+      icons: 'mdi'
+    }
   },
   /*
    ** Build configuration

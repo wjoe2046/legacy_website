@@ -1,48 +1,35 @@
 
 const epiModelParamsInfo = require('./epi-model-params.json');
 
-const paramObjsByKey = {};
-const paramGroups = {};
 
-epiModelParamsInfo.forEach(paramObj => {
+Object.entries(epiModelParamsInfo.groups).forEach(([key, groupObj]) => {
+  groupObj.key = key;
+  groupObj.params = [];
+});
+
+Object.entries(epiModelParamsInfo.params).forEach( ([key, paramObj]) => {
   if (paramObj.disabled) {
     return;
   }
 
+  paramObj.key = key;
   paramObj.value = paramObj.default;
+  paramObj.group = epiModelParamsInfo.groups[paramObj.param_group_key];
 
-  paramObjsByKey[paramObj.key] = paramObj;
-
-  const groupName = paramObj["param_group"] || "Miscellaneous";
-  if (!(groupName in paramGroups)) {
-    paramGroups[groupName] = [];
-  }
-  paramGroups[groupName].push(paramObj);
+  paramObj.group.params.push(paramObj);
 });
 
 const groupsList = (() => {
-  let groupKeys = [...Object.keys(paramGroups)];
-
-  // If 'Miscellaneous' is a group, move it to the end.
-  if (groupKeys.includes('Miscellaneous')) {
-    groupKeys = groupKeys.filter(k => k !== 'Miscellaneous');
-    groupKeys.push('Miscellaneous');
-  }
-
-  const groupsWithParams = groupKeys.map(groupKey => ({
-    name: groupKey,
-    params: paramGroups[groupKey]
-  }));
-  return groupsWithParams;
+  return [...Object.values(epiModelParamsInfo.groups)];
 })();
 
 
 const paramsModel = {
   groups: groupsList,
-  get params() { return paramObjsByKey; },
+  get params() { return epiModelParamsInfo.params; },
 
   value(paramKey) {
-    return paramObjsByKey[paramKey].value;
+    return epiModelParamsInfo.params[paramKey].value;
   }
 };
 

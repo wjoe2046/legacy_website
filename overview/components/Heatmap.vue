@@ -97,50 +97,55 @@
       </v-col>
       <v-col cols="12" md="6" class="btns-and-info">
         <v-row class="seektime" v-if="trajectoryModel.isDataLoaded">
-
-          <div>
-
-            <strong>
-              Day {{Math.floor(currentTimeDayCount)}}:
-              {{epidemiologyModel.infectedCount.healthy}} healthy,
-              {{epidemiologyModel.infectedCount.infected}} infected,
-              {{epidemiologyModel.infectedCount.dead}} dead.
-              {{epidemiologyModel.infectedCount.quarantined}} quarantined.
-            </strong>
-          </div>
-          <div>
-            {{currentTimeDateObj}}
-          </div>
-
-          <v-slider label="Playback speed" v-model="timeIncrement" :min="30 * 60" :max="6 * 60 * 60" :dense="true">
-
-          </v-slider>
+          <v-col>
+            <v-row>
+              <div>
+                <strong>
+                  Day {{Math.floor(currentTimeDayCount)}}:
+                  {{epidemiologyModel.infectedCount.healthy}} healthy,
+                  {{epidemiologyModel.infectedCount.infected}} infected,
+                  {{epidemiologyModel.infectedCount.dead}} dead.
+                  {{epidemiologyModel.infectedCount.quarantined}} quarantined.
+                </strong>
+              </div>
+              <div>
+                {{currentTimeDateObj}}
+              </div>
+            </v-row>
+            <v-row>
+              <v-col>
+                <v-row>
+                  <v-slider
+                      class="slider-minilabeled"
+                      hint="Playback speed"
+                      :persistent-hint="true"
+                      v-model="timeIncrement"
+                      :min="30 * 60"
+                      :max="6 * 60 * 60"
+                      :dense="true">
+                  </v-slider>
+                </v-row>
+                <v-row  class="mt-1 justify-center">
+                  <v-btn fab x-small class="mx-1" color="primary" v-if="!isPlaying" @click="resetWithData()">
+                    <v-icon>mdi-cached</v-icon>
+                  </v-btn>
+                  <v-btn fab x-small class="mx-1" color="primary" v-if="!isPlaying" @click="isPlaying=true; play()">
+                    <a id="slide-here-on-info-click" style="position:absolute; top:-80px;"></a>
+                    <v-icon>mdi-play</v-icon>
+                  </v-btn>
+                  <v-btn fab x-small class="mx-1" color="primary" v-if="!isPlaying" @click="advanceTime()">
+                    <v-icon>mdi-play-pause</v-icon>
+                  </v-btn>
+                  <v-btn fab x-small class="mx-1" color="primary" v-if="isPlaying" @click="isPlaying=false">
+                    <v-icon>mdi-stop</v-icon>
+                  </v-btn>
+                </v-row>
+              </v-col>
+            </v-row>
+          </v-col>
         </v-row>
-        <v-row v-if="trajectoryModel.isDataLoaded">
-
-          <v-btn fab small class="mx-1" color="primary" v-if="!isPlaying" @click="resetWithData()">
-            <v-icon>mdi-cached</v-icon>
-          </v-btn>
-          <v-btn fab small class="mx-1" color="primary" v-if="!isPlaying" @click="isPlaying=true; play()">
-            <a id="slide-here-on-info-click" style="position:absolute; top:-80px;"></a>
-            <v-icon>mdi-play</v-icon>
-          </v-btn>
-          <v-btn fab small class="mx-1" color="primary" v-if="!isPlaying" @click="advanceTime()">
-            <v-icon>mdi-play-pause</v-icon>
-          </v-btn>
-          <v-btn fab small class="mx-1" color="primary" v-if="isPlaying" @click="isPlaying=false">
-            <v-icon>mdi-stop</v-icon>
-          </v-btn>
-        </v-row>
-
         <v-row>
-          <v-alert type="info" :dismissible="true" v-if="!trajectoryModel.isDataLoading &&
-                !trajectoryModel.isDataLoaded">
-            <p>
-              The data file has not yet been loaded.
-              The data comes as a JSON file approximately
-              4 MB in size.
-            </p>
+          <v-alert type="info" :dismissible="true">
             <p>
               NOTE: This is simulated data representing a theoretical epidemiological model.
               This simulation does not contain any actual COVID-19 transmission data
@@ -174,6 +179,7 @@
                       <v-icon v-else>mdi-information</v-icon>
                     </v-btn>
                     <v-slider
+                        class="slider-minilabeled"
                         :hint="param.name"
                         v-model="param.value"
                         :min="param.range_min"
@@ -275,13 +281,6 @@
       }
       .v-input__slider {
         cursor: pointer;
-        height: 1em;
-        margin-top: 1em;
-        margin-bottom: 1ex;
-      }
-      .v-messages {
-        top: -6ex;
-        left: 2ex;
       }
 
       .param-slider-description {
@@ -293,6 +292,16 @@
     }
   }
 
+  .slider-minilabeled {
+    height: 1em;
+    margin-top: 1em;
+    margin-bottom: 1ex;
+
+    .v-messages {
+      top: -6.5ex;
+      left: 2ex;
+    }
+  }
 
   .siminfotable,
   .conditionreport-table {

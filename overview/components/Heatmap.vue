@@ -8,8 +8,22 @@
           </v-tab>
           <v-tab-item :transition="false" :reverse-transition="false">
             <div class="map-container">
-              <v-progress-circular indeterminate color="primary" v-if="!trajectoryModel.isDataLoaded" class="circular-loader" size="55" width="5"></v-progress-circular>
-              <GmapMap ref="mapRef" v-if="trajectoryModel.isDataLoaded" :center="mapInitCenter" :zoom="11" map-type-id="roadmap" style="width: 100%; height: 100%">
+              <v-progress-circular
+                indeterminate
+                color="primary"
+                v-if="!trajectoryModel.isDataLoaded"
+                class="circular-loader"
+                size="55"
+                width="5"
+              ></v-progress-circular>
+              <GmapMap
+                ref="mapRef"
+                v-if="trajectoryModel.isDataLoaded"
+                :center="mapInitCenter"
+                :zoom="11"
+                map-type-id="roadmap"
+                style="width: 100%; height: 100%"
+              >
               </GmapMap>
             </div>
           </v-tab-item>
@@ -20,34 +34,64 @@
           <v-tab-item :transition="false" :reverse-transition="false">
             <v-row>
               <v-container>
-                <v-data-table class="siminfotable" :headers="simInfoTableHeaders" :items="epidemiologyModel.simInfoList" :items-per-page="25" :dense="true" :footer-props="simInfoTableFooterProps" :options="{sortBy: ['daysInfected'], sortDesc:[true]}">
+                <v-data-table
+                  class="siminfotable"
+                  :headers="simInfoTableHeaders"
+                  :items="epidemiologyModel.simInfoList"
+                  :items-per-page="25"
+                  :dense="true"
+                  :footer-props="simInfoTableFooterProps"
+                  :options="{ sortBy: ['daysInfected'], sortDesc: [true] }"
+                >
                   <template v-slot:item.id="{ item }">
-                    <span :class="`siminfo-infectionstage-${item.infectionStage.name.toLowerCase()}`">
-                      {{item.id}}
+                    <span
+                      :class="
+                        `siminfo-infectionstage-${item.infectionStage.name.toLowerCase()}`
+                      "
+                    >
+                      {{ item.id }}
                     </span>
                   </template>
                   <template v-slot:item.complicationRisk="{ item }">
-                    <span class="siminfo-complicationrisk" :style="{color:gradientGreenYellowRed(item.complicationRisk)}">
+                    <span
+                      class="siminfo-complicationrisk"
+                      :style="{
+                        color: gradientGreenYellowRed(item.complicationRisk)
+                      }"
+                    >
                       {{ Math.floor(item.complicationRisk * 100) }}%
                     </span>
                   </template>
                   <template v-slot:item.infectionStage.name="{ item }">
-                    <span :class="`siminfo-infectionstage-${item.infectionStage.name.toLowerCase()}`">
-                      {{item.infectionStage.name}}
+                    <span
+                      :class="
+                        `siminfo-infectionstage-${item.infectionStage.name.toLowerCase()}`
+                      "
+                    >
+                      {{ item.infectionStage.name }}
                     </span>
                   </template>
                   <template v-slot:item.infectionStage.infected="{ item }">
-                    <span v-if="item.infectionStage.infected" class="siminfo-infected">
+                    <span
+                      v-if="item.infectionStage.infected"
+                      class="siminfo-infected"
+                    >
                       <v-icon>mdi-biohazard</v-icon>
                     </span>
                   </template>
                   <template v-slot:item.infectionStage.contagious="{ item }">
-                    <span v-if="item.infectionStage.contagious" class="siminfo-contagious">
+                    <span
+                      v-if="item.infectionStage.contagious"
+                      class="siminfo-contagious"
+                    >
                       <v-icon>mdi-account-tie-voice</v-icon>
                     </span>
                   </template>
                   <template v-slot:item.infectionStage.symptomatic="{ item }">
-                    <span v-if="item.infectionStage.symptomatic" class="siminfo-symptomatic">
+                    <span
+                      v-if="item.infectionStage.symptomatic"
+                      class="siminfo-symptomatic"
+                    >
                       <v-icon>mdi-bed</v-icon>
                     </span>
                   </template>
@@ -74,26 +118,35 @@
               <v-container>
                 <v-row>
                   <v-col cols="12" md="6" lg="3">
-                    <v-data-table class="conditionreport-table" :headers="conditionReportHeaders" :items="epidemiologyModel.conditionReport" :items-per-page="25" :dense="true">
+                    <v-data-table
+                      class="conditionreport-table"
+                      :headers="conditionReportHeaders"
+                      :items="epidemiologyModel.conditionReport"
+                      :items-per-page="25"
+                      :dense="true"
+                    >
                       <template v-slot:item.popfrac="{ item }">
-                        <span>
-                          {{ Math.floor(item.popfrac * 100) }}%
-                        </span>
+                        <span> {{ Math.floor(item.popfrac * 100) }}% </span>
                       </template>
                     </v-data-table>
                   </v-col>
                   <v-col style="position:relative; min-height:25em;">
                     <div class="plotlyholder">
-                      <vue-plotly ref="plotlygraph" v-if="epidemiologyModel.totalSeconds > 0" :data="plotlydata" :layout="plotlylayout" :autoResize="true" :display-mode-bar="false"></vue-plotly>
+                      <vue-plotly
+                        ref="plotlygraph"
+                        v-if="epidemiologyModel.totalSeconds > 0"
+                        :data="plotlydata"
+                        :layout="plotlylayout"
+                        :autoResize="true"
+                        :display-mode-bar="false"
+                      ></vue-plotly>
                     </div>
                   </v-col>
                 </v-row>
               </v-container>
             </v-row>
           </v-tab-item>
-
         </v-tabs>
-
       </v-col>
       <v-col cols="12" md="6" class="btns-and-info">
         <v-row class="seektime" v-if="trajectoryModel.isDataLoaded">
@@ -101,42 +154,77 @@
             <v-row>
               <div>
                 <strong>
-                  Day {{Math.floor(currentTimeDayCount)}}:
-                  {{epidemiologyModel.infectedCount.healthy}} healthy,
-                  {{epidemiologyModel.infectedCount.infected}} infected,
-                  {{epidemiologyModel.infectedCount.dead}} dead.
-                  {{epidemiologyModel.infectedCount.quarantined}} quarantined.
+                  Day {{ Math.floor(currentTimeDayCount) }}:
+                  {{ epidemiologyModel.infectedCount.healthy }} healthy,
+                  {{ epidemiologyModel.infectedCount.infected }} infected,
+                  {{ epidemiologyModel.infectedCount.dead }} dead.
+                  {{ epidemiologyModel.infectedCount.quarantined }} quarantined.
                 </strong>
               </div>
               <div>
-                {{currentTimeDateObj}}
+                {{ currentTimeDateObj }}
               </div>
             </v-row>
             <v-row>
               <v-col>
                 <v-row>
                   <v-slider
-                      class="slider-minilabeled"
-                      hint="Playback speed"
-                      :persistent-hint="true"
-                      v-model="timeIncrement"
-                      :min="30 * 60"
-                      :max="6 * 60 * 60"
-                      :dense="true">
+                    class="slider-minilabeled"
+                    hint="Playback speed"
+                    :persistent-hint="true"
+                    v-model="timeIncrement"
+                    :min="30 * 60"
+                    :max="6 * 60 * 60"
+                    :dense="true"
+                  >
                   </v-slider>
                 </v-row>
-                <v-row  class="mt-1 justify-center">
-                  <v-btn fab x-small class="mx-1" color="primary" v-if="!isPlaying" @click="resetWithData()">
+                <v-row class="mt-1 justify-center">
+                  <v-btn
+                    fab
+                    x-small
+                    class="mx-1"
+                    color="primary"
+                    v-if="!isPlaying"
+                    @click="resetWithData()"
+                  >
                     <v-icon>mdi-cached</v-icon>
                   </v-btn>
-                  <v-btn fab x-small class="mx-1" color="primary" v-if="!isPlaying" @click="isPlaying=true; play()">
-                    <a id="slide-here-on-info-click" style="position:absolute; top:-80px;"></a>
+                  <v-btn
+                    fab
+                    x-small
+                    class="mx-1"
+                    color="primary"
+                    v-if="!isPlaying"
+                    @click="
+                      isPlaying = true;
+                      play();
+                    "
+                  >
+                    <a
+                      id="slide-here-on-info-click"
+                      style="position:absolute; top:-80px;"
+                    ></a>
                     <v-icon>mdi-play</v-icon>
                   </v-btn>
-                  <v-btn fab x-small class="mx-1" color="primary" v-if="!isPlaying" @click="advanceTime()">
+                  <v-btn
+                    fab
+                    x-small
+                    class="mx-1"
+                    color="primary"
+                    v-if="!isPlaying"
+                    @click="advanceTime()"
+                  >
                     <v-icon>mdi-play-pause</v-icon>
                   </v-btn>
-                  <v-btn fab x-small class="mx-1" color="primary" v-if="isPlaying" @click="isPlaying=false">
+                  <v-btn
+                    fab
+                    x-small
+                    class="mx-1"
+                    color="primary"
+                    v-if="isPlaying"
+                    @click="isPlaying = false"
+                  >
                     <v-icon>mdi-stop</v-icon>
                   </v-btn>
                 </v-row>
@@ -147,63 +235,87 @@
         <v-row>
           <v-alert type="info" :dismissible="true">
             <p>
-              NOTE: This is simulated data representing a theoretical epidemiological model.
-              This simulation does not contain any actual COVID-19 transmission data
-              nor the exact movements of any real individuals, and should
-              not be used in place of studying actual real-world infection cases.
+              NOTE: This is simulated data representing a theoretical
+              epidemiological model. This simulation does not contain any actual
+              COVID-19 transmission data nor the exact movements of any real
+              individuals, and should not be used in place of studying actual
+              real-world infection cases.
             </p>
           </v-alert>
           <v-alert type="error" v-if="trajectoryModel.errorMsg">
-            {{trajectoryModel.errorMsg}}
+            {{ trajectoryModel.errorMsg }}
           </v-alert>
         </v-row>
-
       </v-col>
       <v-col>
         <v-container class="flex-grow-1 param-sliders">
           <v-row>
             <v-expansion-panels accordion>
-              <v-expansion-panel v-for="(group,iGroup) in paramsModel.groups" :key="iGroup">
+              <v-expansion-panel
+                v-for="(group, iGroup) in paramsModel.groups"
+                :key="iGroup"
+              >
                 <v-expansion-panel-header>
                   <span>
                     <v-icon>mdi-tune</v-icon>
-                    {{group.name}}
+                    {{ group.name }}
                   </span>
                 </v-expansion-panel-header>
                 <v-expansion-panel-content>
-                  <v-row v-for="(param, iParam) in group.params" :key="iParam" class="param-slider-row">
-                    <v-btn icon color="info" x-small
-                        @click="infoParam===param ? infoParam=null : infoParam=param"
-                        class="param-info-button">
-                      <v-icon v-if="infoParam===param">mdi-information-outline</v-icon>
+                  <v-row
+                    v-for="(param, iParam) in group.params"
+                    :key="iParam"
+                    class="param-slider-row"
+                  >
+                    <v-btn
+                      icon
+                      color="info"
+                      x-small
+                      @click="
+                        infoParam === param
+                          ? (infoParam = null)
+                          : (infoParam = param)
+                      "
+                      class="param-info-button"
+                    >
+                      <v-icon v-if="infoParam === param"
+                        >mdi-information-outline</v-icon
+                      >
                       <v-icon v-else>mdi-information</v-icon>
                     </v-btn>
                     <v-slider
-                        class="slider-minilabeled"
-                        :hint="param.name"
-                        v-model="param.value"
-                        :min="param.range_min"
-                        :max="param.range_max"
-                        :persistent-hint="true"
-                        :dense="true"
-                        :thumb-label="true"
-                        :step="param.valuetype === 'integer' ? 1 : ((param.range_max - param.range_min) / 200)"></v-slider>
+                      class="slider-minilabeled"
+                      :hint="param.name"
+                      v-model="param.value"
+                      :min="param.range_min"
+                      :max="param.range_max"
+                      :persistent-hint="true"
+                      :dense="true"
+                      :thumb-label="true"
+                      :step="
+                        param.valuetype === 'integer'
+                          ? 1
+                          : (param.range_max - param.range_min) / 200
+                      "
+                    ></v-slider>
                     <v-alert
-                        type="info"
-                        :dense="true"
-                        :icon="false"
-                        v-if="infoParam===param"
-                        class="param-slider-description">
+                      type="info"
+                      :dense="true"
+                      :icon="false"
+                      v-if="infoParam === param"
+                      class="param-slider-description"
+                    >
                       <p>
-                        {{param.description}}
+                        {{ param.description }}
                       </p>
                       <p>
-                        Model variable name: {{param.key}}<br/>
-                        Range: {{param.range_min}} - {{param.range_max}}<br />
-                        Default value: {{param.default}}
+                        Model variable name: {{ param.key }}<br />
+                        Range: {{ param.range_min }} - {{ param.range_max
+                        }}<br />
+                        Default value: {{ param.default }}
                       </p>
                       <p>
-                        Current value: <strong>{{param.value}}</strong>
+                        Current value: <strong>{{ param.value }}</strong>
                       </p>
                     </v-alert>
                   </v-row>
@@ -214,7 +326,6 @@
         </v-container>
       </v-col>
     </v-row>
-
   </v-layout>
 </template>
 

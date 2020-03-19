@@ -415,8 +415,8 @@
   .param-slider-tab-content {
     overflow-y: auto;
     overflow-x: hidden;
-    max-height: 50vh;
     min-height: 40vh;
+    max-height: 300px;
   }
 
   .slider-minilabeled {

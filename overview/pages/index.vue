@@ -377,6 +377,11 @@
   }
 }
 
+.v-application a {
+  color: #BF3F4A;
+  text-decoration: none;
+  }
+
 img {
   max-width: 100%;
 }
@@ -570,6 +575,8 @@ img {
   // padding-left: 60px;
   // padding-bottom: 100px;
 }
+
+
 </style>
 
 <script>

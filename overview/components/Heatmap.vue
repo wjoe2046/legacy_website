@@ -122,7 +122,7 @@
             <v-icon>mdi-cached</v-icon>
           </v-btn>
           <v-btn fab small class="mx-1" color="primary" v-if="!isPlaying" @click="isPlaying=true; play()">
-            <a id="slider-info" style="position:absolute; top:-80px;"></a>
+            <a id="slide-here-on-info-click" style="position:absolute; top:-80px;"></a>
             <v-icon>mdi-play</v-icon>
           </v-btn>
           <v-btn fab small class="mx-1" color="primary" v-if="!isPlaying" @click="advanceTime()">
@@ -158,18 +158,17 @@
             {{trajectoryModel.errorMsg}}
           </v-alert>
 
-          <v-alert type="info" v-if="hoverParam" class="slider-info">
-
-            <h3>{{hoverParam.name}}</h3>
+          <v-alert type="info" v-if="infoParam" class="slider-info">
+            <h3>{{infoParam.name}}</h3>
             <p>
-              {{hoverParam.description}}
+              {{infoParam.description}}
             </p>
             <p>
-              Range: {{hoverParam.range_min}} - {{hoverParam.range_max}}<br />
-              Default value: {{hoverParam.default}}
+              Range: {{infoParam.range_min}} - {{infoParam.range_max}}<br />
+              Default value: {{infoParam.default}}
             </p>
             <p>
-              Current value: <strong>{{hoverParam.value}}</strong>
+              Current value: <strong>{{infoParam.value}}</strong>
             </p>
           </v-alert>
         </v-row>
@@ -189,7 +188,7 @@
                 <v-expansion-panel-content>
                   <div v-for="(param, iParam) in group.params" :key="iParam">
                     <v-row>
-                      <v-btn icon color="info" x-small @click="hoverParam = param" href="#slider-info">
+                      <v-btn icon color="info" x-small @click="infoParam = param" href="#slide-here-on-info-click">
                         <v-icon>mdi-information</v-icon>
                       </v-btn>
                       <v-slider :hint="param.name" v-model="param.value" :min="param.range_min" :max="param.range_max" :persistent-hint="true" :dense="true" :thumb-label="true" :step="param.valuetype === 'integer' ? 1 : ((param.range_max - param.range_min) / 50)"></v-slider>
@@ -362,7 +361,7 @@ export default {
 
   data() {
     return {
-      hoverParam: null,
+      infoParam: null,
 
       paramsModel,
       trajectoryModel,

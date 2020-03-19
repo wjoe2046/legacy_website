@@ -247,8 +247,8 @@ const epidemiologyModel = {
       },
 
       age: mathHelpers.randomNormalWithCutoff(
-        this.paramsModel.value("MEAN_AGE_APP_INSTALLED"),
-        this.paramsModel.value("STDEV_AGE_APP_INSTALLED"),
+        this.paramsModel.value("MEAN_AGE_POPULATION"),
+        this.paramsModel.value("STDEV_AGE_POPULATION"),
         18,
         85,
         true

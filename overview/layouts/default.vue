@@ -10,43 +10,36 @@
               ><img class="logoImg" src="../assets/images/logo/logo.png" alt=""
             /></a>
 
-            <v-btn color="#BF3F4A" class="white--text">
-              Download App
-            </v-btn>
+            <div class="rightNav">
+              <v-btn color="#BF3F4A" class="white--text">
+                Get App
+              </v-btn>
 
-            <!-- @Isaiah this is where menu code begins.  The commented out <ul> a bit further down is what I'm attemtping to replace with this dropdown menu so at some point we need to get the links to other pages in the menu items-->
-            <v-menu offset-y>
-              <template v-slot:activator="{ on }">
-                <v-btn text color="gray" v-on="on">
-                  <v-icon left>mdi-chevron-down</v-icon>
-                  <span>Menu</span>
-                </v-btn>
-              </template>
-              <v-list>
-                <v-list-item>
-                  hey
-                </v-list-item>
+              <!-- @Isaiah this is where menu code begins.  The commented out <ul> a bit further down is what I'm attemtping to replace with this dropdown menu so at some point we need to get the links to other pages in the menu items-->
+              <v-menu offset-y>
+                <template v-slot:activator="{ on }">
+                  <v-btn text color="gray" v-on="on">
+                    <v-icon left>mdi-chevron-down</v-icon>
+                    <span>Menu</span>
+                  </v-btn>
+                </template>
+                <v-list>
+                  <v-list-item>
+                    <a target="_blank" class="link" href="https://www.covid19risk.com/heatmap/" style="color:#BF3F4A;">Heatmap Demo</a>
+                  </v-list-item>
+                  <v-list-item>
+                    <a target="_blank" class="link" href="https://www.covid19risk.com/collaborate.html" style="color:#BF3F4A;">Get Involved</a>                </v-list-item>
+                  <v-list-item>
+                    <a target="_blank" class="link" href="https://www.covid19risk.com/collaborate.html" style="color:#BF3F4A;">Donate</a>
+                  </v-list-item>
+                  <v-list-item>
+                    <a target="_blank" class="link" href="https://www.covid19risk.com/about.html" style="color:#BF3F4A;">About</a>
+                  </v-list-item>
 
-                <!-- <v-list-item
-                  v-for="(item, i) in items"
-                  :key="i"
-                  @click=""
-                >
-                  <v-list-item-title>
-                    hey
-                  </v-list-item-title>
-
-                </v-list-item> -->
-              </v-list>
-            </v-menu>
-
-            <!-- <ul class="navbarList">
-              <li><a target="_blank" class="link heatmapLink text-no-wrap" href="https://www.covid19risk.com/heatmap/">Heatmap</a></li>
-              <li><a target="_blank" class="link text-no-wrap" href="https://www.covid19risk.com/collaborate.html">Get Involved</a></li>
-              <li><a target="_blank" class="link text-no-wrap" href="https://www.covid19risk.com/collaborate.html">Donate</a></li>
-              <li><a target="_blank" class="link text-no-wrap" href="https://www.covid19risk.com/about.html">About</a></li>
-              <li class="download text-no-wrap">Download App</li>
-            </ul> -->
+              
+                </v-list>
+              </v-menu>
+            </div>
           </v-col>
         </v-row>
       </v-container>

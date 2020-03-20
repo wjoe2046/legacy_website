@@ -46,7 +46,7 @@
                     <li><a href="#interventionOptimization">Mobile Phone Intervention Optimization</a></li>
                 </ol>
               </li>
-              <li><strong><a href="#proposedSystem">Propose System: Three Parts</a></strong>
+              <li><strong><a href="#proposedSystem">Proposed System: Three Parts</a></strong>
                 <ol class="innerList">
                     <li><a href="#contactTracing">Part 1: Bluetooth Contact Tracing</a>
                       <ol class="nestedInnerList">
@@ -56,32 +56,32 @@
                         <li><a href="#bluetoothDatabase">Bluetooth Contact Tracing Implementation</a></li>
                       </ol>
                     </li>
-                    <li>Part 2: GPS Heatmap
+                    <li><a href="heatmapTitle">Part 2: GPS Heatmap</a>
                        <ol class="nestedInnerList">
-                        <li>GPS Heatmap Model Description</li>
-                        <li>GPS Heatmap Implementation</li>
-                        <li>GPS Heatmap Epidemiology Model</li>
-                        <li>GPS Privacy Model and Database</li>
+                        <li><a href="heatmapDesc">GPS Heatmap Model Description</a></li>
+                        <li><a href="heatmapImplementation">GPS Heatmap Implementation</a></li>
+                        <li><a href="heatmapEpidemiology">GPS Heatmap Epidemiology Model</a></li>
+                        <li><a href="databasePrivacy">GPS Privacy Model and Database</a></li>
                       </ol>
                     </li>
-                    <li>Part 3: Recommendations
+                    <li><a href="userRecommendations">Part 3: Recommendations</a>
                       <ol class="nestedInnerList">
-                        <li>Scope and Design</li>
+                        <li><a href="scopeDesign">Scope and Design</a></li>
+                        <li><a href="timeline">Timeline to Deployment</a></li>
                       </ol>
                     </li>
                 </ol>
               </li>
-              <li><strong>Why You Should Care</strong>
+              <li><strong><a href="#care">Why You Should Care</a></strong>
                <ol class="innerList">
-                    <li>Value-add for Health Authorities</li>
-                    <li>Value-add for Users</li>
-                    <li>Quantitative Analysis of Impact</li>
+                    <li><a href="healthAuthorities">Health Authorities</a></li>
+                    <li><a href="users">Individuals (Users)</a></li>
+                    <li><a href="impact">Quantitative Analysis of Impact</a></li>
                 </ol>
               </li>
               <li> <strong><a href="#conclusion">Conclusion</a></strong>
               <ol class="innerList">
-                  <li>Timeline</li>
-                  <li>What You Can Do</li>
+                  <li><a href="#youDo">What You Can Do</a></li>
                   <li><a href="#contributors">Authors, Advisors, and Acknowledgements</a></li>
                 </ol>
               </li>
@@ -133,6 +133,7 @@
 
         <!--Proposed System: Threee Parts-->
         <h2 id="proposedSystem"><span class="titleLine">Proposed System: Three Parts</span></h2>
+         <p>&nbsp;</p>
         <p>The system proposed here is intended to be used as part of a broader campaign to combat COVID-19. These methods focus on gathering and disseminating the information needed to perform targeted interventions. </p>
         <p>There are three components to this system that work almost independently, but can be bundled into a single mobile app. Depending on privacy requirements and the needs of specific public health authorities a subset of these capabilities could be utilized. The three components each target a different parameter to influence disease dynamics: </p>
          <ul style="list-style:decimal">
@@ -251,7 +252,10 @@
        <iframe width="1425" height="566" src="https://www.youtube.com/embed/4aQ90emoAqc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       <p>&nbsp;</p>
 
-      <p><span id="contactTracing" class="subTitleLine"> Part 2: GPS Heatmap</span></p>
+
+
+      <!-- Heatmap -->
+      <p><span id="heatmapTitle" class="subTitleLine"> Part 2: GPS Heatmap</span></p>
       <p><span id="heatmapDesc" class="subTitleLine">GPS Heatmap Model Description</span></p>
       <p>GPS capability is ubiquitous among smartphone devices, and high-resolution spatiotemporal data is regularly used by mapping and social media apps. Given anonymised GPS data along with user infection status, we can approximately calculate where the fomite-based risk of infection is the highest; meaning, where there may be inanimate objects capable of transmitting infection. </p>
        <p>Anonymized GPS data can inform an epidemiological model to show how the disease is likely to spread.</p>
@@ -292,7 +296,7 @@
       <p>This does require a significant number of trajectories to be significant, so we will be supplementing our initial database with plausible synthetic trajectories created by the <a href="https://iapg.jade-hs.de/personen/brinkhoff/generator/">Brinkhoff trajectory generator</a>. </p>
       <p>The end result is that the trajectories being used to generate our heatmap can be mathematically verified to be anonymous, guaranteeing the privacy of our users. </p>
 
-      <p><span id="contactTracing" class="subTitleLine"> Part 3: User Recommendations</span></p>
+      <p><span id="userRecommendations" class="subTitleLine"> Part 3: User Recommendations</span></p>
       <p>We have designed the app user interface (UI) and are building a beta app with the following features: </p>
       <ul>
         <li>CDC general COVID-19 advice, symptoms, and resources</li>
@@ -305,7 +309,7 @@
 
          <p>&nbsp;</p>
 
-      <h3>User Interface Design: Covid Watch Transmission Map and Phone Log</h3>
+      <h3 id="scopeDesign">User Interface Design: Covid Watch Transmission Map and Phone Log</h3>
 
       <p style="font-size:30px;color:red;">need one more final mobile frame, see comment in google doc</p>  
       <!-- my quick attempt at making the mobile app images shrink to be responsive, may need adjustment - Jesse -->
@@ -351,7 +355,7 @@
       <!-- Why You Should Care --> 
       <h2 id="care"><span class="titleLine">Why You Should Care</span></h2>
       <p>&nbsp;</p>
-      <h3>Incentives for Health Authorities</h3>
+      <h3 id="healthAuthorities">Incentives for Health Authorities</h3>
       <br>
       <ul>
         <li>High accuracy, instantaneous contact tracing</li>
@@ -360,7 +364,7 @@
       </ul>
       <br>
 
-      <h3>Incentives for Individuals</h3>
+      <h3 id="users">Incentives for Individuals</h3>
       <br>
       <ul>
         <li>Information about how to avoid contracting the disease</li>
@@ -370,7 +374,7 @@
       </ul>
       <br>
 
-      <h3>Quantitative Analysis of Impact</h3>
+      <h3 id="impact">Quantitative Analysis of Impact</h3>
       <br>
       <p>The impact of this technology will depend largely on the state of the system around it. Numerical models and ongoing <a href="https://www.sciencemag.org/news/2020/03/coronavirus-cases-have-dropped-sharply-south-korea-whats-secret-its-success">campaigns</a> suggest that with extensive testing, accurate contact tracing, and isolation of suspected cases, outbreaks can be contained]. For intermediate testing and contact tracing detection rates, a system like this would likely need to be used in combination with social distancing measures and manual contact tracing. However, the measures suggested by <a href="https://www.imperial.ac.uk/media/imperial-college/medicine/sph/ide/gida-fellowships/Imperial-College-COVID19-NPI-modelling-16-03-2020.pdf">Ferguson et al</a>. could potentially be relaxed if supplemented with sufficient targeted interventions.   </p>
       <p>Of the three target parameters (tracing accuracy, detection rate, base transmission), the potential influence of the app on tracing accuracy is the simplest to quantify. Any two users of the app who are at the same location at the same time will register a contact event. In theory,  all transmission events except those by fomites would be detected. This includes all types of contact classified as being <a href="https://www.ecdc.europa.eu/sites/default/files/documents/covid-19-public-health-management-contact-novel-coronavirus-cases-EU.pdf">“high risk” by the ECDC</a> Preventative measures encouraged by the app such as avoiding high-risk areas and increased precautions would reduce overall transmission rate, however it is difficult to quantify this impact. The current design of the app may also increase detection rate by informing users of symptoms to watch for and how to get tested. Ongoing research is being conducted on how to allocate testing resources to maximize the expected value of secondary cases detected. </p>
@@ -388,6 +392,10 @@ This model was used to estimate the average number of infections caused in 6 wee
 
 
        <!--
+        ALL OF THIS WAS PREVIOUS VERSION - to be removed but keeping just in case for a bit -Jesse
+
+
+
         <div id="intro">
           <p> Non-pharmaceutical approaches to infectious disease control generally have the following two components:</p>
         </div>
@@ -646,7 +654,7 @@ This model was used to estimate the average number of infections caused in 6 wee
         <p>We are developing this technology as a high-quality filter to be used for the pandemic optimization problem. Combined with a comprehensive testing program, our filter may be powerful enough to stop further spread of COVID-19. </p>
       
         <p>&nbsp;</p>
-        <h2 id="conclusion"><span class="titleLine">Who Can Help</span></h2>
+        <h2 id="youDo"><span class="titleLine">Who Can Help</span></h2>
         <br>
         <p>We continue to seek more <a href="https://www.covid19risk.com/collaborate.html">collaborators</a>, donors, and support from health organizations and testing centers.</p>
       </v-col>
@@ -1062,12 +1070,18 @@ img {
     padding: 10px;
     border-radius: 4px;
 
+    .outerList {
+      font-size: 22px;
+    }
+
      .innerList {
         list-style: none;
+        font-size: 18px;
       }
 
       .nestedInnerList {
         list-style: none;
+        font-size: 16px;
       }
 
   }

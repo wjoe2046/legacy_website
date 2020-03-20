@@ -25,15 +25,15 @@
                 </template>
                 <v-list>
                   <v-list-item>
-                    <a target="_blank" class="link" href="https://www.covid19risk.com/heatmap/" style="color:#BF3F4A;">Heatmap Demo</a>
+                    <a target="_blank" class="link" href="https://www.covid-watch.org/heatmap/" style="color:#BF3F4A;">Heatmap Demo</a>
                   </v-list-item>
                   <v-list-item>
-                    <a target="_blank" class="link" href="https://www.covid19risk.com/collaborate.html" style="color:#BF3F4A;">Get Involved</a></v-list-item>
+                    <a target="_blank" class="link" href="https://www.covid-watch.org/collaborate.html" style="color:#BF3F4A;">Get Involved</a></v-list-item>
                   <v-list-item>
-                    <a target="_blank" class="link" href="https://www.covid19risk.com/collaborate.html" style="color:#BF3F4A;">Donate</a>
+                    <a target="_blank" class="link" href="https://www.covid-watch.org/collaborate.html" style="color:#BF3F4A;">Donate</a>
                   </v-list-item>
                   <v-list-item>
-                    <a target="_blank" class="link" href="https://www.covid19risk.com/about.html" style="color:#BF3F4A;">About</a>
+                    <a target="_blank" class="link" href="https://www.covid-watch.org/about.html" style="color:#BF3F4A;">About</a>
                   </v-list-item>
 
               
@@ -62,25 +62,25 @@
           <a
             target="_blank"
             class="text-no-wrap"
-            href="https://www.covid19risk.com/heatmap/"
+            href="https://www.covid-watch.org/heatmap/"
             >Heatmap Demo</a
           >
           <a
             target="_blank"
             class="text-no-wrap"
-            href="https://www.covid19risk.com/collaborate.html"
+            href="https://www.covid-watch.org/collaborate.html"
             >Get Involved</a
           >
           <a
             target="_blank"
             class="text-no-wrap"
-            href="https://www.covid19risk.com/collaborate.html"
+            href="https://www.covid-watch.org/collaborate.html"
             >Donate</a
           >
           <a
             target="_blank"
             class="text-no-wrap"
-            href="https://www.covid19risk.com/about.html"
+            href="https://www.covid-watch.org/about.html"
             >About</a
           >
         </div>

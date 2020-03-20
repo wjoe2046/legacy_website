@@ -16,15 +16,13 @@
             -->
         <div class="TopSection">
        
-        <div class="mainTitle">
-           <p> COVID Watch  </p>
-          <!-- <h4>COVID Watch</h4> -->
-        </div>
+          <div class="mainTitle">
+            <p> COVID Watch  </p>
+          </div>
 
-         <div class="mainSubTitle">
-          <!-- <h4>Slowing the spread of infectious disease with crowdsourcing</h4> -->
-           <p> Slowing the spread of infectious disease with crowdsourcing  </p>
-        </div>
+          <div class="mainSubTitle">
+            <p> Slowing the spread of infectious disease with crowdsourcing  </p>
+          </div>
 
          </div>
 
@@ -35,62 +33,63 @@
 
         <div id="keyPoints">
           <div class="keyPointsContainer">
-            <h2 class="titleLine">Key Points:</h2>
+            <h2 class="titleLine">Table of Contents</h2>
             <br />
-            <ol>
-              <li><a href="#intro">Pandemic mitigation</a> in the context of filtering and optimization: developing a tool to better filter the population for more effective interventions</li>
-              <li><a href="#keyParameters">Epidemiological modeling</a> and findings from China and South Korea: important parameters to influence are contact tracing accuracy, diagnosis speed, and base infection rate</li>
-              <li><a href="#proposedSystem">Proposed system</a> (bluetooth, heatmap) and how it might affect key parameters&nbsp;</li>
-              <li><a href="#privacyRequirements">Privacy requirements</a></li>
-              <li><a href="#implementationDetails">Implementation details</a> - crowdsourcing with bluetooth and GPS</li>
-              <li><a href="#pathToAdoption">Path to adoption:</a> incentives for individuals and public health / support of tech companies</li>
-              <li><a href="#estimatedImpact">Estimated impact:</a> modeling results</li>
-              <li><a href="#conclusion">Next steps:</a> what needs to be done and why it needs to be done quickly</li>
+            <ol class="outerList">
+              <li> Table of Contents
+                <ol class="innerList">
+                    <li>Mission Statement</li>
+                    <li>Privacy Focus</li>
+                    <li>Mobile Phone Intervention Background</li>
+                    <li>Mobile Phone Intervention Optimization</li>
+                </ol>
+              </li>
+              <li>Propose System: Three Parts
+                <ol class="innerList">
+                    <li>Part 1: Bluetooth Contact Tracing
+                      <ol class="nestedInnerList">
+                        <li>Contact Tracing Background</li>
+                        <li>Bluetooth Contact Tracing Model Description</li>
+                        <li>Bluetooth Privacy Model and Database</li>
+                        <li>Bluetooth Contact Tracing Implementation</li>
+                      </ol>
+                    </li>
+                    <li>Part 2: GPS Heatmap
+                       <ol class="nestedInnerList">
+                        <li>GPS Heatmap Model Description</li>
+                        <li>GPS Heatmap Implementation</li>
+                        <li>GPS Heatmap Epidemiology Model</li>
+                        <li>GPS Privacy Model and Database</li>
+                      </ol>
+                    </li>
+                    <li>Part 3: Recommendations
+                      <ol class="nestedInnerList">
+                        <li>Scope and Design</li>
+                      </ol>
+                    </li>
+                </ol>
+              </li>
+              <li>Why You Should Care
+               <ol class="innerList">
+                    <li>Value-add for Health Authorities</li>
+                    <li>Value-add for Users</li>
+                    <li>Quantitative Analysis of Impact</li>
+                </ol>
+              </li>
+              <li> <a href="#conclusion">Conclusion</a>
+              <ol class="innerList">
+                  <li>Timeline</li>
+                  <li>What You Can Do</li>
+                  <li><a href="#contributors">Authors, Advisors, and Acknowledgements</a></li>
+                </ol>
+              </li>
             </ol>
           </div>
         </div>
         <!-- <div class="byline-grid gridContainer">
           <div class="authors-affiliations grid"> -->
 
-        <v-container>
-          <v-row justify="center" align="center">
-            <v-col cols="10" sm="9">
-              <v-row>
-                <v-col cols="6" sm="3">
-                  <h4>Authors</h4>
-                  <div class="author">
-                    <a class="name" href="#">John Smith</a>
-                  </div>
-                  <p class="author">
-                    <a class="name" href="#">Jane Doe</a>
-                  </p>
-                </v-col>
-                <v-col cols="6" sm="3">
-                  <h4>Affiliations</h4>
-                  <div class="affiliation">
-                    <a class="affiliation" href="#">Stanford</a>
-                  </div>
-                  <div class="affiliation">
-                    <a class="affiliation" href="#">Univ of Waterloo</a>
-                  </div>
-                </v-col>
-                <v-col cols="6" sm="3">
-                  <h4>Published</h4>
-                  <div class="published">
-                    <div>March 17, 2020</div>
-                  </div>
-                </v-col>
-                <v-col cols="6" sm="3">
-                  <h4>DOI</h4>
-                  <div>
-                    <a href="#"> 12345</a>
-                  </div>
-                </v-col>
-              </v-row>
-            </v-col>
-          </v-row>
-
-        </v-container>
+        
 
         <!-- <p>&nbsp;</p>
         <div id="intro">
@@ -360,6 +359,345 @@
         <p><span>What we are developing is a high-quality filter to be used for the pandemic optimization problem. Combined with a comprehensive testing program, our filter may be powerful enough to protect our communities from COVID-19.</span></p>
       </v-col>
     </v-row>
+
+    <p>&nbsp;</p>
+    <a class="link" href="#">Back to Top</a>
+    <p>&nbsp;</p>
+
+    <h2 id="contributors" class="titleLine">Contributors, Advisors, and Acknowledgements</h2>
+    <div class="subTitleLine">Contributors:</div>
+    <v-container class="contributors">
+          <v-row justify="center" align="center">
+            <v-col cols="10" sm="9">
+              <v-row>
+                <v-col cols="6" sm="3">
+                  <h4>Name</h4>
+                  <div class="author">
+                    <a class="name">Isaiah Becker-Mayer</a>
+                  </div>
+                  <div class="author">
+                    <a class="name">Hana Gabrielle Bidon</a>
+                  </div>
+                  <div class="author">
+                    <a class="name">Daniel Blank</a>
+                  </div>
+                  <div class="author">
+                    <a class="name">Jesse Colligan</a>
+                  </div>
+                  <div class="author">
+                    <a class="name">Rhys Fenwick</a>
+                  </div>
+                  <div class="author">
+                    <a class="name">Mike Hittle</a>
+                  </div>
+                  <div class="author">
+                    <a class="name">Victoria Nguyen</a>
+                  </div>
+                  <div class="author">
+                    <a class="name">James Petrie</a>
+                  </div>
+                  <div class="author">
+                    <a class="name">Jeff Schwaber</a>
+                  </div>
+                  <div class="author">
+                    <a class="name">Zsombor Szabo</a>
+                  </div>
+                  <div class="author">
+                    <a class="name">Akhil Veeraghanta</a>
+                  </div>
+                  <div class="author">
+                    <a class="name">Mikhail Voloshin</a>
+                  </div>
+                  <div class="author">
+                    <a class="name">Sydney Von Arx</a>
+                  </div>
+                  <div class="author">
+                    <a class="name">Tina White</a>
+                  </div>
+                </v-col>
+                <v-col cols="6" sm="3">
+                  <h4>Role</h4>
+                  <div class="role">
+                    <div>Software Engineer</div>
+                  </div>
+                  <div class="role">
+                    <div>?</div>
+                  </div>
+                  <div class="role">
+                    <div>Software Engineer - Heat Map</div>
+                  </div>
+                  <div class="role">
+                    <div>Software Engineer</div>
+                  </div>
+                  <div class="role">
+                    <div>Head of Communications</div>
+                  </div>
+                  <div class="role">
+                    <div>Heat Map Team Advisor</div>
+                  </div>
+                  <div class="role">
+                    <div>UI Designer</div>
+                  </div>
+                  <div class="role">
+                    <div>Head of Research</div>
+                  </div>
+                  <div class="role">
+                    <div>Software Engineer</div>
+                  </div>
+                  <div class="role">
+                    <div>Bluetooth Team Lead</div>
+                  </div>
+                  <div class="role">
+                    <div>Software Engineer - Bluetooth</div>
+                  </div>
+                  <div class="role">
+                    <div>Heatmap Team Lead</div>
+                  </div>
+                  <div class="role">
+                    <div>?</div>
+                  </div>
+                  <div class="role">
+                    <div>Executive Director</div>
+                  </div>
+                </v-col>
+                <v-col cols="6" sm="3">
+                  <h4>Affiliation</h4>
+                  <div class="affiliation">
+                    <a class="affiliation">?</a>
+                  </div>
+                  <div class="affiliation">
+                    <a class="affiliation">Cornell University</a>
+                  </div>
+                  <div class="affiliation">
+                    <a class="affiliation">?</a>
+                  </div>
+                  <div class="affiliation">
+                    <a class="affiliation">?</a>
+                  </div>
+                  <div class="affiliation">
+                    <a class="affiliation">?</a>
+                  </div>
+                  <div class="affiliation">
+                    <a class="affiliation">?</a>
+                  </div>
+                  <div class="affiliation">
+                    <a class="affiliation">42 Silicon Valley</a>
+                  </div>
+                  <div class="affiliation">
+                    <a class="affiliation">University of Waterloo</a>
+                  </div>
+                  <div class="affiliation">
+                    <a class="affiliation">?</a>
+                  </div>
+                  <div class="affiliation">
+                    <a class="affiliation">?</a>
+                  </div>
+                  <div class="affiliation">
+                    <a class="affiliation">?</a>
+                  </div>
+                  <div class="affiliation">
+                    <a class="affiliation">?</a>
+                  </div>
+                  <div class="affiliation">
+                    <a class="affiliation">Stanford University</a>
+                  </div>
+                  <div class="affiliation">
+                    <a class="affiliation">Stanford University</a>
+                  </div>
+                </v-col>
+                
+                <v-col cols="6" sm="3">
+                  <h4>Location</h4>
+                  <div>
+                    <a>California, USA</a>
+                  </div>
+                  <div>
+                    <a>USA</a>
+                  </div>
+                  <div>
+                    <a>Berkeley, USA</a>
+                  </div>
+                  <div>
+                    <a>New York, USA</a>
+                  </div>
+                  <div>
+                    <a>Australia</a>
+                  </div>
+                  <div>
+                    <a>?</a>
+                  </div>
+                  <div>
+                    <a>USA</a>
+                  </div>
+                  <div>
+                    <a>Canada</a>
+                  </div>
+                  <div>
+                    <a>?</a>
+                  </div>
+                  <div>
+                    <a>?</a>
+                  </div>
+                  <div>
+                    <a>?</a>
+                  </div>
+                  <div>
+                    <a>USA</a>
+                  </div>
+                  <div>
+                    <a>USA</a>
+                  </div>
+                  <div>
+                    <a href="">United States</a>
+                  </div>
+                </v-col>
+              </v-row>
+            </v-col>
+          </v-row>
+        </v-container>
+        
+        <div class="subTitleLine">Public Health and Epidemiology Advisors:</div>
+        <v-container class="healthAdvisors">
+          <v-row justify="center" align="center">
+            <v-col cols="10" sm="9">
+              <v-row>
+                <v-col cols="6" sm="3">
+                  <h4>Name</h4>
+                  <div class="author">
+                    <a class="name">Megan Coffee</a>
+                  </div>
+                  <div class="author">
+                    <a class="name">Jolene Elizabeth</a>
+                  </div>
+                  <div class="author">
+                    <a class="name">Celine Gounder</a>
+                  </div>
+                    <br><br>
+                  <div class="author">
+                    <a class="name">Julie Parsonnet</a>
+                  </div>
+                </v-col>
+                <v-col cols="6" sm="3">
+                  <h4>Title</h4>
+                  <div class="role">
+                    <div>MD, PhD, Infectious Diseases</div>
+                  </div>
+                  <div class="role">
+                    <div>Public Health Research</div>
+                  </div>
+                  <div class="role">
+                    <div>MD, ScM, FIDSA, Internist, Infectious Diseases Specialist, Epidemiologist</div>
+                  </div>
+                  <div class="role">
+                    <div>MD, PhD, Infectious Diseases Specialist and Epidemiologist</div>
+                  </div>
+                </v-col>
+                <v-col cols="6" sm="3">
+                  <h4>Affiliation</h4>
+                  <div class="affiliation">
+                    <a class="affiliation">NYU and Columbia University</a>
+                  </div>
+                  <div class="affiliation">
+                    <a class="affiliation">?</a>
+                  </div>
+                  <div class="affiliation">
+                    <a class="affiliation">?</a>
+                  </div>
+
+                  <br><br>
+                  <div class="affiliation">
+                    <a class="affiliation">Stanford University</a>
+                  </div>
+                </v-col>
+                
+                <v-col cols="6" sm="3">
+                  <h4>Location</h4>
+                  <div>
+                    <a>New York, USA</a>
+                  </div>
+                  <div>
+                    <a>California, USA</a>
+                  </div>
+                  <div>
+                    <a>New York, USA</a>
+                  </div>
+                    <br><br>
+                  <div>
+                    <a>California, USA</a>
+                  </div>
+                </v-col>
+              </v-row>
+            </v-col>
+          </v-row>
+        </v-container>
+
+        <div class="subTitleLine">Privacy and Security Advisors:</div>
+        <v-container class="privacyAdvisors">
+          <v-row justify="center" align="center">
+            <v-col cols="10" sm="9">
+              <v-row>
+                <v-col cols="6" sm="3">
+                  <h4>Name</h4>
+                  <div class="author">
+                    <a class="name">Tessa Alexanian</a>
+                  </div>
+                  <div class="author">
+                    <a class="name">Peter Eckersley</a>
+                  </div>
+                  <div class="author">
+                    <a class="name">Jeffrey Ladish</a>
+                  </div>
+                 
+                </v-col>
+                <v-col cols="6" sm="3">
+                  <h4>Title</h4>
+                  <div class="role">
+                    <div>Privacy and Security, iGEM</div>
+                  </div>
+                  <div class="role">
+                    <div>Privacy and Security, Distinguished Technology Fellow</div>
+                  </div>
+                  <div class="role">
+                    <div>Privacy and Security, Security Consultant</div>
+                  </div>
+                 
+                </v-col>
+                <v-col cols="6" sm="3">
+                  <h4>Affiliation</h4>
+                  <div class="affiliation">
+                    <a class="affiliation">East Bay Biosecurity Group</a>
+                  </div>
+                  <div class="affiliation">
+                    <a class="affiliation">stop-covid.tech, EFF</a>
+                  </div>
+                  <div class="affiliation">
+                    <a class="affiliation">Gordian Research</a>
+                  </div>
+                 
+                </v-col>
+                
+                <v-col cols="6" sm="3">
+                  <h4>Location</h4>
+                  <div>
+                    <a>Berkeley, USA</a>
+                  </div>
+                  <div>
+                    <a>?</a>
+                  </div>
+                  <div>
+                    <a>Berkeley, USA</a>
+                  </div>
+                </v-col>
+              </v-row>
+            </v-col>
+          </v-row>
+        </v-container>
+
+        <div class="subTitleLine">Acknowledgements:</div>
+        <p>We would like to thank all of the helpers who have volunteered their time to the Covid Watch project. Look for the helpers.</p>
+
+        <p>&nbsp;</p>
+        <a class="link" href="#">Back to Top</a>
   </v-container>
 </template>
 

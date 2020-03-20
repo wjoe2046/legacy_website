@@ -11,7 +11,7 @@
             /></a>
 
             <div class="rightNav">
-              <v-btn color="#BF3F4A" class="white--text">
+              <v-btn color="#BF3F4A" class="white--text" onClick={alertFunc()}>
                 Get App
               </v-btn>
 

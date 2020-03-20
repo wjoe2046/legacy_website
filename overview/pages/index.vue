@@ -26,32 +26,34 @@
 
          </div>
 
+          <!-- possible subtitle:
           <p>&nbsp;</p>
         <div id="intro">
           <p><span style="font-size: 19px;">From a technical standpoint, pandemic mitigation is an optimization problem. We are a team of volunteer academics, epidemiologists, and technologists from around the world. Our goal is to simultaneously minimize the adverse health outcomes and economic impact of diseases like Covid19.</span>     </p>
         </div>
+        -->
 
-        <div id="keyPoints">
-          <div class="keyPointsContainer">
+        <div id="tableOfContents">
+          <div class="tableOfContentsContainer">
             <h2 class="titleLine">Table of Contents</h2>
             <br />
             <ol class="outerList">
-              <li> Table of Contents
+              <li> <strong><a href="#aboutUs">About Us</a></strong>
                 <ol class="innerList">
-                    <li>Mission Statement</li>
-                    <li>Privacy Focus</li>
-                    <li>Mobile Phone Intervention Background</li>
-                    <li>Mobile Phone Intervention Optimization</li>
+                    <li><a href="#mission">Mission Statement</a></li>
+                    <li><a href="#privacy">Privacy Focus</a></li>
+                    <li><a href="#interventionBackground">Mobile Phone Intervention Background</a></li>
+                    <li><a href="#interventionOptimization">Mobile Phone Intervention Optimization</a></li>
                 </ol>
               </li>
-              <li>Propose System: Three Parts
+              <li><strong><a href="#proposedSystem">Propose System: Three Parts</a></strong>
                 <ol class="innerList">
-                    <li>Part 1: Bluetooth Contact Tracing
+                    <li><a href="#contactTracing">Part 1: Bluetooth Contact Tracing</a>
                       <ol class="nestedInnerList">
-                        <li>Contact Tracing Background</li>
-                        <li>Bluetooth Contact Tracing Model Description</li>
-                        <li>Bluetooth Privacy Model and Database</li>
-                        <li>Bluetooth Contact Tracing Implementation</li>
+                        <li><a href="#contactTracingBackground">Contact Tracing Background</a></li>
+                        <li><a href="#blueToothModel">Bluetooth Contact Tracing Model Description</a></li>
+                        <li><a href="#blueToothPrivacy">Bluetooth Privacy Model and Database</a></li>
+                        <li><a href="#bluetoothDatabase">Bluetooth Contact Tracing Implementation</a></li>
                       </ol>
                     </li>
                     <li>Part 2: GPS Heatmap
@@ -69,14 +71,14 @@
                     </li>
                 </ol>
               </li>
-              <li>Why You Should Care
+              <li><strong>Why You Should Care</strong>
                <ol class="innerList">
                     <li>Value-add for Health Authorities</li>
                     <li>Value-add for Users</li>
                     <li>Quantitative Analysis of Impact</li>
                 </ol>
               </li>
-              <li> <a href="#conclusion">Conclusion</a>
+              <li> <strong><a href="#conclusion">Conclusion</a></strong>
               <ol class="innerList">
                   <li>Timeline</li>
                   <li>What You Can Do</li>
@@ -86,20 +88,208 @@
             </ol>
           </div>
         </div>
-        <!-- <div class="byline-grid gridContainer">
-          <div class="authors-affiliations grid"> -->
-
-        
-
-        <!-- <p>&nbsp;</p>
-        <div id="intro">
-          <p><span style="font-weight:bold; font-size: 18px;">From a technical standpoint, pandemic mitigation is an optimization problem.</span> The goal is to simultaneously minimize adverse health outcomes and economic impact. Non-pharmaceutical approaches to infectious disease control have the following components:</p>
-        </div> -->
 
        <p>&nbsp;</p>
-       <h2 id="keyParameters"><span class="titleLine">Introduction</span></h2>
 
-        <p><span class="subTitleLine"> Current Approaches </span></p>
+       <!--About Us-->
+       <h2 id="aboutUs"><span class="titleLine">About Us</span></h2>
+              <p>&nbsp;</p>
+
+
+        <p><span id="mission" class="subTitleLine"> Mission Statement </span></p>
+        
+        <p>We are a group of global volunteers — researchers, software engineers, public health and privacy experts — who have developed a privacy-preserving mobile app intervention to reduce the spread of COVID-19. The app performs automated decentralized contact tracing from crowdsourced data. All code is <a href="https://github.com/covid19risk">open source</a> and could be easily reproduced and used anywhere on the planet. </p>
+        <p>We're building this app to provide components and tools that public health agencies can utilize. We believe scalable measures like an app are especially helpful in countries or communities where contact tracing resources are too limited to match the scope of the eventual pandemic.</p>
+        <p>Our software performs automatic decentralized contact tracing using bluetooth proximity networks. All data we collect is voluntary and fully anonymized. Our mobile app performs this service for anyone with a bluetooth-capable smartphone, alerting them to their risk of having been in contact with a confirmed case of COVID-19, which they may not otherwise know about.</p>
+
+        <p><span id="privacy" class="subTitleLine"> Privacy Focus </span></p>
+        <p>Mobile apps without a privacy focus appear to have been an effective intervention in reducing the spread of COVID-19. However, invasive interventions carry a significant human rights cost, and we believe they are ultimately less effective because individuals may fear the consequences of sharing data. </p>
+        <p>In contrast, our mobile app research has focused on developing a strong privacy model while still providing effective intervention. Privacy is important both to prevent COVID-19 patients from being ostracized or targeted on account of inadvertent potential exposures; and because mobile apps with poor privacy models may undermine public confidence in responses or cause individuals to fear sharing of data. </p>
+        <p>Via the app, users can alert recent contacts without anyone being able to trace the information back to them. We believe this intervention has the potential to save lives.  </p>
+
+        <p><span id="interventionBackground" class="subTitleLine"> Mobile Phone Intervention Background </span></p>
+        <p><a href="https://www.nytimes.com/2020/03/04/health/coronavirus-china-aylward.html">China</a> was the first to create a mobile app intervention. Their intervention appears to be successful, but it was achieved by authoritarian and invasive measures. </p>
+        <p><a href="https://www.sciencemag.org/news/2020/03/coronavirus-cases-have-dropped-sharply-south-korea-whats-secret-its-success">South Korea</a> is a better example of successful intervention. South Korea’s success has been attributed mostly to (1) widespread testing (2) contact tracing and (3) case isolation. However, their mobile alert solutions did not anonymize patient data well. South Korea sent text alerts with the location history of patients, which in many other countries would be considered invasive and identifying. They gathered the location data from interviews, mobile phone GPS history, surveillance cameras, and credit card records. </p>
+        <p style="font-size:30px;color:red;">possible image</p>  
+        <p>We’ve built a privacy-preserving version of these successful interventions that we believe would have a regulatorily and politically viable adoption process within the United States and other Western countries. We believe the designed system complies with the United States’s existing regulations around medical information and does not reveal identifying patient information. </p>
+
+        <p><span id="interventionOptimization" class="subTitleLine"> Making Interventions More Efficient </span></p>
+        <p>Non-pharmaceutical pandemic interventions fundamentally make a trade-off between two important social goods: (1) loss of life from the pandemic and (2) economic impact, which influences health and well-being outcomes indirectly. Mobile app interventions are a powerful public health tool because they can improve this trade-off.</p>
+        <p>In general, non-pharmaceutical approaches to infectious disease control have the following components:</p>
+         <ul>
+          <li>Filtering (picking a subset of the population)</li>
+          <li>Intervention (modifying the behaviour of these people)</li>
+        </ul>
+         <p></p>
+        <p>For example, quarantining patients with a positive diagnosis applies a filter based on testing and then applies the quarantine intervention. Other examples include travel restrictions for at-risk areas, cancelling public events in a specific city, or encouraging more handwashing in an entire country. Some of these interventions, especially self-isolation, are highly effective at preventing the transmission of infectious diseases like COVID-19. The downside is that they can also be costly to use.</p>   
+        <p>The quality of filtering plays a crucial role in determining the trade-off between loss of life and economic impact. If filtering is poor, a correspondingly larger economic impact will be needed to achieve the same loss of life reduction. Without good filtering, broad quarantines and social distancing are needed, incurring a huge cost in the form of negative impact on people’s lives.</p>   
+        <p>Unfortunately, traditional approaches to filtering, such as contact tracing, are labor intensive and don’t scale well. So we expect filtering (and, correspondingly, the trade-off between loss of life and economic impact) to degrade in quality as a pandemic grows. But automated contact tracing solutions have the potential to be more scalable -- and potentially even more accurate, with access to higher quality information than traditional contact tracing. This may allow for a better trade-off to be maintained in the midst of a pandemic.</p>   
+        <p>The quality of filtering plays a crucial role in determining the trade-off between loss of life and economic impact. If filtering is poor, a correspondingly larger economic impact will be needed to achieve the same loss of life reduction. Without good filtering, broad quarantines and social distancing are needed, incurring a huge cost in the form of negative impact on people’s lives.</p>   
+        <p>In the short term, we expect our intervention to slow the spread of COVID-19. </p>   
+        <p>However, many countries are already finding it necessary to take aggressive action in the form of broad social distancing and shelter-in-place measures, which are not a sustainable long-term intervention. When they are lifted, the proposed intervention is also expected to have an alleviating effect in influencing medium and long term outcomes.  </p>   
+        <p>Using numerical models, we demonstrate how in some parameter regimes this system could also be used to prevent COVID-19 from becoming endemic.   </p>   
+
+
+
+        <!--Proposed System: Threee Parts-->
+        <h2 id="proposedSystem"><span class="titleLine">Proposed System: Three Parts</span></h2>
+        <p>The system proposed here is intended to be used as part of a broader campaign to combat COVID-19. These methods focus on gathering and disseminating the information needed to perform targeted interventions. </p>
+        <p>There are three components to this system that work almost independently, but can be bundled into a single mobile app. Depending on privacy requirements and the needs of specific public health authorities a subset of these capabilities could be utilized. The three components each target a different parameter to influence disease dynamics: </p>
+         <ul style="list-style:decimal">
+          <li>Automated contact tracing at scale using anonymized bluetooth proximity sensing </li>
+          <li>Intervention (modifying the behaviour of these people)</li>
+          <li>Recommendations from local health authorities and risk-aware suggestions about when to get tested</li>
+        </ul>
+
+
+          <p>&nbsp;</p>
+        <p><span id="contactTracing" class="subTitleLine"> Part 1: Bluetooth Contact Tracing</span></p>
+        <p><span id="contactTracingBackground" class="subTitleLine"> Contact Tracing Background</span></p>
+        <p>Currently non-pharmaceutical methods focused on social distancing have been shown to reduce the spread of COVID-19. These methods are based on reducing contact between infected and susceptible people, even when it isn’t known who is infected. </p>
+        <p>In the simplest form, this is being achieved by reducing all social events and increasing precautions like handwashing. This is an effective measure because the number of new infections is roughly proportional to the number of contact events with infectious people, scaled by a factor relating to the degree of caution. </p>
+        <p>A more targeted approach employed by many health agencies is contact tracing []. This system works by finding and monitoring contacts of patients that have been diagnosed. Individuals that are thought to be infected are then put into isolation to prevent further transmission, and individuals who have previously been in contact with infected individuals are quarantined. </p>
+
+         <div class="centerImage" style="display:flex;flex-direction:column;align-items:center;">
+          <img src="../assets/images/003.png" alt="">
+            <p style="color:gray;">image description? </p>
+        </div>
+
+        <p><a href="https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(20)30074-7/fulltext">Hellewell et al</a> analyzed the effectiveness of contact tracing as a method to contain COVID-19 at the beginning of an outbreak. <strong>Their findings are promising: with 80% contact tracing accuracy and a mean detection time of 3.8 days after symptom onset, containment is likely.</strong></p>
+          <p>In the context of contact tracing there are three parameters that can strongly impact results:</p>
+         <ul style="list-style:decimal">
+          <li>Reduction in overall transmission through social distancing </li>
+          <li>Testing rate and time to diagnosis</li>
+          <li>Contact tracing accuracy</li>
+        </ul>
+          <p>The first reduces how quickly the disease spreads overall, the second is used to isolate patients before they infect more people, and the third is used to isolate contacts of patients before they become infectious. </p>
+
+          
+        <p><span id="blueToothModel" class="subTitleLine"> Bluetooth Model Description</span></p>
+        <p>Mobile phones are carried by a majority of people in several countries [estimated <a href="https://www.statista.com/statistics/330695/number-of-smartphone-users-worldwide/">3.5 billion users worldwide</a>]. They are extremely common in Western society, with <a href="https://www.statista.com/statistics/201183/forecast-of-smartphone-penetration-in-the-us/">over 70%</a> of the entire US population estimated to own one. Bluetooth is a radio protocol that can be used to wirelessly communicate between nearby mobile devices and bluetooth signal strength can be used to estimate distance.</p>
+        <p>Mobile devices can be made to proactively record contact events with other nearby devices by sending bluetooth signals. By measuring the signal strength and discrete number of contact events, the duration and distance of contact between two phone users can be estimated. </p>
+        <p>By recording all contact events, a high accuracy list of at-risk individuals can be generated and sorted immediately to determine close contacts when a new person is diagnosed to provide instantaneous alerts. And the contact events can be deleted after a certain number of days.  </p>
+        <p>Bluetooth proximity may be the most accurate crowdsourcing method for approximating close contact. While GPS data is a more well-known general technology, there are clear advantages bluetooth has over GPS in terms of accuracy for contact tracing. With bluetooth, proximity can be approximated by signal strength that is reduced by obstructions like walls. Therefore, it more accurately reflects functional proximity in high-risk environments for close contact: inside buildings, in vehicles and airplanes, and in underground transit.</p>
+        <p>In addition, bluetooth communication occurs directly between mobile devices. This means a decentralized system can be built with strong privacy preservation. </p>
+        <p>We are pursuing research in developing inexpensive <a href="https://www.amazon.com/DSD-TECH-Bluetooth-CC2640R2F-Arduino/dp/B07MBLVHH8">external bluetooth devices</a> under the same automatic contact tracing alert system for use in countries with fewer smartphone users. These methods would face much steeper adoption challenges, but if mobile app users and external device users could be integrated under a single system, outcomes could be further improved over more regions. However, this technology is still under development. </p>
+
+        <p><span id="blueToothPrivacy" class="subTitleLine"> Bluetooth Privacy Model</span></p>
+        <p>The bluetooth contact tracing system can be structured in a decentralized and anonymous way using randomly generated and locally stored ‘Contact Event Numbers’. This allows the system to function fully without any private information being stored or transmitted. </p>
+        <p>By generating a new random number for each contact event, the system is able to operate without storing or transmitting any personal information. This method is designed so that only the phones involved in a contact event are able to identify messages on a public database. </p>
+
+        <v-container class="stepsVisual">
+          <v-row align="center">
+            <v-col cols="12" md="6">
+              <li>
+                <span>1</span>
+                <p>Every time two phones are close a contact event is detected.  </p>
+                <img src="../assets/images/004.png" alt="">
+              </li>
+            </v-col>
+            <v-col cols="12" md="6">
+              <li>
+                <span>2</span>
+                <p>Each phone broadcasts a randomly generated contact event number. The number is updated every few minutes. </p>
+                <img src="../assets/images/007.png" alt="">
+              </li>
+            </v-col>
+            <v-col cols="12" md="6">
+              <li>
+                <span>3</span>
+                <p>All phones keep a local log of every number they have transmitted or received.</p>
+                <img src="../assets/images/008.png" alt="">
+              </li>
+            </v-col>
+            <v-col cols="12" md="6">
+              <li>
+                <span>4</span>
+                <p>This person sends a packet to the public database with the permission number and their history of contact event numbers (both transmitted and received). </p>
+                <img src="../assets/images/009.png" alt="">
+              </li>
+            </v-col>
+            <v-col cols="12" md="6">
+              <li>
+                <span>5</span>
+                <p>This person sends a packet to the public database with the permission number and their history of contact event numbers.</p>
+                <img src="../assets/images/010.png" alt="">
+              </li>
+            </v-col>
+            <v-col cols="12" md="6">
+              <li>
+                <span>6</span>
+                <p>If the permission number is valid, the contact event numbers are stored in the database and transmitted to all other phones.</p>
+                <img src="../assets/images/011.png" alt="">
+              </li>
+            </v-col>
+            <v-col cols="12" md="6">
+              <li>
+                <span>7</span>
+                <p>Each phone compares the publicly posted contact event numbers against their own history. If there are any matches this means they were close to an infected individual and are given instructions on what to do next.</p>
+                <img src="../assets/images/012.png" alt="">
+              </li>
+            </v-col>
+          </v-row>
+        </v-container>
+
+       <p>The only authentication required is the permission number provided by a public health authority. This permission number is used so that malicious actors cannot send false alarms. After authentication the permission number is deleted from server memory.</p>
+       <p>The contact event numbers are random and only known by the message recipient and the message sender, so the database can be made public without risk of sensitive information being discovered. </p>
+       <p>While our current intervention is based on permission numbers, in regions where widespread testing is unavailable, a well-designed symptom sharing questionnaire may perform a similar function, with a higher number of false positives. Research in this direction is currently being done by the CoEpi team. </p>
+
+      <p><span id="bluetoothDatabase" class="subTitleLine"> Bluetooth Database</span></p>
+      <p>The specification for the database is very simple: it is shared across all installations of the app and stores anonymized Contact Event Numbers. If protections against hoaxes are required, permission numbers can be used, but are not an essential requirement of the system. If the database grows too large, it can also be fragmented based on general location. The code and a more in depth discussion of architecture are available on the open source github repo <a href="https://github.com/covid19risk/covidwatch-backend/blob/master/README.md">here</a>.</p>
+
+      <p><span class="subTitleLine"> Bluetooth Implementation</span></p>
+      <p>Bluetooth contact tracing is implemented via background processes on iOS and Android.</p>
+      <p>The approach currently being investigated utilizes BLE functionality for background advertisement and scanning. Due to different system requirements for Android and iOS, the protocol works differently depending on the operating systems of the devices involved. The key challenges are:</p>
+      <ul style="list-style:decimal">
+        <li>iOS devices acting as “peripherals” in the background can only be found by “centrals” that are scanning for their specific service UUID. These peripherals must establish a connection to transfer any data.</li>
+        <li>Android devices have several unfixed bugs where subsequent connections with many devices can cause the bluetooth system to lock up.</li>
+      </ul>
+      <p>The current solution is a hybrid model that is asymmetric for communication between iOS and Android. All devices will simultaneously act as peripherals and centrals, but only some devices will be able to detect others, and only some devices will need to establish a connection to exchange data. An extended description of the communication model and the code are available on github here <a href="https://github.com/covid19risk/covidwatch-ios">for iOS </a> and <a href="https://github.com/covid19risk/covidwatch-android">for Android</a>.</p>
+       <p>This model has been successfully implemented as a proof-of-concept, as shown below:</p>
+       <iframe width="1425" height="566" src="https://www.youtube.com/embed/4aQ90emoAqc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <p>&nbsp;</p>
+
+
+      <p><span id="heatmapDesc" class="subTitleLine">GPS Heatmap Model Description</span></p>
+      <p>GPS capability is ubiquitous among smartphone devices, and high-resolution spatiotemporal data is regularly used by mapping and social media apps. Given anonymised GPS data along with user infection status, we can approximately calculate where the fomite-based risk of infection is the highest; meaning, where there may be inanimate objects capable of transmitting infection. </p>
+       <p>Anonymized GPS data can inform an epidemiological model to show how the disease is likely to spread.</p>
+       <p>Based on this epidemiological model, we can generate a risk heatmap showing comparative fomite risk for different geographical areas. This heatmap enables our users to adjust their behaviours in response to their local environment. They could, for example, choose to take extra precautions when in high-risk areas, or avoid them altogether. This both decreases the risk of our users becoming infected, and decreases the risk that they will infect those around them.</p>
+       <p>This provides a supplementary service for our users to inform their social distancing measures.</p>
+
+      <p>&nbsp;</p>
+      <p><span id="heatmapImplementation" class="subTitleLine">Heatmap Implementation</span></p>
+      <Heatmap class="heatMap"></Heatmap>
+
+        <p>&nbsp;</p>
+
+      <p><span id="heatmapEpidemiology" class="subTitleLine">Heatmap Epidemiology Model</span></p>
+       <p>The source code at time of writing [19-MAR-2020] of the epidemiological model can be found and is available open source <a href="https://github.com/covid19risk/proof/tree/master/SimContagion/">here</a>. </p>
+       <p>To describe it simply, the heat map builds upon SEIR models and simulates users according to the following state machine:</p>
+
+      <p style="color:red;font-size:30px">need a better resolution image, enlarge font size inside each node also</p>
+      <img src="../assets/images/bad_resolution_epi_model.png" alt="">
+       
+
+
+
+
+       <p>&nbsp;</p>
+        <p>&nbsp;</p>
+         <p>&nbsp;</p>
+          <p>&nbsp;</p>
+       <p>&nbsp;</p>
+        <p>&nbsp;</p>
+         <p>&nbsp;</p>
+          <p>&nbsp;</p>
+       <p>&nbsp;</p>
+        <p>&nbsp;</p>
+         <p>&nbsp;</p>
+          <p>&nbsp;</p>
+       <p>&nbsp;</p>
+        <p>&nbsp;</p>
+         <p>&nbsp;</p>
+          <p>&nbsp;</p>
+
 
        
         <div id="intro">
@@ -472,7 +662,7 @@
                     <a class="affiliation">?</a>
                   </div>
                   <div class="affiliation">
-                    <a class="affiliation">?</a>
+                    <a class="affiliation">Georgetown University</a>
                   </div>
                   <div class="affiliation">
                     <a class="affiliation">?</a>
@@ -694,7 +884,10 @@
         </v-container>
 
         <div class="subTitleLine">Acknowledgements:</div>
-        <p>We would like to thank all of the helpers who have volunteered their time to the Covid Watch project. Look for the helpers.</p>
+        <p>Chris Olah and Joshua Zader for editing feedback.</p>
+        <p>Drew, Allen, Manisha, Ian, Manisha</p>
+        <p>Scott and Dana and the CoEpi team</p>
+        <p>We would also like to thank all the volunteers and helpers and anyone else we might have missed here who showed up and contributed a part of their time to the COVID Watch Volunteer Force. Look for the helpers.</p>
 
         <p>&nbsp;</p>
         <a class="link" href="#">Back to Top</a>
@@ -765,7 +958,7 @@ img {
 }
 
 
-#keyPoints {
+#tableOfContents {
   display: flex;
   justify-content: center;
   width: 100%;
@@ -773,11 +966,20 @@ img {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   padding-bottom: 40px;
 
-  .keyPointsContainer {
+  .tableOfContentsContainer {
     border: gray 1px solid;
     width: 70%;
     padding: 10px;
     border-radius: 4px;
+
+     .innerList {
+        list-style: none;
+      }
+
+      .nestedInnerList {
+        list-style: none;
+      }
+
   }
 }
 
@@ -868,12 +1070,14 @@ img {
       font-weight: bold;
       font-size: 40px;
       margin-right: 20px;
+      // color of large number:
+      // color: #779F98;
     }
 
     p {
       // width: 300px;
       width: 40%;
-      font-size: 18px;
+      font-size: 17px;
     }
 
     img {
@@ -914,6 +1118,8 @@ img {
   // padding-left: 60px;
   // padding-bottom: 100px;
 }
+
+
 
 
 </style>

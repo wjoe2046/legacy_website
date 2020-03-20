@@ -56,27 +56,27 @@
                         <li><a href="#bluetoothDatabase">Bluetooth Contact Tracing Implementation</a></li>
                       </ol>
                     </li>
-                    <li><a href="heatmapTitle">Part 2: GPS Heatmap</a>
+                    <li><a href="#heatmapTitle">Part 2: GPS Heatmap</a>
                        <ol class="nestedInnerList">
-                        <li><a href="heatmapDesc">GPS Heatmap Model Description</a></li>
-                        <li><a href="heatmapImplementation">GPS Heatmap Implementation</a></li>
-                        <li><a href="heatmapEpidemiology">GPS Heatmap Epidemiology Model</a></li>
-                        <li><a href="databasePrivacy">GPS Privacy Model and Database</a></li>
+                        <li><a href="#heatmapDesc">GPS Heatmap Model Description</a></li>
+                        <li><a href="#heatmapImplementation">GPS Heatmap Implementation</a></li>
+                        <li><a href="#heatmapEpidemiology">GPS Heatmap Epidemiology Model</a></li>
+                        <li><a href="#databasePrivacy">GPS Privacy Model and Database</a></li>
                       </ol>
                     </li>
-                    <li><a href="userRecommendations">Part 3: Recommendations</a>
+                    <li><a href="#userRecommendations">Part 3: Recommendations</a>
                       <ol class="nestedInnerList">
-                        <li><a href="scopeDesign">Scope and Design</a></li>
-                        <li><a href="timeline">Timeline to Deployment</a></li>
+                        <li><a href="#scopeDesign">Scope and Design</a></li>
+                        <li><a href="#timeline">Timeline to Deployment</a></li>
                       </ol>
                     </li>
                 </ol>
               </li>
               <li><strong><a href="#care">Why You Should Care</a></strong>
                <ol class="innerList">
-                    <li><a href="healthAuthorities">Health Authorities</a></li>
-                    <li><a href="users">Individuals (Users)</a></li>
-                    <li><a href="impact">Quantitative Analysis of Impact</a></li>
+                    <li><a href="#healthAuthorities">Health Authorities</a></li>
+                    <li><a href="#users">Individuals (Users)</a></li>
+                    <li><a href="#impact">Quantitative Analysis of Impact</a></li>
                 </ol>
               </li>
               <li> <strong><a href="#conclusion">Conclusion</a></strong>
@@ -148,7 +148,7 @@
         <p><span id="contactTracingBackground" class="subTitleLine"> Contact Tracing Background</span></p>
         <p>Currently non-pharmaceutical methods focused on social distancing have been shown to reduce the spread of COVID-19. These methods are based on reducing contact between infected and susceptible people, even when it isn’t known who is infected. </p>
         <p>In the simplest form, this is being achieved by reducing all social events and increasing precautions like handwashing. This is an effective measure because the number of new infections is roughly proportional to the number of contact events with infectious people, scaled by a factor relating to the degree of caution. </p>
-        <p>A more targeted approach employed by many health agencies is contact tracing []. This system works by finding and monitoring contacts of patients that have been diagnosed. Individuals that are thought to be infected are then put into isolation to prevent further transmission, and individuals who have previously been in contact with infected individuals are quarantined. </p>
+        <p>A more targeted approach employed by many health agencies is contact tracing. This system works by finding and monitoring contacts of patients that have been diagnosed. Individuals that are thought to be infected are then put into isolation to prevent further transmission, and individuals who have previously been in contact with infected individuals are quarantined. </p>
 
          <div class="centerImage" style="display:flex;flex-direction:column;align-items:center;">
           <img src="../assets/images/003.png" alt="">

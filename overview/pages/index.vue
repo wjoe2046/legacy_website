@@ -3,7 +3,7 @@
     This is usually a v-container. -->
   <v-container class="overviewContainer">
     <v-row justify="center">
-      <v-col cols="12" lg="9">
+      <v-col cols="12" lg="10">
         <!-- Typically a v-container has a bunch of v-row elements under it.
         Each v-row usually has v-col elements, which are organized into a
         responsive 12-column grid.
@@ -20,7 +20,7 @@
           </div>
 
           <div class="mainSubTitle">
-            <p>Slowing the spread of infectious disease with crowdsourcing</p>
+            <p>Join the Watch. Help stop COVID-19 with crowdsourced data.</p>
           </div>
         </div>
 
@@ -730,14 +730,16 @@
           This model has been successfully implemented as a proof-of-concept, as
           shown below:
         </p>
-        <iframe
-          width="100%"
-          height="500px"
-          src="https://www.youtube.com/embed/4aQ90emoAqc"
-          frameborder="0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
+        <div style="text-align: center">
+          <iframe
+            width="70%"
+            height="350px"
+            src="https://www.youtube.com/embed/4aQ90emoAqc"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
         <p>&nbsp;</p>
 
         <!-- Heatmap -->
@@ -1754,7 +1756,7 @@ img {
 
 .mainSubTitle {
   display: flex;
-  // justify-content: center;
+  justify-content: center;
   color: #779f98;
   font-size: 24px;
   padding-bottom: 15px;

@@ -28,7 +28,7 @@
                     <a target="_blank" class="link" href="https://www.covid19risk.com/heatmap/" style="color:#BF3F4A;">Heatmap Demo</a>
                   </v-list-item>
                   <v-list-item>
-                    <a target="_blank" class="link" href="https://www.covid19risk.com/collaborate.html" style="color:#BF3F4A;">Get Involved</a>                </v-list-item>
+                    <a target="_blank" class="link" href="https://www.covid19risk.com/collaborate.html" style="color:#BF3F4A;">Get Involved</a></v-list-item>
                   <v-list-item>
                     <a target="_blank" class="link" href="https://www.covid19risk.com/collaborate.html" style="color:#BF3F4A;">Donate</a>
                   </v-list-item>
@@ -63,7 +63,7 @@
             target="_blank"
             class="text-no-wrap"
             href="https://www.covid19risk.com/heatmap/"
-            >Heatmap</a
+            >Heatmap Demo</a
           >
           <a
             target="_blank"
@@ -97,16 +97,6 @@
 
 <script>
 export default {
-  data() {
-    return {
-      drawer: false,
-      items: [
-        { title: "Click Me" },
-        { title: "Click Me" },
-        { title: "Click Me" },
-        { title: "Click Me 2" }
-      ]
-    };
-  }
-};
+
+}
 </script>

@@ -6,8 +6,8 @@ export default {
    ** Headers of the page
    */
   head: {
-    titleTemplate: "%s - COVID-19 Risk Project",
-    title: "COVID-19 Risk Project",
+    titleTemplate: "%s - COVID Watch",
+    title: "COVID Watch",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },

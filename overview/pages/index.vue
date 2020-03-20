@@ -361,7 +361,7 @@
         <v-col cols="12" md="6" class="centerImage" style="justify-content:space-evenly;">
           <img style="border:1px solid gray;" src="../assets/images/mobile/mobile_cdc.png" alt="">
           <img style="border:1px solid gray;" src="../assets/images/mobile/mobile_symptoms.png" alt="">
-          <img style="border:1px solid gray;" src="../assets/images/mobile_symptoms_survey.png" alt="">
+          <img style="border:1px solid gray;" src="../assets/images/mobile/mobile_symptoms_survey.png" alt="">
         </v-col>
       </v-container>
        <p>&nbsp;</p>
@@ -409,7 +409,7 @@
       <p>This model was used to estimate the average number of infections caused in 6 weeks due to a single imported case. Results show a significant reduction in risk for clusters of app users that are partially distanced from non app users. This is important because it provides an additional incentive for individuals to use the app even when the overall adoption rate is low. As the proportion of the population using the app increases the risk for the entire population is reduced and most outbreaks are contained. </p>
         <div class="centerImage" style="display:flex;flex-direction:column;align-items:center;">
           <img src="../assets/images/totalInfected.png" alt="">
-          <img src="../assets/images/appInfected.png.png" alt="">
+          <img src="../assets/images/appInfected.png" alt="">
           <p style="color:gray;">Expected infections for total population (top) and app population (bottom) adjusted for relative population size.</p>
         </div>
        <p> <strong>So for the question: “Can an effective contact tracing program reduce local transmission so that sustained local spread does not occur?” </strong></p>

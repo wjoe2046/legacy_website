@@ -971,36 +971,32 @@
           User Interface Design: COVID Watch Transmission Map and Phone Log
         </h3>
 
-        <!-- my quick attempt at making the mobile app images shrink to be responsive, may need adjustment - Jesse -->
         <v-container>
-          <v-col
-            cols="12"
-            md="6"
-            class="centerImage"
-            style="justify-content:space-evenly;"
-          >
-            <img
-              style="border:1px solid gray;"
-              src="../assets/images/mobile/mobile_get_started.png"
-              alt=""
-            />
-            <img
-              style="border:1px solid gray;"
-              src="../assets/images/mobile/mobile_heat_map.png"
-              alt=""
-            />
-            <img
-              style="border:1px solid gray;"
-              src="../assets/images/mobile/mobile_transmission_log.png"
-              alt=""
-            />
-          </v-col>
+          <v-row>
+            <v-col cols="12" md="4" style="justify-content:space-evenly;">
+              <img
+                style="border:1px solid gray;"
+                src="../assets/images/mobile/mobile_get_started.png"
+                alt=""
+              />
+            </v-col>
+            <v-col cols="12" md="4" style="justify-content:space-evenly;">
+              <img
+                style="border:1px solid gray;"
+                src="../assets/images/mobile/mobile_heat_map.png"
+                alt=""
+              />
+            </v-col>
+            <v-col cols="12" md="4" style="justify-content:space-evenly;">
+              <img
+                style="border:1px solid gray;"
+                src="../assets/images/mobile/mobile_transmission_log.png"
+                alt=""
+              />
+            </v-col>
+          </v-row>
         </v-container>
-        <p>&nbsp;</p>
-        <div
-          class="centerImage"
-          style="border:1px solid black;border-radius:4px;padding: 10px;"
-        >
+        <div style="border:1px solid black;border-radius:4px;padding: 10px;">
           <p>
             <strong>Figure 1: COVID-19 Transmission Map and Phone Log</strong>.
             The transmission map will utilize Bluetooth proximity network and a
@@ -1017,34 +1013,31 @@
         <p>&nbsp;</p>
         <h3>Design: CDC Information and Symptoms Survey</h3>
         <v-container>
-          <v-col
-            cols="12"
-            md="6"
-            class="centerImage"
-            style="justify-content:space-evenly;"
-          >
-            <img
-              style="border:1px solid gray;"
-              src="../assets/images/mobile/mobile_cdc.png"
-              alt=""
-            />
-            <img
-              style="border:1px solid gray;"
-              src="../assets/images/mobile/mobile_symptoms.png"
-              alt=""
-            />
-            <img
-              style="border:1px solid gray;"
-              src="../assets/images/mobile/mobile_symptoms_survey.png"
-              alt=""
-            />
-          </v-col>
+          <v-row>
+            <v-col cols="12" md="4" style="justify-content:space-evenly;">
+              <img
+                style="border:1px solid gray;"
+                src="../assets/images/mobile/mobile_cdc.png"
+                alt=""
+              />
+            </v-col>
+            <v-col cols="12" md="4" style="justify-content:space-evenly;">
+              <img
+                style="border:1px solid gray;"
+                src="../assets/images/mobile/mobile_symptoms.png"
+                alt=""
+              />
+            </v-col>
+            <v-col cols="12" md="4" style="justify-content:space-evenly;">
+              <img
+                style="border:1px solid gray;"
+                src="../assets/images/mobile/mobile_symptoms_survey.png"
+                alt=""
+              />
+            </v-col>
+          </v-row>
         </v-container>
-        <p>&nbsp;</p>
-        <div
-          class="centerImage"
-          style="border:1px solid black;border-radius:4px;padding: 10px;"
-        >
+        <div style="border:1px solid black;border-radius:4px;padding: 10px;">
           <p>
             <strong
               >Figure 2: COVID-19 CDC Information and Symptoms Survey</strong
@@ -1056,6 +1049,7 @@
             concerns.
           </p>
         </div>
+        <p>&nbsp;</p>
 
         <!-- Why You Should Care -->
         <h2 id="care"><span class="titleLine">Why You Should Care</span></h2>
@@ -1579,7 +1573,7 @@
     <div class="subTitleLine">Contributors:</div>
     <v-container class="contributors">
       <v-row justify="center" align="center">
-        <v-col cols="10" sm="9">
+        <v-col cols="12" md="10">
           <v-row>
             <v-col cols="6" sm="3">
               <h4>Name</h4>

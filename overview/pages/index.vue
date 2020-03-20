@@ -17,7 +17,7 @@
         <div class="TopSection">
 
           <div class="mainTitle">
-            <p> COVID Watch  </p>
+            <img src="../assets/images/logo/banner_1.png" alt="">
           </div>
 
           <div class="mainSubTitle">
@@ -182,7 +182,7 @@
         <p>In the simplest form, this is being achieved by reducing all social events and increasing precautions like handwashing. This is an effective measure because the number of new infections is roughly proportional to the number of contact events with infectious people.</p>
         <p>A more targeted approach employed by many health agencies is <a href="https://www.canada.ca/en/public-health/services/diseases/2019-novel-coronavirus-infection/health-professionals/interim-guidance-cases-contacts.html">contact tracing</a>. This system works by finding and monitoring contacts of patients that have been diagnosed. Individuals that are thought to be infected are then put into isolation to prevent further transmission, and individuals who have previously been in contact with infected individuals are quarantined.</p>
          <div class="centerImage" style="display:flex;flex-direction:column;align-items:center;">
-          <img src="../assets/images/003.png" alt="">
+          <img src="../assets/images/overview_article_imgs/003.png" alt="">
             <p style="color:gray;">Contact Network </p>
         </div>
 
@@ -212,49 +212,49 @@
               <li>
                 <span>1</span>
                 <p>Every time two phones are close a contact event is detected.  </p>
-                <img src="../assets/images/004.png" alt="">
+                <img src="../assets/images/overview_article_imgs/004.png" alt="">
               </li>
             </v-col>
             <v-col cols="12" md="6">
               <li>
                 <span>2</span>
                 <p>Each phone broadcasts a randomly generated contact event number. The number is updated every few minutes. </p>
-                <img src="../assets/images/007.png" alt="">
+                <img src="../assets/images/overview_article_imgs/007.png" alt="">
               </li>
             </v-col>
             <v-col cols="12" md="6">
               <li>
                 <span>3</span>
                 <p>All phones keep a local log of every number they have transmitted or received.</p>
-                <img src="../assets/images/008.png" alt="">
+                <img src="../assets/images/overview_article_imgs/008.png" alt="">
               </li>
             </v-col>
             <v-col cols="12" md="6">
               <li>
                 <span>4</span>
                 <p>This person sends a packet to the public database with the permission number and their history of contact event numbers (both transmitted and received). </p>
-                <img src="../assets/images/009.png" alt="">
+                <img src="../assets/images/overview_article_imgs/009.png" alt="">
               </li>
             </v-col>
             <v-col cols="12" md="6">
               <li>
                 <span>5</span>
                 <p>This person sends a packet to the public database with the permission number and their history of contact event numbers.</p>
-                <img src="../assets/images/010.png" alt="">
+                <img src="../assets/images/overview_article_imgs/010.png" alt="">
               </li>
             </v-col>
             <v-col cols="12" md="6">
               <li>
                 <span>6</span>
                 <p>If the permission number is valid, the contact event numbers are stored in the database and transmitted to all other phones.</p>
-                <img src="../assets/images/011.png" alt="">
+                <img src="../assets/images/overview_article_imgs/011.png" alt="">
               </li>
             </v-col>
             <v-col cols="12" md="6">
               <li>
                 <span>7</span>
                 <p>Each phone compares the publicly posted contact event numbers against their own history. If there are any matches this means they were close to an infected individual and are given instructions on what to do next.</p>
-                <img src="../assets/images/012.png" alt="">
+                <img src="../assets/images/overview_article_imgs/012.png" alt="">
               </li>
             </v-col>
           </v-row>
@@ -303,7 +303,7 @@
        <p>To describe it simply, the heat map builds upon SEIR models and simulates users according to the following state machine:</p>
 
       <p style="color:red;font-size:30px">need a better resolution image, enlarge font size inside each node also</p>
-      <img src="../assets/images/bad_resolution_epi_model.png" alt="">
+      <img src="../assets/images/overview_article_imgs/bad_resolution_epi_model.png" alt="">
       <p>&nbsp;</p>
 
       <p>The population of simulated users, and probability and timing of a simulated user moving from one state to the next, are generated from the data we have available: both on the background demographics of impacted areas and specific case data. </p>
@@ -345,9 +345,9 @@
       <!-- my quick attempt at making the mobile app images shrink to be responsive, may need adjustment - Jesse -->
       <v-container>
         <v-col cols="12" md="6" class="centerImage" style="justify-content:space-evenly;">
-          <img style="border:1px solid gray;" src="../assets/images/mobile_get_started.png" alt="">
-          <img style="border:1px solid gray;" src="../assets/images/mobile_heat_map.png" alt="">
-          <img style="border:1px solid gray;" src="../assets/images/mobile_transmission_log.PNG" alt="">
+          <img style="border:1px solid gray;" src="../assets/images/mobile/mobile_get_started.png" alt="">
+          <img style="border:1px solid gray;" src="../assets/images/mobile/mobile_heat_map.png" alt="">
+          <img style="border:1px solid gray;" src="../assets/images/mobile/mobile_transmission_log.PNG" alt="">
         </v-col>
       </v-container>
        <p>&nbsp;</p>
@@ -359,8 +359,8 @@
       <h3>Design: CDC Information and Symptoms Survey</h3>
        <v-container>
         <v-col cols="12" md="6" class="centerImage" style="justify-content:space-evenly;">
-          <img style="border:1px solid gray;" src="../assets/images/mobile_cdc.png" alt="">
-          <img style="border:1px solid gray;" src="../assets/images/mobile_symptoms.png" alt="">
+          <img style="border:1px solid gray;" src="../assets/images/mobile/mobile_cdc.png" alt="">
+          <img style="border:1px solid gray;" src="../assets/images/mobile/mobile_symptoms.png" alt="">
           <img style="border:1px solid gray;" src="../assets/images/mobile_symptoms_survey.png" alt="">
         </v-col>
       </v-container>
@@ -1073,7 +1073,7 @@ img {
   display: flex;
   justify-content: center;
   color: #779F98;
-  font-size: 27px;
+  font-size: 40px;
   padding-bottom: 15Px;
 }
 

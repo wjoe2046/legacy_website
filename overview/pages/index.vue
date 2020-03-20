@@ -1276,262 +1276,7 @@
         </p>
 
         <p>&nbsp;</p>
-        <!--
-        ALL OF THIS WAS PREVIOUS VERSION - to be removed but keeping just in case for a bit -Jesse
 
-
-
-        <div id="intro">
-          <p> Non-pharmaceutical approaches to infectious disease control generally have the following two components:</p>
-        </div>
-
-        <ul>
-          <li><span>Filtering (picking a subset of the population)</span></li>
-          <li><span>Intervention (modifying the behaviour of these people)</span></li>
-        </ul>
-        <p>&nbsp;</p>
-        <p><span>For example, quarantining patients with a positive diagnosis applies a filter based on testing and then applies the quarantine intervention. Other examples include travel restrictions for at-risk areas, cancelling public events in a specific city, or encouraging more handwashing in an entire country.</span></p>
-        <p><span>It has been shown [] that some of these interventions, especially self-isolation, are highly effective at preventing the transmission of infectious diseases like COVID-19. The downside is that they can also be costly to use. If the filtering process is not accurate this could result in a huge number of false positives, and therefore a huge cost incurred in the form of negative impact on peoples&rsquo; lives. In the short term it may be necessary to take aggressive action in the form of broad quarantines. If COVID-19 is not completely contained, medium and long term solutions must also be developed.&nbsp;</span></p>
-         <p><span class="subTitleLine"> Crowdsourcing for pandemics </span></p>
-        <p><span>In this document a technological solution to the pandemic optimization problem is explored. We show how anonymous information gathered from mobile devices can be used to build a high quality filter, and how targeted interventions can be selected and implemented using this information. Using numerical models we demonstrate how in some parameter regimes this system could be used to prevent COVID-19 from becoming endemic. This document discusses what we would like to accomplish, how the technology works, how the technology can be used, and numerical estimates of the benefit gained by implementing this system.</span></p>
-
-        <p>&nbsp;</p>
-        <h2 id="keyParameters"><span class="titleLine">Contact Tracing</span></h2>
-        <p><span class="subTitleLine"> Objctive: Reducing contact between contagious people </span></p>
-        <!-- <p style="color:red;">this section doesn't appear to be fully written yet</p>
-        <p><span>Non-pharmaceutical methods the only choice for COVID-19 currently</span></p>
-        <p><span>Based around reducing contact between contagious and susceptible people&nbsp;</span></p>
-        <p><span>Simplest form this can be achieved by reducing all social events and increasing precautions like handwashing</span></p>
-        <p><span>Number of new infections roughly proportional to the number of contact events with infectious people, scaled by a factor relating to the degree of caution (masks, etc.)</span></p>
-        <p><span class="subTitleLine"> How it works </span></p>
-        <p><span>A more targeted approach employed by many health agencies is contact tracing []. This system works by finding and monitoring contacts of patients that have been diagnosed.&nbsp;</span></p>
-
-        <div class="centerImage">
-          <img src="../assets/images/003.png" alt="">
-        </div>
-        <p><span>Hellewell et al analyzed the effectiveness of contact tracing as a method to contain COVID-19 at the beginning of an outbreak (<a href="https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(20)30074-7/fulltext" target="_blank">paper</a>). Their findings are fairly promising: with 80% contact tracing accuracy and a mean detection time of 3.8 days after symptom onset, containment is likely.</span></p>
-        <p><span>In the context of contact tracing there are three parameters that can strongly impact results:</span></p>
-        <ol>
-          <li><span>Reduction in transmission through social distancing</span></li>
-          <li><span>Testing rate and time to diagnosis</span></li>
-          <li><span>Contact tracing accuracy</span></li>
-        </ol>
-        <p>&nbsp;</p>
-        <p><span>China and South Korea have demonstrated two methods to contain COVID-19. is problem, which have both seen significant success.</span></p>
-        <p><span>China uses thousands of people to manually trace contacts, combined with a mobile app of unknown functionality.</span></p>
-        <p>&nbsp;</p>
-        <p><span>South Korea publicizes a large amount of information collected from the cellphones of infected patients so that others can determine if they were in contact.</span></p>
-
-        <!-- in line styling for now just so the images aren't huge in rough draft
-        <div class="centerImage">
-
-          <img style="width:30%;" src="../assets/images/001.png" alt="">
-          <img style="width:70%;" src="../assets/images/002.png" alt="">
-        </div>
-
-        <p><br /><br /></p>
-
-        <h2 id="proposedSystem"><span class="titleLine">Proposed System</span></h2>
-        <!-- <p><br /></p>
-
-          <p><span class="subTitleLine"> Mobile App </span></p>
-        <p><span>Potential app functionality depending on time constraints and regulations:</span></p>
-        <ul>
-          <li><span>Logging contact events using Bluetooth when two people with the app are nearby</span></li>
-          <li><span>Logging coarse location data (at a resolution that cannot identify the user)</span></li>
-          <li><span>Warning users when someone they have been in contact with tests positive for the disease</span></li>
-          <li><span>Estimating a risk score</span></li>
-          <ul>
-            <li><span>Simplest version: all direct contacts are instructed to call health authorities, all others in high risk areas are told to call if they experience certain symptoms</span></li>
-            <li><span>More complicated: health authorities can adjust thresholds for certain interventions based on testing capacity, other risk estimates</span></li>
-            <li><span>Can combine contact events with time spent in high risk areas to generate a risk score and customized set of instructions for what to do if users experience certain symptoms</span></li>
-          </ul>
-        </ul>
-
-        <p>&nbsp;</p>
-         <p><span class="subTitleLine"> Use mobile devices to </span></p>
-
-        <ul>
-          <li><span>Automatically trace contacts, increasing accuracy and scale of contact tracing efforts</span></li>
-          <li><span>Advise people of current risk so that they avoid dangerous areas and take additional precautions, reducing overall transmission rate</span></li>
-          <li><span>Advise people that have a higher risk of infection to monitor for symptoms and get tested if they exceed a symptom threshold, increasing testing rate and reducing diagnosis time</span></li>
-        </ul>
-        <p>&nbsp;</p>
-       <p><span class="subTitleLine"> Automated Contact Tracing </span></p>
-
-        <!-- <h2><span>Use Case: Automated Contact Tracing&nbsp;</span></h2> -
-        <ul>
-          <li><span>Use direct contact measured with Bluetooth, general location data, and symptom threshold to give targeted advice about when to self isolate and when to get tested</span></li>
-          <li><span>Always on, always private contact tracing using cellphone Bluetooth&nbsp;</span></li>
-          <li><span>&lsquo;Contact Events&rsquo; are measured when two people with cellphones running our software are close to each other&nbsp;&nbsp;</span></li>
-        </ul>
-
-        <div class="centerImage">
-          <img src="../assets/images/004.png" alt="">
-        </div>
-
-        <ul>
-          <li><span>When a new positive diagnosis occurs, the infected individual uses our app to automatically send an alert to everyone they have recently been in close contact with</span></li>
-          <li><span>Public health offices can adjust the threshold for their targeted advisories:</span></li>
-          <ul>
-            <li><span>If the resources are available they can ask anyone who has logged a contact event to call them</span></li>
-            <li><span>If the situation is very severe and they don&rsquo;t have the resources, these people could be instructed to self isolate.</span></li>
-            <li><span>Even with no contact events, can advise people in high risk areas what symptoms warrant calling</span></li>
-          </ul>
-
-          <div class="centerImage">
-            <img src="../assets/images/005_TEMP.png" alt="">
-          </div>
-
-        </ul>
-        <ul>
-          <li><span>If implemented properly, this system would be faster, more accurate, and would work even if public health offices became overwhelmed.</span></li>
-        </ul>
-
-        <p>&nbsp;</p>
-       <p><span class="subTitleLine"> Location-Specific Alerts and Advisories </span></p>
-
-        <ul>
-          <li><span>List of location-specific instructions from health authorities, including what symptoms to look for, recommended social distancing methods, hand washing reminders, who to contact if needed</span></li>
-          <li><span>Low resolution heatmap of infection density, instructions for individuals in high risk areas to be extra cautious. Instructions about social distancing and symptom monitoring when travelling from high risk area to low risk area</span></li>
-        </ul>
-        <p>&nbsp;</p>
-        <p><span class="subTitleLine"> Use Case: Heatmap </span></p>
-
-        <Heatmap class="heatMap"></Heatmap>
-
-        <p>&nbsp;</p>
-        <h2 id="privacyRequirements"><span class="titleLine">Privacy Requirements</span></h2>
-           <p><span class="subTitleLine"> Privacy preservation </span></p>
-        <p><span>As effective as these approaches are, they both involve significant personal information being released to the public. The challenge is to find an equally effective system that can be made to work in countries where stricter privacy laws and increased civil liberties make a number of such approaches nearly infeasible.</span></p>
-
-         <p><span class="subTitleLine"> Cryptographically secure system </span></p>
-        <p><span>Our solution is the use of a cryptographically secure system structured so that patient data is kept completely private.&nbsp;</span></p>
-        <p><span>We can do this by building the system in a decentralized manner, and by using randomly generated &lsquo;contact event numbers&rsquo; instead of static IDs.&nbsp;</span></p>
-
-        <h2 id="implementationDetails"><span class="titleLine">Implementation Details</span></h2>
-        <p><span class="subTitleLine"> Private and Decentralized System for Contact Tracing </span></p>
-
-
-        <!-- <h3><span>Private and Decentralized System for Contact Tracing&nbsp;</span></h3>
-        <p><span>By generating a new random number for each contact event, the system is able to operate without storing or transmitting any personal information. This method is designed so that only the phones involved in a contact event are able to identify messages on a public database.</span></p>
-
-        <p><span>The method works as follows:</span></p>
-
-        <v-container class="stepsVisual">
-          <v-row align="center">
-            <v-col cols="12" md="6">
-              <li>
-                <span>1</span>
-                <p>Every time two phones are close they randomly generate a contact event number and share it privately. </p>
-                <img src="../assets/images/007.png" alt="">
-              </li>
-            </v-col>
-            <v-col cols="12" md="6">
-              <li>
-                <span>2</span>
-                <p>This number is saved locally on both phones.</p>
-                <img src="../assets/images/008.png" alt="">
-              </li>
-            </v-col>
-            <v-col cols="12" md="6">
-              <li>
-                <span>3</span>
-                <p>If one of the phone owners is diagnosed positive, they are given a permission number by health authorities.</p>
-                <img src="../assets/images/009.png" alt="">
-              </li>
-            </v-col>
-            <v-col cols="12" md="6">
-              <li>
-                <span>4</span>
-                <p>This person sends a packet to the public database with the permission number and their history of contact event numbers.</p>
-                <img src="../assets/images/010.png" alt="">
-              </li>
-            </v-col>
-            <v-col cols="12" md="6">
-              <li>
-                <span>5</span>
-                <p>If the permission number is valid the contact event numbers are stored in the database and transmitted to all other phones.</p>
-                <img src="../assets/images/011.png" alt="">
-              </li>
-            </v-col>
-            <v-col cols="12" md="6">
-              <li>
-                <span>6</span>
-                <p>Each phone compares the publicly posted contact event numbers against their own history. If there are any matches this means they were close to an infected individual and are given instructions on what to do next.</p>
-                <img src="../assets/images/012.png" alt="">
-              </li>
-            </v-col>
-          </v-row>
-        </v-container>
-
-        <p><br /></p>
-        <p><span>The only authentication required is the permission number provided by a public health authority. This permission number is used so that malicious actors cannot send false alarms. After authentication the permission number is deleted from server memory.</span></p>
-        <p><span>The contact event numbers are random and only known by the message recipient and the message sender, so the database can be made public without risk of sensitive information being discovered.&nbsp;</span></p>
-        <p><br /></p>
-
-        <p><span class="subTitleLine"> Bluetooth Protocol: Background Processes on iOS and Android </span></p>
-
-        <p><span>Contact Event Number shared privately between two phones</span></p>
-        <p><span>With this approach, a contact event number is only used once and it is only known by two phones. This could be implemented by temporarily linking nearby phones running our app and using Diffie-Hellman key exchange to establish an encrypted channel. The two phones could then collectively generate and store a contact event number. For example, each phone could generate a random number and the combined CEN could be formed by concatenating these two numbers.</span></p>
-
-        <br />
-
-        <!-- in line styling to be replaced, just temporary for quick non-styled first draft  - Jesse
-
-        <div class="centerImage">
-          <div class="benefitsDisadvantages">
-            <div class="benefits">
-              <p><strong>Benefits:</strong></p>
-              <p>It is relatively simple to reason about the privacy of this approach- only two phones have knowledge of the CEN.</p>
-              <br />
-            </div>
-
-            <div>
-              <p><strong>Disadvantages:</strong></p>
-              <p>Linking phones with bluetooth could be complicated, and it may require more time and power to record a contact event.</p>
-            </div>
-          </div>
-        </div>
-
-        <p><br /></p>
-
-       <p><span class="subTitleLine"> Database Implementation: Diagnosis Authentication and Bandwidth Estimates </span></p>
-
-        <h3><span>Database</span></h3>
-        <p><span>The database will perform two functionalities: storing packets that are successfully authenticated, and transmitting contact event numbers to phones that request this information</span></p>
-        <p><br /></p>
-        <h3><span>Heatmap Calculation</span></h3>
-        <p><br /></p>
-
-        <h2 id="pathToAdoption"><span class="titleLine">Path to adoption</span></h2>
-           <p><span class="subTitleLine"> Value add for health authorities </span></p>
-        <!-- <h3><span>Value-add for Health Authorities</span></h3>
-        <ul>
-          <li><span>High accuracy, instantaneous contact tracing</span></li>
-          <li><span>Targeted interventions based on calculated risk and current health policy</span></li>
-          <li><span>Public announcements and information</span></li>
-        </ul>
-        <p>&nbsp;</p>
-           <p><span class="subTitleLine"> Value add for individuals </span></p>
-        <!-- <h3><span>Value-add for Individuals</span></h3>
-        <ul>
-          <li><span>Information about how to avoid contracting the disease</span></li>
-          <li><span>Early warning to protect friends and family if you do get sick</span></li>
-          <li><span>Friends and family who use our system will be warned before they can get you sick</span></li>
-          <li><span>Health measures to contain the disease will be targeted and private, so regular life will not need to be disrupted as much</span></li>
-        </ul>
-
-        <p>&nbsp;</p>
-
-        <h2 id="estimatedImpact"><span class="titleLine">Epidemiological Modelling: Estimated Impact</span></h2>
-        <p><a href="https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(20)30074-7/fulltext" target="_blank">This paper</a> analyzes the effectiveness of contact tracing as a method to contain COVID-19 at the beginning of an outbreak. Their findings are fairly promising: with 80% contact tracing accuracy and a mean detection time of 3.8 days after symptom onset, containment is very likely. We are working on a very similar model for a slightly different research question:</p>
-        <p><strong>&ldquo;Can an effective contact tracing program reduce local transmission so that sustained local spread does not occur?&rdquo;</strong></p>
-        <p><span>The answer seems to be yes. With a comprehensive testing program, high contact tracing accuracy, and self-isolation of diagnosed individuals, our models predict that each new case will likely cause on the order of 10 other cases before the outbreak is extinguished.&nbsp;</span></p>
-        <p><span>Current&nbsp;</span></p>
-        <p><br /><br /></p>
-
-        -->
         <p>&nbsp;</p>
         <h2 id="conclusion"><span class="titleLine">Conclusions</span></h2>
         <br />
@@ -1563,186 +1308,301 @@
       </v-col>
     </v-row>
 
-    <p>&nbsp;</p>
-    <a class="link" href="#">Back to Top</a>
-    <p>&nbsp;</p>
-
     <h2 id="contributors" class="titleLine">
       Contributors, Advisors, and Acknowledgements
     </h2>
     <div class="subTitleLine">Contributors:</div>
     <v-container class="contributors">
       <v-row justify="center" align="center">
-        <v-col cols="12" md="10">
+        <v-col cols="12">
           <v-row>
-            <v-col cols="6" sm="3">
+            <v-col>
               <h4>Name</h4>
-              <div class="author">
-                <a class="name">Isaiah Becker-Mayer</a>
-              </div>
-              <div class="author">
-                <a class="name">Daniel Blank</a>
-              </div>
-              <div class="author">
-                <a class="name">Jesse Colligan</a>
-              </div>
-              <div class="author">
-                <a class="name">Rhys Fenwick</a>
-              </div>
-              <div class="author">
-                <a class="name">Mike Hittle</a>
-              </div>
-              <div class="author">
-                <a class="name">Victoria Nguyen</a>
-              </div>
-              <div class="author">
-                <a class="name">James Petrie</a>
-              </div>
-              <div class="author">
-                <a class="name">Jeff Schwaber</a>
-              </div>
-              <div class="author">
-                <a class="name">Zsombor Szabo</a>
-              </div>
-              <div class="author">
-                <a class="name">Akhil Veeraghanta</a>
-              </div>
-              <div class="author">
-                <a class="name">Mikhail Voloshin</a>
-              </div>
-              <div class="author">
-                <a class="name">Sydney Von Arx</a>
-              </div>
-              <div class="author">
-                <a class="name">Tina White</a>
-              </div>
             </v-col>
-            <v-col cols="6" sm="3">
+            <v-col>
               <h4>Role</h4>
-              <div class="role">
-                <div>Software Engineer</div>
-              </div>
-              <div class="role">
-                <div>Software Engineer - Heat Map</div>
-              </div>
-              <div class="role">
-                <div>Software Engineer</div>
-              </div>
-              <div class="role">
-                <div>Head of Communications</div>
-              </div>
-              <div class="role">
-                <div>Heat Map Team Advisor</div>
-              </div>
-              <div class="role">
-                <div>User Interface Designer</div>
-              </div>
-              <div class="role">
-                <div>Head of Research</div>
-              </div>
-              <div class="role">
-                <div>Software Engineer</div>
-              </div>
-              <div class="role">
-                <div>Bluetooth Team Lead</div>
-              </div>
-              <div class="role">
-                <div>Software Engineer - Bluetooth</div>
-              </div>
-              <div class="role">
-                <div>Heatmap Team Lead</div>
-              </div>
-              <div class="role">
-                <div>Human Resources</div>
-              </div>
-              <div class="role">
-                <div>Executive Director</div>
-              </div>
             </v-col>
-            <v-col cols="6" sm="3">
+            <v-col>
               <h4>Affiliation</h4>
-              <div class="affiliation">
-                <a class="affiliation">n/a</a>
-              </div>
-              <div class="affiliation">
-                <a class="affiliation">n/a</a>
-              </div>
-              <div class="affiliation">
-                <a class="affiliation">Georgetown University</a>
-              </div>
-              <div class="affiliation">
-                <a class="affiliation">n/a</a>
-              </div>
-              <div class="affiliation">
-                <a class="affiliation">Stanford University</a>
-              </div>
-              <div class="affiliation">
-                <a class="affiliation">42 Silicon Valley</a>
-              </div>
-              <div class="affiliation">
-                <a class="affiliation">University of Waterloo</a>
-              </div>
-              <div class="affiliation">
-                <a class="affiliation">Bigtincan</a>
-              </div>
-              <div class="affiliation">
-                <a class="affiliation">n/a</a>
-              </div>
-              <div class="affiliation">
-                <a class="affiliation">University of British Columbia</a>
-              </div>
-              <div class="affiliation">
-                <a class="affiliation">n/a</a>
-              </div>
-              <div class="affiliation">
-                <a class="affiliation">Stanford University</a>
-              </div>
-              <div class="affiliation">
-                <a class="affiliation">Stanford University</a>
-              </div>
             </v-col>
-
-            <v-col cols="6" sm="3">
+            <v-col>
               <h4>Location</h4>
-              <div>
-                <a>California, USA</a>
-              </div>
-              <div>
-                <a>Berkeley, USA</a>
-              </div>
-              <div>
-                <a>New York, USA</a>
-              </div>
-              <div>
-                <a>Australia</a>
-              </div>
-              <div>
-                <a>USA</a>
-              </div>
-              <div>
-                <a>USA</a>
-              </div>
-              <div>
-                <a>Canada</a>
-              </div>
-              <div>
-                <a>USA</a>
-              </div>
-              <div>
-                <a>Budapest, Romania</a>
-              </div>
-              <div>
-                <a>Canada</a>
-              </div>
-              <div>
-                <a>USA</a>
-              </div>
-              <div>
-                <a>USA</a>
-              </div>
-              <div>
-                <a href="">United States</a>
-              </div>
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col>
+              <a class="name">Isaiah Becker-Mayer</a>
+            </v-col>
+            <v-col>
+              <div>Software Engineer</div>
+            </v-col>
+            <v-col>
+              <a class="affiliation">n/a</a>
+            </v-col>
+            <v-col>
+              <a>California, USA</a>
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col>
+              <a class="name">Daniel Blank</a>
+            </v-col>
+            <v-col>
+              <div>Software Engineer - Heatmap</div>
+            </v-col>
+            <v-col>
+              <a class="affiliation">n/a</a>
+            </v-col>
+            <v-col>
+              <a>Berkeley, USA</a>
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col>
+              <a class="name">Jesse Colligan</a>
+            </v-col>
+            <v-col>
+              <div>Project Manager</div>
+            </v-col>
+            <v-col>
+              <a class="affiliation">n/a</a>
+            </v-col>
+            <v-col>
+              <a>New York, USA</a>
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col>
+              <a class="name">Rhys Fenwick</a>
+            </v-col>
+            <v-col>
+              <div>Head of Communications</div>
+            </v-col>
+            <v-col>
+              <a class="affiliation">n/a</a>
+            </v-col>
+            <v-col>
+              <a>Wollongong, Australia</a>
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col>
+              <a class="name">Mike Hittle</a>
+            </v-col>
+            <v-col>
+              <div>Heat Map Team Epidemiologist</div>
+            </v-col>
+            <v-col>
+              <a class="affiliation">Stanford</a>
+            </v-col>
+            <v-col>
+              <a>California, USA</a>
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col>
+              <a class="name">Mark Ingle</a>
+            </v-col>
+            <v-col>
+              <div>Bluetooth Team Software Engineer</div>
+            </v-col>
+            <v-col>
+              <a class="affiliation">n/a</a>
+            </v-col>
+            <v-col>
+              <a>South Carolina, USA</a>
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col>
+              <a class="name">Oliver Nash</a>
+            </v-col>
+            <v-col>
+              <div>Software Engineer</div>
+            </v-col>
+            <v-col>
+              <a class="affiliation">n/a</a>
+            </v-col>
+            <v-col>
+              <a>London, United Kingdom</a>
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col>
+              <a class="name">Victoria Nguyen</a>
+            </v-col>
+            <v-col>
+              <div>UI Designer</div>
+            </v-col>
+            <v-col>
+              <a class="affiliation">n/a</a>
+            </v-col>
+            <v-col>
+              <a>California, United States</a>
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col>
+              <a class="name">James Petrie</a>
+            </v-col>
+            <v-col>
+              <div>Head of Research</div>
+            </v-col>
+            <v-col>
+              <a class="affiliation">University of Waterloo</a>
+            </v-col>
+            <v-col>
+              <a>Canada</a>
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col>
+              <a class="name">Jeff Schwaber</a>
+            </v-col>
+            <v-col>
+              <div>Software Engineer</div>
+            </v-col>
+            <v-col>
+              <a class="affiliation">VP of Engineering at Bigtincan</a>
+            </v-col>
+            <v-col>
+              <a>USA</a>
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col>
+              <a class="name">Zsombor Szabo</a>
+            </v-col>
+            <v-col>
+              <div>Bluetooth Team Lead</div>
+            </v-col>
+            <v-col>
+              <a class="affiliation">n/a</a>
+            </v-col>
+            <v-col>
+              <a>Budapest, Romania</a>
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col>
+              <a class="name">Akhil Veeraghanta</a>
+            </v-col>
+            <v-col>
+              <div>Bluetooth Team Software Engineer</div>
+            </v-col>
+            <v-col>
+              <a class="affiliation">University of British Columbia</a>
+            </v-col>
+            <v-col>
+              <a>Canada</a>
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col>
+              <a class="name">Mikhail Voloshin</a>
+            </v-col>
+            <v-col>
+              <div>Heat Map Team Lead</div>
+            </v-col>
+            <v-col>
+              <a class="affiliation">n/a</a>
+            </v-col>
+            <v-col>
+              <a>North Carolina, United States</a>
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col>
+              <a class="name">Sydney Von Arx</a>
+            </v-col>
+            <v-col>
+              <div>Human Resources</div>
+            </v-col>
+            <v-col>
+              <a class="affiliation">Stanford University</a>
+            </v-col>
+            <v-col>
+              <a>United States</a>
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col>
+              <a class="name">Tina White</a>
+            </v-col>
+            <v-col>
+              <div>Executive Director</div>
+            </v-col>
+            <v-col>
+              <a class="affiliation">Stanford University</a>
+            </v-col>
+            <v-col>
+              <a>United States</a>
+            </v-col>
+          </v-row>
+        </v-col>
+      </v-row>
+    </v-container>
+    <div class="subTitleLine">Privacy and Security Advisors:</div>
+    <v-container class="contributors">
+      <v-row justify="center" align="center">
+        <v-col cols="12">
+          <v-row>
+            <v-col>
+              <h4>Name</h4>
+            </v-col>
+            <v-col>
+              <h4>Role</h4>
+            </v-col>
+            <v-col>
+              <h4>Affiliation</h4>
+            </v-col>
+            <v-col>
+              <h4>Location</h4>
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col>
+              <a class="name">Tessa Alexanian</a>
+            </v-col>
+            <v-col>
+              <div>Privacy and Security</div>
+            </v-col>
+            <v-col>
+              <a class="affiliation">iGEM, East Bay Biosecurity Group</a>
+            </v-col>
+            <v-col>
+              <a>California, USA</a>
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col>
+              <a class="name">Peter Eckersley</a>
+            </v-col>
+            <v-col>
+              <div>Privacy and Security</div>
+            </v-col>
+            <v-col>
+              <a class="affiliation"
+                >Convener of stop-covid.tech and Distinguished Technology
+                Fellow, EFF</a
+              >
+            </v-col>
+            <v-col>
+              <a>Australia</a>
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col>
+              <a class="name">Jeffrey Ladish</a>
+            </v-col>
+            <v-col>
+              <div>Privacy and Security</div>
+            </v-col>
+            <v-col>
+              <a class="affiliation">Security Consultant, Gordian Research</a>
+            </v-col>
+            <v-col>
+              <a>Berkeley, USA</a>
             </v-col>
           </v-row>
         </v-col>
@@ -1750,138 +1610,81 @@
     </v-container>
 
     <div class="subTitleLine">Public Health and Epidemiology Advisors:</div>
-    <v-container class="healthAdvisors">
+    <v-container class="contributors">
       <v-row justify="center" align="center">
-        <v-col cols="10" sm="9">
+        <v-col cols="12">
           <v-row>
-            <v-col cols="6" sm="3">
+            <v-col>
               <h4>Name</h4>
-              <div class="author">
-                <a class="name">Megan Coffee</a>
-              </div>
-              <div class="author">
-                <a class="name">Jolene Elizabeth</a>
-              </div>
-              <div class="author">
-                <a class="name">Celine Gounder</a>
-              </div>
-              <br /><br />
-              <div class="author">
-                <a class="name">Julie Parsonnet</a>
-              </div>
             </v-col>
-            <v-col cols="6" sm="3">
-              <h4>Title</h4>
-              <div class="role">
-                <div>MD, PhD, Infectious Diseases</div>
-              </div>
-              <div class="role">
-                <div>Public Health Research</div>
-              </div>
-              <div class="role">
-                <div>
-                  MD, ScM, FIDSA, Internist, Infectious Diseases Specialist,
-                  Epidemiologist
-                </div>
-              </div>
-              <div class="role">
-                <div>
-                  MD, PhD, Infectious Diseases Specialist and Epidemiologist
-                </div>
-              </div>
+            <v-col>
+              <h4>Role</h4>
             </v-col>
-            <v-col cols="6" sm="3">
+            <v-col>
               <h4>Affiliation</h4>
-              <div class="affiliation">
-                <a class="affiliation">NYU and Columbia University</a>
-              </div>
-              <div class="affiliation">
-                <a class="affiliation">?</a>
-              </div>
-              <div class="affiliation">
-                <a class="affiliation">?</a>
-              </div>
-
-              <br /><br />
-              <div class="affiliation">
-                <a class="affiliation">Stanford University</a>
-              </div>
             </v-col>
-
-            <v-col cols="6" sm="3">
+            <v-col>
               <h4>Location</h4>
-              <div>
-                <a>New York, USA</a>
-              </div>
-              <div>
-                <a>California, USA</a>
-              </div>
-              <div>
-                <a>New York, USA</a>
-              </div>
-              <br /><br />
-              <div>
-                <a>California, USA</a>
-              </div>
             </v-col>
           </v-row>
-        </v-col>
-      </v-row>
-    </v-container>
-
-    <div class="subTitleLine">Privacy and Security Advisors:</div>
-    <v-container class="privacyAdvisors">
-      <v-row justify="center" align="center">
-        <v-col cols="10" sm="9">
           <v-row>
-            <v-col cols="6" sm="3">
-              <h4>Name</h4>
-              <div class="author">
-                <a class="name">Tessa Alexanian</a>
-              </div>
-              <div class="author">
-                <a class="name">Peter Eckersley</a>
-              </div>
-              <div class="author">
-                <a class="name">Jeffrey Ladish</a>
+            <v-col>
+              <a class="name">Megan Coffee MD, PhD, Infectious Diseases</a>
+            </v-col>
+            <v-col>
+              <div>Public Health and Epidemiology Advisor</div>
+            </v-col>
+            <v-col>
+              <a class="affiliation">NYU and Public Health, Columbia</a>
+            </v-col>
+            <v-col>
+              <a>New York, USA</a>
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col>
+              <a class="name">Jolene Elizabeth</a>
+            </v-col>
+            <v-col>
+              <div>Public Health and Epidemiology Advisor</div>
+            </v-col>
+            <v-col>
+              <a class="affiliation"
+                >Public Health Research and Digital Health Innovation</a
+              >
+            </v-col>
+            <v-col>
+              <a>California, USA</a>
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col>
+              <a class="name">Celine Gounder MD, ScM, FIDSA</a>
+            </v-col>
+            <v-col>
+              <div>
+                Internist, Infectious Diseases Specialist, Epidemiologist
               </div>
             </v-col>
-            <v-col cols="6" sm="3">
-              <h4>Title</h4>
-              <div class="role">
-                <div>Privacy and Security, iGEM</div>
-              </div>
-              <div class="role">
-                <div>Privacy and Security, Distinguished Technology Fellow</div>
-              </div>
-              <div class="role">
-                <div>Privacy and Security, Security Consultant</div>
-              </div>
+            <v-col>
+              <a class="affiliation">n/a</a>
             </v-col>
-            <v-col cols="6" sm="3">
-              <h4>Affiliation</h4>
-              <div class="affiliation">
-                <a class="affiliation">East Bay Biosecurity Group</a>
-              </div>
-              <div class="affiliation">
-                <a class="affiliation">stop-covid.tech, EFF</a>
-              </div>
-              <div class="affiliation">
-                <a class="affiliation">Gordian Research</a>
-              </div>
+            <v-col>
+              <a>New York, USA</a>
             </v-col>
-
-            <v-col cols="6" sm="3">
-              <h4>Location</h4>
-              <div>
-                <a>Berkeley, USA</a>
-              </div>
-              <div>
-                <a>Australia</a>
-              </div>
-              <div>
-                <a>Berkeley, USA</a>
-              </div>
+          </v-row>
+          <v-row>
+            <v-col>
+              <a class="name">Julie Parsonnet MD, PhD</a>
+            </v-col>
+            <v-col>
+              <div>Infectious Diseases Specialist and Epidemiologist</div>
+            </v-col>
+            <v-col>
+              <a class="affiliation">Stanford</a>
+            </v-col>
+            <v-col>
+              <a>USA</a>
             </v-col>
           </v-row>
         </v-col>

@@ -2,8 +2,8 @@
   <!-- Hi Jesse. nuxt requires a single element under v-container (or at least it used to.)
     This is usually a v-container. -->
   <v-container class="overviewContainer">
-    <v-row>
-      <v-col cols="12">
+    <v-row justify="center">
+      <v-col cols="12" lg="9">
         <!-- Typically a v-container has a bunch of v-row elements under it.
         Each v-row usually has v-col elements, which are organized into a
         responsive 12-column grid.
@@ -782,7 +782,6 @@
           >
         </p>
         <Heatmap class="heatMap"></Heatmap>
-
         <p>&nbsp;</p>
 
         <p>
@@ -1755,9 +1754,9 @@ img {
 
 .mainSubTitle {
   display: flex;
-  justify-content: center;
+  // justify-content: center;
   color: #779f98;
-  font-size: 40px;
+  font-size: 24px;
   padding-bottom: 15px;
 }
 

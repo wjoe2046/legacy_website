@@ -150,7 +150,7 @@
         </p>
         <p>
           <span
-            >It could be installed by anyone with a Bluetooth-capable
+            >The app could be installed by anyone with a Bluetooth-capable
             smartphone, alerting them to their risk of having been in contact
             with a confirmed case of COVID-19, and helping them to protect
             themselves and their friends, families, and other contacts

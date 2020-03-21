@@ -1,4 +1,4 @@
-import colors from 'vuetify/es5/util/colors'
+import colors from "vuetify/es5/util/colors";
 
 export default {
   mode: "universal",
@@ -57,7 +57,16 @@ export default {
   vuetify: {
     customVariables: ["~/assets/variables.scss"],
     defaultAssets: {
-      icons: 'mdi'
+      icons: "mdi"
+    },
+    theme: {
+      light: true, //you don't actually need this line as it's for default
+      themes: {
+        light: {
+          primary: "#BF3F4A",
+          info: "#BF3F4A"
+        }
+      }
     }
   },
   /*

@@ -15,16 +15,8 @@
                 <ol class="innerList">
                   <li><a href="#mission">Mission Statement</a></li>
                   <li><a href="#privacy">Privacy Focus</a></li>
-                  <li>
-                    <a href="#interventionBackground"
-                      >Mobile Phone Intervention Background</a
-                    >
-                  </li>
-                  <li>
-                    <a href="#interventionOptimization"
-                      >Mobile Phone Intervention Optimization</a
-                    >
-                  </li>
+                  <li><a href="#interventionBackground">Current Mobile Phone Interventions</a></li>
+                  <li><a href="#interventionOptimization">Making Interventions More Efficient</a></li>
                 </ol>
               </li>
               <li>
@@ -34,82 +26,43 @@
                   ></strong
                 >
                 <ol class="innerList">
-                  <li>
-                    <a href="#contactTracing"
-                      >Part 1: Bluetooth Contact Tracing</a
-                    >
-                    <!-- <ol class="nestedInnerList">
-                      <li>
-                        <a href="#contactTracingBackground"
-                          >Contact Tracing Background</a
-                        >
-                      </li>
-                      <li>
-                        <a href="#blueToothModel"
-                          >Bluetooth Contact Tracing Model Description</a
-                        >
-                      </li>
-                      <li>
-                        <a href="#blueToothPrivacy"
-                          >Bluetooth Privacy Model and Database</a
-                        >
-                      </li>
-                      <li>
-                        <a href="#bluetoothDatabase"
-                          >Bluetooth Contact Tracing Implementation</a
-                        >
-                      </li>
-                    </ol> -->
+                  <li><a href="#contactTracing">Part 1: Bluetooth Contact Tracing</a>
+                    <ol class="nestedInnerList">
+                      <li><a href="#contactTracingBackground">Contact Tracing Background</a></li>
+                      <li><a href="#blueToothModel">Model Description</a></li>
+                      <li><a href="#blueToothPrivacy">Privacy Model</a></li>
+                      <li><a href="#bluetoothDatabase">Database</a></li>
+                      <li><a href="#bluetoothImplementation">Implementation</a></li>
+                    </ol>
                   </li>
-                  <li>
-                    <a href="#heatmapTitle">Part 2: GPS Heatmap</a>
-                    <!-- <ol class="nestedInnerList">
-                      <li>
-                        <a href="#heatmapDesc">GPS Heatmap Model Description</a>
-                      </li>
-                      <li>
-                        <a href="#heatmapImplementation"
-                          >GPS Heatmap Implementation</a
-                        >
-                      </li>
-                      <li>
-                        <a href="#heatmapEpidemiology"
-                          >GPS Heatmap Epidemiology Model</a
-                        >
-                      </li>
-                      <li>
-                        <a href="#databasePrivacy"
-                          >GPS Privacy Model and Database</a
-                        >
-                      </li>
-                    </ol> -->
+                  <li><a href="#heatmapTitle">Part 2: GPS Heatmap</a>
+                    <ol class="nestedInnerList">
+                      <li><a href="#heatmapDesc">Model Description</a></li>
+                      <li><a href="#heatmapImplementation">Implementation</a></li>
+                      <li><a href="#heatmapEpidemiology">Heatmap Epidemiology Model</a></li>
+                      <li><a href="#databasePrivacy">Privacy Model</a></li>
+                      <li><a href="#databaseAnonymization">Anonymization Model</a></li>
+                    </ol>
                   </li>
-                  <li>
-                    <a href="#userRecommendations">Part 3: Recommendations</a>
-                    <!-- <ol class="nestedInnerList">
+                  <li><a href="#userRecommendations">Part 3: User Recommendations</a>
+                    <ol class="nestedInnerList">
                       <li><a href="#scopeDesign">Scope and Design</a></li>
-                      <li><a href="#timeline">Timeline to Deployment</a></li>
-                    </ol> -->
+                    </ol>
                   </li>
                 </ol>
               </li>
-              <li>
-                <strong><a href="#care">Why You Should Care</a></strong>
+              <li><strong><a href="#care">Why You Should Care</a></strong>
                 <ol class="innerList">
-                  <li><a href="#healthAuthorities">Health Authorities</a></li>
-                  <li><a href="#users">Individuals (Users)</a></li>
+                  <li><a href="#healthAuthorities">Incentive for Health Authorities</a></li>
+                  <li><a href="#users">Incentives for Individuals</a></li>
                   <li><a href="#impact">Quantitative Analysis of Impact</a></li>
+                  <li><a href="#timeline">Timeline to Deployment</a></li>
                 </ol>
               </li>
-              <li>
-                <strong><a href="#conclusion">Conclusion</a></strong>
+              <li> <strong><a href="#conclusion">Conclusions</a></strong>
                 <ol class="innerList">
-                  <li><a href="#youDo">What You Can Do</a></li>
-                  <li>
-                    <a href="#contributors"
-                      >Authors, Advisors, and Acknowledgements</a
-                    >
-                  </li>
+                  <li><a href="#youDo">Who Can Help</a></li>
+                  <li><a href="#contributors">Contributors, Advisors, and Acknowledgements</a></li>
                 </ol>
               </li>
             </ol>
@@ -606,43 +559,159 @@
         <p>&nbsp;</p>
         <p>&nbsp;</p>
 
-        <p>
-          The only authentication required is the permission number provided by
-          a public health authority. This permission number is used so that
-          malicious actors cannot send false alarms. After authentication the
-          permission number is deleted from server memory.
-        </p>
-        <p>
-          The contact event numbers are random and only known by the message
-          recipient and the message sender, so the database can be made public
-          without risk of sensitive information being discovered.
-        </p>
-        <p>
-          While our current intervention is based on permission numbers, in
-          regions where widespread testing is unavailable, a well-designed
-          symptom sharing questionnaire may perform a similar function, with a
-          higher number of false positives. Research in this direction is
-          currently being done by the
-          <a href="https://www.CoEpi.org">CoEpi</a> team.
-        </p>
-        <p>
-        The most effective form of this intervention would occur in communities that implement widespread testing and where permission numbers are shared with the mobile app by public health departments. 
-        </p>
+       <p>The only authentication required is the permission number provided by a public health authority. This permission number is used so that malicious actors cannot send false alarms. After authentication the permission number is deleted from server memory.</p>
+       <p>The contact event numbers are random and only known by the message recipient and the message sender, so the database can be made public without risk of sensitive information being discovered. </p>
+       <p>While our current intervention is based on permission numbers, in regions where widespread testing is unavailable, a well-designed symptom sharing questionnaire may perform a similar function, with a higher number of false positives. Research in this direction is currently being done by the <a href="https://www.CoEpi.org">CoEpi</a> team. </p>
 
-        <p><span id="bluetoothDatabase" class="subTitleLine">Database</span></p>
-        <p>
-          The specification for the database is very simple: it is shared across
-          all installations of the app and stores anonymized Contact Event
-          Numbers. If protections against hoaxes are required, permission
-          numbers can be used, but are not an essential requirement of the
-          system. If the database grows too large, it can also be fragmented
-          based on general location. The code and a more in depth discussion of
-          architecture are available on the open source github repo
-          <a
-            href="https://github.com/covid19risk/covidwatch-backend/blob/master/README.md"
-            >here</a
-          >.
-        </p>
+      <p><span id="bluetoothDatabase" class="subTitleLine">Database</span></p>
+      <p>The specification for the database is very simple: it is shared across all installations of the app and stores anonymized Contact Event Numbers. If protections against hoaxes are required, permission numbers can be used, but are not an essential requirement of the system. If the database grows too large, it can also be fragmented based on general location. The code and a more in depth discussion of architecture are available on the open source github repo <a href="https://github.com/covid19risk/covidwatch-backend/blob/master/README.md">here</a>.</p>
+
+      <p><span id="bluetoothImplementation" class="subTitleLine">Implementation</span></p>
+      <p>Bluetooth contact tracing is implemented via background processes on iOS and Android.</p>
+      <p>The approach currently being investigated utilizes BLE functionality for background advertisement and scanning. Due to different system requirements for Android and iOS, the protocol works differently depending on the operating systems of the devices involved. The key challenges are:</p>
+      <ul style="list-style:decimal">
+        <li>iOS devices acting as “peripherals” in the background can only be found by “centrals” that are scanning for their specific service UUID. These peripherals must establish a connection to transfer any data.</li>
+        <li>Android devices have several unfixed bugs where subsequent connections with many devices can cause the Bluetooth system to lock up.</li>
+      </ul>
+      <br>
+      <p>The current solution is a hybrid model that is asymmetric for communication between iOS and Android. All devices will simultaneously act as peripherals and centrals, but only some devices will be able to detect others, and only some devices will need to establish a connection to exchange data. An extended description of the communication model and the code are available on github here <a href="https://github.com/covid19risk/covidwatch-ios">for iOS </a> and <a href="https://github.com/covid19risk/covidwatch-android">for Android</a>.</p>
+       <p>This model has been successfully implemented as a proof-of-concept, as shown below:</p>
+       <iframe width="1425" height="566" src="https://www.youtube.com/embed/4aQ90emoAqc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <p>&nbsp;</p>
+
+
+
+      <!-- Heatmap -->
+      <p><span id="heatmapTitle" class="subTitleLine"> Part 2: GPS Heatmap</span></p>
+      <p><span id="heatmapDesc" class="subTitleLine">Model Description</span></p>
+      <p>GPS capability is ubiquitous among smartphone devices, and high-resolution spatiotemporal data is regularly used by mapping and social media apps. Given anonymized GPS data along with user infection status, we can approximately calculate where the fomite-based risk of infection is the highest; meaning, where there may be inanimate objects capable of transmitting infection. </p>
+       <p>Anonymized GPS data can inform an epidemiological model to show how the disease is likely to spread.</p>
+       <p>Based on this epidemiological model, we can generate a risk heatmap showing comparative fomite risk for different geographical areas. This heatmap enables our users to adjust their behaviours in response to their local environment. They could, for example, choose to take extra precautions when in high-risk areas, or avoid them altogether. This both decreases the risk of our users becoming infected, and decreases the risk that they will infect those around them.</p>
+       <p>This provides a supplementary service for our users to inform their social distancing measures.</p>
+
+      <p>&nbsp;</p>
+      <p><span id="heatmapImplementation" class="subTitleLine">Implementation</span></p>
+      <Heatmap class="heatMap"></Heatmap>
+
+        <p>&nbsp;</p>
+
+      <p><span id="heatmapEpidemiology" class="subTitleLine">Heatmap Epidemiology Model</span></p>
+       <p>The source code at time of writing [19-MAR-2020] of the epidemiological model can be found and is available open source <a href="https://github.com/covid19risk/proof/tree/master/SimContagion/">here</a>. </p>
+       <p>To describe it simply, the heat map builds upon SEIR models and simulates users according to the following state machine:</p>
+
+      <p style="color:red;font-size:30px">need a better resolution image, enlarge font size inside each node also</p>
+      <img src="../assets/images/overview_article_imgs/bad_resolution_epi_model.png" alt="">
+      <p>&nbsp;</p>
+
+      <p>The population of simulated users, and probability and timing of a simulated user moving from one state to the next, are generated from the data we have available: both on the background demographics of impacted areas and specific case data. </p>
+      <p>Each simulated user is given an age and has a chance of having pre-existing health conditions, which impact their contagiousness and susceptibility to infection.</p>
+      <p>The anonymized user trajectories are superimposed over a grid covering the area being modelled, while the grid squares are filled with a number of randomly generated simulated humans based off demographic data for that area. As simulated infected and contagious users move across the grid, they carry a chance of infecting the other simulated humans (both user and non-user) sharing their grid space at any given time. </p>
+      <p>Simulated non-user humans also have a probability of adjusting their behaviour and movement throughout the simulation, to model hospital admission and self-isolation. </p>
+      <p>This simulation is run multiple times, and the amount of time each infected human spent in each grid square contributes to its overall risk score, which is represented by the final heatmap.</p>
+      <p>As our understanding of COVID-19 progresses, this heatmap can be refined, and the parameters tuned to more accurately reflect real-world data.</p>
+
+      <p><span id="databasePrivacy" class="subTitleLine">Privacy Model</span></p>
+      <p>Given the personally identifying nature of the spatiotemporal trajectories provided by GPS systems, this information will be handled in a more complex way involving two distinct servers.</p>
+      <p>The first server, Server A, will handle anonymization using the methods described in the <span style="font-style:italic">Heatmap Privacy Model</span> section above. Users will send their GPS data to Server A first without any other information, and Server A will return the now-anonymized data to them.</p>
+      <p>They will then upload the anonymized data, along with their infection status, to the second server, Server B. Server B will take this data and add it to our epidemiological simulation, generating a heatmap.</p>
+
+      <p><span id="databaseAnonymization" class="subTitleLine">Anonymization Model</span></p>
+      <p>The heatmap may either require the application of an anonymization algorithm, or the explicit consent of users to publish high resolution GPS trajectories. This choice will need to be made in consultation with regulators. The advisory system will make use of the information generated by the other two methods and information from public health offices. It can be structured so no additional patient data needs to be collected, but making suggestions more complicated than ‘call your local public health department’ may require additional regulatory approval.</p>
+      <p>There is a large body of academic work behind the anonymization of spatiotemporal data, most of which draw from a handful of common strategies. These include aggregating multiple similar trajectories together, decreasing the resolution of each datapoint across space and time, removing particularly distinctive datapoints, and swapping sections of trajectories that cross paths.</p>
+      <p>One widely accepted metric for de-identification of data is  k-anonymization. A dataset is anonymous for some integer k if no entry can be narrowed down further than belonging to one of k individuals. For example, a group of trajectories would be 3-anonymous if each trajectory could plausibly belong to at least 3 individuals. Our aim is to create a dataset with the maximum possible k-value that still preserves utility. The worst-case scenario we would be willing to publish is at minimum a 10-anonymous dataset with respect to an adversary using commonly available geographical information. </p>
+      <p>Given the urgency of the situation, we intend to use contractual boundaries against deanonymization rather than aiming to protect against more sophisticated and hypothetical attacks on our anonymization scheme. Building anonymity systems that are resistant to more sophisticated attacks is challenging, and takes much more time.</p>
+      <p>The anonymization model we are implementing is one created by researchers from the University of Montreal <a href="https://www.academia.edu/24040759/Anonymizing_trajectory_data_for_passenger_flow_analysis">(Ghazemzadeh et al 2014)</a>. It allows for flexible k-anonymity without significant distortion, and has a proven and open-source implementation. </p>
+      <p>This does require a significant number of trajectories to be significant, so we will be supplementing our initial database with plausible synthetic trajectories created by the <a href="https://iapg.jade-hs.de/personen/brinkhoff/generator/">Brinkhoff trajectory generator</a>. </p>
+      <p>The end result is that the trajectories being used to generate our heatmap can be mathematically verified to be anonymous, guaranteeing the privacy of our users. </p>
+
+      <p><span id="userRecommendations" class="subTitleLine"> Part 3: User Recommendations</span></p>
+      <p>We have designed the app user interface (UI) and are building a beta app with the following features: </p>
+      <ul>
+        <li>CDC general COVID-19 advice, symptoms, and resources</li>
+        <li>An infection density heat map based on anonymized GPS data</li>
+        <li>A notification system of potential COVID-19 contact risk via Bluetooth proximity networks</li>
+        <li>Personalized advice: If close contact is detected, a popup instructs the user to call the local public health department, and looks up this number to call for them to inquire about next steps</li>
+        <li>Other features may include: more personalized advice based on heat map location, a supplies map, self-reporting of symptoms, FAQs, news updates tailored by geographic region, travel counseling, or access to home-based testing</li>
+      </ul>
+
+
+         <p>&nbsp;</p>
+
+      <h3 id="scopeDesign">Scope and Design</h3>
+
+      <!-- my quick attempt at making the mobile app images shrink to be responsive, may need adjustment - Jesse -->
+      <v-container>
+        <v-col cols="12" md="6" class="centerImage" style="justify-content:space-evenly;">
+          <img style="border:1px solid gray;" src="../assets/images/mobile/mobile_get_started.png" alt="">
+          <img style="border:1px solid gray;" src="../assets/images/mobile/mobile_heat_map.png" alt="">
+          <img style="border:1px solid gray;" src="../assets/images/mobile/mobile_transmission_log.png" alt="">
+        </v-col>
+      </v-container>
+       <p>&nbsp;</p>
+      <div class="centerImage" style="border:1px solid black;border-radius:4px;padding: 10px;">
+        <p> <strong>Figure 1: COVID-19 Transmission Map and Phone Log</strong>. The transmission map will utilize Bluetooth proximity network and a confirmed contact event number provided by health authorities. When a confirmed COVID-19 is identified, notifications are sent to users who may have been in close proximity to the confirmed case based on the phone’s Bluetooth and GPS system. Users are able to determine when they may have contracted the viruses based on the user’s transmission phone log. In addition, a user is able to self-report symptoms of illness or positive COVID-19 lab results.</p>
+      </div>
+
+      <p>&nbsp;</p>
+      <h3>Design: CDC Information and Symptoms Survey</h3>
+       <v-container>
+        <v-col cols="12" md="6" class="centerImage" style="justify-content:space-evenly;">
+          <img style="border:1px solid gray;" src="../assets/images/mobile/mobile_cdc.png" alt="">
+          <img style="border:1px solid gray;" src="../assets/images/mobile/mobile_symptoms.png" alt="">
+          <img style="border:1px solid gray;" src="../assets/images/mobile/mobile_symptoms_survey.png" alt="">
+        </v-col>
+      </v-container>
+       <p>&nbsp;</p>
+      <div class="centerImage" style="border:1px solid black;border-radius:4px;padding: 10px;">
+        <p> <strong>Figure 2: COVID-19 CDC Information and Symptoms Survey</strong>. Users are given information, resources, and advice from the Centers for Disease Control and Prevention (CDC) about COVID-19. In addition, users are able to fill a travel/symptoms questionnaire to better tailor their advice and assess their risk level. This data will be stored locally on the user’s phone to reduce privacy concerns.</p>
+      </div>
+
+
+      <!-- Why You Should Care -->
+      <h2 id="care"><span class="titleLine">Why You Should Care</span></h2>
+      <p>&nbsp;</p>
+      <h3 id="healthAuthorities">Incentives for Health Authorities</h3>
+      <br>
+      <ul>
+        <li>High accuracy, instantaneous contact tracing</li>
+        <li>Targeted interventions based on calculated risk and current health policy</li>
+        <li>Easier communication of announcements and information</li>
+      </ul>
+      <br>
+
+      <h3 id="users">Incentives for Individuals</h3>
+      <br>
+      <ul>
+        <li>Information about how to avoid contracting the disease</li>
+        <li>Earlier warning to protect friends, family, and close contacts if you do get sick</li>
+        <li>Friends, family, and close contacts who use the system will likely be warned before they can get you sick</li>
+        <li>Broad health measures to contain the disease could be relaxed in favor of such targeted and private interventions, so regular life will not need to be disrupted as much</li>
+      </ul>
+      <br>
+
+      <h3 id="impact">Quantitative Analysis of Impact</h3>
+      <br>
+        <p>The impact of this technology will depend largely on the state of the system around it. <a href="https://github.com/BDI-pathogens/covid-19_instant_tracing/blob/master/Manuscript%20-%20Modelling%20instantaneous%20digital%20contact%20tracing.pdf">Numerical models</a> and ongoing <a href="https://www.sciencemag.org/news/2020/03/coronavirus-cases-have-dropped-sharply-south-korea-whats-secret-its-success">campaigns</a> suggest that with extensive testing, accurate contact tracing, and isolation of suspected cases, outbreaks can be contained.</p>
+        <p>For intermediate testing and contact tracing detection rates, a system like this would likely need to be used in combination with social distancing measures and manual contact tracing. However, the measures suggested by <a href="https://www.imperial.ac.uk/media/imperial-college/medicine/sph/ide/gida-fellowships/Imperial-College-COVID19-NPI-modelling-16-03-2020.pdf">Ferguson et al</a>. could potentially be relaxed if supplemented with sufficient targeted interventions.   </p>
+        <p>Of the three target parameters (tracing accuracy, detection rate, base transmission), the potential influence of the app on tracing accuracy is the simplest to quantify. Any two users of the app who are at the same location at the same time will register a contact event. In theory,  all transmission events except those by fomites would be detected. This includes all types of contact classified as being <a href="https://www.ecdc.europa.eu/sites/default/files/documents/covid-19-public-health-management-contact-novel-coronavirus-cases-EU.pdf">“high risk” by the ECDC</a>.</p>
+        <p>Preventative measures encouraged by the app such as avoiding high-risk areas and increased precautions would reduce overall transmission rate, however it is difficult to quantify this impact. The current design of the app may also increase detection rate by informing users of symptoms to watch for and how to get tested. Ongoing research is being conducted on how to allocate testing resources to maximize the expected value of secondary cases detected. </p>
+        <p>To have a significant impact the technology will require a significant adoption rate. To detect contact events using Bluetooth both individuals must have the app installed at the time of transmission. Assuming ‘P’ percent of the population uses the app, ‘A’  percent of transmission events between app users are detected, and ‘T’ percent of infected are tested, then T*A*P^2 percent of total transmissions are detected (if app users are homogeneous in the population). </p>
+        <p>The figure below examines the percentage of detectable transmission events in countries with different testing rates as a function of app usage. The analysis assumes that these events are uncorrelated, which may significantly under-estimate detected transmissions due to missing chain-reaction testing. Ongoing modelling work is being done to investigate the dynamics of rapid tracing and testing along infection chains.</p>
+
+        <div class="centerImage" style="display:flex;flex-direction:column;align-items:center;">
+          <img src="../assets/images/ProportionTraced.png" alt="">
+          <p style="color:gray;">Transmission Detection vs. App Usage curves for testing rates [0.05, 0.1, 0.2, 0.4, 0.8]. BLE_Acc gives the detection rate of transmission events between app users. Work derived from this <a href="https://colab.research.google.com/drive/1V7yuwuVHK-WXP5p_LWmJ77NuhNb2Lvid">Monte Carlo Model</a>.</p>
+        </div>
+        <p>In order to investigate disease dynamics with clusters of app users, the model developed by Hellewel et al was modified to account for two sub-populations, one that uses the app and another that doesn’t. The modified implementation is available on <a href="https://github.com/covid19risk/impact-sim">Github</a> and currently assumes 90% app tracing accuracy and 50% non-app tracing accuracy (assuming health systems are partially overwhelmed).</p>
+      <p>This model was used to estimate the average number of infections caused in 6 weeks due to a single imported case. Results show a significant reduction in risk for clusters of app users that are partially distanced from non app users. This is important because it provides an additional incentive for individuals to use the app even when the overall adoption rate is low. As the proportion of the population using the app increases the risk for the entire population is reduced and most outbreaks are contained. </p>
+        <div class="centerImage" style="display:flex;flex-direction:column;align-items:center;">
+          <img src="../assets/images/totalInfected.png" alt="">
+          <img src="../assets/images/appInfected.png" alt="">
+          <p style="color:gray;">Expected infections for total population (top) and app population (bottom) adjusted for relative population size.</p>
+        </div>
+       <p> <strong>So for the question: “Can an effective contact tracing program reduce local transmission so that sustained local spread does not occur?” </strong></p>
+       <p> The answer seems to be yes. With a comprehensive testing program, high contact tracing accuracy, and self-isolation of diagnosed individuals, our models predict that each new case could cause on the order of 10 other cases before the outbreak is extinguished. Even in parameter regimes where automated contact tracing alone is not enough, this technology can be used in combination with existing methodologies to provide greater protections with lower social cost. </p>
+       <p>Also, even in parameter regimes where automated contact tracing alone is not enough, this technology can be used in combination with existing methodologies to provide greater protection with lower social cost.</p>
 
         <p><span class="subTitleLine">Implementation</span></p>
         <p>

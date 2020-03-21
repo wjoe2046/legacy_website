@@ -682,8 +682,9 @@ export default {
       epidemiologyModel.reset();
       trajectoryModel.softReset();
       epidemiologyModel.generateSimInfo(trajectoryModel.trajectoryIds);
+
       epidemiologyModel.infectPatientZeroes();
-      epidemiologyModel.advanceTime(1);
+      epidemiologyModel.preContaminateCells();
 
       this.mapMarkersByTrajId = {};
 

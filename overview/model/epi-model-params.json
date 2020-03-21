@@ -419,6 +419,15 @@
       "default": 10,
       "param_group_key": "VIRUS"
     },
+    "PRE_CONTAMINATION_LEVEL": {
+      "name": "Starting contamination level",
+      "description": "How many locations start out being contaminated by the virus. These will correspond to the locations of Patient Zeroes.",
+      "valuetype": "integer",
+      "range_min": 1,
+      "range_max": 200,
+      "default": 60,
+      "param_group_key": "VIRUS"
+    },
     "PROB_CATCH_FROM_LOCATION": {
       "name": "Probability of catching virus from location",
       "description": "This is the probability that a sim in prolonged contact with a contaminated location catches the virus.",

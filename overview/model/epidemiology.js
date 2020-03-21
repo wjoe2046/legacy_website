@@ -334,6 +334,34 @@ const epidemiologyModel = {
     return simsToInfect;
   },
 
+  preContaminateCells() {
+    // If we don't have a trajectory model, then we can't know which cells
+    // the sim has passed through.
+    if (!this.trajectoryModel) {
+      return;
+    }
+
+    const infectees = Object.values(this.simInfo).filter(sim => sim.infectionStage.contagious);
+    if (!infectees.length) {
+      // No infectees defined yet!
+      return;
+    }
+
+    const cellsOfInfectees = [];
+    infectees.forEach(sim => {
+      const location = this.trajectoryModel.locations[sim.id];
+      const cell = this.getOrCreateContaminationCell(location);
+      cellsOfInfectees.push(cell);
+    });
+
+    const numPreContaminations = this.paramsModel.value('PRE_CONTAMINATION_LEVEL');
+    for (let i = 0; i < numPreContaminations; i++) {
+      const iCell = Math.floor(Math.random() * cellsOfInfectees.length);
+      const cell = cellsOfInfectees[iCell];
+      cell.contaminationLevel++;
+    }
+  },
+
   computeComplicationsRisk(sim) {
     const riskAge50 = this.paramsModel.value("PROB_COMPLICATIONS_AGE_50");
     const riskAge90 = this.paramsModel.value("PROB_COMPLICATIONS_AGE_90");
@@ -604,7 +632,6 @@ const epidemiologyModel = {
 
       // An exposed sim may choose to self-quarantine.
       if (mathHelpers.pcheck(this.paramsModel.value("PROB_EXPOSED_SELF_QUARANTINE"))) {
-        console.log(`${sim.id} is self-quarantining from exposure`);
         sim.isQuarantined = true;
       }
       // Independently, a sim that's been exposed may choose to get tested.
@@ -709,7 +736,6 @@ const epidemiologyModel = {
     // we know how many of these direct interactions will have been with
     // fellow app users (we won't model indirect tracking for now).
     const numInteractionsWithAppUsers = numRecordedInteractions * probAppInstalled;
-    console.log(numInteractionsWithAppUsers)
 
     // Only sims that are active can be out and about in the public so as to
     // receive notifications.

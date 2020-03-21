@@ -4,16 +4,10 @@
       <v-col cols="12" lg="10">
         <div class="TopSection">
           <div class="mainTitle">
-            <img src="../assets/images/logo/banner_1.png" alt="" />
+            <img src="~/assets/images/logo/banner_1.png" alt="" />
           </div>
 
-          <div class="mainSubTitle">
-            <p>Join the Watch. Help stop COVID-19 with crowdsourced data.</p>
-          </div>
-        </div>
-
-        <div id="tableOfContents">
-          <div class="tableOfContentsContainer">
+          <TableOfContents>
             <h2 class="titleLine">Table of Contents</h2>
             <ol class="outerList">
               <li>
@@ -119,6 +113,11 @@
                 </ol>
               </li>
             </ol>
+          </TableOfContents>
+
+
+          <div class="mainSubTitle">
+            <p>Join the Watch. Help stop COVID-19 with crowdsourced data.</p>
           </div>
         </div>
 
@@ -257,7 +256,7 @@
           class="centerImage"
           style="display:flex;flex-direction:column;align-items:center;"
         >
-          <img src="../assets/images/ROKDailyCases.png" alt="" />
+          <img src="~/assets/images/ROKDailyCases.png" alt="" />
           <p style="color:gray;">
             <span>South Korea&nbsp;</span>
             <a
@@ -1119,7 +1118,7 @@
           class="centerImage"
           style="display:flex;flex-direction:column;align-items:center;"
         >
-          <img src="../assets/images/ProportionTraced.png" alt="" />
+          <img src="~/assets/images/ProportionTraced.png" alt="" />
           <p style="color:gray;">
             Transmission Detection vs. App Usage curves for testing rates [0.05,
             0.1, 0.2, 0.4, 0.8]. BLE_Acc gives the detection rate of
@@ -1826,10 +1825,12 @@ img {
 
 <script>
 import Heatmap from "~/components/Heatmap.vue";
+import TableOfContents from "~/components/TableOfContents.vue";
 
 export default {
   components: {
-    Heatmap
+    Heatmap,
+    TableOfContents
   }
 };
 </script>

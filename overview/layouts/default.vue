@@ -81,11 +81,18 @@
          :width="350"
         v-model="tocShow"
         >
+      <v-btn icon small color="primary"
+          class="toc-closer"
+          @click="tocShow = false">
+        <v-icon>mdi-close-circle</v-icon>
+      </v-btn>
+
       <div class="px-1" ref="toc"></div>
     </v-navigation-drawer>
 
     <v-content>
       <v-btn class="toc-hamburger" color="primary"
+          v-show="!tocShow"
           @click="tocShow = !tocShow"
       >
         <v-icon>mdi-table-of-contents</v-icon>
@@ -154,14 +161,22 @@
 </template>
 
 <style lang="scss">
+.v-navigation-drawer {
+  max-width: 95vw;
+
+  .toc-closer {
+    position: absolute;
+    top: 1.5em;
+    right: 2em;
+  }
+}
+
 .toc-hamburger {
   margin: 1ex;
   position: fixed;
+  z-index: 1;
 
-  @media (min-width: 1264px) {
-    display: none;
-  }
-  @media (max-width: 600px) {
+  @media (max-width: 1264px) {
     opacity: .8;
   }
 }

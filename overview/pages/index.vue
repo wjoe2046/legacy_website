@@ -36,59 +36,14 @@
                 <ol class="innerList">
                   <li>
                     <a href="#contactTracing"
-                    >Part 1: Bluetooth Contact Tracing</a
+                      >Part 1: Bluetooth Contact Tracing</a
                     >
-                    <!-- <ol class="nestedInnerList">
-                      <li>
-                        <a href="#contactTracingBackground"
-                          >Contact Tracing Background</a
-                        >
-                      </li>
-                      <li>
-                        <a href="#blueToothModel"
-                          >Bluetooth Contact Tracing Model Description</a
-                        >
-                      </li>
-                      <li>
-                        <a href="#blueToothPrivacy"
-                          >Bluetooth Privacy Model and Database</a
-                        >
-                      </li>
-                      <li>
-                        <a href="#bluetoothDatabase"
-                          >Bluetooth Contact Tracing Implementation</a
-                        >
-                      </li>
-                    </ol> -->
                   </li>
                   <li>
                     <a href="#heatmapTitle">Part 2: GPS Heatmap</a>
-                    <!-- <ol class="nestedInnerList">
-                      <li>
-                        <a href="#heatmapDesc">GPS Heatmap Model Description</a>
-                      </li>
-                      <li>
-                        <a href="#heatmapImplementation"
-                          >GPS Heatmap Implementation</a
-                        >
-                      </li>
-                      <li>
-                        <a href="#heatmapEpidemiology"
-                          >GPS Heatmap Epidemiology Model</a
-                        >
-                      </li>
-                      <li>
-                        <a href="#databasePrivacy"
-                          >GPS Privacy Model and Database</a
-                        >
-                      </li>
-                    </ol> -->
                   </li>
                   <li>
                     <a href="#userRecommendations">Part 3: User Recommendations</a>
-                    <!-- <ol class="nestedInnerList">
-                      <li><a href="#scopeDesign">Scope and Design</a></li>
-                    </ol> -->
                   </li>
                 </ol>
               </li>
@@ -118,7 +73,6 @@
           <p>&nbsp;</p>
         <div class="mainSubTitle">
           <p>Help us stop COVID-19 with crowdsourced data.</p>
-        </div>
         </div>
         <!--About Us-->
         <h2 id="aboutUs"><span class="titleLine">About Us</span></h2>

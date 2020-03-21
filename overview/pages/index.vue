@@ -119,6 +119,7 @@
             <p>Join the Watch. Help stop COVID-19 with crowdsourced data.</p>
           </div>
         </div>
+      </v-col cols="12" lg="10">
 
         <p>&nbsp;</p>
 
@@ -1142,6 +1143,7 @@
             Expected infections for total population (top) and app population
             (bottom) adjusted for relative population size.
           </p>
+        </div>
         </v-row>
         <p>
           <strong>What we’ve most wanted to know is the answer to this question: “Can an effective contact tracing program reduce local transmission so that sustained local spread does not occur?” The answer looks like yes.

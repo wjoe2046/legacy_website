@@ -9,15 +9,15 @@
 
           <TableOfContents>
             <h2 class="titleLine">Table of Contents</h2>
-            <ol class="outerList">
+            <ul class="outerList">
               <li>
-                <strong><a href="#aboutUs">About Us</a></strong>
-                <ol class="innerList">
+                <strong>About Us</strong>
+                <ul class="innerList">
                   <li><a href="#mission">Mission Statement</a></li>
                   <li><a href="#privacy">Privacy Focus</a></li>
                   <li><a href="#interventionBackground">Current Mobile Phone Interventions</a></li>
                   <li><a href="#interventionOptimization">Making Interventions More Efficient</a></li>
-                </ol>
+                </ul>
               </li>
               <li>
                 <strong
@@ -25,60 +25,57 @@
                     >Proposed System: Three Parts</a
                   ></strong
                 >
-                <ol class="innerList">
+                <ul class="innerList">
                   <li><a href="#contactTracing">Part 1: Bluetooth Contact Tracing</a>
-                    <ol class="nestedInnerList">
+                    <ul class="nestedInnerList">
                       <li><a href="#contactTracingBackground">Contact Tracing Background</a></li>
                       <li><a href="#blueToothModel">Model Description</a></li>
                       <li><a href="#blueToothPrivacy">Privacy Model</a></li>
                       <li><a href="#bluetoothDatabase">Database</a></li>
                       <li><a href="#bluetoothImplementation">Implementation</a></li>
-                    </ol>
+                    </ul>
                   </li>
                   <li><a href="#heatmapTitle">Part 2: GPS Heatmap</a>
-                    <ol class="nestedInnerList">
+                    <ul class="nestedInnerList">
                       <li><a href="#heatmapDesc">Model Description</a></li>
                       <li><a href="#heatmapImplementation">Implementation</a></li>
                       <li><a href="#heatmapEpidemiology">Heatmap Epidemiology Model</a></li>
                       <li><a href="#databasePrivacy">Privacy Model</a></li>
                       <li><a href="#databaseAnonymization">Anonymization Model</a></li>
-                    </ol>
+                    </ul>
                   </li>
                   <li><a href="#userRecommendations">Part 3: User Recommendations</a>
-                    <ol class="nestedInnerList">
+                    <ul class="nestedInnerList">
                       <li><a href="#scopeDesign">Scope and Design</a></li>
-                    </ol>
+                    </ul>
                   </li>
-                </ol>
+                </ul>
               </li>
               <li><strong><a href="#care">Why You Should Care</a></strong>
-                <ol class="innerList">
+                <ul class="innerList">
                   <li><a href="#healthAuthorities">Incentive for Health Authorities</a></li>
                   <li><a href="#users">Incentives for Individuals</a></li>
                   <li><a href="#impact">Quantitative Analysis of Impact</a></li>
                   <li><a href="#timeline">Timeline to Deployment</a></li>
-                </ol>
+                </ul>
               </li>
               <li> <strong><a href="#conclusion">Conclusions</a></strong>
-                <ol class="innerList">
+                <ul class="innerList">
                   <li><a href="#youDo">Who Can Help</a></li>
                   <li><a href="#contributors">Contributors, Advisors, and Acknowledgements</a></li>
-                </ol>
+                </ul>
               </li>
-            </ol>
+            </ul>
           </TableOfContents>
 
           <div class="mainSubTitle">
-            <p>Join the Watch. Help stop COVID-19 with crowdsourced data.</p>
+            <p>Help stop COVID-19 with crowdsourced data.</p>
           </div>
         </div>
       </v-col cols="12" lg="10">
 
         <p>&nbsp;</p>
 
-        <!--About Us-->
-        <h2 id="aboutUs"><span class="titleLine">About Us</span></h2>
-        <p>&nbsp;</p>
 
         <p>
           <span id="mission" class="subTitleLine"> Mission Statement </span>
@@ -362,6 +359,17 @@
         </div>
 
         <p>
+          In the context of contact tracing there are three parameters that
+          <a href="https://github.com/BDI-pathogens/covid-19_instant_tracing/blob/master/Manuscript%20-%20Modelling%20instantaneous%20digital%20contact%20tracing.pdf">models show</a>
+          can strongly impact results:
+
+        </p>
+        <ul style="list-style:decimal">
+          <li>Reduction in overall transmission through social distancing</li>
+          <li>Testing rate and time to diagnosis</li>
+          <li>Contact tracing accuracy</li>
+        </ul>
+        <p>
           <a
             href="https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(20)30074-7/fulltext"
             >Hellewell et al</a
@@ -374,17 +382,6 @@
             is likely.</strong
           >
         </p>
-        <p>
-          In the context of contact tracing there are three parameters that
-          <a href="https://github.com/BDI-pathogens/covid-19_instant_tracing/blob/master/Manuscript%20-%20Modelling%20instantaneous%20digital%20contact%20tracing.pdf">models show</a>
-          can strongly impact results:
-
-        </p>
-        <ul style="list-style:decimal">
-          <li>Reduction in overall transmission through social distancing</li>
-          <li>Testing rate and time to diagnosis</li>
-          <li>Contact tracing accuracy</li>
-        </ul>
 
         <p>
           <span id="blueToothModel" class="subTitleLine"
@@ -567,8 +564,7 @@
       <p>The specification for the database is very simple: it is shared across all installations of the app and stores anonymized Contact Event Numbers. If protections against hoaxes are required, permission numbers can be used, but are not an essential requirement of the system. If the database grows too large, it can also be fragmented based on general location. The code and a more in depth discussion of architecture are available on the open source github repo <a href="https://github.com/covid19risk/covidwatch-backend/blob/master/README.md">here</a>.</p>
 
       <p><span id="bluetoothImplementation" class="subTitleLine">Implementation</span></p>
-      <p>Bluetooth contact tracing is implemented via background processes on iOS and Android.</p>
-      <p>The approach currently being investigated utilizes BLE functionality for background advertisement and scanning. Due to different system requirements for Android and iOS, the protocol works differently depending on the operating systems of the devices involved. The key challenges are:</p>
+      <p>Bluetooth contact tracing is implemented via background processes on iOS and Android. The approach currently being investigated utilizes BLE functionality for background advertisement and scanning. Due to different system requirements for Android and iOS, the protocol works differently depending on the operating systems of the devices involved. The key challenges are:</p>
       <ul style="list-style:decimal">
         <li>iOS devices acting as “peripherals” in the background can only be found by “centrals” that are scanning for their specific service UUID. These peripherals must establish a connection to transfer any data.</li>
         <li>Android devices have several unfixed bugs where subsequent connections with many devices can cause the Bluetooth system to lock up.</li>

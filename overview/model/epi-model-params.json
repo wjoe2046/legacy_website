@@ -691,7 +691,7 @@
       "icon": "mdi-cellphone-play"
     },
     "RESPONSE": {
-      "name": "Threat Response",
+      "name": "Response",
       "description": "Specifications for how simulated people (sims) change their behavior in response to the threat of contagion",
       "icon": "mdi-medical-bag"
     }

@@ -2,7 +2,9 @@
   <v-layout column class="covid19heatmap">
     <v-row>
       <v-col cols="12">
-        <v-tabs class="map-container-tabber">
+        <v-tabs class="map-container-tabber"
+            centered
+            color="primary">
           <v-tab>
             Map
           </v-tab>
@@ -179,6 +181,7 @@
                 :min="30 * 60"
                 :max="6 * 60 * 60"
                 :dense="true"
+                track-color="secondaryLight"
               >
               </v-slider>
             </v-row>
@@ -244,9 +247,9 @@
               <v-tab
                 v-for="(group, iGroup) in paramsModel.groups"
                 :key="iGroup"
+                class="param-slider-tab"
               >
-                <span
-                  class="param-slider-group-name param-slider-group-name-tab"
+                <span class="d-none d-sm-flex"
                 >
                   {{ group.name }}
                 </span>
@@ -261,12 +264,10 @@
               >
                 <v-container>
                   <v-row class="param-slider-group-description">
-                    <div
-                      class="param-slider-group-name param-slider-group-name-desc"
-                    >
+                    <div class="param-slider-group-name d-block d-sm-none">
                       {{ group.name }}
                     </div>
-                    <div style="color: #BF3F4A">
+                    <div class="param-slider-group-desc">
                       {{ group.description }}
                     </div>
                   </v-row>
@@ -301,6 +302,7 @@
                       :persistent-hint="true"
                       :dense="true"
                       :thumb-label="true"
+                      track-color="secondaryLight"
                       :step="
                         param.valuetype === 'integer'
                           ? 1
@@ -338,7 +340,7 @@
     </v-row>
     <v-row class="justify-center">
       <v-col cols="12" md="8" lg="6">
-        <v-alert type="info" :dismissible="true">
+        <v-alert type="warning" :dismissible="true">
           <p>
             NOTE: This is simulated data representing a theoretical
             epidemiological model. This simulation does not contain any actual
@@ -363,17 +365,28 @@
     transform: translate(-50%, -50%);
   }
 
-  .map-container-tabber {
-    .v-item-group[role="tablist"] {
-      margin-left: 1em;
-    }
+  .v-messages__message {
+    color: var(--v-secondary-base);
+  }
+  .v-tab:not(.v-tab--active) > .v-icon {
+    color: var(--v-secondary-base) !important;
+  }
+  .v-tabs .v-window {
+    border: 1px solid var(--v-secondaryLight-base);
+    border-radius: 1ex;
+    overflow: hidden;
+  }
+  .v-tabs--icons-and-text > .v-tabs-bar {
+    height: unset;
+    padding-left: 2em;
+    padding-right: 2em;
   }
 
   .map-container {
     background: #ccc;
     border: 1px solid #444;
-    border-radius: 1em;
-    overflow: hidden;
+    border-radius: 1.1ex;
+    overflow: hidden; // Otherwise the rectangular Google Map object clips the corners.
     width: 100%;
     height: calc(100vh - 35em);
     min-height: 20em;
@@ -404,24 +417,24 @@
 
   .param-sliders {
     position: relative;
-    padding-right: 5em;
-    @media (max-width: 800px) {
-      padding-right: unset;
 
-      .param-slider-group-name-tab {
-        display: none;
-      }
-      .param-slider-group-name-desc {
-        display: unset;
-      }
+    .param-slider-group-description {
+      color: var(--v-primary-base);
+      display: block;
     }
 
-    .param-slider-group-name-desc {
+    .param-slider-group-name {
       font-style: normal;
       font-variant: small-caps;
       font-weight: bold;
       font-size: 130%;
-      display: none;
+    }
+
+    .param-slider-tab {
+      padding-top: 1ex;
+      padding-bottom: 1ex;
+      min-width: 4em;
+      flex: 1;
     }
 
     .param-slider-tab-content {
@@ -435,11 +448,11 @@
       width: 75%;
       margin: auto;
       margin-bottom: 0.5ex;
-      color: #2196f3;
       font-style: italic;
 
-      @media (max-width: 800px) {
+      @media (max-width: 600px) {
         font-size: 80%;
+        width: unset;
       }
     }
 
@@ -450,7 +463,7 @@
         margin-top: 1em;
         margin-left: 5%;
 
-        @media (max-width: 800px) {
+        @media (max-width: 960px) {
           margin-left: 0;
         }
       }
@@ -472,9 +485,6 @@
     margin-top: 1em;
     margin-bottom: 1ex;
     max-width: 75%;
-    @media (max-width: 800px) {
-      max-width: 100%;
-    }
 
     .v-messages {
       top: -6.5ex;

@@ -6,7 +6,13 @@
         <!-- if by using Vuetify we can improve the below somehow to be more responsive, etc. please let me know, I'm new to Vuetify and eager to learn! - Jesse -->
         <v-row class="navbarRow">
           <v-col class="navbarColumn">
-            <a class="logo" href="#"
+            <a class="logoDesktop" href="#" style="width: 25%;"
+              ><img
+                class="logoImg"
+                src="../assets/images/logo/banner_1.png"
+                alt=""
+            /></a>
+            <a class="logoMobile logo" href="#"
               ><img class="logoImg" src="../assets/images/logo/logo.png" alt=""
             /></a>
 
@@ -138,3 +144,17 @@
 <script>
 export default {};
 </script>
+
+<style>
+@media screen and (max-width: 960px) {
+  .logoDesktop {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .logoMobile {
+    display: none !important;
+  }
+}
+</style>

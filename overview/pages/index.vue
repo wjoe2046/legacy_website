@@ -44,7 +44,7 @@
                     <a href="#contactTracing"
                       >Part 1: Bluetooth Contact Tracing</a
                     >
-                    <ol class="nestedInnerList">
+                    <!-- <ol class="nestedInnerList">
                       <li>
                         <a href="#contactTracingBackground"
                           >Contact Tracing Background</a
@@ -65,11 +65,11 @@
                           >Bluetooth Contact Tracing Implementation</a
                         >
                       </li>
-                    </ol>
+                    </ol> -->
                   </li>
                   <li>
                     <a href="#heatmapTitle">Part 2: GPS Heatmap</a>
-                    <ol class="nestedInnerList">
+                    <!-- <ol class="nestedInnerList">
                       <li>
                         <a href="#heatmapDesc">GPS Heatmap Model Description</a>
                       </li>
@@ -88,14 +88,14 @@
                           >GPS Privacy Model and Database</a
                         >
                       </li>
-                    </ol>
+                    </ol> -->
                   </li>
                   <li>
                     <a href="#userRecommendations">Part 3: Recommendations</a>
-                    <ol class="nestedInnerList">
+                    <!-- <ol class="nestedInnerList">
                       <li><a href="#scopeDesign">Scope and Design</a></li>
                       <li><a href="#timeline">Timeline to Deployment</a></li>
-                    </ol>
+                    </ol> -->
                   </li>
                 </ol>
               </li>
@@ -762,12 +762,8 @@
           simulates users according to the following state machine:
         </p>
 
-        <p style="color:red;font-size:30px">
-          need a better resolution image, enlarge font size inside each node
-          also
-        </p>
         <img
-          src="../assets/images/overview_article_imgs/bad_resolution_epi_model.png"
+          src="../assets/images/overview_article_imgs/Infection_state_diagram.png"
           alt=""
         />
         <p>&nbsp;</p>
@@ -1236,7 +1232,6 @@
 
         <p>&nbsp;</p>
 
-        <p>&nbsp;</p>
         <h2 id="conclusion"><span class="titleLine">Conclusions</span></h2>
         <br />
         <p>
@@ -1458,21 +1453,21 @@
       <v-row justify="center" align="center">
         <v-col cols="12">
           <v-row no-gutters>
-            <v-col>
+            <v-col md="2">
               <h4>Name</h4>
             </v-col>
-            <v-col>
-              <h4>Roles and Affiliations</h4>
+            <v-col md="8">
+              <h4>Roles</h4>
             </v-col>
             <v-col>
               <h4>Location</h4>
             </v-col>
           </v-row>
           <v-row no-gutters>
-            <v-col>
+            <v-col md="2">
               <a class="name">Tessa Alexanian</a>
             </v-col>
-            <v-col>
+            <v-col md="8">
               <a class="affiliation"
                 >Privacy and Security, iGEM, East Bay Biosecurity Group</a
               >
@@ -1482,13 +1477,13 @@
             </v-col>
           </v-row>
           <v-row no-gutters>
-            <v-col>
+            <v-col md="2">
               <a class="name">Peter Eckersley</a>
             </v-col>
-            <v-col>
+            <v-col md="8">
               <a class="affiliation"
-                >Privacy and Security, Convener of stop-covid.tech and
-                Distinguished Technology Fellow, EFF</a
+                >Privacy and Security, stop-covid.tech and Distinguished
+                Technology Fellow, EFF</a
               >
             </v-col>
             <v-col>
@@ -1496,10 +1491,10 @@
             </v-col>
           </v-row>
           <v-row no-gutters>
-            <v-col>
+            <v-col md="2">
               <a class="name">Jeffrey Ladish</a>
             </v-col>
-            <v-col>
+            <v-col md="8">
               <a class="affiliation"
                 >Privacy and Security, Security Consultant, Gordian Research</a
               >
@@ -1517,23 +1512,23 @@
       <v-row justify="center" align="center">
         <v-col cols="12">
           <v-row no-gutters>
-            <v-col>
+            <v-col md="2">
               <h4>Name</h4>
             </v-col>
-            <v-col>
-              <h4>Roles and Affiliations</h4>
+            <v-col md="8">
+              <h4>Roles</h4>
             </v-col>
             <v-col>
               <h4>Location</h4>
             </v-col>
           </v-row>
           <v-row no-gutters>
-            <v-col>
-              <a class="name">Megan Coffee MD, PhD</a>
+            <v-col md="2">
+              <a class="name">Megan Coffee</a>
             </v-col>
-            <v-col>
+            <v-col md="8">
               <a class="affiliation"
-                >Infectious Diseases, NYU and Public Health</a
+                >MD, PhD, Infectious Diseases, NYU and Public Health</a
               >
             </v-col>
             <v-col>
@@ -1541,10 +1536,10 @@
             </v-col>
           </v-row>
           <v-row no-gutters>
-            <v-col>
+            <v-col md="2">
               <a class="name">Jolene Elizabeth</a>
             </v-col>
-            <v-col>
+            <v-col md="8">
               <a class="affiliation"
                 >Public Health Research and Digital Health Innovation</a
               >
@@ -1554,12 +1549,13 @@
             </v-col>
           </v-row>
           <v-row no-gutters>
-            <v-col>
-              <a class="name">Celine Gounder MD, ScM, FIDSA</a>
+            <v-col md="2">
+              <a class="name">Celine Gounder</a>
             </v-col>
-            <v-col>
+            <v-col md="8">
               <a>
-                Internist, Infectious Diseases Specialist, Epidemiologist
+                MD, ScM, FIDSA, Internist, Infectious Diseases Specialist,
+                Epidemiologist
               </a>
             </v-col>
             <v-col>
@@ -1567,14 +1563,14 @@
             </v-col>
           </v-row>
           <v-row no-gutters>
-            <v-col>
-              <a class="name">Julie Parsonnet MD, PhD</a>
+            <v-col md="2">
+              <a class="name">Julie Parsonnet</a>
+            </v-col>
+            <v-col md="8">
+              <a>MD, PhD, Infectious Diseases Specialist and Epidemiologist</a>
             </v-col>
             <v-col>
-              <a>Infectious Diseases Specialist and Epidemiologist</a>
-            </v-col>
-            <v-col>
-              <a>Stanford, USA</a>
+              <a>Stanford University, CA</a>
             </v-col>
           </v-row>
         </v-col>

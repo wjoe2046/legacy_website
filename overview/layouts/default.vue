@@ -6,23 +6,18 @@
         <!-- if by using Vuetify we can improve the below somehow to be more responsive, etc. please let me know, I'm new to Vuetify and eager to learn! - Jesse -->
         <v-row class="navbarRow">
           <v-col class="navbarColumn">
-            <a class="logoDesktop logo d-none d-md-flex"
-                href="#"
+            <a class="logoDesktop logo d-none d-md-flex" href="#"
               ><img
                 class="logoImg"
                 src="../assets/images/logo/banner_1.png"
                 alt=""
             /></a>
-            <a class="logoMobile logo d-flex d-md-none"
-                href="#"
+            <a class="logoMobile logo d-flex d-md-none" href="#"
               ><img class="logoImg" src="../assets/images/logo/logo.png" alt=""
             /></a>
 
             <div class="rightNav">
-              <v-btn
-                color="primary"
-                class="white--text"
-              >
+              <v-btn color="primary" class="white--text">
                 Get App
               </v-btn>
 
@@ -50,7 +45,7 @@
                     <a
                       target="_blank"
                       class="link"
-                      to="https://www.covid-watch.org/collaborate.html"
+                      href="https://www.covid-watch.org/collaborate.html"
                       style="color:#BF3F4A;"
                       >Get Involved</a
                     ></v-list-item
@@ -81,13 +76,14 @@
       </v-container>
     </v-app-bar>
 
-    <v-navigation-drawer clipped app
-         :width="350"
-        v-model="tocShow"
-        >
-      <v-btn icon small color="primary"
-          class="toc-closer"
-          @click="tocShow = false">
+    <v-navigation-drawer clipped app :width="350" v-model="tocShow">
+      <v-btn
+        icon
+        small
+        color="primary"
+        class="toc-closer"
+        @click="tocShow = false"
+      >
         <v-icon>mdi-close-circle</v-icon>
       </v-btn>
 
@@ -95,13 +91,14 @@
     </v-navigation-drawer>
 
     <v-content>
-      <v-btn class="toc-hamburger" color="primary"
-          v-show="!tocShow"
-          @click="tocShow = !tocShow"
+      <v-btn
+        class="toc-hamburger"
+        color="primary"
+        v-show="!tocShow"
+        @click="tocShow = !tocShow"
       >
         <v-icon>mdi-table-of-contents</v-icon>
       </v-btn>
-
 
       <nuxt style="min-height: 100vh" />
 
@@ -117,7 +114,7 @@
               <v-col class="footerList" cols="12" md="3">
                 <nuxt-link
                   class="text-no-wrap"
-                  :to="{path: '/', hash:'heatmapImplementation'}"
+                  :to="{ path: '/', hash: 'heatmapImplementation' }"
                   >Heatmap Demo</nuxt-link
                 >
               </v-col>
@@ -154,13 +151,15 @@
             <img src="~/assets/images/logo/banner_1.png" alt="" />
           </v-card-text>
           <v-card-text class="gray--text">
-            Licensed <a href="https://creativecommons.org/licenses/by-nc/2.0/">CC-BY-NC</a> - COVID Watch
+            Licensed
+            <a href="https://creativecommons.org/licenses/by-nc/2.0/"
+              >CC-BY-NC</a
+            >
+            - COVID Watch
           </v-card-text>
         </v-card>
       </v-footer>
-
     </v-content>
-
   </v-app>
 </template>
 
@@ -181,7 +180,7 @@
   z-index: 1;
 
   @media (max-width: 1264px) {
-    opacity: .8;
+    opacity: 0.8;
   }
 }
 

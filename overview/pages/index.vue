@@ -1268,347 +1268,347 @@
             >collaborators</a
           >, donors, and support from health organizations and testing centers.
         </p>
+
+        <h2 id="contributors" class="titleLine">
+          Contributors, Advisors, and Acknowledgements
+        </h2>
+        <div class="subTitleLine">Contributors:</div>
+        <v-container class="contributors">
+          <v-row justify="center" align="center">
+            <v-col cols="12">
+              <v-row no-gutters>
+                <v-col>
+                  <h4>Name</h4>
+                </v-col>
+                <v-col>
+                  <h4>Role</h4>
+                </v-col>
+                <v-col>
+                  <h4>Location</h4>
+                </v-col>
+              </v-row>
+              <v-row no-gutters>
+                <v-col>
+                  <div class="name">Isaiah Becker-Mayer</div>
+                </v-col>
+                <v-col>
+                  <div>Software Engineer</div>
+                </v-col>
+                <v-col>
+                  <div>California, USA</div>
+                </v-col>
+              </v-row>
+              <v-row no-gutters>
+                <v-col>
+                  <div class="name">Daniel Blank</div>
+                </v-col>
+                <v-col>
+                  <div>Software Engineer - Heatmap</div>
+                </v-col>
+                <v-col>
+                  <div>Berkeley, USA</div>
+                </v-col>
+              </v-row>
+              <v-row no-gutters>
+                <v-col>
+                  <div class="name">Jesse Colligan</div>
+                </v-col>
+                <v-col>
+                  <div>Project Manager</div>
+                </v-col>
+                <v-col>
+                  <div>New York, USA</div>
+                </v-col>
+              </v-row>
+              <v-row no-gutters>
+                <v-col>
+                  <div class="name">Rhys Fenwick</div>
+                </v-col>
+                <v-col>
+                  <div>Head of Communications</div>
+                </v-col>
+                <v-col>
+                  <div>Wollongong, Australia</div>
+                </v-col>
+              </v-row>
+              <v-row no-gutters>
+                <v-col>
+                  <div class="name">Mike Hittle</div>
+                </v-col>
+                <v-col>
+                  <div>Heat Map Team Epidemiologist</div>
+                </v-col>
+                <v-col>
+                  <div>Stanford University, USA</div>
+                </v-col>
+              </v-row>
+              <v-row no-gutters>
+                <v-col>
+                  <div class="name">Mark Ingle</div>
+                </v-col>
+                <v-col>
+                  <div>Bluetooth Team Software Engineer</div>
+                </v-col>
+                <v-col>
+                  <div>South Carolina, USA</div>
+                </v-col>
+              </v-row>
+              <v-row no-gutters>
+                <v-col>
+                  <div class="name">Oliver Nash</div>
+                </v-col>
+                <v-col>
+                  <div>Software Engineer</div>
+                </v-col>
+                <v-col>
+                  <div>London, United Kingdom</div>
+                </v-col>
+              </v-row>
+              <v-row no-gutters>
+                <v-col>
+                  <div class="name">Victoria Nguyen</div>
+                </v-col>
+                <v-col>
+                  <div>UI Designer</div>
+                </v-col>
+                <v-col>
+                  <div>California, United States</div>
+                </v-col>
+              </v-row>
+              <v-row no-gutters>
+                <v-col>
+                  <div class="name">James Petrie</div>
+                </v-col>
+                <v-col>
+                  <div>Head of Research</div>
+                </v-col>
+                <v-col>
+                  <div>University of Waterloo, Canada</div>
+                </v-col>
+              </v-row>
+              <v-row no-gutters>
+                <v-col>
+                  <div class="name">Jeff Schwaber</div>
+                </v-col>
+                <v-col>
+                  <div>Software Engineer</div>
+                </v-col>
+                <v-col>
+                  <div>VP of Engineering at Bigtincan, USA</div>
+                </v-col>
+              </v-row>
+              <v-row no-gutters>
+                <v-col>
+                  <div class="name">Zsombor Szabo</div>
+                </v-col>
+                <v-col>
+                  <div>Bluetooth Team Lead</div>
+                </v-col>
+                <v-col>
+                  <div>Budapest, Romania</div>
+                </v-col>
+              </v-row>
+              <v-row no-gutters>
+                <v-col>
+                  <div class="name">Akhil Veeraghanta</div>
+                </v-col>
+                <v-col>
+                  <div>Bluetooth Team Software Engineer</div>
+                </v-col>
+                <v-col>
+                  <div>University of British Columbia, Canada</div>
+                </v-col>
+              </v-row>
+              <v-row no-gutters>
+                <v-col>
+                  <div class="name">Mikhail Voloshin</div>
+                </v-col>
+                <v-col>
+                  <div>Heat Map Team Lead</div>
+                </v-col>
+                <v-col>
+                  <div>North Carolina, United States</div>
+                </v-col>
+              </v-row>
+              <v-row no-gutters>
+                <v-col>
+                  <div class="name">Sydney Von Arx</div>
+                </v-col>
+                <v-col>
+                  <div>Human Resources</div>
+                </v-col>
+                <v-col>
+                  <div>Stanford University, USA</div>
+                </v-col>
+              </v-row>
+              <v-row no-gutters>
+                <v-col>
+                  <div class="name">Tina White</div>
+                </v-col>
+                <v-col>
+                  <div>Executive Director</div>
+                </v-col>
+                <v-col>
+                  <div>Stanford University, USA</div>
+                </v-col>
+              </v-row>
+            </v-col>
+          </v-row>
+        </v-container>
+        <div class="subTitleLine">Privacy and Security Advisors:</div>
+        <v-container class="contributors">
+          <v-row justify="center" align="center">
+            <v-col cols="12">
+              <v-row no-gutters>
+                <v-col md="2">
+                  <h4>Name</h4>
+                </v-col>
+                <v-col md="8">
+                  <h4>Roles</h4>
+                </v-col>
+                <v-col>
+                  <h4>Location</h4>
+                </v-col>
+              </v-row>
+              <v-row no-gutters>
+                <v-col md="2">
+                  <div class="name">Tessa Alexanian</div>
+                </v-col>
+                <v-col md="8">
+                  <div class="affiliation">
+                    Privacy and Security, iGEM, East Bay Biosecurity Group
+                  </div>
+                </v-col>
+                <v-col>
+                  <div>Berkeley, USA</div>
+                </v-col>
+              </v-row>
+              <v-row no-gutters>
+                <v-col md="2">
+                  <div class="name">Peter Eckersley</div>
+                </v-col>
+                <v-col md="8">
+                  <div class="affiliation">
+                    Privacy and Security, stop-covid.tech and Distinguished
+                    Technology Fellow, EFF
+                  </div>
+                </v-col>
+                <v-col>
+                  <div>Australia</div>
+                </v-col>
+              </v-row>
+              <v-row no-gutters>
+                <v-col md="2">
+                  <div class="name">Jeffrey Ladish</div>
+                </v-col>
+                <v-col md="8">
+                  <div class="affiliation">
+                    Privacy and Security, Security Consultant, Gordian Research
+                  </div>
+                </v-col>
+                <v-col>
+                  <div>Berkeley, USA</div>
+                </v-col>
+              </v-row>
+            </v-col>
+          </v-row>
+        </v-container>
+
+        <div class="subTitleLine">Public Health and Epidemiology Advisors:</div>
+        <v-container class="contributors">
+          <v-row justify="center" align="center">
+            <v-col cols="12">
+              <v-row no-gutters>
+                <v-col md="2">
+                  <h4>Name</h4>
+                </v-col>
+                <v-col md="8">
+                  <h4>Roles</h4>
+                </v-col>
+                <v-col>
+                  <h4>Location</h4>
+                </v-col>
+              </v-row>
+              <v-row no-gutters>
+                <v-col md="2">
+                  <div class="name">Megan Coffee</div>
+                </v-col>
+                <v-col md="8">
+                  <div class="affiliation">
+                    MD, PhD, Infectious Diseases, NYU and Public Health
+                  </div>
+                </v-col>
+                <v-col>
+                  <div>Columbia, USA</div>
+                </v-col>
+              </v-row>
+              <v-row no-gutters>
+                <v-col md="2">
+                  <div class="name">Jolene Elizabeth</div>
+                </v-col>
+                <v-col md="8">
+                  <div class="affiliation">
+                    Public Health Research and Digital Health Innovation
+                  </div>
+                </v-col>
+                <v-col>
+                  <div>California, USA</div>
+                </v-col>
+              </v-row>
+              <v-row no-gutters>
+                <v-col md="2">
+                  <div class="name">Celine Gounder</div>
+                </v-col>
+                <v-col md="8">
+                  <div>
+                    MD, ScM, FIDSA, Internist, Infectious Diseases Specialist,
+                    Epidemiologist
+                  </div>
+                </v-col>
+                <v-col>
+                  <div>New York, USA</div>
+                </v-col>
+              </v-row>
+              <v-row no-gutters>
+                <v-col md="2">
+                  <div class="name">Julie Parsonnet</div>
+                </v-col>
+                <v-col md="8">
+                  <div>
+                    MD, PhD, Infectious Diseases Specialist and Epidemiologist
+                  </div>
+                </v-col>
+                <v-col>
+                  <div>Stanford University, CA</div>
+                </v-col>
+              </v-row>
+            </v-col>
+          </v-row>
+        </v-container>
+
+        <div class="subTitleLine">Acknowledgements:</div>
+        <br />
+        <p>
+          We are deeply grateful for the feedback and contributions from Allen
+          Akhaumere, Ian Derrington, Wang Jian, Chris Olah, Justin Shovelain,
+          Manisha Singh, Drew Stonebraker, and Joshua Zader.
+        </p>
+        <p>
+          We also appreciate the advice, shared work, and cooperative spirit of
+          Scott Leibrandt, Dana Lewis and the entire
+          <a href="https://www.coepi.org/">CoEpi</a> volunteer team.
+        </p>
+        <p>
+          We would also like to thank all the other volunteers and helpers and
+          anyone else we might have missed who showed up and contributed time to
+          the COVID Watch project. We couldn’t have done this without you. Look
+          for the helpers.
+        </p>
+
+        <p>&nbsp;</p>
+        <a class="link" href="#">Back to Top</a>
       </v-col>
     </v-row>
-
-    <h2 id="contributors" class="titleLine">
-      Contributors, Advisors, and Acknowledgements
-    </h2>
-    <div class="subTitleLine">Contributors:</div>
-    <v-container class="contributors">
-      <v-row justify="center" align="center">
-        <v-col cols="12">
-          <v-row no-gutters>
-            <v-col>
-              <h4>Name</h4>
-            </v-col>
-            <v-col>
-              <h4>Role</h4>
-            </v-col>
-            <v-col>
-              <h4>Location</h4>
-            </v-col>
-          </v-row>
-          <v-row no-gutters>
-            <v-col>
-              <div class="name">Isaiah Becker-Mayer</div>
-            </v-col>
-            <v-col>
-              <div>Software Engineer</div>
-            </v-col>
-            <v-col>
-              <div>California, USA</div>
-            </v-col>
-          </v-row>
-          <v-row no-gutters>
-            <v-col>
-              <div class="name">Daniel Blank</div>
-            </v-col>
-            <v-col>
-              <div>Software Engineer - Heatmap</div>
-            </v-col>
-            <v-col>
-              <div>Berkeley, USA</div>
-            </v-col>
-          </v-row>
-          <v-row no-gutters>
-            <v-col>
-              <div class="name">Jesse Colligan</div>
-            </v-col>
-            <v-col>
-              <div>Project Manager</div>
-            </v-col>
-            <v-col>
-              <div>New York, USA</div>
-            </v-col>
-          </v-row>
-          <v-row no-gutters>
-            <v-col>
-              <div class="name">Rhys Fenwick</div>
-            </v-col>
-            <v-col>
-              <div>Head of Communications</div>
-            </v-col>
-            <v-col>
-              <div>Wollongong, Australia</div>
-            </v-col>
-          </v-row>
-          <v-row no-gutters>
-            <v-col>
-              <div class="name">Mike Hittle</div>
-            </v-col>
-            <v-col>
-              <div>Heat Map Team Epidemiologist</div>
-            </v-col>
-            <v-col>
-              <div>Stanford University, USA</div>
-            </v-col>
-          </v-row>
-          <v-row no-gutters>
-            <v-col>
-              <div class="name">Mark Ingle</div>
-            </v-col>
-            <v-col>
-              <div>Bluetooth Team Software Engineer</div>
-            </v-col>
-            <v-col>
-              <div>South Carolina, USA</div>
-            </v-col>
-          </v-row>
-          <v-row no-gutters>
-            <v-col>
-              <div class="name">Oliver Nash</div>
-            </v-col>
-            <v-col>
-              <div>Software Engineer</div>
-            </v-col>
-            <v-col>
-              <div>London, United Kingdom</div>
-            </v-col>
-          </v-row>
-          <v-row no-gutters>
-            <v-col>
-              <div class="name">Victoria Nguyen</div>
-            </v-col>
-            <v-col>
-              <div>UI Designer</div>
-            </v-col>
-            <v-col>
-              <div>California, United States</div>
-            </v-col>
-          </v-row>
-          <v-row no-gutters>
-            <v-col>
-              <div class="name">James Petrie</div>
-            </v-col>
-            <v-col>
-              <div>Head of Research</div>
-            </v-col>
-            <v-col>
-              <div>University of Waterloo, Canada</div>
-            </v-col>
-          </v-row>
-          <v-row no-gutters>
-            <v-col>
-              <div class="name">Jeff Schwaber</div>
-            </v-col>
-            <v-col>
-              <div>Software Engineer</div>
-            </v-col>
-            <v-col>
-              <div>VP of Engineering at Bigtincan, USA</div>
-            </v-col>
-          </v-row>
-          <v-row no-gutters>
-            <v-col>
-              <div class="name">Zsombor Szabo</div>
-            </v-col>
-            <v-col>
-              <div>Bluetooth Team Lead</div>
-            </v-col>
-            <v-col>
-              <div>Budapest, Romania</div>
-            </v-col>
-          </v-row>
-          <v-row no-gutters>
-            <v-col>
-              <div class="name">Akhil Veeraghanta</div>
-            </v-col>
-            <v-col>
-              <div>Bluetooth Team Software Engineer</div>
-            </v-col>
-            <v-col>
-              <div>University of British Columbia, Canada</div>
-            </v-col>
-          </v-row>
-          <v-row no-gutters>
-            <v-col>
-              <div class="name">Mikhail Voloshin</div>
-            </v-col>
-            <v-col>
-              <div>Heat Map Team Lead</div>
-            </v-col>
-            <v-col>
-              <div>North Carolina, United States</div>
-            </v-col>
-          </v-row>
-          <v-row no-gutters>
-            <v-col>
-              <div class="name">Sydney Von Arx</div>
-            </v-col>
-            <v-col>
-              <div>Human Resources</div>
-            </v-col>
-            <v-col>
-              <div>Stanford University, USA</div>
-            </v-col>
-          </v-row>
-          <v-row no-gutters>
-            <v-col>
-              <div class="name">Tina White</div>
-            </v-col>
-            <v-col>
-              <div>Executive Director</div>
-            </v-col>
-            <v-col>
-              <div>Stanford University, USA</div>
-            </v-col>
-          </v-row>
-        </v-col>
-      </v-row>
-    </v-container>
-    <div class="subTitleLine">Privacy and Security Advisors:</div>
-    <v-container class="contributors">
-      <v-row justify="center" align="center">
-        <v-col cols="12">
-          <v-row no-gutters>
-            <v-col md="2">
-              <h4>Name</h4>
-            </v-col>
-            <v-col md="8">
-              <h4>Roles</h4>
-            </v-col>
-            <v-col>
-              <h4>Location</h4>
-            </v-col>
-          </v-row>
-          <v-row no-gutters>
-            <v-col md="2">
-              <div class="name">Tessa Alexanian</div>
-            </v-col>
-            <v-col md="8">
-              <div class="affiliation">
-                Privacy and Security, iGEM, East Bay Biosecurity Group
-              </div>
-            </v-col>
-            <v-col>
-              <div>Berkeley, USA</div>
-            </v-col>
-          </v-row>
-          <v-row no-gutters>
-            <v-col md="2">
-              <div class="name">Peter Eckersley</div>
-            </v-col>
-            <v-col md="8">
-              <div class="affiliation">
-                Privacy and Security, stop-covid.tech and Distinguished
-                Technology Fellow, EFF
-              </div>
-            </v-col>
-            <v-col>
-              <div>Australia</div>
-            </v-col>
-          </v-row>
-          <v-row no-gutters>
-            <v-col md="2">
-              <div class="name">Jeffrey Ladish</div>
-            </v-col>
-            <v-col md="8">
-              <div class="affiliation">
-                Privacy and Security, Security Consultant, Gordian Research
-              </div>
-            </v-col>
-            <v-col>
-              <div>Berkeley, USA</div>
-            </v-col>
-          </v-row>
-        </v-col>
-      </v-row>
-    </v-container>
-
-    <div class="subTitleLine">Public Health and Epidemiology Advisors:</div>
-    <v-container class="contributors">
-      <v-row justify="center" align="center">
-        <v-col cols="12">
-          <v-row no-gutters>
-            <v-col md="2">
-              <h4>Name</h4>
-            </v-col>
-            <v-col md="8">
-              <h4>Roles</h4>
-            </v-col>
-            <v-col>
-              <h4>Location</h4>
-            </v-col>
-          </v-row>
-          <v-row no-gutters>
-            <v-col md="2">
-              <div class="name">Megan Coffee</div>
-            </v-col>
-            <v-col md="8">
-              <div class="affiliation">
-                MD, PhD, Infectious Diseases, NYU and Public Health
-              </div>
-            </v-col>
-            <v-col>
-              <div>Columbia, USA</div>
-            </v-col>
-          </v-row>
-          <v-row no-gutters>
-            <v-col md="2">
-              <div class="name">Jolene Elizabeth</div>
-            </v-col>
-            <v-col md="8">
-              <div class="affiliation">
-                Public Health Research and Digital Health Innovation
-              </div>
-            </v-col>
-            <v-col>
-              <div>California, USA</div>
-            </v-col>
-          </v-row>
-          <v-row no-gutters>
-            <v-col md="2">
-              <div class="name">Celine Gounder</div>
-            </v-col>
-            <v-col md="8">
-              <div>
-                MD, ScM, FIDSA, Internist, Infectious Diseases Specialist,
-                Epidemiologist
-              </div>
-            </v-col>
-            <v-col>
-              <div>New York, USA</div>
-            </v-col>
-          </v-row>
-          <v-row no-gutters>
-            <v-col md="2">
-              <div class="name">Julie Parsonnet</div>
-            </v-col>
-            <v-col md="8">
-              <div>
-                MD, PhD, Infectious Diseases Specialist and Epidemiologist
-              </div>
-            </v-col>
-            <v-col>
-              <div>Stanford University, CA</div>
-            </v-col>
-          </v-row>
-        </v-col>
-      </v-row>
-    </v-container>
-
-    <div class="subTitleLine">Acknowledgements:</div>
-    <br />
-    <p>
-      We are deeply grateful for the feedback and contributions from Allen
-      Akhaumere, Ian Derrington, Wang Jian, Chris Olah, Justin Shovelain,
-      Manisha Singh, Drew Stonebraker, and Joshua Zader.
-    </p>
-    <p>
-      We also appreciate the advice, shared work, and cooperative spirit of
-      Scott Leibrandt, Dana Lewis and the entire
-      <a href="https://www.coepi.org/">CoEpi</a> volunteer team.
-    </p>
-    <p>
-      We would also like to thank all the other volunteers and helpers and
-      anyone else we might have missed who showed up and contributed time to the
-      COVID Watch project. We couldn’t have done this without you. Look for the
-      helpers.
-    </p>
-
-    <p>&nbsp;</p>
-    <a class="link" href="#">Back to Top</a>
   </v-container>
 </template>
 

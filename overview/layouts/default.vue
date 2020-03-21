@@ -142,7 +142,7 @@
             <img src="~/assets/images/logo/banner_1.png" alt="" />
           </v-card-text>
           <v-card-text class="gray--text">
-            All rights reserved - COVID Watch
+            Licensed <a href="https://creativecommons.org/licenses/by-nc/2.0/">CC-BY-NC</a>
           </v-card-text>
         </v-card>
       </v-footer>

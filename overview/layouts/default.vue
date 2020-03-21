@@ -38,15 +38,6 @@
                     <a
                       target="_blank"
                       class="link"
-                      href="https://www.covid-watch.org/heatmap/"
-                      style="color:#BF3F4A;"
-                      >Heatmap Demo</a
-                    >
-                  </v-list-item>
-                  <v-list-item>
-                    <a
-                      target="_blank"
-                      class="link"
                       href="https://www.covid-watch.org/collaborate.html"
                       style="color:#BF3F4A;"
                       >Get Involved</a

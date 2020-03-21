@@ -344,7 +344,7 @@
           There are three components to this system that work almost
           independently, but can be bundled into a single mobile app. Depending
           on privacy requirements and the needs of specific public health
-          authorities a subset of these capabilities could be utilized:
+          authorities a subset of these capabilities could be utilized.
         </p>
         <ul style="list-style:decimal">
           <li>
@@ -421,8 +421,10 @@
           >
         </p>
         <p>
-          In the context of contact tracing there are three parameters that can
-          strongly impact results:
+          In the context of contact tracing there are three parameters that
+          <a href="https://github.com/BDI-pathogens/covid-19_instant_tracing/blob/master/Manuscript%20-%20Modelling%20instantaneous%20digital%20contact%20tracing.pdf">models show</a>
+          can strongly impact results:
+
         </p>
         <ul style="list-style:decimal">
           <li>Reduction in overall transmission through social distancing</li>
@@ -446,10 +448,8 @@
             href="https://www.statista.com/statistics/201183/forecast-of-smartphone-penetration-in-the-us/"
             >over 70%</a
           >
-          of the entire US population estimated to own one. Bluetooth is a radio
-          protocol that can be used to wirelessly communicate between nearby
-          mobile devices and Bluetooth signal strength can be used to estimate
-          distance.
+          of the entire US population estimated to own one.  Bluetooth is a radio protocol that can be used to wirelessly communicate between nearby mobile devices and the signal strength can be used to estimate distance.
+
         </p>
         <p>
           Mobile devices can be made to proactively record contact events with
@@ -458,26 +458,20 @@
           and distance of contact between two phone users can be estimated.
         </p>
         <p>
-          By recording all contact events, a high accuracy list of at-risk
-          individuals can be generated and sorted immediately to determine close
-          contacts when a new person is diagnosed to provide instantaneous
-          alerts. And the contact events can be deleted after a certain number
-          of days.
+          By recording all contact events, a high accuracy list of at-risk individuals can be generated automatically when a new person is diagnosed. These individuals can then be immediately notified to ensure they self-isolate before infecting more people. 
+
         </p>
-        <p>
+        <p><strong>
           Bluetooth proximity may be the most accurate crowdsourcing method for
-          approximating close contact. While GPS data is a more well-known
-          general technology, there are clear advantages Bluetooth has over GPS
-          in terms of accuracy for contact tracing. With Bluetooth, proximity
-          can be approximated by signal strength that is reduced by obstructions
-          like walls. Therefore, it more accurately reflects functional
-          proximity in high-risk environments for close contact: inside
-          buildings, in vehicles and airplanes, and in underground transit.
-        </p>
+          approximating close contact.
+        </strong></p>
         <p>
-          Finally and most importantly, Bluetooth communication occurs directly
-          between mobile devices. This means a decentralized system can be built
-          with strong privacy preservation.
+          While GPS data is a more well-known general technology, there are significant advantages bluetooth has over GPS in terms of accuracy for contact tracing. With bluetooth, proximity can be approximated by signal strength that is reduced by obstructions like walls; therefore, it more accurately reflects functional proximity in high-risk environments for close contact: inside buildings, in vehicles and airplanes, and in underground transit.
+
+        </p>
+        <p><strong>
+          Bluetooth communication also occurs directly between mobile devices. This means a decentralized system can be built more easily with and with stronger privacy protection than other crowdsourcing data types like GPS trajectories. 
+        </strong>
         </p>
         <p>
           We are pursuing research in developing inexpensive
@@ -488,9 +482,8 @@
           under the same automatic contact tracing alert system for use in
           countries with fewer smartphone users. These methods would face much
           steeper adoption challenges, but if mobile app users and external
-          device users could be integrated under a single system, outcomes could
-          be further improved over more regions. However, this technology is
-          still under development.
+          device users could be integrated under a single system, outcomes could be further improved over more global communities. 
+
         </p>
 
         <p>
@@ -553,7 +546,7 @@
               <li>
                 <span>4</span>
                 <p>
-                  This person sends a packet to the public database with the
+                  This person sends a request to the public database with the
                   permission number and their history of contact event numbers
                   (both transmitted and received).
                 </p>
@@ -567,7 +560,7 @@
               <li>
                 <span>5</span>
                 <p>
-                  This person sends a packet to the public database with the
+                  This person sends a request to the public database with the
                   permission number and their history of contact event numbers.
                 </p>
                 <img
@@ -630,6 +623,9 @@
           higher number of false positives. Research in this direction is
           currently being done by the
           <a href="https://www.CoEpi.org">CoEpi</a> team.
+        </p>
+        <p>
+        The most effective form of this intervention would occur in communities that implement widespread testing and where permission numbers are shared with the mobile app by public health departments. 
         </p>
 
         <p><span id="bluetoothDatabase" class="subTitleLine">Database</span></p>
@@ -874,7 +870,7 @@
         </p>
         <p>
           The anonymization model we are implementing is one created by
-          researchers from the University of Montreal
+          researchers from the University of Montréal
           <a
             href="https://www.academia.edu/24040759/Anonymizing_trajectory_data_for_passenger_flow_analysis"
             >(Ghazemzadeh et al 2014)</a
@@ -917,10 +913,7 @@
             this number to call for them to inquire about next steps
           </li>
           <li>
-            Other features may include: more personalized advice based on heat
-            map location, a supplies map, self-reporting of symptoms, FAQs, news
-            updates tailored by geographic region, travel counseling, or access
-            to home-based testing
+            Future features may include: more personalized advice based on heat map location, a supplies map, self-reporting of symptoms, FAQs, news updates tailored by geographic region, travel counseling, or access to home-based testing
           </li>
         </ul>
 
@@ -1000,12 +993,7 @@
           <p>
             <strong
               >Figure 2: COVID-19 CDC Information and Symptoms Survey</strong
-            >. Users are given information, resources, and advice from the
-            Centers for Disease Control and Prevention (CDC) about COVID-19. In
-            addition, users are able to fill a travel/symptoms questionnaire to
-            better tailor their advice and assess their risk level. This data
-            will be stored locally on the user’s phone to reduce privacy
-            concerns.
+            >. Users are given information, resources, and advice from the Centers for Disease Control and Prevention (CDC) about COVID-19. In addition, users are able to fill a travel/symptoms questionnaire to better tailor their advice and assess their risk level. This data will only be stored locally on the user’s phone to preserve privacy.
           </p>
         </div>
         <p>&nbsp;</p>

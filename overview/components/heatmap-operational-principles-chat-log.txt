@@ -1,0 +1,453 @@
+TODO: Turn the information presented here into a README.md
+
+Mikhail Voloshin (North Carolina, USA)  1:13 AM
+Actually, lemme just explain in text for now. That way you'll have a reference.
+1:13
+And when I can't anymore, then maybe we'll call.
+:+1:
+1
+
+1:13
+So, it starts with the Geolife dataset, which is downloadable from Microsoft Research.
+1:14
+That dataset is like 1.5GB tho uncompressed, so it isn't feasible to load it to a client's browser.
+1:15
+The Geolife dataset consists of one folder for each user, and in that folder is one file for every day that that user had some GPS activity. In that file, there's a series of comma-delimited rows listing their GPS coordinates at every five-second intervals.
+1:16
+There's 182 users, but their data is pretty sparse. The study lasted five years, and very few of those users had their GPS on at the same time on any given day.
+1:16
+Like, one user might have only recorded a few days worth of data.
+1:17
+And there are many days that no user was active at all.
+1:18
+So instead of playing back the data faithfully as it was actually recorded, I play what I call "ghosts".
+1:18
+A "ghost" trajectory is a sequence of continuous data from one day for one user. And I play all ghosts simultaneously with one another.
+1:19
+So for example, one Ghost is Alice going shopping. Another ghost is Bob going for a morning jog. Another ghost is Alice again, only this time she's driving out to the country.
+1:19
+All continuous activitiy sequences play simultaneously with one another. Like ghosts forever re-enacting the night that they died.
+
+Rhys (Australia)  1:20 AM
+Right, so you treat each continuous-trajectory-day as its own thing and play them all at once (edited)
+1:20
+Correct?
+
+Mikhail Voloshin (North Carolina, USA)  1:20 AM
+Yes.
+1:20
+This enables me to create the illusion of thousands of simultaneous active trajectories.
+1:21
+With a lot of overlap, because the Alice-ghost that goes shopping and the Alice-ghost that drives out to the country will presumably run into one another at some point at their starting point, Alice's house.
+1:22
+So then, to keep each trajectory file from getting too big, I only record when each ghost has moved more than some distance from its last known point. That distance is set to 2km in the data used in the paper.
+1:23
+So this keeps me from having to record Alice's whereabouts every 5sec. I just record where she was at one time, and then if she moves more than 2km from that spot then I note her new place and new time. Then I do it again if she moves another 2km, and so on.
+1:23
+So that's how we get trajectories moving all over the heatmap.
+
+Rhys (Australia)  1:23 AM
+Yep
+
+Mikhail Voloshin (North Carolina, USA)  1:23 AM
+Oh, and I throw away any ghost records that never moved more than 2km. Cuz those are boring.
+
+Rhys (Australia)  1:24 AM
+Is it 2km grids, or 2km in a circle from the starting point?
+
+Mikhail Voloshin (North Carolina, USA)  1:24 AM
+2km circle.
+1:24
+Which permits the heatmap that I ultimately create from the thing to be kinda fluid-looking.
+:+1:
+1
+
+1:24
+I'll get to the heatmap part. I use trickery.
+1:25
+Basically, the heatmap is gridded, because computationally speaking that's the best approach. But the hot-dot within each grid cell is based on the location of the first ghost to drop an infection-turd in that cell, which is based on the ghost's coordinates.
+1:25
+I'll get to all that.
+1:26
+First off, I load this trajectory file into the simulation. By the time I've ghosted it as described, it's about 4 MB.
+1:28
+Then, I use user-provided parameters to roll ages and health conditions for each ghost. At this point I call them "sims". A sim is a simulated person. That's just my internal monicker, and doesn't necessarily need to make it into the paper; but in practice, it's good to differentiate a sim from a person because these sims have absolutely no relationship to actual people.
+1:29
+They are not records of people. They use records that originally might have come from people, but then I start giving them made-up ages and health conditions and temporally displaced travel histories and then I pretend they're using a mobile app.... No real people corresponded to any of this behavior.
+1:29
+So I call them sims. You can call them whatever you want in your writeup, but to me the distinction is important.
+
+Rhys (Australia)  1:29 AM
+Yep: randomly rolled sims randomly attached to real trajectory fragments
+1:29
+Correct?
+
+Mikhail Voloshin (North Carolina, USA)  1:30 AM
+The whole reason I dropped out of a PhD program in computational neurobiology is because lifelong specialists in the field lost the ability to recognize the difference between real neurons and the weird simulated data objects they called "neurons" inside their computers.
+1:30
+And I was like, "This isn't science. This is autofellatio."
+:laughing:
+1
+
+1:30
+Correct. (edited)
+1:31
+Annnnyway. Where was I.
+1:31
+Ah yes. Australia.
+:open_mouth:
+1
+
+1:31
+So, the simulation is given a user-specified parameter to decide how many of them to infect. This number are chosen at random.
+1:31
+(It might technically be a little less than this number because I'm sloppy and I draw with replacement. But whatever.)
+1:32
+Wait no. That part I actually shufflesort and then draw the first n. So strike that.
+1:32
+So n sims have their initial infection state set to Asymptomatic.
+1:32
+From there, the simulation proceeds in discrete time steps.
+1:33
+The size of the time step is set by the user, based on the playback speed.
+
+Rhys (Australia)  1:33 AM
+(Wait, what about Latent?)
+
+Mikhail Voloshin (North Carolina, USA)  1:33 AM
+Nope, I start them in Asymptomatic, because at Asymptomatic they are already contagious.
+1:34
+I could start them at Latent, but it just makes the simulation boring.
+1:34
+We can safely presume that these sims already went through a latent period. Doesn't really change anything.
+
+Rhys (Australia)  1:34 AM
+Okay, fair
+
+Mikhail Voloshin (North Carolina, USA)  1:34 AM
+Oh, I give them a small chance of having one or more health problems.
+1:35
+The way this is done is: each sim has a small percent chance of having a health problem, set by the user. If they roll a percentage check and get a health problem, they roll again. They continue accumulating health problems until the first failed check.
+1:35
+So, most people will have none, but a few will have one, and one or two may have two or more.
+1:36
+Which health problem they have is selected randomly from a small list that I hard-coded. The names of the health problems are just for decoration; they don't change anything in the simulation whether the sim is "Diabetic" or "Immunocompromised" or "Smoker" or whatever.
+1:37
+Annnnyway.
+1:37
+Each timestep is some number of seconds, determined by the user based on the Playback Speed setting.
+1:37
+Within that timestep, a number of things happen.
+
+Rhys (Australia)  1:37 AM
+And the health problems impact the probabilities of moving from some states to others?
+
+Mikhail Voloshin (North Carolina, USA)  1:38 AM
+Correct, using the formulas in the ASCII chart.
+1:38
+And following the state machine of the ASCII chart.
+1:38
+state machine / Markov model.
+
+Rhys (Australia)  1:38 AM
+Yup, I see it
+
+Mikhail Voloshin (North Carolina, USA)  1:38 AM
+So, first of all, the sim's illness progresses based on these rolls.
+1:39
+The probability calculation algorithm is nontrivial.
+1:39
+I use a Poisson distribution to determine the probability of a state transition within the time interval corresponding to the time step.
+1:41
+So for example, if MEAN_SICKNESS_DURATION is some number of days, and the timestep for the simulation is some number of seconds, I use a Poisson probability distribution to determine, if an event happens once every MEAN_SICKNESS_DURATION days on average, then what's the probability that this event happens in any given interval of t seconds?
+1:41
+Sometimes it happens right away, sometimes it takes a very long time. Which is pretty realistic, I believe.
+1:41
+But the mean is what the user specifies.
+1:42
+So I use this Poisson calculation to determine the probability that a transition event occurs on the Markov model. If a transition event does occur, then I use the corresponding event probability, adjusted by the user's risk of complications, to determine which direction that transition goes in.
+1:42
+So that's how the chart is navigated.
+1:43
+chart / Markov model.
+1:43
+With me so far?
+
+Rhys (Australia)  1:43 AM
+With you so far.
+
+Mikhail Voloshin (North Carolina, USA)  1:44 AM
+Okay, so, then the other thing that happens is, they can spread it to others.
+
+Rhys (Australia)  1:45 AM
+(Actually, question)
+
+Mikhail Voloshin (North Carolina, USA)  1:45 AM
+The spreading is done somewhat abstractly. It's generally based on the following assumptions...
+1:45
+Yes?
+
+Rhys (Australia)  1:46 AM
+In states that have two possible following states, say sick -> [critical|recovered]
+How is that calculated?
+1:46
+Do you determine which probability path will eventuate and from there decide when the chosen transition happens?
+1:47
+Follow-up question: does that question make any sense?
+
+Mikhail Voloshin (North Carolina, USA)  1:47 AM
+No, first I choose when the transition happens. Then, when the transition occurs, I use whatever corresponding probability determines that state transition, magnified by the sim's risk complications.
+1:47
+For example...
+
+Rhys (Australia)  1:48 AM
+Okay, so time then outcome, not outcome then time
+
+Mikhail Voloshin (North Carolina, USA)  1:48 AM
+Right.
+
+Rhys (Australia)  1:48 AM
+Great!
+Continue.
+Or don't, I'm on the other side of the world.
+
+Mikhail Voloshin (North Carolina, USA)  1:48 AM
+The rationale for this is that, if we ever have any hope of basing this on real numbers, then we need to describe those numbers in terms of observed effects rather than underlying states.
+1:49
+That's what makes this a Markov model, not a Hidden Markov model.
+1:49
+That is, we can, in the real world, determine the value of the probability PROB_SICK_BECOMES_CRITICAL.
+1:50
+We cannot directly determine the probability that some person actually had a critical illness all along that was merely acting like a light one.
+1:50
+Make sense?
+
+Rhys (Australia)  1:50 AM
+Makes sense.
+
+Mikhail Voloshin (North Carolina, USA)  1:50 AM
+So we determine, in the real world, on average, how long does someone stay sick before they either recover or have to go into the ICU?
+1:51
+And that's MEAN_INFECTION_SICKNESS_DURATION.
+1:52
+(In theory I can have another illness stage called "Recovering" or something, in which they're effectively no longer contagious but still symptomatic, but that's just a pain in the ass.)
+1:52
+Okay, so, infection spread.
+1:53
+I assume two things:
+The app is probably not in such wide use that app-using sims are directly interacting with one another, or at least not often enough to matter.
+The app-using sims (I assume all my ghosts are using the app) are representative of the population as a whole.
+1:54
+The user specifies an average "number of prolonged interactions per day" that a person typically has.
+1:54
+Each sim that isn't quarantined is assumed to interact wiht that many other people in their world.
+1:54
+(or other sims, not people)
+1:55
+The simulation looks at what percentage of the ghosts are currently contagious and not quarantined.
+1:55
+It assumes that this percentage is representative of the general public.
+1:56
+So if each sim interacts with N people, then we can assume that N * (CONTAGIOUS%) of them are contagious.
+1:56
+We don't know who is contagious, but it doesn't really matter.
+1:57
+I.e. what I mean is, we don't know exactly which sim spreads the disease to which other sim. But we can assume that it's from the pool of non-represented sims (i.e. non-app users)
+1:57
+So, if we know how many contagious sims each sim has interacted with...
+
+Rhys (Australia)  1:57 AM
+Yup, makes sense so far
+
+Mikhail Voloshin (North Carolina, USA)  1:57 AM
+And we know the probability that one contagious sim passes it to another in the course of one prolonged interaction (this probability is set by the user)
+1:58
+then we can determine the probability of the sim catching it from at least one of those contagious sims.
+1:58
+So that's how the infection spreads from sim to sim.
+1:58
+Then there's the heatmap.
+2:00
+The heatmap consists of a series of "cells". The cells are determined by rounding off the lat and long GPS coordinates of the sim. Two sims that might be at different GPS coordinates will round off to the same coordinate.
+2:00
+Then I store a gridcell object in a hash table whose key is a string representation of that rounded coordinate.
+2:01
+This lets me very quickly and efficiently determine which sims are "near" each other, with some stipulations. It's a crude system, but good enough for government work, as they say.
+2:02
+Now, there's some probability that a contagious individual will "contaminate" a grid cell.
+2:02
+This is set by the user.
+2:03
+The probability describes the chance that the sim will contaminate the grid cell after a "prolonged" period in that cell, and a "prolonged' period is hard-coded to be defined as five minutes. So I use the same Poisson trick as before. Given the we know that there's some probability of this event happening in this time period, what's the probability that it happens in this other time period?
+2:04
+If the contagious sim is determined to have caused a contamination event, then every grid cell they've passed through in the latest time period is marked as "contaminated".
+2:04
+(The grid cells they've passed through are, of course, determined by their trajectory history).
+2:04
+(Using the rounding trick)
+2:05
+When a contagious sim contaminates a cell, the cell's contamination count increments. It's that simple.
+
+Rhys (Australia)  2:06 AM
+If there are multiple contagious sims in the same cell I assume they each increment the contamination count?
+
+Mikhail Voloshin (North Carolina, USA)  2:06 AM
+The contamination count corresponds to no direct real-world measurable property, but it can roughly be thought of as how thoroughly saturated the place is with virus particles.
+2:06
+Yes.
+
+Rhys (Australia)  2:06 AM
+Or can increment it
+2:06
+Great!
+
+Mikhail Voloshin (North Carolina, USA)  2:07 AM
+Now, contamination decays by a half-life. This is not a stochastic process; it's deterministic. The user sets a mean longevity for virus particles in a location, and every time step I use a simple power law to determine how much the contamination has reduced in that time step.
+2:07
+When the contamination falls below a certain low threshold, I simply remove it from the hashmap of contaminated cells.
+2:08
+Now, when an un-infected sim is in a contaminated cell, I roll a probability that the sim gets infected just from being in that cell (which is set by the user).
+2:09
+I magnify this roll for each level of contamination, so that each level of contamination is effectively an independent trial with the same probability, and the healthy sim will get infected if at least one trial passes.
+2:10
+That part is done with a simple Bernoulli calculation. "If 1 trial passes with probability p, what's the probability that at least 1 in n trials will pass?" = 1 - (1-p)^n
+2:10
+So, that's how the heatmap works.
+2:10
+So then there's how sims get tested and how they use the mobile app n stuff.
+2:11
+First of all, there's quarantining. A sim that's quarantined will neither catch nor transmit any illness. They essentially no longer count as part of the simulation.
+2:11
+Now, a sim that's Critical is automatically quarantined. They don't have a choice in the matter. They're in the ICU.
+2:12
+For everyone else, when they become sick, i.e. when they start showing symptoms, they make a roll to decide whether or not to self-quarantine.
+2:12
+If they pass, they self-isolate.
+2:12
+If they fail, they keep walking around coughing on everyone, like my landlord.
+:laughing:
+1
+
+2:13
+When they get sick, they also roll to see if they will go in and get tested.
+2:13
+If they pass, they also have to roll to see if they will receive a test given they're sick, which isn't guaranteed.
+2:14
+But if both tests pass, they'll discover they're infected. Their Aware flag will turn true.
+2:14
+And when that happens, they then roll to see if they will use the app to notify people.
+2:15
+(If they did not get the test when they were Sick, and they turn Critical, then they will automatically get the test when they turn Critical, and will then likewise roll to see if they will use the app to notify people.)
+2:15
+Drawing a diagram for this part could be really useful.
+
+Rhys (Australia)  2:15 AM
+I'm following you, but for the article- yes
+
+Mikhail Voloshin (North Carolina, USA)  2:16 AM
+So, if they do send a notification, then other sims may receive a message that they've been Exposed.
+2:16
+Like infection, notification is handled abstractly.
+2:16
+Lemme check my code to see how the heck I handled it.
+2:17
+LOL it's super simple.
+2:18
+We determine the probability that any app-wielding sim contacted any other app-wielding sim in the period that their phone remmebers contacts (usually two weeks or so, I guess)
+2:18
+by...
+2:18
+NUM_PROLONGED_INTERACTIONS_PER_DAY * PROB_APP_RECORD_CONTACT * APP_INFECTION_NOTIFICATION_BACK_DAYS * PROB_APP_INSTALLED. (corrected) (edited)
+2:21
+So, that many other non-quarantined sims are chosen at random, and alerted that they've been Exposed.
+
+Rhys (Australia)  2:21 AM
+(Notification Back Days?)
+
+Mikhail Voloshin (North Carolina, USA)  2:21 AM
+Once they receive the alert, they can choose to self-quarantine (with a probability roll set by the user). They can, independent of choosing to self-quarantine, choose to go get tested (with a probability set by the user).
+2:22
+Yes. How long the app keeps a record of a contact.
+:+1:
+1
+
+2:23
+If they choose to get tested, they then have to roll to see if they can get a test despite being asymptomatic, which is a different probability.
+2:24
+But if they do and they do, then they will learn their own Infected status, which might be 0 or 1. If it's 0, they carry on. If it's 1, they can then choose to self-quarantine, and they can choose to send a notification.
+2:24
+So notifications snowball through the system.
+2:24
+In practice, in the sim, I have to set PROB_APP_INSTALLED to something very low by default.
+2:25
+If it's more than about 20% or so, then everybody just quarantines immediately the moment a single infected person is discovered.
+2:25
+And that's boring.
+2:25
+But that's exactly what Tina wants to see, so I guess it's a feature not a bug.
+2:27
+So let's see, what's left?
+2:28
+Oh. Minor point: I use a scaling factor to control for the "mean probability of contaminating a location".
+
+Rhys (Australia)  2:28 AM
+That...seems to about cover it
+
+Mikhail Voloshin (North Carolina, USA)  2:29 AM
+Basically, the problem is that the description of "location", intuitively speaking, refers to, like, a Starbucks or something.
+2:29
+But my grid cells are over 4km^2.
+2:29
+That's a big honkin Starbucks.
+2:30
+image.png
+image.png
+
+
+2:30
+So I use a magic number to tweak how the user's settings of "Probablity of a sim to contaminate a location" and "probability of getting contaminated from a location" would scale based on contamination level.
+2:30
+It's the only place in the entire app that I use a "magic number".
+2:31
+but it can roughly be thought of as a function of the number of "locations", as the user would understand the term, that would fit inside a grid cell.
+
+Rhys (Australia)  2:32 AM
+Yep yep
+
+Mikhail Voloshin (North Carolina, USA)  2:32 AM
+It's only necessary because communication with the user requires using a term that operates on one scale, but computational efficency requires using values in a completely different scale.
+2:32
+Aaaand that's it.
+2:32
+Simple, right? :slightly_smiling_face:
+:sweat_smile:
+1
+
+2:33
+Any further questions can probably be answered by a tour through the source code.
+2:33
+I advise sharing this information with Isaiah. He's been poking through my source code, though with a focus on UI.
+2:33
+You may wish to also consult Daniel for this. Haven't seen him around in a while, tbh.
+2:34
+But basically yoou should share this briefing with both of them, esppecially Daniel.
+
+Rhys (Australia)  2:34 AM
+I've put him to work on GPS anonymisation of the kind that this model doesn't need but which the real deal will
+2:34
+I'll write it up in a doc for them
+Thanks so much for your time!
+2:34
+That was an explanation and a half haha
+2:35
+And definitely laid it out clearly enough for even a lay audience to understand what was going on
+2:35
+Which makes my job a heck of a lot easier
+
+Mikhail Voloshin (North Carolina, USA)  2:35 AM
+Yeah well, I believe in showing my work, because I stand by my work. :slightly_smiling_face:
+2:36
+Please do take a gander through the source code. It'll help concretize a lot of the abstractions. And all the formulas are in the source code; I think I wrote them pretty legibly.
+:+1:
+1
+

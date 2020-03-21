@@ -1,19 +1,7 @@
 <template>
-  <!-- Hi Jesse. nuxt requires a single element under v-container (or at least it used to.)
-    This is usually a v-container. -->
   <v-container class="overviewContainer">
     <v-row justify="center">
       <v-col cols="12" lg="10">
-        <!-- Typically a v-container has a bunch of v-row elements under it.
-        Each v-row usually has v-col elements, which are organized into a
-        responsive 12-column grid.
-        See: https://vuetifyjs.com/en/components/grids/
-        -->
-        <!-- Jesse's notes:
-              1) I used this word to html website (https://wordhtml.com/) to save time + generate an outline in html of the text content, hence the sometimes slightly whacky formatting and inline styling font-weights.  I will adjust as needed.
-              2) since the desired output is a single column of text, images, etc. I don't believe including any columns is necessary <v-col cols="12" md="12">
-              3) I abandoned using v-row elements since the word2html service output line breaks differently and I'm not as familiar w v-row/v-col.  Path of least resistance and doesn't seem to compromise the result
-            -->
         <div class="TopSection">
           <div class="mainTitle">
             <img src="../assets/images/logo/banner_1.png" alt="" />
@@ -24,17 +12,9 @@
           </div>
         </div>
 
-        <!-- possible subtitle:
-          <p>&nbsp;</p>
-        <div id="intro">
-          <p><span style="font-size: 19px;">From a technical standpoint, pandemic mitigation is an optimization problem. We are a team of volunteer academics, epidemiologists, and technologists from around the world. Our goal is to simultaneously minimize the adverse health outcomes and economic impact of diseases like Covid19.</span>     </p>
-        </div>
-        -->
-
         <div id="tableOfContents">
           <div class="tableOfContentsContainer">
             <h2 class="titleLine">Table of Contents</h2>
-            <br />
             <ol class="outerList">
               <li>
                 <strong><a href="#aboutUs">About Us</a></strong>
@@ -1649,11 +1629,6 @@ img {
   max-width: 100%;
 }
 
-// .TopSection {
-//   background-color: #779F98;
-//   opacity: 0.5;
-// }
-
 .mainTitle {
   display: flex;
   justify-content: center;
@@ -1734,11 +1709,6 @@ img {
   // display: grid;
   display: flex;
   justify-content: space-evenly;
-  // justify-items: stretch;
-  // grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr [text-end page-end gutter-end kicker-end middle-end];
-  // this was original below modified from distill site.  Simplified above with no significant end result change - Jesse
-  // grid-template-columns: [screen-start] 8px [page-start kicker-start text-start gutter-start middle-start]  1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr [text-end page-end gutter-end kicker-end middle-end] 8px [screen-end];
-  // grid-column-gap: 80px;
 
   .byline {
     grid-template-columns: 1fr 1fr;
@@ -1844,11 +1814,6 @@ img {
   .benefitsDisadvantages {
     width: 60%;
   }
-}
-.container {
-  // padding-right: 60px;
-  // padding-left: 60px;
-  // padding-bottom: 100px;
 }
 </style>
 

@@ -6,7 +6,7 @@
         <!-- if by using Vuetify we can improve the below somehow to be more responsive, etc. please let me know, I'm new to Vuetify and eager to learn! - Jesse -->
         <v-row class="navbarRow">
           <v-col class="navbarColumn">
-            <a class="logoDesktop" href="#" style="width: 25%;"
+            <a class="logoDesktop logo" href="#" style="width: 25%;"
               ><img
                 class="logoImg"
                 src="../assets/images/logo/banner_1.png"
@@ -146,7 +146,7 @@ export default {};
 <style>
 @media screen and (max-width: 960px) {
   .logoDesktop {
-    display: none;
+    display: none !important;
   }
 }
 

@@ -401,7 +401,11 @@
           class="centerImage"
           style="display:flex;flex-direction:column;align-items:center;"
         >
-          <img src="../assets/images/overview_article_imgs/003.png" alt="" />
+          <img
+            style="width:70%"
+            src="../assets/images/Contact_Tracing_Map.png"
+            alt=""
+          />
           <p style="color:gray;">Contact Network</p>
         </div>
 
@@ -761,11 +765,13 @@
           To describe it simply, the heat map builds upon SEIR models and
           simulates users according to the following state machine:
         </p>
-
-        <img
-          src="../assets/images/overview_article_imgs/Infection_state_diagram.png"
-          alt=""
-        />
+        <div class="centerImage">
+          <img
+            style="width: 70%"
+            src="../assets/images/overview_article_imgs/Infection_state_diagram.png"
+            alt=""
+          />
+        </div>
         <p>&nbsp;</p>
 
         <p>
@@ -1143,17 +1149,20 @@
           population using the app increases the risk for the entire population
           is reduced and most outbreaks are contained.
         </p>
-        <div
-          class="centerImage"
-          style="display:flex;flex-direction:column;align-items:center;"
-        >
-          <img src="../assets/images/totalInfected.png" width="70%" alt="" />
-          <img src="../assets/images/appInfected.png" width="70%" alt="" />
+        <v-row>
+          <v-col cols="12" md="6">
+            <img src="../assets/images/totalInfected.png" alt="" />
+          </v-col>
+          <v-col cols="12" md="6">
+            <img src="../assets/images/appInfected.png" alt="" />
+          </v-col>
+        </v-row>
+        <v-row>
           <p style="color:gray;">
             Expected infections for total population (top) and app population
             (bottom) adjusted for relative population size.
           </p>
-        </div>
+        </v-row>
         <p>
           <strong
             >So for the question: “Can an effective contact tracing program

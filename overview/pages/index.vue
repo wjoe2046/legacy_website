@@ -7,13 +7,7 @@
             <img src="~/assets/images/logo/banner_1.png" alt="" />
           </div>
 
-          <div class="mainSubTitle">
-            <p>Join the Watch. Help stop COVID-19 with crowdsourced data.</p>
-          </div>
-        </div>
-
-        <div id="tableOfContents">
-          <div class="tableOfContentsContainer">
+          <TableOfContents>
             <h2 class="titleLine">Table of Contents</h2>
             <ol class="outerList">
               <li>
@@ -119,6 +113,11 @@
                 </ol>
               </li>
             </ol>
+          </TableOfContents>
+
+
+          <div class="mainSubTitle">
+            <p>Join the Watch. Help stop COVID-19 with crowdsourced data.</p>
           </div>
         </div>
 
@@ -1819,10 +1818,12 @@ img {
 
 <script>
 import Heatmap from "~/components/Heatmap.vue";
+import TableOfContents from "~/components/TableOfContents.vue";
 
 export default {
   components: {
-    Heatmap
+    Heatmap,
+    TableOfContents
   }
 };
 </script>

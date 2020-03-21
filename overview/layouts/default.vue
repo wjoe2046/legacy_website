@@ -1,6 +1,6 @@
 <template>
   <v-app id="covid19app">
-    <v-app-bar id="navBar" fixed app>
+    <v-app-bar id="navBar" fixed app clipped-left>
       <!-- this is the header that persists across pages -->
       <v-container class="navbarContainer">
         <!-- if by using Vuetify we can improve the below somehow to be more responsive, etc. please let me know, I'm new to Vuetify and eager to learn! - Jesse -->
@@ -71,68 +71,98 @@
       </v-container>
     </v-app-bar>
 
+    <v-navigation-drawer clipped app
+        v-model="tocShow"
+        >
+      <div class="px-1" ref="toc"></div>
+    </v-navigation-drawer>
+
     <v-content>
-      <v-container>
-        <nuxt />
-      </v-container>
+      <v-btn class="toc-hamburger" color="primary"
+          @click="tocShow = !tocShow"
+      >
+        <v-icon>mdi-table-of-contents</v-icon>
+      </v-btn>
+
+
+      <nuxt style="min-height: 100vh" />
+
+      <v-footer color="#A2C5BF" :elevation="6">
+        <v-card
+          flat
+          tile
+          class="lighten-1 white--text text-center"
+          color="#A2C5BF"
+        >
+          <v-container>
+            <v-row>
+              <v-col class="footerList" cols="12" md="3">
+                <nuxt-link
+                  class="text-no-wrap"
+                  :to="{path: '/', hash:'heatmapImplementation'}"
+                  >Heatmap Demo</nuxt-link
+                >
+              </v-col>
+              <v-col class="footerList" cols="12" md="3">
+                <a
+                  target="_blank"
+                  class="text-no-wrap"
+                  href="https://www.covid-watch.org/collaborate.html"
+                  >Get Involved</a
+                >
+              </v-col>
+              <v-col class="footerList" cols="12" md="3">
+                <a
+                  target="_blank"
+                  class="text-no-wrap"
+                  href="https://www.covid-watch.org/collaborate.html"
+                  >Donate</a
+                >
+              </v-col>
+              <v-col class="footerList" cols="12" md="3">
+                <a
+                  target="_blank"
+                  class="text-no-wrap"
+                  href="https://www.covid-watch.org/about.html"
+                  >About</a
+                >
+              </v-col></v-row
+            ></v-container
+          >
+
+          <v-divider></v-divider>
+
+          <v-card-text class="gray--text">
+            <img src="~/assets/images/logo/banner_1.png" alt="" />
+          </v-card-text>
+          <v-card-text class="gray--text">
+            All rights reserved - COVID Watch
+          </v-card-text>
+        </v-card>
+      </v-footer>
+
     </v-content>
 
-    <v-footer color="#A2C5BF" :elevation="6">
-      <v-card
-        flat
-        tile
-        class="lighten-1 white--text text-center"
-        color="#A2C5BF"
-      >
-        <v-container>
-          <v-row>
-            <v-col class="footerList" cols="12" md="3">
-              <nuxt-link
-                class="text-no-wrap"
-                :to="{path: '/', hash:'heatmapImplementation'}"
-                >Heatmap Demo</nuxt-link
-              >
-            </v-col>
-            <v-col class="footerList" cols="12" md="3">
-              <a
-                target="_blank"
-                class="text-no-wrap"
-                href="https://www.covid-watch.org/collaborate.html"
-                >Get Involved</a
-              >
-            </v-col>
-            <v-col class="footerList" cols="12" md="3">
-              <a
-                target="_blank"
-                class="text-no-wrap"
-                href="https://www.covid-watch.org/collaborate.html"
-                >Donate</a
-              >
-            </v-col>
-            <v-col class="footerList" cols="12" md="3">
-              <a
-                target="_blank"
-                class="text-no-wrap"
-                href="https://www.covid-watch.org/about.html"
-                >About</a
-              >
-            </v-col></v-row
-          ></v-container
-        >
-
-        <v-divider></v-divider>
-
-        <v-card-text class="gray--text">
-          <img src="~/assets/images/logo/banner_1.png" alt="" />
-        </v-card-text>
-        <v-card-text class="gray--text">
-          All rights reserved - COVID Watch
-        </v-card-text>
-      </v-card>
-    </v-footer>
   </v-app>
 </template>
 
+<style lang="scss">
+.toc-hamburger {
+  margin: 1ex;
+  position: fixed;
+
+  @media (min-width: 1264px) {
+    display: none;
+  }
+}
+</style>
+
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      tocShow: false
+    };
+  }
+};
 </script>

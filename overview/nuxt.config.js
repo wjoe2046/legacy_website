@@ -12,6 +12,7 @@ export default {
     titleTemplate: "%s | COVID Watch",
     title: metaHeaders.title,
     meta: [
+      metaHeaders,
       ...Object.entries(metaHeaders).map( ([key, value]) => ({
         hid: key,
         name: key,

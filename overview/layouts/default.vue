@@ -170,7 +170,7 @@
 
   .toc-closer {
     position: absolute;
-    top: 1.5em;
+    top: 1em;
     right: 1em;
   }
 }

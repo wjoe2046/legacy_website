@@ -78,7 +78,7 @@
     </v-app-bar>
 
     <v-navigation-drawer clipped app
-        :width="350"
+         :width="350"
         v-model="tocShow"
         >
       <div class="px-1" ref="toc"></div>
@@ -161,7 +161,6 @@
   @media (min-width: 1264px) {
     display: none;
   }
-
   @media (max-width: 600px) {
     opacity: .8;
   }

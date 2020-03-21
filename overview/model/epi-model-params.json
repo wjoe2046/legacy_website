@@ -263,7 +263,18 @@
       "range_min": 4,
       "range_max": 120,
       "default": 35,
-      "param_group_key": "POPULATION"
+      "param_group_key": "POPULATION",
+      "requires_reset": true
+    },
+    "STDEV_AGE_POPULATION": {
+      "name":"Standard deviation of the population's age",
+      "description": "This is a demographic statistic that describes the standard deviation of the age of the people in the population.",
+      "valuetype": "float",
+      "range_min": 0,
+      "range_max": 100,
+      "default": 15,
+      "param_group_key": "POPULATION",
+      "requires_reset": true
     },
     "PROB_APP_INSTALLED": {
       "name": "Probability of app installation",
@@ -273,15 +284,6 @@
       "range_max": 1,
       "default": 0.05,
       "param_group_key": "APP"
-    },
-    "STDEV_AGE_POPULATION": {
-      "name":"Standard deviation of the population's age",
-      "description": "This is a demographic statistic that describes the standard deviation of the age of the people in the population.",
-      "valuetype": "float",
-      "range_min": 0,
-      "range_max": 100,
-      "default": 15,
-      "param_group_key": "POPULATION"
     },
     "PROB_LUNCH_OUT": {
       "name": "Probability of eating lunch out",
@@ -417,7 +419,8 @@
       "range_min": 1,
       "range_max": 50,
       "default": 10,
-      "param_group_key": "VIRUS"
+      "param_group_key": "VIRUS",
+      "requires_reset": true
     },
     "PRE_CONTAMINATION_LEVEL": {
       "name": "Starting contamination level",
@@ -426,7 +429,8 @@
       "range_min": 1,
       "range_max": 200,
       "default": 60,
-      "param_group_key": "VIRUS"
+      "param_group_key": "VIRUS",
+      "requires_reset": true
     },
     "PROB_CATCH_FROM_LOCATION": {
       "name": "Probability of catching virus from location",

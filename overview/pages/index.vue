@@ -1256,7 +1256,7 @@
               <div class="name">Jesse Colligan</div>
             </v-col>
             <v-col>
-              <div>Project Manager</div>
+              <div>Software Engineer</div>
             </v-col>
             <v-col>
               <div>New York, USA</div>

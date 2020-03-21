@@ -72,8 +72,9 @@
         </div>
           <p>&nbsp;</p>
         <div class="mainSubTitle">
-          <p>Help us stop COVID-19 with crowdsourced data.</p>
+          <p style="font-size:30px;"><strong>Help stop COVID-19 with crowdsourced data</strong></p>
         </div>
+        <br>
         <!--About Us-->
         <h2 id="aboutUs"><span class="titleLine">About Us</span></h2>
         <p>&nbsp;</p>
@@ -1210,8 +1211,9 @@
         </p>
       </v-col>
     </v-row>
-
-    <h2 id="contributors" class="titleLine">
+    <br>
+    <h2 id="contributors" class="titleLine" style="border-top: lightgray 1px solid;">
+    <br>
       Contributors, Advisors, and Acknowledgements
     </h2>
     <div class="subTitleLine">Contributors:</div>

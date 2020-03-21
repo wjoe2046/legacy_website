@@ -23,7 +23,8 @@
                 color="primary"
                 class="white--text"
               >
-                Get App
+              <a target="_blank" href="https://www.covid-watch.org/#mc_embed_signup_scroll" style="color:white;">Get App </a>
+                
               </v-btn>
 
               <!-- @Isaiah this is where menu code begins.  The commented out <ul> a bit further down is what I'm attemtping to replace with this dropdown menu so at some point we need to get the links to other pages in the menu items-->
@@ -50,7 +51,7 @@
                     <a
                       target="_blank"
                       class="link"
-                      to="https://www.covid-watch.org/collaborate.html"
+                      href="https://www.covid-watch.org/collaborate.html"
                       style="color:#BF3F4A;"
                       >Get Involved</a
                     ></v-list-item

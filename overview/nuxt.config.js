@@ -70,7 +70,8 @@ export default {
       themes: {
         light: {
           primary: "#BF3F4A",
-          info: "#BF3F4A"
+          secondary: "#779f98",
+          info: "#BF3F4A",
         }
       }
     }

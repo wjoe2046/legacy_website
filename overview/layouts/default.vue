@@ -1,26 +1,27 @@
 <template>
   <v-app id="covid19app">
-    <v-app-bar id="navBar" fixed app clipped-left>
+    <v-app-bar id="navBar" fixed app clipped-left color="#779f9860">
       <!-- this is the header that persists across pages -->
       <v-container class="navbarContainer">
         <!-- if by using Vuetify we can improve the below somehow to be more responsive, etc. please let me know, I'm new to Vuetify and eager to learn! - Jesse -->
         <v-row class="navbarRow">
           <v-col class="navbarColumn">
-            <a class="logoDesktop logo" href="#" style="width: 25%;"
+            <a class="logoDesktop logo d-none d-md-flex"
+                href="#"
               ><img
                 class="logoImg"
                 src="../assets/images/logo/banner_1.png"
                 alt=""
             /></a>
-            <a class="logoMobile logo" href="#"
+            <a class="logoMobile logo d-flex d-md-none"
+                href="#"
               ><img class="logoImg" src="../assets/images/logo/logo.png" alt=""
             /></a>
 
             <div class="rightNav">
               <v-btn
-                color="#BF3F4A"
+                color="primary"
                 class="white--text"
-                onClick="{alertFunc()}"
               >
                 Get App
               </v-btn>
@@ -29,8 +30,11 @@
               <v-menu offset-y>
                 <template v-slot:activator="{ on }">
                   <v-btn text color="gray" v-on="on">
-                    <v-icon left>mdi-chevron-down</v-icon>
-                    <span>Menu</span>
+                    <span class="d-none d-md-flex">
+                      <v-icon left>mdi-chevron-down</v-icon>
+                      <span>Menu</span>
+                    </span>
+                    <v-icon class="d-flex d-md-none">mdi-menu</v-icon>
                   </v-btn>
                 </template>
                 <v-list>
@@ -180,7 +184,13 @@
     opacity: .8;
   }
 }
+
+.logoDesktop {
+  width: 25% !important;
+}
 </style>
+
+
 
 <script>
 export default {
@@ -191,17 +201,3 @@ export default {
   }
 };
 </script>
-
-<style>
-@media screen and (max-width: 960px) {
-  .logoDesktop {
-    display: none !important;
-  }
-}
-
-@media screen and (min-width: 960px) {
-  .logoMobile {
-    display: none !important;
-  }
-}
-</style>

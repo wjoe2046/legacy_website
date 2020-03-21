@@ -1548,7 +1548,7 @@
         </p>
         <p>
           We also appreciate the advice, shared work, and cooperative spirit of
-          Scott Leibrandt, Dana Lewis and the entire
+          Scott Leibrand, Dana Lewis and the entire
           <a href="https://www.coepi.org/">CoEpi</a> volunteer team.
         </p>
         <p>

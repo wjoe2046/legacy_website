@@ -40,49 +40,51 @@
             <ol class="outerList">
               <li> <strong><a href="#aboutUs">About Us</a></strong>
                 <ol class="innerList">
-                    <li><a href="#mission">Mission Statement</a></li>
-                    <li><a href="#privacy">Privacy Focus</a></li>
-                    <li><a href="#interventionBackground">Mobile Phone Intervention Background</a></li>
-                    <li><a href="#interventionOptimization">Mobile Phone Intervention Optimization</a></li>
+                  <li><a href="#mission">Mission Statement</a></li>
+                  <li><a href="#privacy">Privacy Focus</a></li>
+                  <li><a href="#interventionBackground">Current Mobile Phone Interventions</a></li>
+                  <li><a href="#interventionOptimization">Making Interventions More Efficient</a></li>
                 </ol>
               </li>
               <li><strong><a href="#proposedSystem">Proposed System: Three Parts</a></strong>
                 <ol class="innerList">
-                    <li><a href="#contactTracing">Part 1: Bluetooth Contact Tracing</a>
-                      <ol class="nestedInnerList">
-                        <li><a href="#contactTracingBackground">Contact Tracing Background</a></li>
-                        <li><a href="#blueToothModel">Bluetooth Contact Tracing Model Description</a></li>
-                        <li><a href="#blueToothPrivacy">Bluetooth Privacy Model and Database</a></li>
-                        <li><a href="#bluetoothDatabase">Bluetooth Contact Tracing Implementation</a></li>
-                      </ol>
-                    </li>
-                    <li><a href="#heatmapTitle">Part 2: GPS Heatmap</a>
-                       <ol class="nestedInnerList">
-                        <li><a href="#heatmapDesc">GPS Heatmap Model Description</a></li>
-                        <li><a href="#heatmapImplementation">GPS Heatmap Implementation</a></li>
-                        <li><a href="#heatmapEpidemiology">GPS Heatmap Epidemiology Model</a></li>
-                        <li><a href="#databasePrivacy">GPS Privacy Model and Database</a></li>
-                      </ol>
-                    </li>
-                    <li><a href="#userRecommendations">Part 3: Recommendations</a>
-                      <ol class="nestedInnerList">
-                        <li><a href="#scopeDesign">Scope and Design</a></li>
-                        <li><a href="#timeline">Timeline to Deployment</a></li>
-                      </ol>
-                    </li>
+                  <li><a href="#contactTracing">Part 1: Bluetooth Contact Tracing</a>
+                    <ol class="nestedInnerList">
+                      <li><a href="#contactTracingBackground">Contact Tracing Background</a></li>
+                      <li><a href="#blueToothModel">Model Description</a></li>
+                      <li><a href="#blueToothPrivacy">Privacy Model</a></li>
+                      <li><a href="#bluetoothDatabase">Database</a></li>
+                      <li><a href="#bluetoothImplementation">Implementation</a></li>
+                    </ol>
+                  </li>
+                  <li><a href="#heatmapTitle">Part 2: GPS Heatmap</a>
+                    <ol class="nestedInnerList">
+                      <li><a href="#heatmapDesc">Model Description</a></li>
+                      <li><a href="#heatmapImplementation">Implementation</a></li>
+                      <li><a href="#heatmapEpidemiology">Heatmap Epidemiology Model</a></li>
+                      <li><a href="#databasePrivacy">Privacy Model</a></li>
+                      <li><a href="#databaseAnonymization">Anonymization Model</a></li>
+                    </ol>
+                  </li>
+                  <li><a href="#userRecommendations">Part 3: User Recommendations</a>
+                    <ol class="nestedInnerList">
+                      <li><a href="#scopeDesign">Scope and Design</a></li>
+                    </ol>
+                  </li>
                 </ol>
               </li>
               <li><strong><a href="#care">Why You Should Care</a></strong>
-               <ol class="innerList">
-                    <li><a href="#healthAuthorities">Health Authorities</a></li>
-                    <li><a href="#users">Individuals (Users)</a></li>
-                    <li><a href="#impact">Quantitative Analysis of Impact</a></li>
+                <ol class="innerList">
+                  <li><a href="#healthAuthorities">Incentive for Health Authorities</a></li>
+                  <li><a href="#users">Incentives for Individuals</a></li>
+                  <li><a href="#impact">Quantitative Analysis of Impact</a></li>
+                  <li><a href="#timeline">Timeline to Deployment</a></li>
                 </ol>
               </li>
-              <li> <strong><a href="#conclusion">Conclusion</a></strong>
-              <ol class="innerList">
-                  <li><a href="#youDo">What You Can Do</a></li>
-                  <li><a href="#contributors">Authors, Advisors, and Acknowledgements</a></li>
+              <li> <strong><a href="#conclusion">Conclusions</a></strong>
+                <ol class="innerList">
+                  <li><a href="#youDo">Who Can Help</a></li>
+                  <li><a href="#contributors">Contributors, Advisors, and Acknowledgements</a></li>
                 </ol>
               </li>
             </ol>
@@ -269,7 +271,7 @@
       <p><span id="bluetoothDatabase" class="subTitleLine">Database</span></p>
       <p>The specification for the database is very simple: it is shared across all installations of the app and stores anonymized Contact Event Numbers. If protections against hoaxes are required, permission numbers can be used, but are not an essential requirement of the system. If the database grows too large, it can also be fragmented based on general location. The code and a more in depth discussion of architecture are available on the open source github repo <a href="https://github.com/covid19risk/covidwatch-backend/blob/master/README.md">here</a>.</p>
 
-      <p><span class="subTitleLine">Implementation</span></p>
+      <p><span id="bluetoothImplementation" class="subTitleLine">Implementation</span></p>
       <p>Bluetooth contact tracing is implemented via background processes on iOS and Android.</p>
       <p>The approach currently being investigated utilizes BLE functionality for background advertisement and scanning. Due to different system requirements for Android and iOS, the protocol works differently depending on the operating systems of the devices involved. The key challenges are:</p>
       <ul style="list-style:decimal">
@@ -318,7 +320,7 @@
       <p>The first server, Server A, will handle anonymization using the methods described in the <span style="font-style:italic">Heatmap Privacy Model</span> section above. Users will send their GPS data to Server A first without any other information, and Server A will return the now-anonymized data to them.</p>
       <p>They will then upload the anonymized data, along with their infection status, to the second server, Server B. Server B will take this data and add it to our epidemiological simulation, generating a heatmap.</p>
 
-      <p><span id="databaseAnonymization" class="subTitleLine">GPS Anonymization Model</span></p>
+      <p><span id="databaseAnonymization" class="subTitleLine">Anonymization Model</span></p>
       <p>The heatmap may either require the application of an anonymization algorithm, or the explicit consent of users to publish high resolution GPS trajectories. This choice will need to be made in consultation with regulators. The advisory system will make use of the information generated by the other two methods and information from public health offices. It can be structured so no additional patient data needs to be collected, but making suggestions more complicated than ‘call your local public health department’ may require additional regulatory approval.</p>
       <p>There is a large body of academic work behind the anonymization of spatiotemporal data, most of which draw from a handful of common strategies. These include aggregating multiple similar trajectories together, decreasing the resolution of each datapoint across space and time, removing particularly distinctive datapoints, and swapping sections of trajectories that cross paths.</p>
       <p>One widely accepted metric for de-identification of data is  k-anonymization. A dataset is anonymous for some integer k if no entry can be narrowed down further than belonging to one of k individuals. For example, a group of trajectories would be 3-anonymous if each trajectory could plausibly belong to at least 3 individuals. Our aim is to create a dataset with the maximum possible k-value that still preserves utility. The worst-case scenario we would be willing to publish is at minimum a 10-anonymous dataset with respect to an adversary using commonly available geographical information. </p>
@@ -340,7 +342,7 @@
 
          <p>&nbsp;</p>
 
-      <h3 id="scopeDesign">User Interface Design: COVID Watch Transmission Map and Phone Log</h3>
+      <h3 id="scopeDesign">Scope and Design</h3>
 
       <!-- my quick attempt at making the mobile app images shrink to be responsive, may need adjustment - Jesse -->
       <v-container>

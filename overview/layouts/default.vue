@@ -6,7 +6,13 @@
         <!-- if by using Vuetify we can improve the below somehow to be more responsive, etc. please let me know, I'm new to Vuetify and eager to learn! - Jesse -->
         <v-row class="navbarRow">
           <v-col class="navbarColumn">
-            <a class="logo" href="#"
+            <a class="logoDesktop logo" href="#" style="width: 25%;"
+              ><img
+                class="logoImg"
+                src="../assets/images/logo/banner_1.png"
+                alt=""
+            /></a>
+            <a class="logoMobile logo" href="#"
               ><img class="logoImg" src="../assets/images/logo/logo.png" alt=""
             /></a>
 
@@ -31,7 +37,7 @@
                   <v-list-item>
                     <nuxt-link
                       class="link"
-                      :to="{path: '/', hash:'heatmapImplementation'}"
+                      :to="{ path: '/', hash: 'heatmapImplementation' }"
                       style="color:#BF3F4A;"
                       >Heatmap Demo</nuxt-link
                     >
@@ -166,3 +172,17 @@ export default {
   }
 };
 </script>
+
+<style>
+@media screen and (max-width: 960px) {
+  .logoDesktop {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .logoMobile {
+    display: none !important;
+  }
+}
+</style>

@@ -38,7 +38,7 @@
                     <a href="#contactTracing"
                       >Part 1: Bluetooth Contact Tracing</a
                     >
-                    <ol class="nestedInnerList">
+                    <!-- <ol class="nestedInnerList">
                       <li>
                         <a href="#contactTracingBackground"
                           >Contact Tracing Background</a
@@ -59,11 +59,11 @@
                           >Bluetooth Contact Tracing Implementation</a
                         >
                       </li>
-                    </ol>
+                    </ol> -->
                   </li>
                   <li>
                     <a href="#heatmapTitle">Part 2: GPS Heatmap</a>
-                    <ol class="nestedInnerList">
+                    <!-- <ol class="nestedInnerList">
                       <li>
                         <a href="#heatmapDesc">GPS Heatmap Model Description</a>
                       </li>
@@ -82,14 +82,14 @@
                           >GPS Privacy Model and Database</a
                         >
                       </li>
-                    </ol>
+                    </ol> -->
                   </li>
                   <li>
                     <a href="#userRecommendations">Part 3: Recommendations</a>
-                    <ol class="nestedInnerList">
+                    <!-- <ol class="nestedInnerList">
                       <li><a href="#scopeDesign">Scope and Design</a></li>
                       <li><a href="#timeline">Timeline to Deployment</a></li>
-                    </ol>
+                    </ol> -->
                   </li>
                 </ol>
               </li>
@@ -400,7 +400,11 @@
           class="centerImage"
           style="display:flex;flex-direction:column;align-items:center;"
         >
-          <img src="~/assets/images/overview_article_imgs/003.png" alt="" />
+          <img
+            style="width:70%"
+            src="../assets/images/Contact_Tracing_Map.png"
+            alt=""
+          />
           <p style="color:gray;">Contact Network</p>
         </div>
 
@@ -760,15 +764,13 @@
           To describe it simply, the heat map builds upon SEIR models and
           simulates users according to the following state machine:
         </p>
-
-        <p style="color:red;font-size:30px">
-          need a better resolution image, enlarge font size inside each node
-          also
-        </p>
-        <img
-          src="../assets/images/overview_article_imgs/bad_resolution_epi_model.png"
-          alt=""
-        />
+        <div class="centerImage">
+          <img
+            style="width: 70%"
+            src="../assets/images/overview_article_imgs/Infection_state_diagram.png"
+            alt=""
+          />
+        </div>
         <p>&nbsp;</p>
 
         <p>
@@ -1146,17 +1148,20 @@
           population using the app increases the risk for the entire population
           is reduced and most outbreaks are contained.
         </p>
-        <div
-          class="centerImage"
-          style="display:flex;flex-direction:column;align-items:center;"
-        >
-          <img src="~/assets/images/totalInfected.png" width="70%" alt="" />
-          <img src="~/assets/images/appInfected.png" width="70%" alt="" />
+        <v-row>
+          <v-col cols="12" md="6">
+            <img src="../assets/images/totalInfected.png" alt="" />
+          </v-col>
+          <v-col cols="12" md="6">
+            <img src="../assets/images/appInfected.png" alt="" />
+          </v-col>
+        </v-row>
+        <v-row>
           <p style="color:gray;">
             Expected infections for total population (top) and app population
             (bottom) adjusted for relative population size.
           </p>
-        </div>
+        </v-row>
         <p>
           <strong
             >So for the question: “Can an effective contact tracing program
@@ -1235,7 +1240,6 @@
 
         <p>&nbsp;</p>
 
-        <p>&nbsp;</p>
         <h2 id="conclusion"><span class="titleLine">Conclusions</span></h2>
         <br />
         <p>
@@ -1286,167 +1290,167 @@
           </v-row>
           <v-row no-gutters>
             <v-col>
-              <a class="name">Isaiah Becker-Mayer</a>
+              <div class="name">Isaiah Becker-Mayer</div>
             </v-col>
             <v-col>
               <div>Software Engineer</div>
             </v-col>
             <v-col>
-              <a>California, USA</a>
+              <div>California, USA</div>
             </v-col>
           </v-row>
           <v-row no-gutters>
             <v-col>
-              <a class="name">Daniel Blank</a>
+              <div class="name">Daniel Blank</div>
             </v-col>
             <v-col>
               <div>Software Engineer - Heatmap</div>
             </v-col>
             <v-col>
-              <a>Berkeley, USA</a>
+              <div>Berkeley, USA</div>
             </v-col>
           </v-row>
           <v-row no-gutters>
             <v-col>
-              <a class="name">Jesse Colligan</a>
+              <div class="name">Jesse Colligan</div>
             </v-col>
             <v-col>
               <div>Project Manager</div>
             </v-col>
             <v-col>
-              <a>New York, USA</a>
+              <div>New York, USA</div>
             </v-col>
           </v-row>
           <v-row no-gutters>
             <v-col>
-              <a class="name">Rhys Fenwick</a>
+              <div class="name">Rhys Fenwick</div>
             </v-col>
             <v-col>
               <div>Head of Communications</div>
             </v-col>
             <v-col>
-              <a>Wollongong, Australia</a>
+              <div>Wollongong, Australia</div>
             </v-col>
           </v-row>
           <v-row no-gutters>
             <v-col>
-              <a class="name">Mike Hittle</a>
+              <div class="name">Mike Hittle</div>
             </v-col>
             <v-col>
               <div>Heat Map Team Epidemiologist</div>
             </v-col>
             <v-col>
-              <a>Stanford University, USA</a>
+              <div>Stanford University, USA</div>
             </v-col>
           </v-row>
           <v-row no-gutters>
             <v-col>
-              <a class="name">Mark Ingle</a>
+              <div class="name">Mark Ingle</div>
             </v-col>
             <v-col>
               <div>Bluetooth Team Software Engineer</div>
             </v-col>
             <v-col>
-              <a>South Carolina, USA</a>
+              <div>South Carolina, USA</div>
             </v-col>
           </v-row>
           <v-row no-gutters>
             <v-col>
-              <a class="name">Oliver Nash</a>
+              <div class="name">Oliver Nash</div>
             </v-col>
             <v-col>
               <div>Software Engineer</div>
             </v-col>
             <v-col>
-              <a>London, United Kingdom</a>
+              <div>London, United Kingdom</div>
             </v-col>
           </v-row>
           <v-row no-gutters>
             <v-col>
-              <a class="name">Victoria Nguyen</a>
+              <div class="name">Victoria Nguyen</div>
             </v-col>
             <v-col>
               <div>UI Designer</div>
             </v-col>
             <v-col>
-              <a>California, United States</a>
+              <div>California, United States</div>
             </v-col>
           </v-row>
           <v-row no-gutters>
             <v-col>
-              <a class="name">James Petrie</a>
+              <div class="name">James Petrie</div>
             </v-col>
             <v-col>
               <div>Head of Research</div>
             </v-col>
             <v-col>
-              <a>University of Waterloo, Canada</a>
+              <div>University of Waterloo, Canada</div>
             </v-col>
           </v-row>
           <v-row no-gutters>
             <v-col>
-              <a class="name">Jeff Schwaber</a>
+              <div class="name">Jeff Schwaber</div>
             </v-col>
             <v-col>
               <div>Software Engineer</div>
             </v-col>
             <v-col>
-              <a>VP of Engineering at Bigtincan, USA</a>
+              <div>VP of Engineering at Bigtincan, USA</div>
             </v-col>
           </v-row>
           <v-row no-gutters>
             <v-col>
-              <a class="name">Zsombor Szabo</a>
+              <div class="name">Zsombor Szabo</div>
             </v-col>
             <v-col>
               <div>Bluetooth Team Lead</div>
             </v-col>
             <v-col>
-              <a>Budapest, Romania</a>
+              <div>Budapest, Romania</div>
             </v-col>
           </v-row>
           <v-row no-gutters>
             <v-col>
-              <a class="name">Akhil Veeraghanta</a>
+              <div class="name">Akhil Veeraghanta</div>
             </v-col>
             <v-col>
               <div>Bluetooth Team Software Engineer</div>
             </v-col>
             <v-col>
-              <a>University of British Columbia, Canada</a>
+              <div>University of British Columbia, Canada</div>
             </v-col>
           </v-row>
           <v-row no-gutters>
             <v-col>
-              <a class="name">Mikhail Voloshin</a>
+              <div class="name">Mikhail Voloshin</div>
             </v-col>
             <v-col>
               <div>Heat Map Team Lead</div>
             </v-col>
             <v-col>
-              <a>North Carolina, United States</a>
+              <div>North Carolina, United States</div>
             </v-col>
           </v-row>
           <v-row no-gutters>
             <v-col>
-              <a class="name">Sydney Von Arx</a>
+              <div class="name">Sydney Von Arx</div>
             </v-col>
             <v-col>
               <div>Human Resources</div>
             </v-col>
             <v-col>
-              <a>Stanford University, USA</a>
+              <div>Stanford University, USA</div>
             </v-col>
           </v-row>
           <v-row no-gutters>
             <v-col>
-              <a class="name">Tina White</a>
+              <div class="name">Tina White</div>
             </v-col>
             <v-col>
               <div>Executive Director</div>
             </v-col>
             <v-col>
-              <a>Stanford University, USA</a>
+              <div>Stanford University, USA</div>
             </v-col>
           </v-row>
         </v-col>
@@ -1457,54 +1461,54 @@
       <v-row justify="center" align="center">
         <v-col cols="12">
           <v-row no-gutters>
-            <v-col>
+            <v-col md="2">
               <h4>Name</h4>
             </v-col>
-            <v-col>
-              <h4>Roles and Affiliations</h4>
+            <v-col md="8">
+              <h4>Roles</h4>
             </v-col>
             <v-col>
               <h4>Location</h4>
             </v-col>
           </v-row>
           <v-row no-gutters>
-            <v-col>
-              <a class="name">Tessa Alexanian</a>
+            <v-col md="2">
+              <div class="name">Tessa Alexanian</div>
+            </v-col>
+            <v-col md="8">
+              <div class="affiliation">
+                Privacy and Security, iGEM, East Bay Biosecurity Group
+              </div>
             </v-col>
             <v-col>
-              <a class="affiliation"
-                >Privacy and Security, iGEM, East Bay Biosecurity Group</a
-              >
-            </v-col>
-            <v-col>
-              <a>Berkeley, USA</a>
-            </v-col>
-          </v-row>
-          <v-row no-gutters>
-            <v-col>
-              <a class="name">Peter Eckersley</a>
-            </v-col>
-            <v-col>
-              <a class="affiliation"
-                >Privacy and Security, Convener of stop-covid.tech and
-                Distinguished Technology Fellow, EFF</a
-              >
-            </v-col>
-            <v-col>
-              <a>Australia</a>
+              <div>Berkeley, USA</div>
             </v-col>
           </v-row>
           <v-row no-gutters>
-            <v-col>
-              <a class="name">Jeffrey Ladish</a>
+            <v-col md="2">
+              <div class="name">Peter Eckersley</div>
+            </v-col>
+            <v-col md="8">
+              <div class="affiliation">
+                Privacy and Security, stop-covid.tech and Distinguished
+                Technology Fellow, EFF
+              </div>
             </v-col>
             <v-col>
-              <a class="affiliation"
-                >Privacy and Security, Security Consultant, Gordian Research</a
-              >
+              <div>Australia</div>
+            </v-col>
+          </v-row>
+          <v-row no-gutters>
+            <v-col md="2">
+              <div class="name">Jeffrey Ladish</div>
+            </v-col>
+            <v-col md="8">
+              <div class="affiliation">
+                Privacy and Security, Security Consultant, Gordian Research
+              </div>
             </v-col>
             <v-col>
-              <a>Berkeley, USA</a>
+              <div>Berkeley, USA</div>
             </v-col>
           </v-row>
         </v-col>
@@ -1516,64 +1520,67 @@
       <v-row justify="center" align="center">
         <v-col cols="12">
           <v-row no-gutters>
-            <v-col>
+            <v-col md="2">
               <h4>Name</h4>
             </v-col>
-            <v-col>
-              <h4>Roles and Affiliations</h4>
+            <v-col md="8">
+              <h4>Roles</h4>
             </v-col>
             <v-col>
               <h4>Location</h4>
             </v-col>
           </v-row>
           <v-row no-gutters>
-            <v-col>
-              <a class="name">Megan Coffee MD, PhD</a>
+            <v-col md="2">
+              <div class="name">Megan Coffee</div>
+            </v-col>
+            <v-col md="8">
+              <div class="affiliation">
+                MD, PhD, Infectious Diseases, NYU and Public Health
+              </div>
             </v-col>
             <v-col>
-              <a class="affiliation"
-                >Infectious Diseases, NYU and Public Health</a
-              >
-            </v-col>
-            <v-col>
-              <a>Columbia, USA</a>
-            </v-col>
-          </v-row>
-          <v-row no-gutters>
-            <v-col>
-              <a class="name">Jolene Elizabeth</a>
-            </v-col>
-            <v-col>
-              <a class="affiliation"
-                >Public Health Research and Digital Health Innovation</a
-              >
-            </v-col>
-            <v-col>
-              <a>California, USA</a>
+              <div>Columbia, USA</div>
             </v-col>
           </v-row>
           <v-row no-gutters>
-            <v-col>
-              <a class="name">Celine Gounder MD, ScM, FIDSA</a>
+            <v-col md="2">
+              <div class="name">Jolene Elizabeth</div>
+            </v-col>
+            <v-col md="8">
+              <div class="affiliation">
+                Public Health Research and Digital Health Innovation
+              </div>
             </v-col>
             <v-col>
-              <a>
-                Internist, Infectious Diseases Specialist, Epidemiologist
-              </a>
-            </v-col>
-            <v-col>
-              <a>New York, USA</a>
+              <div>California, USA</div>
             </v-col>
           </v-row>
           <v-row no-gutters>
-            <v-col>
-              <a class="name">Julie Parsonnet MD, PhD</a>
+            <v-col md="2">
+              <div class="name">Celine Gounder</div>
+            </v-col>
+            <v-col md="8">
+              <div>
+                MD, ScM, FIDSA, Internist, Infectious Diseases Specialist,
+                Epidemiologist
+              </div>
             </v-col>
             <v-col>
-              <a>Infectious Diseases Specialist and Epidemiologist</a>
+              <div>New York, USA</div>
+            </v-col>
+          </v-row>
+          <v-row no-gutters>
+            <v-col md="2">
+              <div class="name">Julie Parsonnet</div>
+            </v-col>
+            <v-col md="8">
+              <div>
+                MD, PhD, Infectious Diseases Specialist and Epidemiologist
+              </div>
             </v-col>
             <v-col>
-              <a>Stanford, USA</a>
+              <div>Stanford University, CA</div>
             </v-col>
           </v-row>
         </v-col>

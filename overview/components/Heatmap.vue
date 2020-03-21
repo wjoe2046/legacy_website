@@ -308,6 +308,7 @@
                           ? 1
                           : (param.range_max - param.range_min) / 200
                       "
+                      @change="onParamSliderValueChanged(param)"
                     ></v-slider>
 
                     <v-alert
@@ -707,6 +708,8 @@ export default {
           }
         };
       });
+
+      this.advanceTime(1);
     },
 
     loadData() {
@@ -863,6 +866,14 @@ export default {
       setTimeout(() => {
         this.play();
       }, 50);
+    },
+
+    onParamSliderValueChanged(param) {
+      // Fortunately this is only called when the param slider stops moving,
+      // so we don't have to be too concerned with throttle.
+      if (param.requires_reset) {
+        this.resetWithData();
+     }
     }
   },
 

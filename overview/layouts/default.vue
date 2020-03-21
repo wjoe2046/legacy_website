@@ -35,10 +35,18 @@
                 </template>
                 <v-list>
                   <v-list-item>
+                    <nuxt-link
+                      class="link"
+                      :to="{ path: '/', hash: 'heatmapImplementation' }"
+                      style="color:#BF3F4A;"
+                      >Heatmap Demo</nuxt-link
+                    >
+                  </v-list-item>
+                  <v-list-item>
                     <a
                       target="_blank"
                       class="link"
-                      href="https://www.covid-watch.org/collaborate.html"
+                      to="https://www.covid-watch.org/collaborate.html"
                       style="color:#BF3F4A;"
                       >Get Involved</a
                     ></v-list-item
@@ -85,11 +93,10 @@
         <v-container>
           <v-row>
             <v-col class="footerList" cols="12" md="3">
-              <a
-                target="_blank"
+              <nuxt-link
                 class="text-no-wrap"
-                href="https://www.covid-watch.org/heatmap/"
-                >Heatmap Demo</a
+                :to="{ path: '/', hash: 'heatmapImplementation' }"
+                >Heatmap Demo</nuxt-link
               >
             </v-col>
             <v-col class="footerList" cols="12" md="3">

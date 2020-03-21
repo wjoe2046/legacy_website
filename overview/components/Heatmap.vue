@@ -232,7 +232,8 @@
         </v-row>
       </v-col>
       <v-col class="py-0" cols="12">
-        <v-container class="param-sliders" py-0>
+        <v-container class="param-sliders py-0"
+            v-if="trajectoryModel.isDataLoaded">
           <v-row>
             <v-tabs
                 centered icons-and-text

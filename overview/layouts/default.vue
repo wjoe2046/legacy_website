@@ -167,7 +167,7 @@
   .toc-closer {
     position: absolute;
     top: 1.5em;
-    right: 2em;
+    right: 1em;
   }
 }
 

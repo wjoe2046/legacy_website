@@ -347,7 +347,7 @@
         <v-col cols="12" md="6" class="centerImage" style="justify-content:space-evenly;">
           <img style="border:1px solid gray;" src="../assets/images/mobile/mobile_get_started.png" alt="">
           <img style="border:1px solid gray;" src="../assets/images/mobile/mobile_heat_map.png" alt="">
-          <img style="border:1px solid gray;" src="../assets/images/mobile/mobile_transmission_log.PNG" alt="">
+          <img style="border:1px solid gray;" src="../assets/images/mobile/mobile_transmission_log.png" alt="">
         </v-col>
       </v-container>
        <p>&nbsp;</p>

@@ -115,7 +115,6 @@
             </ol>
           </TableOfContents>
 
-
           <div class="mainSubTitle">
             <p>Join the Watch. Help stop COVID-19 with crowdsourced data.</p>
           </div>
@@ -1313,7 +1312,7 @@
                   <div class="name">Jesse Colligan</div>
                 </v-col>
                 <v-col>
-                  <div>Project Manager</div>
+                  <div>Software Engineer</div>
                 </v-col>
                 <v-col>
                   <div>New York, USA</div>

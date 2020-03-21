@@ -321,6 +321,9 @@
                       <p>
                         {{ param.description }}
                       </p>
+                      <p v-if="param.requires_reset">
+                        Changing this parameter will reset the simulation.
+                      </p>
                       <p>
                         Model variable name: {{ param.key }}<br />
                         Range: {{ param.range_min }} - {{ param.range_max

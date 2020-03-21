@@ -150,8 +150,11 @@
       </v-col>
       <v-col cols="12" class="btns-and-info py-0">
         <v-row class="seektime" v-if="trajectoryModel.isDataLoaded">
-          <v-col cols="12" sm="6"
-              class="health-ticker py-0 d-flex flex-column justify-center">
+          <v-col
+            cols="12"
+            sm="6"
+            class="health-ticker py-0 d-flex flex-column justify-center"
+          >
             <div>
               <strong>
                 Day {{ Math.floor(currentTimeDayCount) }}:
@@ -232,21 +235,22 @@
         </v-row>
       </v-col>
       <v-col class="py-0" cols="12">
-        <v-container class="param-sliders py-0"
-            v-if="trajectoryModel.isDataLoaded">
+        <v-container
+          class="param-sliders py-0"
+          v-if="trajectoryModel.isDataLoaded"
+        >
           <v-row>
-            <v-tabs
-                centered icons-and-text
-                show-arrows
-            >
+            <v-tabs centered icons-and-text show-arrows>
               <v-tab
                 v-for="(group, iGroup) in paramsModel.groups"
                 :key="iGroup"
               >
-                <span class="param-slider-group-name param-slider-group-name-tab">
-                  {{group.name}}
+                <span
+                  class="param-slider-group-name param-slider-group-name-tab"
+                >
+                  {{ group.name }}
                 </span>
-                <v-icon>{{group.icon}}</v-icon>
+                <v-icon>{{ group.icon }}</v-icon>
               </v-tab>
               <v-tab-item
                 v-for="(group, iGroup) in paramsModel.groups"
@@ -257,10 +261,14 @@
               >
                 <v-container>
                   <v-row class="param-slider-group-description">
-                    <div class="param-slider-group-name param-slider-group-name-desc">
-                      {{group.name}}
+                    <div
+                      class="param-slider-group-name param-slider-group-name-desc"
+                    >
+                      {{ group.name }}
                     </div>
-                    {{ group.description }}
+                    <div style="color: #BF3F4A">
+                      {{ group.description }}
+                    </div>
                   </v-row>
                   <v-row
                     v-for="(param, iParam) in group.params"
@@ -312,7 +320,8 @@
                       </p>
                       <p>
                         Model variable name: {{ param.key }}<br />
-                        Range: {{ param.range_min }} - {{ param.range_max }}<br />
+                        Range: {{ param.range_min }} - {{ param.range_max
+                        }}<br />
                         Default value: {{ param.default }}
                       </p>
                       <p>
@@ -332,10 +341,10 @@
         <v-alert type="info" :dismissible="true">
           <p>
             NOTE: This is simulated data representing a theoretical
-            epidemiological model. This simulation does not contain any
-            actual COVID-19 transmission data nor the exact movements of any
-            real individuals, and should not be used in place of studying
-            actual real-world infection cases.
+            epidemiological model. This simulation does not contain any actual
+            COVID-19 transmission data nor the exact movements of any real
+            individuals, and should not be used in place of studying actual
+            real-world infection cases.
           </p>
         </v-alert>
         <v-alert type="error" v-if="trajectoryModel.errorMsg">
@@ -343,7 +352,6 @@
         </v-alert>
       </v-col>
     </v-row>
-
   </v-layout>
 </template>
 
@@ -356,7 +364,7 @@
   }
 
   .map-container-tabber {
-    .v-item-group[role=tablist] {
+    .v-item-group[role="tablist"] {
       margin-left: 1em;
     }
   }
@@ -397,7 +405,7 @@
   .param-sliders {
     position: relative;
     padding-right: 5em;
-    @media(max-width: 800px) {
+    @media (max-width: 800px) {
       padding-right: unset;
 
       .param-slider-group-name-tab {
@@ -426,11 +434,11 @@
     .param-slider-group-description {
       width: 75%;
       margin: auto;
-      margin-bottom: .5ex;
+      margin-bottom: 0.5ex;
       color: #2196f3;
       font-style: italic;
 
-      @media(max-width: 800px) {
+      @media (max-width: 800px) {
         font-size: 80%;
       }
     }

@@ -123,7 +123,7 @@
         <v-divider></v-divider>
 
         <v-card-text class="gray--text">
-          <img src="../assets/images/logo/banner_1.png" alt="" />
+          <img src="~/assets/images/logo/banner_1.png" alt="" />
         </v-card-text>
         <v-card-text class="gray--text">
           All rights reserved - COVID Watch

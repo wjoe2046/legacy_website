@@ -1,6 +1,6 @@
 <template>
   <v-app id="covid19app">
-    <v-app-bar id="navBar" fixed app clipped-left color="#779f9860">
+    <v-app-bar id="navBar" fixed app clipped-left color="secondaryLight">
       <!-- this is the header that persists across pages -->
       <v-container class="navbarContainer">
         <!-- if by using Vuetify we can improve the below somehow to be more responsive, etc. please let me know, I'm new to Vuetify and eager to learn! - Jesse -->

@@ -71,6 +71,7 @@ export default {
         light: {
           primary: "#BF3F4A",
           secondary: "#779f98",
+          secondaryLight: "#ccdbd8",
           info: "#BF3F4A",
         }
       }

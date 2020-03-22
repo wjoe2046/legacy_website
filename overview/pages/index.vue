@@ -93,7 +93,7 @@
         <p>
           Our volunteers care strongly about preserving human life and human
           rights. All data we could collect is voluntary and fully anonymized.
-          All code is transparent. It is&nbsp;
+          All code is transparent. It is
           <a href="https://github.com/covid19risk/"><span>open source</span></a
           ><span
             >&nbsp;and could be easily reviewed, reproduced and used anywhere on
@@ -514,8 +514,7 @@
               <li>
                 <span>5</span>
                 <p>
-                  This person sends a request to the public database with the
-                  permission number and their history of contact event numbers.
+                  If one of the phone owners is diagnosed positive, they are given a permission number by health authorities.
                 </p>
                 <img
                   src="../assets/images/overview_article_imgs/010.png"
@@ -581,6 +580,10 @@
         <p>
           The most effective form of this intervention would occur in communities that implement widespread testing and where permission numbers are shared with the mobile app by public health departments.
         </p>
+      <p>
+        Singapore just released an <a href="https://www.straitstimes.com/singapore/coronavirus-singapore-develops-smartphone-app-for-efficient-contact-tracing">app</a> that performs some contact tracing using Bluetooth proximity networks.
+        However, our <a href="https://trello-attachments.s3.amazonaws.com/5e750fa118cc121ce836e525/5e76ae82e927b944ff3ce999/22c00e17fbc36c0dd6961d08f83bbca4/Centralized_and_Decentralized_Contact_Tracing_Security_Models.pdf">initial analysis</a> suggests their privacy model is susceptible to attack because they did not take advantage of Bluetooth's potential for decentralization.
+      </p>
         <p><span id="bluetoothDatabase" class="subTitleLine">Database</span></p>
         <p>
           The specification for the database is very simple: it is shared across
@@ -590,6 +593,7 @@
           system. If the database grows too large, it can also be fragmented
           based on general location. The code and a more in depth discussion of
           architecture are available on the open source github repo
+
           <a
             href="https://github.com/covid19risk/covidwatch-backend/blob/master/README.md"
             >here</a
@@ -1100,8 +1104,8 @@
         </v-row>
         <v-row>
           <p style="color:gray;">
-            Expected infections for total population (top) and app population
-            (bottom) adjusted for relative population size.
+            Expected infections for total population (1st) and app population
+            (2nd) adjusted for relative population size.
           </p>
         </v-row>
         <p>

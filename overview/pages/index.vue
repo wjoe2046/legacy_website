@@ -170,6 +170,20 @@
             tracing accuracy COVID-19 can be contained.</span
           >
         </p>
+        <div
+          class="centerImage"
+          style="display:flex;flex-direction:column;align-items:center;"
+        >
+          <img src="~/assets/images/CasesTrendIntl.png" alt="" />
+          <p style="color:gray;">
+            <span>FT Graphic: @jburnmurdoch 19th March &nbsp;</span>
+            <a
+              href="https://www.ft.com/coronavirus-latest"
+              ><span> John Hopkins data</span></a
+            >
+          </p>
+        </div>
+
         <p>
           <a
             href="https://www.nytimes.com/2020/03/04/health/coronavirus-china-aylward.html"

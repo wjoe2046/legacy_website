@@ -1,6 +1,4 @@
-Any files in the ./overview/articles/pages directory will render at this path: https://staging.covid-watch.org/articles/index.html
-
-Possible Environments:
+### Possible Environments:
   * LOCAL: localhost:3000/articles/index.html
   * STAGING: https://staging.covid-watch.org/articles/index.html
   * PRODUCTION: www.covid-watch.org/articles/index.html
@@ -9,7 +7,9 @@ The script to push to staging and production can be found at ./overview/scripts/
 
 There are further instructions and commands commented at the top of build.sh.
 
-To contribute to this repo, run the following commands to run locally:
+Any files in the ./overview/articles/pages directory will render at this path: https://staging.covid-watch.org/articles/index.html
+
+### To contribute to this repo, run the following commands to run locally:
 1. `git clone <repo URL>`
 2. navigate to /overview directory
 3. `npm install`

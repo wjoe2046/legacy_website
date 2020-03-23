@@ -23,8 +23,7 @@
                 color="primary"
                 class="white--text"
               >
-              <a target="_blank" href="https://www.covid-watch.org/subscribe.html" style="color:white;">Sign Up</a>
-
+              <nuxt-link style="color:white;" to="/Subscribe">Sign Up</nuxt-link>
               </v-btn>
 
               <!-- @Isaiah this is where menu code begins.  The commented out <ul> a bit further down is what I'm attemtping to replace with this dropdown menu so at some point we need to get the links to other pages in the menu items-->
@@ -40,6 +39,9 @@
                 </template>
                 <v-list>
                   <v-list-item>
+                    <nuxt-link class="link" style="color:#BF3F4A;" to="/Home">Home</nuxt-link>
+                  </v-list-item>
+                  <v-list-item>
                     <nuxt-link
                       class="link"
                       :to="{ path: '/', hash: 'heatmapImplementation' }"
@@ -48,31 +50,13 @@
                     >
                   </v-list-item>
                   <v-list-item>
-                    <a
-                      target="_blank"
-                      class="link"
-                      href="https://www.covid-watch.org/collaborate.html"
-                      style="color:#BF3F4A;"
-                      >Get Involved</a
-                    ></v-list-item
-                  >
-                  <v-list-item>
-                    <a
-                      target="_blank"
-                      class="link"
-                      href="https://www.covid-watch.org/collaborate.html"
-                      style="color:#BF3F4A;"
-                      >Donate</a
-                    >
+                    <nuxt-link class="link" style="color:#BF3F4A;" to="/Collaborate">Get Involved</nuxt-link>
                   </v-list-item>
                   <v-list-item>
-                    <a
-                      target="_blank"
-                      class="link"
-                      href="https://www.covid-watch.org/about.html"
-                      style="color:#BF3F4A;"
-                      >About</a
-                    >
+                    <nuxt-link class="link" style="color:#BF3F4A;" to="/Blog">Blog</nuxt-link>
+                  </v-list-item>
+                  <v-list-item>
+                    <nuxt-link class="link" style="color:#BF3F4A;" to="/Donate">Donate</nuxt-link>
                   </v-list-item>
                 </v-list>
               </v-menu>
@@ -123,28 +107,13 @@
                 >
               </v-col>
               <v-col class="footerList" cols="12" md="3">
-                <a
-                  target="_blank"
-                  class="text-no-wrap"
-                  href="https://www.covid-watch.org/collaborate.html"
-                  >Get Involved</a
-                >
+                <nuxt-link class="link" style="color:ivory;" to="/Collaborate">Get Involved</nuxt-link>
               </v-col>
               <v-col class="footerList" cols="12" md="3">
-                <a
-                  target="_blank"
-                  class="text-no-wrap"
-                  href="https://www.covid-watch.org/collaborate.html"
-                  >Donate</a
-                >
+                <nuxt-link class="link" style="color:ivory;" to="/Donate">Donate</nuxt-link>
               </v-col>
               <v-col class="footerList" cols="12" md="3">
-                <a
-                  target="_blank"
-                  class="text-no-wrap"
-                  href="https://www.covid-watch.org/about.html"
-                  >About</a
-                >
+                <nuxt-link class="link" style="color:ivory;" to="/About">About</nuxt-link>
               </v-col></v-row
             ></v-container
           >

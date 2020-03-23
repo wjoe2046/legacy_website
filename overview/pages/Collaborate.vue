@@ -63,12 +63,8 @@
 
     <p>We're also interested if you have information that you think could be relevant to this project. In particular, we are interested in any other teams that are currently, or were previously, engaged in similar efforts.</p>
 
-    <h2>Other ways to help</h2>
-
-    <h3>Donations</h3>
-
-    <p>We are currently exploring funding options. We do not currently have a way to donate directly, but if you have information or inquiries related to funding, we'd love to hear from you at the email above.</p>
-
+    <h2>Other Ways to Share</h2>
+    
     <h3>Awareness</h3>
 
     <p>Even if you don&#39;t have the ability to directly support us right now, consider sharing our project over social media or by word of mouth. To keep up to date with our progress, or to see if a role that suits you becomes available, you can sign up to our newsletter via the form on our <b><a class="blue" href="index.html">homepage </a></b>.</p>

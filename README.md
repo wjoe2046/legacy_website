@@ -5,7 +5,7 @@
 
 The script to push to staging and production can be found at ./overview/scripts/build.sh
 
-There are further instructions and commands commented at the top of build.sh.
+There are further instructions and commands commented at the top of build.sh.  You will need certain AWS credentials in order to use these build commands successfully.
 
 Any files in the ./overview/articles/pages directory will render at this path: https://staging.covid-watch.org/articles/index.html
 

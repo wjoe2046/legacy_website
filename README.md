@@ -1,4 +1,4 @@
-Any files in the ./overview/articles directory will render at this path: https://staging.covid-watch.org/articles/index.html
+Any files in the ./overview/articles/pages directory will render at this path: https://staging.covid-watch.org/articles/index.html
 
 LOCAL: localhost:3000/articles/index.html
 STAGING: https://staging.covid-watch.org/articles/index.html

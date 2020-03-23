@@ -1,21 +1,28 @@
 import colors from "vuetify/es5/util/colors";
 
+const metaHeaders = require('./meta-headers.json');
+
+
 export default {
   mode: "universal",
   /*
    ** Headers of the page
    */
   head: {
-    titleTemplate: "%s - COVID Watch",
-    title: "COVID Watch",
+    titleTemplate: "%s | COVID Watch",
+    title: metaHeaders.title,
     meta: [
-      { charset: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      {
-        hid: "description",
-        name: "description",
-        content: process.env.npm_package_description || ""
-      }
+      metaHeaders,
+      ...Object.entries(metaHeaders).map( ([key, value]) => ({
+        hid: key,
+        name: key,
+        content: value
+      })),
+      ...Object.entries(metaHeaders).map(([key, value]) => ({
+        hid: `og:${key}`,
+        name: `og:${key}`,
+        content: value
+      }))
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },
@@ -60,11 +67,22 @@ export default {
       icons: "mdi"
     },
     theme: {
+      options: {
+        customProperties: true,
+      },
       light: true, //you don't actually need this line as it's for default
       themes: {
         light: {
           primary: "#BF3F4A",
-          info: "#BF3F4A"
+          secondary: "#779f98",
+          secondaryLight: "#ccdbd8", // TODO: Use Vuetify theme's existing capabilities for light variants.
+          info: "#779f98",
+          warning: '#BF3F4A',
+
+          //accent: '#82B1FF',
+          //error: '#FF5252',
+          //success: '#4CAF50',
+
         }
       }
     }

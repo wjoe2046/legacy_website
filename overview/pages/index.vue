@@ -4,16 +4,10 @@
       <v-col cols="12" lg="10">
         <div class="TopSection">
           <div class="mainTitle">
-            <img src="../assets/images/logo/banner_1.png" alt="" />
+            <img src="~/assets/images/logo/banner_1.png" alt="" />
           </div>
 
-          <div class="mainSubTitle">
-            <p>Join the Watch. Help stop COVID-19 with crowdsourced data.</p>
-          </div>
-        </div>
-
-        <div id="tableOfContents">
-          <div class="tableOfContentsContainer">
+          <TableOfContents>
             <h2 class="titleLine">Table of Contents</h2>
             <ol class="outerList">
               <li>
@@ -23,107 +17,64 @@
                   <li><a href="#privacy">Privacy Focus</a></li>
                   <li>
                     <a href="#interventionBackground"
-                      >Mobile Phone Intervention Background</a
+                    >Current Mobile Phone Interventions</a
                     >
                   </li>
                   <li>
                     <a href="#interventionOptimization"
-                      >Mobile Phone Intervention Optimization</a
+                    >Making Interventions More Efficient</a
                     >
                   </li>
                 </ol>
               </li>
               <li>
                 <strong
-                  ><a href="#proposedSystem"
-                    >Proposed System: Three Parts</a
-                  ></strong
+                ><a href="#proposedSystem"
+                >Proposed System: Three Parts</a
+                ></strong
                 >
                 <ol class="innerList">
                   <li>
                     <a href="#contactTracing"
                       >Part 1: Bluetooth Contact Tracing</a
                     >
-                    <ol class="nestedInnerList">
-                      <li>
-                        <a href="#contactTracingBackground"
-                          >Contact Tracing Background</a
-                        >
-                      </li>
-                      <li>
-                        <a href="#blueToothModel"
-                          >Bluetooth Contact Tracing Model Description</a
-                        >
-                      </li>
-                      <li>
-                        <a href="#blueToothPrivacy"
-                          >Bluetooth Privacy Model and Database</a
-                        >
-                      </li>
-                      <li>
-                        <a href="#bluetoothDatabase"
-                          >Bluetooth Contact Tracing Implementation</a
-                        >
-                      </li>
-                    </ol>
                   </li>
                   <li>
                     <a href="#heatmapTitle">Part 2: GPS Heatmap</a>
-                    <ol class="nestedInnerList">
-                      <li>
-                        <a href="#heatmapDesc">GPS Heatmap Model Description</a>
-                      </li>
-                      <li>
-                        <a href="#heatmapImplementation"
-                          >GPS Heatmap Implementation</a
-                        >
-                      </li>
-                      <li>
-                        <a href="#heatmapEpidemiology"
-                          >GPS Heatmap Epidemiology Model</a
-                        >
-                      </li>
-                      <li>
-                        <a href="#databasePrivacy"
-                          >GPS Privacy Model and Database</a
-                        >
-                      </li>
-                    </ol>
                   </li>
                   <li>
-                    <a href="#userRecommendations">Part 3: Recommendations</a>
-                    <ol class="nestedInnerList">
-                      <li><a href="#scopeDesign">Scope and Design</a></li>
-                      <li><a href="#timeline">Timeline to Deployment</a></li>
-                    </ol>
+                    <a href="#userRecommendations">Part 3: User Recommendations</a>
                   </li>
                 </ol>
               </li>
               <li>
                 <strong><a href="#care">Why You Should Care</a></strong>
                 <ol class="innerList">
-                  <li><a href="#healthAuthorities">Health Authorities</a></li>
-                  <li><a href="#users">Individuals (Users)</a></li>
+                  <li><a href="#healthAuthorities">Incentives for Health Authorities</a></li>
+                  <li><a href="#users">Incentives for Individuals</a></li>
                   <li><a href="#impact">Quantitative Analysis of Impact</a></li>
+                  <li><a href="#timeline">Timeline to Deployment</a></li>
                 </ol>
               </li>
               <li>
-                <strong><a href="#conclusion">Conclusion</a></strong>
+                <strong><a href="#conclusion">Conclusions</a></strong>
                 <ol class="innerList">
-                  <li><a href="#youDo">What You Can Do</a></li>
+                  <li><a href="#youDo">Who Can Help</a></li>
                   <li>
                     <a href="#contributors"
-                      >Authors, Advisors, and Acknowledgements</a
+                    >Contributors, Advisors, and Acknowledgements</a
                     >
                   </li>
                 </ol>
               </li>
             </ol>
-          </div>
+          </TableOfContents>
         </div>
-
-        <p>&nbsp;</p>
-
+          <p>&nbsp;</p>
+        <div class="mainSubTitle">
+          <p style="font-size:30px;"><strong>Help stop COVID-19 with crowdsourced data</strong></p>
+        </div>
+        <br>
         <!--About Us-->
         <h2 id="aboutUs"><span class="titleLine">About Us</span></h2>
         <p>&nbsp;</p>
@@ -142,7 +93,7 @@
         <p>
           Our volunteers care strongly about preserving human life and human
           rights. All data we could collect is voluntary and fully anonymized.
-          All code is transparent. It is&nbsp;
+          All code is transparent. It is
           <a href="https://github.com/covid19risk/"><span>open source</span></a
           ><span
             >&nbsp;and could be easily reviewed, reproduced and used anywhere on
@@ -151,7 +102,7 @@
         </p>
         <p>
           <span
-            >It could be installed by anyone with a Bluetooth-capable
+            >The app could be installed by anyone with a Bluetooth-capable
             smartphone, alerting them to their risk of having been in contact
             with a confirmed case of COVID-19, and helping them to protect
             themselves and their friends, families, and other contacts
@@ -219,6 +170,20 @@
             tracing accuracy COVID-19 can be contained.</span
           >
         </p>
+        <div
+          class="centerImage"
+          style="display:flex;flex-direction:column;align-items:center;"
+        >
+          <img src="~/assets/images/CasesTrendIntl.png" alt="" />
+          <p style="color:gray;">
+            <span>FT Graphic: @jburnmurdoch 19th March &nbsp;</span>
+            <a
+              href="https://www.ft.com/coronavirus-latest"
+              ><span> John Hopkins data</span></a
+            >
+          </p>
+        </div>
+
         <p>
           <a
             href="https://www.nytimes.com/2020/03/04/health/coronavirus-china-aylward.html"
@@ -257,12 +222,12 @@
           class="centerImage"
           style="display:flex;flex-direction:column;align-items:center;"
         >
-          <img src="../assets/images/ROKDailyCases.png" alt="" />
+          <img src="~/assets/images/ROKDailyCases.png" alt="" />
           <p style="color:gray;">
-            <span>South Korea&nbsp;</span>
+            <span>South Korean&nbsp;</span>
             <a
               href="https://www.worldometers.info/coronavirus/country/south-korea/"
-              ><span>Cases per Day</span></a
+              ><span>new cases per day</span></a
             >
           </p>
         </div>
@@ -346,7 +311,7 @@
           There are three components to this system that work almost
           independently, but can be bundled into a single mobile app. Depending
           on privacy requirements and the needs of specific public health
-          authorities a subset of these capabilities could be utilized:
+          authorities a subset of these capabilities could be utilized.
         </p>
         <ul style="list-style:decimal">
           <li>
@@ -401,7 +366,11 @@
           class="centerImage"
           style="display:flex;flex-direction:column;align-items:center;"
         >
-          <img src="../assets/images/overview_article_imgs/003.png" alt="" />
+          <img
+            style="width:70%"
+            src="../assets/images/Contact_Tracing_Map.png"
+            alt=""
+          />
           <p style="color:gray;">Contact Network</p>
         </div>
 
@@ -419,8 +388,9 @@
           >
         </p>
         <p>
-          In the context of contact tracing there are three parameters that can
-          strongly impact results:
+          In the context of contact tracing there are three parameters that
+          <a href="https://github.com/BDI-pathogens/covid-19_instant_tracing/blob/master/Manuscript%20-%20Modelling%20instantaneous%20digital%20contact%20tracing.pdf">models show</a>
+          can strongly impact results:
         </p>
         <ul style="list-style:decimal">
           <li>Reduction in overall transmission through social distancing</li>
@@ -444,10 +414,9 @@
             href="https://www.statista.com/statistics/201183/forecast-of-smartphone-penetration-in-the-us/"
             >over 70%</a
           >
-          of the entire US population estimated to own one. Bluetooth is a radio
-          protocol that can be used to wirelessly communicate between nearby
-          mobile devices and Bluetooth signal strength can be used to estimate
-          distance.
+          of the entire US population estimated to own one.  Bluetooth is a radio protocol that can be used to wirelessly communicate between nearby mobile devices and the signal strength can be used to estimate distance.
+
+
         </p>
         <p>
           Mobile devices can be made to proactively record contact events with
@@ -456,26 +425,22 @@
           and distance of contact between two phone users can be estimated.
         </p>
         <p>
-          By recording all contact events, a high accuracy list of at-risk
-          individuals can be generated and sorted immediately to determine close
-          contacts when a new person is diagnosed to provide instantaneous
-          alerts. And the contact events can be deleted after a certain number
-          of days.
+          By recording all contact events, a high accuracy list of at-risk individuals can be generated automatically when a new person is diagnosed. These individuals can then be immediately notified to ensure they self-isolate before infecting more people.
+
+
         </p>
-        <p>
+        <p><strong>
           Bluetooth proximity may be the most accurate crowdsourcing method for
-          approximating close contact. While GPS data is a more well-known
-          general technology, there are clear advantages Bluetooth has over GPS
-          in terms of accuracy for contact tracing. With Bluetooth, proximity
-          can be approximated by signal strength that is reduced by obstructions
-          like walls. Therefore, it more accurately reflects functional
-          proximity in high-risk environments for close contact: inside
-          buildings, in vehicles and airplanes, and in underground transit.
+          approximating close contact.
+        </strong>
         </p>
         <p>
-          Finally and most importantly, Bluetooth communication occurs directly
-          between mobile devices. This means a decentralized system can be built
-          with strong privacy preservation.
+          While GPS data is a more well-known general technology, there are significant advantages bluetooth has over GPS in terms of accuracy for contact tracing. With bluetooth, proximity can be approximated by signal strength that is reduced by obstructions like walls; therefore, it more accurately reflects functional proximity in high-risk environments for close contact: inside buildings, in vehicles and airplanes, and in underground transit.
+
+        </p>
+        <p><strong>
+          Bluetooth communication also occurs directly between mobile devices. This means a decentralized system can be built more easily with and with stronger privacy protection than other crowdsourcing data types like GPS trajectories.
+        </strong>
         </p>
         <p>
           We are pursuing research in developing inexpensive
@@ -486,9 +451,7 @@
           under the same automatic contact tracing alert system for use in
           countries with fewer smartphone users. These methods would face much
           steeper adoption challenges, but if mobile app users and external
-          device users could be integrated under a single system, outcomes could
-          be further improved over more regions. However, this technology is
-          still under development.
+          device users could be integrated under a single system, outcomes could be further improved over more global communities.
         </p>
 
         <p>
@@ -551,7 +514,7 @@
               <li>
                 <span>4</span>
                 <p>
-                  This person sends a packet to the public database with the
+                  This person sends a request to the public database with the
                   permission number and their history of contact event numbers
                   (both transmitted and received).
                 </p>
@@ -565,8 +528,7 @@
               <li>
                 <span>5</span>
                 <p>
-                  This person sends a packet to the public database with the
-                  permission number and their history of contact event numbers.
+                  If one of the phone owners is diagnosed positive, they are given a permission number by health authorities.
                 </p>
                 <img
                   src="../assets/images/overview_article_imgs/010.png"
@@ -629,7 +591,13 @@
           currently being done by the
           <a href="https://www.CoEpi.org">CoEpi</a> team.
         </p>
-
+        <p>
+          The most effective form of this intervention would occur in communities that implement widespread testing and where permission numbers are shared with the mobile app by public health departments.
+        </p>
+      <p>
+        Singapore just released an <a href="https://www.straitstimes.com/singapore/coronavirus-singapore-develops-smartphone-app-for-efficient-contact-tracing">app</a> that performs some contact tracing using Bluetooth proximity networks.
+        However, our <a href="https://trello-attachments.s3.amazonaws.com/5e750fa118cc121ce836e525/5e76ae82e927b944ff3ce999/22c00e17fbc36c0dd6961d08f83bbca4/Centralized_and_Decentralized_Contact_Tracing_Security_Models.pdf">initial analysis</a> suggests their privacy model is susceptible to attack because they did not take advantage of Bluetooth's potential for decentralization.
+      </p>
         <p><span id="bluetoothDatabase" class="subTitleLine">Database</span></p>
         <p>
           The specification for the database is very simple: it is shared across
@@ -639,6 +607,7 @@
           system. If the database grows too large, it can also be fragmented
           based on general location. The code and a more in depth discussion of
           architecture are available on the open source github repo
+
           <a
             href="https://github.com/covid19risk/covidwatch-backend/blob/master/README.md"
             >here</a
@@ -761,15 +730,13 @@
           To describe it simply, the heat map builds upon SEIR models and
           simulates users according to the following state machine:
         </p>
-
-        <p style="color:red;font-size:30px">
-          need a better resolution image, enlarge font size inside each node
-          also
-        </p>
-        <img
-          src="../assets/images/overview_article_imgs/bad_resolution_epi_model.png"
-          alt=""
-        />
+        <div class="centerImage">
+          <img
+            style="width: 70%"
+            src="../assets/images/overview_article_imgs/Infection_state_diagram.png"
+            alt=""
+          />
+        </div>
         <p>&nbsp;</p>
 
         <p>
@@ -874,7 +841,7 @@
         </p>
         <p>
           The anonymization model we are implementing is one created by
-          researchers from the University of Montreal
+          researchers from the University of Montréal
           <a
             href="https://www.academia.edu/24040759/Anonymizing_trajectory_data_for_passenger_flow_analysis"
             >(Ghazemzadeh et al 2014)</a
@@ -917,10 +884,8 @@
             this number to call for them to inquire about next steps
           </li>
           <li>
-            Other features may include: more personalized advice based on heat
-            map location, a supplies map, self-reporting of symptoms, FAQs, news
-            updates tailored by geographic region, travel counseling, or access
-            to home-based testing
+            Future features may include: more personalized advice based on heat map location, a supplies map, self-reporting of symptoms, FAQs, news updates tailored by geographic region, travel counseling, or access to home-based testing
+
           </li>
         </ul>
 
@@ -1000,12 +965,8 @@
           <p>
             <strong
               >Figure 2: COVID-19 CDC Information and Symptoms Survey</strong
-            >. Users are given information, resources, and advice from the
-            Centers for Disease Control and Prevention (CDC) about COVID-19. In
-            addition, users are able to fill a travel/symptoms questionnaire to
-            better tailor their advice and assess their risk level. This data
-            will be stored locally on the user’s phone to reduce privacy
-            concerns.
+            >. Users are given information, resources, and advice from the Centers for Disease Control and Prevention (CDC) about COVID-19. In addition, users are able to fill a travel/symptoms questionnaire to better tailor their advice and assess their risk level. This data will only be stored locally on the user’s phone to preserve privacy.
+
           </p>
         </div>
         <p>&nbsp;</p>
@@ -1117,7 +1078,7 @@
           class="centerImage"
           style="display:flex;flex-direction:column;align-items:center;"
         >
-          <img src="../assets/images/ProportionTraced.png" alt="" />
+          <img src="~/assets/images/ProportionTraced.png" alt="" />
           <p style="color:gray;">
             Transmission Detection vs. App Usage curves for testing rates [0.05,
             0.1, 0.2, 0.4, 0.8]. BLE_Acc gives the detection rate of
@@ -1147,17 +1108,20 @@
           population using the app increases the risk for the entire population
           is reduced and most outbreaks are contained.
         </p>
-        <div
-          class="centerImage"
-          style="display:flex;flex-direction:column;align-items:center;"
-        >
-          <img src="../assets/images/totalInfected.png" width="70%" alt="" />
-          <img src="../assets/images/appInfected.png" width="70%" alt="" />
+        <v-row>
+          <v-col cols="12" md="6">
+            <img src="../assets/images/totalInfected.png" alt="" />
+          </v-col>
+          <v-col cols="12" md="6">
+            <img src="../assets/images/appInfected.png" alt="" />
+          </v-col>
+        </v-row>
+        <v-row>
           <p style="color:gray;">
-            Expected infections for total population (top) and app population
-            (bottom) adjusted for relative population size.
+            Expected infections for total population (1st) and app population
+            (2nd) adjusted for relative population size.
           </p>
-        </div>
+        </v-row>
         <p>
           <strong
             >So for the question: “Can an effective contact tracing program
@@ -1236,7 +1200,6 @@
 
         <p>&nbsp;</p>
 
-        <p>&nbsp;</p>
         <h2 id="conclusion"><span class="titleLine">Conclusions</span></h2>
         <br />
         <p>
@@ -1266,8 +1229,9 @@
         </p>
       </v-col>
     </v-row>
-
-    <h2 id="contributors" class="titleLine">
+    <br>
+    <h2 id="contributors" class="titleLine" style="border-top: lightgray 1px solid;">
+    <br>
       Contributors, Advisors, and Acknowledgements
     </h2>
     <div class="subTitleLine">Contributors:</div>
@@ -1287,167 +1251,167 @@
           </v-row>
           <v-row no-gutters>
             <v-col>
-              <a class="name">Isaiah Becker-Mayer</a>
+              <div class="name">Isaiah Becker-Mayer</div>
             </v-col>
             <v-col>
               <div>Software Engineer</div>
             </v-col>
             <v-col>
-              <a>California, USA</a>
+              <div>California, USA</div>
             </v-col>
           </v-row>
           <v-row no-gutters>
             <v-col>
-              <a class="name">Daniel Blank</a>
+              <div class="name">Daniel Blank</div>
             </v-col>
             <v-col>
               <div>Software Engineer - Heatmap</div>
             </v-col>
             <v-col>
-              <a>Berkeley, USA</a>
+              <div>Berkeley, USA</div>
             </v-col>
           </v-row>
           <v-row no-gutters>
             <v-col>
-              <a class="name">Jesse Colligan</a>
+              <div class="name">Jesse Colligan</div>
             </v-col>
             <v-col>
-              <div>Project Manager</div>
+              <div>Software Engineer</div>
             </v-col>
             <v-col>
-              <a>New York, USA</a>
+              <div>New York, USA</div>
             </v-col>
           </v-row>
           <v-row no-gutters>
             <v-col>
-              <a class="name">Rhys Fenwick</a>
+              <div class="name">Rhys Fenwick</div>
             </v-col>
             <v-col>
               <div>Head of Communications</div>
             </v-col>
             <v-col>
-              <a>Wollongong, Australia</a>
+              <div>Wollongong, Australia</div>
             </v-col>
           </v-row>
           <v-row no-gutters>
             <v-col>
-              <a class="name">Mike Hittle</a>
+              <div class="name">Mike Hittle</div>
             </v-col>
             <v-col>
               <div>Heat Map Team Epidemiologist</div>
             </v-col>
             <v-col>
-              <a>Stanford University, USA</a>
+              <div>Stanford University, USA</div>
             </v-col>
           </v-row>
           <v-row no-gutters>
             <v-col>
-              <a class="name">Mark Ingle</a>
+              <div class="name">Mark Ingle</div>
             </v-col>
             <v-col>
               <div>Bluetooth Team Software Engineer</div>
             </v-col>
             <v-col>
-              <a>South Carolina, USA</a>
+              <div>South Carolina, USA</div>
             </v-col>
           </v-row>
           <v-row no-gutters>
             <v-col>
-              <a class="name">Oliver Nash</a>
+              <div class="name">Oliver Nash</div>
             </v-col>
             <v-col>
               <div>Software Engineer</div>
             </v-col>
             <v-col>
-              <a>London, United Kingdom</a>
+              <div>London, United Kingdom</div>
             </v-col>
           </v-row>
           <v-row no-gutters>
             <v-col>
-              <a class="name">Victoria Nguyen</a>
+              <div class="name">Victoria Nguyen</div>
             </v-col>
             <v-col>
               <div>UI Designer</div>
             </v-col>
             <v-col>
-              <a>California, United States</a>
+              <div>California, United States</div>
             </v-col>
           </v-row>
           <v-row no-gutters>
             <v-col>
-              <a class="name">James Petrie</a>
+              <div class="name">James Petrie</div>
             </v-col>
             <v-col>
               <div>Head of Research</div>
             </v-col>
             <v-col>
-              <a>University of Waterloo, Canada</a>
+              <div>University of Waterloo, Canada</div>
             </v-col>
           </v-row>
           <v-row no-gutters>
             <v-col>
-              <a class="name">Jeff Schwaber</a>
+              <div class="name">Jeff Schwaber</div>
             </v-col>
             <v-col>
               <div>Software Engineer</div>
             </v-col>
             <v-col>
-              <a>VP of Engineering at Bigtincan, USA</a>
+              <div>VP of Engineering at Bigtincan, USA</div>
             </v-col>
           </v-row>
           <v-row no-gutters>
             <v-col>
-              <a class="name">Zsombor Szabo</a>
+              <div class="name">Zsombor Szabo</div>
             </v-col>
             <v-col>
               <div>Bluetooth Team Lead</div>
             </v-col>
             <v-col>
-              <a>Budapest, Romania</a>
+              <div>Budapest, Romania</div>
             </v-col>
           </v-row>
           <v-row no-gutters>
             <v-col>
-              <a class="name">Akhil Veeraghanta</a>
+              <div class="name">Akhil Veeraghanta</div>
             </v-col>
             <v-col>
               <div>Bluetooth Team Software Engineer</div>
             </v-col>
             <v-col>
-              <a>University of British Columbia, Canada</a>
+              <div>University of British Columbia, Canada</div>
             </v-col>
           </v-row>
           <v-row no-gutters>
             <v-col>
-              <a class="name">Mikhail Voloshin</a>
+              <div class="name">Mikhail Voloshin</div>
             </v-col>
             <v-col>
               <div>Heat Map Team Lead</div>
             </v-col>
             <v-col>
-              <a>North Carolina, United States</a>
+              <div>North Carolina, United States</div>
             </v-col>
           </v-row>
           <v-row no-gutters>
             <v-col>
-              <a class="name">Sydney Von Arx</a>
+              <div class="name">Sydney Von Arx</div>
             </v-col>
             <v-col>
               <div>Human Resources</div>
             </v-col>
             <v-col>
-              <a>Stanford University, USA</a>
+              <div>Stanford University, USA</div>
             </v-col>
           </v-row>
           <v-row no-gutters>
             <v-col>
-              <a class="name">Tina White</a>
+              <div class="name">Tina White</div>
             </v-col>
             <v-col>
               <div>Executive Director</div>
             </v-col>
             <v-col>
-              <a>Stanford University, USA</a>
+              <div>Stanford University, USA</div>
             </v-col>
           </v-row>
         </v-col>
@@ -1458,54 +1422,54 @@
       <v-row justify="center" align="center">
         <v-col cols="12">
           <v-row no-gutters>
-            <v-col>
+            <v-col md="2">
               <h4>Name</h4>
             </v-col>
-            <v-col>
-              <h4>Roles and Affiliations</h4>
+            <v-col md="8">
+              <h4>Roles</h4>
             </v-col>
             <v-col>
               <h4>Location</h4>
             </v-col>
           </v-row>
           <v-row no-gutters>
-            <v-col>
-              <a class="name">Tessa Alexanian</a>
+            <v-col md="2">
+              <div class="name">Tessa Alexanian</div>
+            </v-col>
+            <v-col md="8">
+              <div class="affiliation">
+                Privacy and Security, iGEM, East Bay Biosecurity Group
+              </div>
             </v-col>
             <v-col>
-              <a class="affiliation"
-                >Privacy and Security, iGEM, East Bay Biosecurity Group</a
-              >
-            </v-col>
-            <v-col>
-              <a>Berkeley, USA</a>
-            </v-col>
-          </v-row>
-          <v-row no-gutters>
-            <v-col>
-              <a class="name">Peter Eckersley</a>
-            </v-col>
-            <v-col>
-              <a class="affiliation"
-                >Privacy and Security, Convener of stop-covid.tech and
-                Distinguished Technology Fellow, EFF</a
-              >
-            </v-col>
-            <v-col>
-              <a>Australia</a>
+              <div>Berkeley, USA</div>
             </v-col>
           </v-row>
           <v-row no-gutters>
-            <v-col>
-              <a class="name">Jeffrey Ladish</a>
+            <v-col md="2">
+              <div class="name">Peter Eckersley</div>
+            </v-col>
+            <v-col md="8">
+              <div class="affiliation">
+                Privacy and Security, stop-covid.tech and Distinguished
+                Technology Fellow, EFF
+              </div>
             </v-col>
             <v-col>
-              <a class="affiliation"
-                >Privacy and Security, Security Consultant, Gordian Research</a
-              >
+              <div>Australia</div>
+            </v-col>
+          </v-row>
+          <v-row no-gutters>
+            <v-col md="2">
+              <div class="name">Jeffrey Ladish</div>
+            </v-col>
+            <v-col md="8">
+              <div class="affiliation">
+                Privacy and Security, Security Consultant, Gordian Research
+              </div>
             </v-col>
             <v-col>
-              <a>Berkeley, USA</a>
+              <div>Berkeley, USA</div>
             </v-col>
           </v-row>
         </v-col>
@@ -1517,64 +1481,67 @@
       <v-row justify="center" align="center">
         <v-col cols="12">
           <v-row no-gutters>
-            <v-col>
+            <v-col md="2">
               <h4>Name</h4>
             </v-col>
-            <v-col>
-              <h4>Roles and Affiliations</h4>
+            <v-col md="8">
+              <h4>Roles</h4>
             </v-col>
             <v-col>
               <h4>Location</h4>
             </v-col>
           </v-row>
           <v-row no-gutters>
-            <v-col>
-              <a class="name">Megan Coffee MD, PhD</a>
+            <v-col md="2">
+              <div class="name">Megan Coffee</div>
+            </v-col>
+            <v-col md="8">
+              <div class="affiliation">
+                MD, PhD, Infectious Diseases, NYU and Public Health
+              </div>
             </v-col>
             <v-col>
-              <a class="affiliation"
-                >Infectious Diseases, NYU and Public Health</a
-              >
-            </v-col>
-            <v-col>
-              <a>Columbia, USA</a>
-            </v-col>
-          </v-row>
-          <v-row no-gutters>
-            <v-col>
-              <a class="name">Jolene Elizabeth</a>
-            </v-col>
-            <v-col>
-              <a class="affiliation"
-                >Public Health Research and Digital Health Innovation</a
-              >
-            </v-col>
-            <v-col>
-              <a>California, USA</a>
+              <div>Columbia, USA</div>
             </v-col>
           </v-row>
           <v-row no-gutters>
-            <v-col>
-              <a class="name">Celine Gounder MD, ScM, FIDSA</a>
+            <v-col md="2">
+              <div class="name">Jolene Elizabeth</div>
+            </v-col>
+            <v-col md="8">
+              <div class="affiliation">
+                Public Health Research and Digital Health Innovation
+              </div>
             </v-col>
             <v-col>
-              <a>
-                Internist, Infectious Diseases Specialist, Epidemiologist
-              </a>
-            </v-col>
-            <v-col>
-              <a>New York, USA</a>
+              <div>California, USA</div>
             </v-col>
           </v-row>
           <v-row no-gutters>
-            <v-col>
-              <a class="name">Julie Parsonnet MD, PhD</a>
+            <v-col md="2">
+              <div class="name">Celine Gounder</div>
+            </v-col>
+            <v-col md="8">
+              <div>
+                MD, ScM, FIDSA, Internist, Infectious Diseases Specialist,
+                Epidemiologist
+              </div>
             </v-col>
             <v-col>
-              <a>Infectious Diseases Specialist and Epidemiologist</a>
+              <div>New York, USA</div>
+            </v-col>
+          </v-row>
+          <v-row no-gutters>
+            <v-col md="2">
+              <div class="name">Julie Parsonnet</div>
+            </v-col>
+            <v-col md="8">
+              <div>
+                MD, PhD, Infectious Diseases Specialist and Epidemiologist
+              </div>
             </v-col>
             <v-col>
-              <a>Stanford, USA</a>
+              <div>Stanford University, CA</div>
             </v-col>
           </v-row>
         </v-col>
@@ -1590,7 +1557,7 @@
     </p>
     <p>
       We also appreciate the advice, shared work, and cooperative spirit of
-      Scott Leibrandt, Dana Lewis and the entire
+      Scott Leibrand, Dana Lewis and the entire
       <a href="https://www.coepi.org/">CoEpi</a> volunteer team.
     </p>
     <p>
@@ -1819,10 +1786,12 @@ img {
 
 <script>
 import Heatmap from "~/components/Heatmap.vue";
+import TableOfContents from "~/components/TableOfContents.vue";
 
 export default {
   components: {
-    Heatmap
+    Heatmap,
+    TableOfContents
   }
 };
 </script>

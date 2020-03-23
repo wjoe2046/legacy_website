@@ -36,6 +36,10 @@
 
         .v-btn {
             margin-right: 20px;
+
+            @media screen and (max-width: 960px) {
+                margin-right: 5px;
+            }
         }
     }
 
@@ -59,7 +63,7 @@
     .v-card {
         width: 100%;
     }
-    
+
     img {
         margin-top: 30px;
     }
@@ -70,7 +74,7 @@
         justify-content: space-evenly;
         height: 80px;
         align-items: center;
-        
+
         a {
             font-weight: bold;
             color: ivory;

@@ -18,7 +18,12 @@
 
             <div class="rightNav">
               <v-btn color="primary" class="white--text">
-                Get App
+                <a
+                  target="_blank"
+                  href="https://www.covid-watch.org/subscribe.html"
+                  style="color:white;"
+                  >Sign Up</a
+                >
               </v-btn>
 
               <!-- @Isaiah this is where menu code begins.  The commented out <ul> a bit further down is what I'm attemtping to replace with this dropdown menu so at some point we need to get the links to other pages in the menu items-->

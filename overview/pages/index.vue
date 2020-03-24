@@ -138,10 +138,10 @@
           Firstly, we&#39;re constantly monitoring the progress of COVID-19
           research and updating our assumptions accordingly, in close
           consultation with our
-          <a href="http://covid-watch.org/advisors.html">academic advisors</a>.
-          If the research suggests that we&#39;re wildly off-track, we&#39;re
-          open to making changes or reassessing the project as needed (although
-          so far it&#39;s shown just the opposite). The end result is that if
+          <nuxt-link to="/advisors">academic advisors</nuxt-link>. If the
+          research suggests that we&#39;re wildly off-track, we&#39;re open to
+          making changes or reassessing the project as needed (although so far
+          it&#39;s shown just the opposite). The end result is that if
           there&#39;s a more effective way to achieve our goals, we&#39;re in a
           good position to find it and pivot in that direction.<br />
           Secondly, we&#39;ve designed our app to be useful at a range of
@@ -190,11 +190,7 @@
 
         <p></p>
         If you think you would like to help, see our
-        <b
-          ><a href="https://www.covid-watch.org/articles/collaborate"
-            >collaborate</a
-          >
-        </b>
+        <b><nuxt-link to="/collaborate">collaborate</nuxt-link> </b>
         page.
 
         <p></p>

@@ -124,12 +124,12 @@
 
             <p>
               For a non-exhaustive list of our team members, click
-              <a href="http://covid-watch.org/team.html">here</a>.
+              <nuxt-link to="/team">here</nuxt-link>.
             </p>
 
             <p>
               For a list of our academic advisors, click
-              <a href="http://covid-watch.org/advisors.html">here</a>.
+              <nuxt-link to="/advisors">here</nuxt-link>.
             </p>
 
             <p></p>
@@ -139,11 +139,7 @@
             <p>
               If you&#39;re interested in joining us or helping out, have a look
               at our
-              <b
-                ><a href="http://covid-watch.org/articles/collaborate"
-                  >collaborations
-                </a></b
-              >
+              <b><nuxt-link href="/collaborate">collaborations </nuxt-link></b>
               page for more information.
             </p>
           </div>

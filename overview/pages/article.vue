@@ -1204,9 +1204,7 @@
         <p>
           The track to development requires (1) more volunteers to help us with
           skill sets listed on our
-          <a href="https://www.covid-watch.org/articles/collaborate"
-            >collaborate page</a
-          >
+          <nuxt-link to="/collaborate">collaborate page</nuxt-link>
           and (2) funding for, at a minimum, cloud services.
         </p>
         <p>The app will be implemented and launched in two parts:</p>
@@ -1265,9 +1263,8 @@
         <br />
         <p>
           We continue to seek more
-          <a href="https://www.covid-watch.org/articles/collaborate"
-            >collaborators</a
-          >, donors, and support from health organizations and testing centers.
+          <nuxt-link to="/collaborate">collaborators</nuxt-link>, donors, and
+          support from health organizations and testing centers.
         </p>
       </v-col>
     </v-row>

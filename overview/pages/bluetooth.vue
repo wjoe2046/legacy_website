@@ -552,7 +552,7 @@
         <p>
           I&rsquo;m glad you asked, hypothetical questioner! We have a
           newsletter - you can sign up at our
-          <a href="http://covid-watch.org.com">homepage</a>.
+          <nuxt-link to="/">homepage</nuxt-link>.
         </p>
 
         <h3>What next?</h3>

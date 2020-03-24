@@ -149,7 +149,7 @@
               word of mouth. To keep up to date with our progress, or to see if
               a role that suits you becomes available, you can sign up to our
               newsletter via the form on our
-              <b><a href="index.html">homepage </a></b>.
+              <b><nuxt-link to="/">homepage </nuxt-link></b>.
             </p>
           </div>
         </section>

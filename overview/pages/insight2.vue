@@ -212,9 +212,7 @@
           <p>
             If you are reading this on Facebook or on our blog, please check out
             the
-            <a href="https://covid-watch.org/collaborate.html"
-              >collaborations</a
-            >
+            <nuxt-link to="/collaborate">collaborations</nuxt-link>
             page on our website to get familiar with what we are doing and then
             email contact@covid-watch.org and ask to join our slack channels to
             work on the challenge.

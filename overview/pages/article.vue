@@ -537,9 +537,8 @@
               <li>
                 <span>4</span>
                 <p>
-                  This person sends a request to the public database with the
-                  permission number and their history of contact event numbers
-                  (both transmitted and received).
+                  If one of the phone owners is diagnosed positive, they are
+                  given a permission number by health authorities.
                 </p>
                 <img
                   src="../assets/images/overview_article_imgs/009.png"
@@ -551,8 +550,9 @@
               <li>
                 <span>5</span>
                 <p>
-                  If one of the phone owners is diagnosed positive, they are
-                  given a permission number by health authorities.
+                  This person sends a request to the public database with the
+                  permission number and their history of contact event numbers
+                  (both transmitted and received).
                 </p>
                 <img
                   src="../assets/images/overview_article_imgs/010.png"

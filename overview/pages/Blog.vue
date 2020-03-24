@@ -28,7 +28,9 @@
 
                   <p>
                     This article is current as of the 20th of March, 2020.<br />
-                    <a class="read-more" href="articles">Read More...</a>
+                    <nuxt-link class="read-more" to="/article"
+                      >Read More...</nuxt-link
+                    >
                   </p>
                 </div>
               </div>
@@ -49,7 +51,9 @@
                   <p>
                     At the same time, with the number of confirmed COVID-19
                     cases now over 100 000...<br />
-                    <a class="read-more" href="bluetooth1.html">Read More...</a>
+                    <nuxt-link class="read-more" to="/bluetooth"
+                      >Read More...</nuxt-link
+                    >
                   </p>
                 </div>
               </div>
@@ -68,7 +72,9 @@
                     internal document. Much of the technical content mentioned
                     has been covered in other blog posts: instead, the insight
                     here is how our project organises and plans...<br />
-                    <a class="read-more" href="insight2.html">Read More...</a>
+                    <nuxt-link class="read-more" to="/insight2"
+                      >Read More...</nuxt-link
+                    >
                   </p>
                 </div>
               </div>
@@ -84,7 +90,9 @@
                     of proximity-based transmission and our latest information
                     about COVID-19. It uses these simulations to generate a risk
                     heatmap...<br />
-                    <a class="read-more" href="progress2.html">Read More...</a>
+                    <nuxt-link class="read-more" to="/progress2"
+                      >Read More...</nuxt-link
+                    >
                   </p>
                 </div>
               </div>
@@ -93,16 +101,18 @@
                 <div class="blog-item-content">
                   <h2>Insight Post: 28th of February 2020</h2>
 
-                  <div class="blog-item-excerpt">
+                  <p>
                     Welcome to our first insight post!<br />
                     In this series, our researchers will share what they&#39;re
                     currently working on and the challenges they&#39;re facing.
                     They will be more technical than our progress posts, but as
                     the name suggests they will hopefully provide some insight
                     into the state of the project.<br />
-                    Today&#39;s post comes from James Petrie...
-                  </div>
-                  <a class="read-more" href="insight1.html">Read More...</a>
+                    Today&#39;s post comes from James Petrie...<br />
+                    <nuxt-link class="read-more" to="insight1"
+                      >Read More...</nuxt-link
+                    >
+                  </p>
                 </div>
               </div>
 
@@ -115,7 +125,6 @@
                     We&rsquo;ve gone from two researchers and a
                     <b
                       ><a
-                        class="blue"
                         href="https://forum.effectivealtruism.org/posts/8chk6DHZXctGHtNoz/covid-19-risk-assessment-app-idea-for-vetting-and-discussion"
                         >forum post</a
                       ></b
@@ -124,7 +133,9 @@
                     support rolling in.<br />
                     As you may expect...
                   </div>
-                  <a class="read-more" href="progress1.html">Read More...</a>
+                  <nuxt-link class="read-more" to="progress1"
+                    >Read More...</nuxt-link
+                  >
                 </div>
               </div>
             </div>

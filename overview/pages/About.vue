@@ -79,7 +79,7 @@
             <p>
               <b>(3) Altruism: </b>This project has its roots in
               <b
-                ><a class="blue" href="https://www.effectivealtruism.org/"
+                ><a href="https://www.effectivealtruism.org/"
                   >effective altruism</a
                 ></b
               >: doing the most good that we can with what we have. We&#39;re
@@ -140,9 +140,7 @@
               If you&#39;re interested in joining us or helping out, have a look
               at our
               <b
-                ><a
-                  class="blue"
-                  href="http://covid-watch.org/articles/collaborate"
+                ><a href="http://covid-watch.org/articles/collaborate"
                   >collaborations
                 </a></b
               >

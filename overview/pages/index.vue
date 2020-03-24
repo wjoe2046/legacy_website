@@ -166,6 +166,7 @@
 
         <p style="text-align: center;">
           <img
+            width="80%"
             alt="CC BY 2.0 Esther Kim &amp; Carl T. Bergstrom"
             src="~/assets/images/SlowPeaks.jpeg"
           />
@@ -190,9 +191,7 @@
         <p></p>
         If you think you would like to help, see our
         <b
-          ><a
-            class="blue"
-            href="https://www.covid-watch.org/articles/collaborate"
+          ><a href="https://www.covid-watch.org/articles/collaborate"
             >collaborate</a
           >
         </b>
@@ -203,7 +202,7 @@
         <p>
           For all inquiries, please contact us at
           <b
-            ><a class="blue" href="mailto: contact@covid-watch.org"
+            ><a href="mailto: contact@covid-watch.org"
               >contact@covid-watch.org</a
             ></b
           >.

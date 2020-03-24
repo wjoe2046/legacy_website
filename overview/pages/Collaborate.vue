@@ -98,7 +98,7 @@
               If you know of anyone who could fill these roles, get them to
               email us at
               <b
-                ><a class="blue" href="mailto: contact@covid-watch.org"
+                ><a href="mailto: contact@covid-watch.org"
                   >contact@covid-watch.org
                 </a></b
               >.
@@ -108,7 +108,6 @@
               We recommend you read the
               <b
                 ><a
-                  class="blue"
                   href="https://forum.effectivealtruism.org/posts/8chk6DHZXctGHtNoz/covid-19-risk-assessment-app-idea-for-vetting-and-discussion"
                   >forum post
                 </a></b
@@ -125,7 +124,7 @@
               If you&#39;re interested in collaborating and have one of the
               skillsets listed above, please contact us at
               <b
-                ><a class="blue" href="mailto: contact@covid-watch.org"
+                ><a href="mailto: contact@covid-watch.org"
                   >contact@covid-watch.org
                 </a></b
               >
@@ -150,7 +149,7 @@
               word of mouth. To keep up to date with our progress, or to see if
               a role that suits you becomes available, you can sign up to our
               newsletter via the form on our
-              <b><a class="blue" href="index.html">homepage </a></b>.
+              <b><a href="index.html">homepage </a></b>.
             </p>
           </div>
         </section>

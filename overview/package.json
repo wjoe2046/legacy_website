@@ -14,11 +14,13 @@
     "@mdi/font": "^5.0.45",
     "@nuxtjs/axios": "^5.9.5",
     "@statnett/vue-plotly": "^0.3.2",
+    "axios": "^0.19.2",
     "color-interpolate": "^1.0.5",
     "nuxt": "^2.0.0",
     "random-normal": "^1.0.0",
     "shuffle-array": "^1.0.1",
     "throttle-debounce": "^2.1.0",
+    "vue-pdf": "^4.0.8",
     "vue2-google-maps": "^0.10.7"
   },
   "devDependencies": {

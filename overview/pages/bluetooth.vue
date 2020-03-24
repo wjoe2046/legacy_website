@@ -289,8 +289,7 @@
 
         <p>
           Let&rsquo;s leave the metaphor and get back to reality. This is a
-          broad overview: the mathematics behind our model can be found
-          <a href="http://covid-watch.org/CSCT.pdf">here</a>.
+          broad overview: the mathematics behind our model can be found here.
         </p>
 
         <p>

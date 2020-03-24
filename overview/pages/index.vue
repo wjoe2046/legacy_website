@@ -47,9 +47,7 @@
           as some information about their potential or confirmed infection
           status, and use it to the benefit of both them and everybody else.
           There are several ways this could happen: through secure and anonymous
-          <a href="http://covid-watch.org/CSCT.pdf" target="_blank"
-            >contact tracing</a
-          >, through the creation of a risk
+          contact tracing, through the creation of a risk
           <nuxt-link
             class="link"
             :to="{ path: '/article', hash: 'heatmapImplementation' }"

@@ -40,13 +40,10 @@
               we can generate heatmaps of high-risk areas from demographic data,
               known cases, and epidemiological modelling, allowing users to
               adjust their behaviour accordingly. Secondly, we can use Bluetooth
-              connections between users to enact
-              <a href="http://covid-watch.org/CSCT.pdf"
-                >cryptographically secure contact tracing</a
-              >
-              and alerting them if we learn that they have been exposed to
-              COVID-19, without revealing the identities or infection status of
-              any other users.
+              connections between users to enact cryptographically secure
+              contact tracing and alerting them if we learn that they have been
+              exposed to COVID-19, without revealing the identities or infection
+              status of any other users.
             </p>
 
             <h3>Our Principles</h3>

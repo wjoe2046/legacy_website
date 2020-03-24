@@ -15,9 +15,10 @@
               </v-col>
               <v-col cols="11" md="3" style="padding-left:0"
                 ><v-text-field
-                  v-model="name"
-                  :rules="nameRules"
+                  v-model="donationAmount"
+                  :rules="donationAmountRules"
                   label="Amount"
+                  required
                 ></v-text-field
               ></v-col>
             </v-row>
@@ -25,28 +26,15 @@
 
           <v-checkbox
             v-model="checkbox"
-            :rules="[v => !!v || 'You must agree to continue!']"
             label="Make this a recurring monthly donation"
-            required
+            class="monthly-checkbox"
           ></v-checkbox>
 
-          <v-btn
-            :disabled="!valid"
-            color="success"
-            class="mr-4"
-            @click="validate"
-          >
+          <v-btn :disabled="!valid" color="info" class="mr-4" @click="validate">
             Validate
           </v-btn>
-
-          <v-btn color="error" class="mr-4" @click="reset">
-            Reset Form
-          </v-btn>
-
-          <v-btn color="warning" @click="resetValidation">
-            Reset Validation
-          </v-btn>
         </v-form>
+        <br />
         <p>
           We have been approved as a not-for-profit organization in the state of
           Arizona. We have submitted the required application with the IRS, and
@@ -61,17 +49,47 @@
 </template>
 <script>
 export default {
-  data: () => ({
-    valid: true,
-    name: "",
-    nameRules: [
-      v => !!v || "Name is required",
-      v => (v && v.length <= 10) || "Name must be less than 10 characters"
-    ],
-    checkbox: false
-  }),
+  // data: () => ({
+
+  // }),
+  data() {
+    return {
+      valid: true,
+      donationAmount: "",
+      donationAmountRules: [
+        v => this.inputToValidDollarAmount(v) != null || "Invalid dollar amount"
+      ],
+      checkbox: false
+    };
+  },
 
   methods: {
+    inputToValidDollarAmount(value) {
+      // Returns a string that's a valid dollar amount or null
+      var regex = /^[0-9]\d*(((,\d{3}){1})?(\.\d{0,2})?)$/;
+      if (regex.test(value)) {
+        //Input is valid, check the number of decimal places
+        var twoDecimalPlaces = /\.\d{2}$/g;
+        var oneDecimalPlace = /\.\d{1}$/g;
+        var noDecimalPlacesWithDecimal = /\.\d{0}$/g;
+
+        if (value.match(twoDecimalPlaces)) {
+          //all good, return as is
+          return value;
+        }
+        if (value.match(noDecimalPlacesWithDecimal)) {
+          //add two decimal places
+          return null;
+        }
+        if (value.match(oneDecimalPlace)) {
+          //ad one decimal place
+          return null;
+        }
+        //else there is no decimal places and no decimal
+        return value + ".00";
+      }
+      return null;
+    },
     validate() {
       this.$refs.form.validate();
     },
@@ -92,5 +110,9 @@ export default {
   padding-left: 0;
   text-align: center;
   color: #779f98;
+}
+.monthly-checkbox {
+  margin-top: 0;
+  padding-top: 0;
 }
 </style>

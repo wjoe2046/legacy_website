@@ -23,15 +23,15 @@
                   target="_blank"
                 >
                   <div id="mc_embed_signup_scroll">
-                    <h2>Subscribe</h2>
+                    <h3>Subscribe</h3>
 
                     <div class="indicates-required">
-                      <span class="asterisk">*</span> indicates required
+                      <span class="asterisk">* indicates required</span> 
                     </div>
 
                     <div class="mc-field-group">
                       <label for="mce-EMAIL"
-                        >Email Address <span class="asterisk">*</span>
+                        >Email Address: <span class="asterisk">*</span>
                       </label>
                       <input
                         class="required email"
@@ -43,12 +43,12 @@
                     </div>
 
                     <div class="mc-field-group">
-                      <label for="mce-FNAME">First Name </label>
+                      <label for="mce-FNAME">First Name: </label>
                       <input id="mce-FNAME" name="FNAME" type="text" value="" />
                     </div>
 
                     <div class="mc-field-group">
-                      <label for="mce-LNAME">Last Name </label>
+                      <label for="mce-LNAME">Last Name: </label>
                       <input id="mce-LNAME" name="LNAME" type="text" value="" />
                     </div>
 
@@ -78,15 +78,15 @@
                     />
                   </div>
 
-                  <div class="clear">
+                  <v-btn color="#BF3F4A" id="subscribe-btn">
                     <input
                       class="button"
                       id="mc-embedded-subscribe"
                       name="subscribe"
                       type="submit"
-                      value="Subscribe"
+                      value="SUBSCRIBE"
                     />
-                  </div>
+                  </v-btn>
                 </form>
               </div>
               <!--End mc_embed_signup-->
@@ -97,3 +97,33 @@
     </v-row>
   </v-container>
 </template>
+
+<style lang="scss">
+
+
+#mc_embed_signup_scroll  {
+  .mc-field-group {
+    margin-top: .5em;
+  }
+  
+  input { 
+    border:1px solid gray;
+    margin-top: .5em;
+    border-radius: 2px;
+    width: 14em;
+  }
+
+  .indicates-required {
+    font-size: 14px;
+  }
+}
+
+#mc-embedded-subscribe {
+  color: white;
+}
+
+#subscribe-btn {
+  margin-top: 20px;
+}
+
+</style>

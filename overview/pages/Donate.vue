@@ -49,9 +49,6 @@
 </template>
 <script>
 export default {
-  // data: () => ({
-
-  // }),
   data() {
     return {
       valid: true,

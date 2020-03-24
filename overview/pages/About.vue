@@ -136,7 +136,7 @@
             <p>
               If you&#39;re interested in joining us or helping out, have a look
               at our
-              <b><nuxt-link href="/collaborate">collaborations </nuxt-link></b>
+              <b><nuxt-link to="/collaborate">collaborations </nuxt-link></b>
               page for more information.
             </p>
           </div>

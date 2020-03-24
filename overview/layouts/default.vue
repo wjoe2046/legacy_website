@@ -167,6 +167,14 @@
             >
             - COVID Watch
           </v-card-text>
+          <v-card-text class="gray--text">
+            <a href="https://www.facebook.com/CovidWatch2020" target="_blank">
+              <img src="~/assets/images/social/FB_logo.png" alt="Like us on Facebook" />
+            </a>
+            <a href="https://twitter.com/COVIDWatchApp" target="_blank">
+              <img src="~/assets/images/social/TW_logo.png" alt="Like us on Twitter" />
+            </a>
+          </v-card-text>
         </v-card>
       </v-footer>
     </v-content>

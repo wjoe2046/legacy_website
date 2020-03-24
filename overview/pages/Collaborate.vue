@@ -40,6 +40,16 @@
               our team, then get them situated and productive quickly
             </p>
 
+            <p>
+              (5) System Administrator - help manage our website and backend.
+               Familiarity with AWS (specifically S3 and Cloudfront) ideal.
+            </p>
+
+            <p>
+              (6) Marketing Expert - assist with mailing campaigns,
+               branding, and media outreach.
+            </p>
+
             <h3>Support Roles</h3>
 
             <p>
@@ -90,7 +100,7 @@
 
             <p>(7) Crypto / security experience</p>
 
-            <p>(8) Experience with bluetooth on Android and iOS</p>
+            <p>(8) Experience with Bluetooth on Android and iOS</p>
 
             <h3>Applying</h3>
 

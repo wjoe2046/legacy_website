@@ -57,7 +57,7 @@ if [ ! -z "$NOBUILD" ] && [ "$NOBUILD" != "nobuild" ]; then
   argquit
 fi
 
-FOLDERNAME=articles
+FOLDERNAME=website
 
 if [ -z "$LIVE_OR_STAGING" ]; then
   echo "ERROR: live|staging not selected"

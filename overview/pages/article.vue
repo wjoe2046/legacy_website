@@ -11,17 +11,17 @@
             <h2 class="titleLine">Table of Contents</h2>
             <ol class="outerList">
               <li>
-                <strong><a href="#aboutUs">About Us</a></strong>
+                <strong><a href="/article#aboutUs">About Us</a></strong>
                 <ol class="innerList">
-                  <li><a href="#mission">Mission Statement</a></li>
-                  <li><a href="#privacy">Privacy Focus</a></li>
+                  <li><a href="/article#mission">Mission Statement</a></li>
+                  <li><a href="/article#privacy">Privacy Focus</a></li>
                   <li>
-                    <a href="#interventionBackground"
+                    <a href="/article#interventionBackground"
                       >Current Mobile Phone Interventions</a
                     >
                   </li>
                   <li>
-                    <a href="#interventionOptimization"
+                    <a href="/article#interventionOptimization"
                       >Making Interventions More Efficient</a
                     >
                   </li>
@@ -29,45 +29,53 @@
               </li>
               <li>
                 <strong
-                  ><a href="#proposedSystem"
+                  ><a href="/article#proposedSystem"
                     >Proposed System: Three Parts</a
                   ></strong
                 >
                 <ol class="innerList">
                   <li>
-                    <a href="#contactTracing"
+                    <a href="/article#contactTracing"
                       >Part 1: Bluetooth Contact Tracing</a
                     >
                   </li>
                   <li>
-                    <a href="#heatmapTitle">Part 2: GPS Heatmap</a>
+                    <a href="/article#heatmapTitle">Part 2: GPS Heatmap</a>
                   </li>
                   <li>
-                    <a href="#userRecommendations"
+                    <a href="/article#userRecommendations"
                       >Part 3: User Recommendations</a
                     >
                   </li>
                 </ol>
               </li>
               <li>
-                <strong><a href="#care">Why You Should Care</a></strong>
+                <strong><a href="/article#care">Why You Should Care</a></strong>
                 <ol class="innerList">
                   <li>
                     <a href="#healthAuthorities"
                       >Incentives for Health Authorities</a
                     >
                   </li>
-                  <li><a href="#users">Incentives for Individuals</a></li>
-                  <li><a href="#impact">Quantitative Analysis of Impact</a></li>
-                  <li><a href="#timeline">Timeline to Deployment</a></li>
+                  <li>
+                    <a href="/article#users">Incentives for Individuals</a>
+                  </li>
+                  <li>
+                    <a href="/article#impact"
+                      >Quantitative Analysis of Impact</a
+                    >
+                  </li>
+                  <li>
+                    <a href="/article#timeline">Timeline to Deployment</a>
+                  </li>
                 </ol>
               </li>
               <li>
-                <strong><a href="#conclusion">Conclusions</a></strong>
+                <strong><a href="/article#conclusion">Conclusions</a></strong>
                 <ol class="innerList">
-                  <li><a href="#youDo">Who Can Help</a></li>
+                  <li><a href="/article#youDo">Who Can Help</a></li>
                   <li>
-                    <a href="#contributors"
+                    <a href="/article#contributors"
                       >Contributors, Advisors, and Acknowledgements</a
                     >
                   </li>

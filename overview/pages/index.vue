@@ -1,24 +1,33 @@
 <template>
   <v-container>
     <v-row justify="center">
-      <v-col cols="12" lg="8">
-        <div class="content-logo">
-          <img alt="COVID Watch" src="images/map1.jpg" />
-        </div>
+      <v-col cols="12" lg="10">
+        <v-row align="center">
+          <v-col cols="12" sm="5">
+            <img
+              width="100%"
+              style="margin-right: 20px"
+              alt="COVID Watch"
+              src="~/assets/images/map1.jpg"
+            />
+          </v-col>
 
-        <h1 style="color:#BF3F4A">Our Mission</h1>
-
-        <h2>
-          We hope to slow the spread of infectious diseases like COVID-19 with
-          crowdsourced data.
-        </h2>
-
-        <p>
-          We are developing an app that shows individuals their risk of COVID-19
-          infection based off GPS data, known cases, and Bluetooth proximity
-          networks. We aim to do so in a way that preserves transparency and
-          personal privacy.
-        </p>
+          <v-col cols="12" sm="7">
+            <h1 style="color:#BF3F4A">Our Mission</h1>
+            <br />
+            <h3>
+              Slow the spread of infectious diseases like COVID-19 with
+              crowdsourced data.
+            </h3>
+            <p>
+              We are developing an app that shows individuals their risk of
+              COVID-19 infection based off GPS data, known cases, and Bluetooth
+              proximity networks. We aim to do so in a way that preserves
+              transparency and personal privacy.
+            </p>
+          </v-col>
+        </v-row>
+        <br />
 
         <h2>Our Plan</h2>
 
@@ -38,15 +47,20 @@
           as some information about their potential or confirmed infection
           status, and use it to the benefit of both them and everybody else.
           There are several ways this could happen: through secure and anonymous
-          <a href="http://covid-watch.org/CSCT.pdf">contact tracing</a>, through
-          the creation of a risk
-          <a href="http://covid-watch.org/heatmap">heatmap</a>, and through more
-          accurate epidemiological modelling.
+          <a href="http://covid-watch.org/CSCT.pdf" target="_blank"
+            >contact tracing</a
+          >, through the creation of a risk
+          <nuxt-link
+            class="link"
+            :to="{ path: '/article', hash: 'heatmapImplementation' }"
+            >heatmap</nuxt-link
+          >
+          , and through more accurate epidemiological modelling.
         </p>
 
         <p>
           A more in-depth discussion of our plan is available
-          <a href="articles">here</a>.
+          <nuxt-link to="/article">here</nuxt-link>
         </p>
         <h2>We Can Make A Difference</h2>
 
@@ -103,9 +117,7 @@
           Combined with a comprehensive testing program, our filter may be
           powerful enough to protect our communities from COVID-19 becoming
           endemic. That&#39;s a bold claim, but we
-          <a href="http://covid-watch.org/optimism.html"
-            >firmly believe it can happen</a
-          >.
+          <nuxt-link to="/optimism">firmly believe it can happen</nuxt-link>.
         </p>
 
         <h2>If We&#39;re Wrong</h2>
@@ -155,7 +167,7 @@
         <p style="text-align: center;">
           <img
             alt="CC BY 2.0 Esther Kim &amp; Carl T. Bergstrom"
-            src="/SlowPeaks.jpeg"
+            src="~/assets/images/SlowPeaks.jpeg"
           />
         </p>
 

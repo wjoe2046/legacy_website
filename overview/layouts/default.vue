@@ -1,6 +1,6 @@
 <template>
   <v-app id="covid19app">
-    <v-app-bar id="navBar" fixed app clipped-left color="secondaryLight">
+    <v-app-bar id="navBar" fixed app clipped-left color="#A2C5BF">
       <!-- this is the header that persists across pages -->
       <v-container class="navbarContainer">
         <!-- if by using Vuetify we can improve the below somehow to be more responsive, etc. please let me know, I'm new to Vuetify and eager to learn! - Jesse -->
@@ -160,20 +160,32 @@
           <v-card-text class="gray--text">
             <img src="~/assets/images/logo/banner_1.png" alt="" />
           </v-card-text>
+          <v-card-text>
+            <a
+              style="margin-right:100px;"
+              href="https://www.facebook.com/CovidWatch2020"
+              target="_blank"
+            >
+              <img
+                style="width: 5em;"
+                src="~/assets/images/footer_assets/facebook-white.png"
+                alt="Like us on Facebook"
+              />
+            </a>
+            <a href="https://twitter.com/COVIDWatchApp" target="_blank">
+              <img
+                style="width: 5em;"
+                src="~/assets/images/footer_assets/twitter-white.png"
+                alt="Like us on Twitter"
+              />
+            </a>
+          </v-card-text>
           <v-card-text class="gray--text">
             Licensed
             <a href="https://creativecommons.org/licenses/by-nc/2.0/"
               >CC-BY-NC</a
             >
             - COVID Watch
-          </v-card-text>
-          <v-card-text class="gray--text">
-            <a href="https://www.facebook.com/CovidWatch2020" target="_blank">
-              <img src="~/assets/images/social/FB_logo.png" alt="Like us on Facebook" />
-            </a>
-            <a href="https://twitter.com/COVIDWatchApp" target="_blank">
-              <img src="~/assets/images/social/TW_logo.png" alt="Like us on Twitter" />
-            </a>
           </v-card-text>
         </v-card>
       </v-footer>

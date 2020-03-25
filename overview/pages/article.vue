@@ -53,7 +53,7 @@
                 <strong><a href="/article#care">Why You Should Care</a></strong>
                 <ol class="innerList">
                   <li>
-                    <a href="#healthAuthorities"
+                    <a href="/article#healthAuthorities"
                       >Incentives for Health Authorities</a
                     >
                   </li>
@@ -92,11 +92,15 @@
         </div>
         <br />
         <!--About Us-->
-        <h2 id="aboutUs"><span class="titleLine">About Us</span></h2>
+        <a class="anchor" id="aboutUs"></a>
+        <h2>
+          <span class="titleLine">About Us</span>
+        </h2>
         <p>&nbsp;</p>
 
         <p>
-          <span id="mission" class="subTitleLine"> Mission Statement </span>
+          <a class="anchor" id="mission"></a>
+          <span class="subTitleLine"> Mission Statement </span>
         </p>
 
         <p>
@@ -135,8 +139,8 @@
             by voluntary public action.&nbsp;</span
           >
         </p>
-
-        <p><span id="privacy" class="subTitleLine"> Privacy Focus </span></p>
+        <a class="anchor" id="privacy"></a>
+        <p><span class="subTitleLine"> Privacy Focus </span></p>
 
         <p>
           <span
@@ -170,7 +174,8 @@
         </p>
 
         <p>
-          <span id="interventionBackground" class="subTitleLine">
+          <a class="anchor" id="interventionBackground"></a>
+          <span class="subTitleLine">
             Current Mobile Phone Interventions
           </span>
         </p>
@@ -258,7 +263,8 @@
         </p>
 
         <p>
-          <span id="interventionOptimization" class="subTitleLine">
+          <a class="anchor" id="interventionOptimization"></a>
+          <span class="subTitleLine">
             Making Interventions More Efficient
           </span>
         </p>
@@ -312,7 +318,8 @@
         </p>
 
         <!--Proposed System: Three Parts-->
-        <h2 id="proposedSystem">
+        <a class="anchor" id="proposedSystem"></a>
+        <h2>
           <span class="titleLine">Proposed System: Three Parts</span>
         </h2>
         <p>&nbsp;</p>
@@ -345,14 +352,12 @@
 
         <p>&nbsp;</p>
         <p>
-          <span id="contactTracing" class="subTitleLine">
-            Part 1: Bluetooth Contact Tracing</span
-          >
+          <a class="anchor" id="contactTracing"></a>
+          <span class="subTitleLine"> Part 1: Bluetooth Contact Tracing</span>
         </p>
         <p>
-          <span id="contactTracingBackground" class="subTitleLine">
-            Contact Tracing Background</span
-          >
+          <a class="anchor" id="contactTracingBackground"></a>
+          <span class="subTitleLine"> Contact Tracing Background</span>
         </p>
         <p>
           Non-pharmaceutical methods focused on social distancing reduce the
@@ -410,16 +415,17 @@
           >
           can strongly impact results:
         </p>
-        <ul style="list-style:decimal">
-          <li>Reduction in overall transmission through social distancing</li>
-          <li>Testing rate and time to diagnosis</li>
-          <li>Contact tracing accuracy</li>
-        </ul>
+        <p>
+          <ul style="list-style:decimal">
+            <li>Reduction in overall transmission through social distancing</li>
+            <li>Testing rate and time to diagnosis</li>
+            <li>Contact tracing accuracy</li>
+          </ul>
+        </p>
 
         <p>
-          <span id="blueToothModel" class="subTitleLine"
-            >Model Description</span
-          >
+          <a class="anchor" id="blueToothModel"></a>
+          <span class="subTitleLine">Model Description</span>
         </p>
         <p>
           Mobile phones are carried by a majority of people in several
@@ -486,7 +492,8 @@
         </p>
 
         <p>
-          <span id="blueToothPrivacy" class="subTitleLine">Privacy Model</span>
+          <a class="anchor" id="blueToothPrivacy"></a>
+          <span class="subTitleLine">Privacy Model</span>
         </p>
         <p>
           The Bluetooth contact tracing system can be structured in a
@@ -643,7 +650,8 @@
           suggests their privacy model is susceptible to attack because they did
           not take advantage of Bluetooth's potential for decentralization.
         </p>
-        <p><span id="bluetoothDatabase" class="subTitleLine">Database</span></p>
+        <a class="anchor" id="bluetoothDatabase"></a>
+        <p><span class="subTitleLine">Database</span></p>
         <p>
           The specification for the database is very simple: it is shared across
           all installations of the app and stores anonymized Contact Event
@@ -716,12 +724,12 @@
 
         <!-- Heatmap -->
         <p>
-          <span id="heatmapTitle" class="subTitleLine">
-            Part 2: GPS Heatmap</span
-          >
+          <a class="anchor" id="heatmapTitle"></a>
+          <span class="subTitleLine"> Part 2: GPS Heatmap</span>
         </p>
         <p>
-          <span id="heatmapDesc" class="subTitleLine">Model Description</span>
+          <a class="anchor" id="heatmapDesc"></a>
+          <span class="subTitleLine">Model Description</span>
         </p>
         <p>
           GPS capability is ubiquitous among smartphone devices, and
@@ -751,17 +759,15 @@
 
         <p>&nbsp;</p>
         <p>
-          <span id="heatmapImplementation" class="subTitleLine"
-            >Implementation</span
-          >
+          <a class="anchor" id="heatmapImplementation"></a>
+          <span class="subTitleLine">Implementation</span>
         </p>
         <Heatmap class="heatMap"></Heatmap>
         <p>&nbsp;</p>
 
         <p>
-          <span id="heatmapEpidemiology" class="subTitleLine"
-            >Heatmap Epidemiology Model</span
-          >
+          <a class="anchor" id="heatmapEpidemiology"></a>
+          <span class="subTitleLine">Heatmap Epidemiology Model</span>
         </p>
         <p>
           The source code at time of writing [19-MAR-2020] of the
@@ -821,7 +827,8 @@
         </p>
 
         <p>
-          <span id="databasePrivacy" class="subTitleLine">Privacy Model</span>
+          <a class="anchor" id="databasePrivacy"></a>
+          <span class="subTitleLine">Privacy Model</span>
         </p>
         <p>
           Given the personally identifying nature of the spatiotemporal
@@ -843,9 +850,8 @@
         </p>
 
         <p>
-          <span id="databaseAnonymization" class="subTitleLine"
-            >GPS Anonymization Model</span
-          >
+          <a class="anchor" id="databaseAnonymization"></a>
+          <span class="subTitleLine">GPS Anonymization Model</span>
         </p>
         <p>
           The heatmap may either require the application of an anonymization
@@ -908,9 +914,8 @@
         </p>
 
         <p>
-          <span id="userRecommendations" class="subTitleLine">
-            Part 3: User Recommendations</span
-          >
+          <a class="anchor" id="userRecommendations"></a>
+          <span class="subTitleLine"> Part 3: User Recommendations</span>
         </p>
         <p>
           We have designed the app user interface (UI) and are building a beta
@@ -937,8 +942,8 @@
         </ul>
 
         <p>&nbsp;</p>
-
-        <h3 id="scopeDesign">
+        <a class="anchor" id="scopeDesign"></a>
+        <h3>
           User Interface Design: COVID Watch Transmission Map and Phone Log
         </h3>
 
@@ -1022,9 +1027,11 @@
         <p>&nbsp;</p>
 
         <!-- Why You Should Care -->
-        <h2 id="care"><span class="titleLine">Why You Should Care</span></h2>
+        <a class="anchor" id="care"></a>
+        <h2><span class="titleLine">Why You Should Care</span></h2>
         <p>&nbsp;</p>
-        <h3 id="healthAuthorities">Incentives for Health Authorities</h3>
+        <a class="anchor" id="healthAuthorities"></a>
+        <h3>Incentives for Health Authorities</h3>
         <br />
         <ul>
           <li>High accuracy, instantaneous contact tracing</li>
@@ -1035,8 +1042,8 @@
           <li>Easier communication of announcements and information</li>
         </ul>
         <br />
-
-        <h3 id="users">Incentives for Individuals</h3>
+        <a class="anchor" id="users"></a>
+        <h3>Incentives for Individuals</h3>
         <br />
         <ul>
           <li>Information about how to avoid contracting the disease</li>
@@ -1055,8 +1062,8 @@
           </li>
         </ul>
         <br />
-
-        <h3 id="impact">Quantitative Analysis of Impact</h3>
+        <a class="anchor" id="impact"></a>
+        <h3>Quantitative Analysis of Impact</h3>
         <br />
         <p>
           The impact of this technology will depend largely on the state of the
@@ -1197,9 +1204,8 @@
 
         <p>&nbsp;</p>
         <p>
-          <span id="timeline" class="subTitleLine">
-            Timeline to Deployment</span
-          >
+          <a class="anchor" id="timeline"></a>
+          <span class="subTitleLine"> Timeline to Deployment</span>
         </p>
         <p>
           We estimate we could complete the remainder of the necessary technical
@@ -1247,8 +1253,8 @@
         </p>
 
         <p>&nbsp;</p>
-
-        <h2 id="conclusion"><span class="titleLine">Conclusions</span></h2>
+        <a class="anchor" id="conclusion"></a>
+        <h2><span class="titleLine">Conclusions</span></h2>
         <br />
         <p>
           Mobile technologies can provide instantaneous and high accuracy
@@ -1267,7 +1273,8 @@
         </p>
 
         <p>&nbsp;</p>
-        <h2 id="youDo"><span class="titleLine">Who Can Help</span></h2>
+        <a class="anchor" id="youDo"></a>
+        <h2><span class="titleLine">Who Can Help</span></h2>
         <br />
         <p>
           We continue to seek more
@@ -1277,11 +1284,8 @@
       </v-col>
     </v-row>
     <br />
-    <h2
-      id="contributors"
-      class="titleLine"
-      style="border-top: lightgray 1px solid;"
-    >
+    <a class="anchor" id="contributors"></a>
+    <h2 class="titleLine" style="border-top: lightgray 1px solid;">
       <br />
       Contributors, Advisors, and Acknowledgements
     </h2>
@@ -1831,6 +1835,13 @@ img {
 
   .benefitsDisadvantages {
     width: 60%;
+  }
+
+  .anchor {
+    display: block;
+    position: relative;
+    top: -70px;
+    visibility: hidden;
   }
 }
 </style>

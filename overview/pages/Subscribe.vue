@@ -11,6 +11,7 @@
                 notifications using the form below.
               </p>
               <!-- Begin Mailchimp Signup Form -->
+
 <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
 <style type="text/css">
 	#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
@@ -38,6 +39,7 @@
 </div>
 <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
 <!--End mc_embed_signup-->
+
             </div>
           </div>
         </section>
@@ -73,5 +75,26 @@
 #subscribe-btn {
   margin-top: 20px;
 }
+
+
+// ALTERNATE: center subscribe form on page
+.blog-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.indicates-required {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.validate {
+   display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 
 </style>

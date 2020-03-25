@@ -3,13 +3,14 @@
     <v-row justify="center">
       <v-col cols="12" lg="10">
         <v-row align="center">
-          <v-col cols="12" sm="5">
+          <v-col cols="12" sm="5" style="display:flex;flex-direction:column;align-items:center;">
             <img
               width="100%"
-              style="margin-right: 20px"
+              style="margin-right: 20px;border:1px solid gray;border-radius:2px;"
               alt="COVID Watch"
-              src="~/assets/images/map1.jpg"
+              src="~/assets/images/map2.png"
             />
+            <p style="color:gray;">Hotspots of COVID-19 risk in our map demo (fake data)</p>
           </v-col>
 
           <v-col cols="12" sm="7">

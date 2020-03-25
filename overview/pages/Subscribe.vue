@@ -23,7 +23,7 @@
                   target="_blank"
                 >
                   <div id="mc_embed_signup_scroll">
-                    <h3>Subscribe</h3>
+                    
 
                     <div class="indicates-required">
                       <span class="asterisk">* indicates required</span> 
@@ -41,7 +41,7 @@
                         value=""
                       />
                     </div>
-
+                  
                     <div class="mc-field-group">
                       <label for="mce-FNAME">First Name: </label>
                       <input id="mce-FNAME" name="FNAME" type="text" value="" />
@@ -124,6 +124,25 @@
 
 #subscribe-btn {
   margin-top: 20px;
+}
+
+// ALTERNATE: center subscribe form on page
+.blog-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.indicates-required {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.validate {
+   display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 </style>

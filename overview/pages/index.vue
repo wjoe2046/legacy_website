@@ -232,15 +232,14 @@
                       target="_blank"
                     >
                       <div id="mc_embed_signup_scroll">
-                        <h3>Subscribe</h3>
 
-                        <div class="indicates-required">
-                          <span class="asterisk">* indicates required</span> 
-                        </div>
 
                         <div class="mc-field-group">
+                          <div class="indicates-required">
+                            <span class="asterisk">* indicates required</span> 
+                          </div>
                           <label for="mce-EMAIL"
-                            >Email Address: <span class="asterisk">*</span>
+                            >Email Address:<span class="asterisk">*</span>
                           </label>
                           <input
                             class="required email"

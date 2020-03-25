@@ -192,8 +192,7 @@
           >
         </p>
         <div
-          class="centerImage"
-          style="display:flex;flex-direction:column;align-items:center;"
+          style="display:flex; flex-direction:column; align-items:center;"
         >
           <img src="~/assets/images/CasesTrendIntl.png" alt="" />
           <p style="color:gray;">

@@ -6,7 +6,7 @@
     #! ./scripts/build.sh staging default
 
 #!push to production at http://www.covid-watch.org/articles/index.html:
-    #! ./scripts/build.sh live default
+    #! ./overview/scripts/build.sh live default
 
 
 CLOUDFRONT_INVALIDATION_ID=E3DTRHAKABXKO3

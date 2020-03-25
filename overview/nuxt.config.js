@@ -1,7 +1,6 @@
 import colors from "vuetify/es5/util/colors";
 
-const metaHeaders = require('./meta-headers.json');
-
+const metaHeaders = require("./meta-headers.json");
 
 export default {
   mode: "universal",
@@ -13,7 +12,7 @@ export default {
     title: metaHeaders.title,
     meta: [
       metaHeaders,
-      ...Object.entries(metaHeaders).map( ([key, value]) => ({
+      ...Object.entries(metaHeaders).map(([key, value]) => ({
         hid: key,
         name: key,
         content: value
@@ -52,10 +51,10 @@ export default {
     "@nuxtjs/axios"
   ],
   router: {
-    base: "/articles/"
+    base: "/"
   },
   axios: {
-    baseURL: "/articles/"
+    baseURL: "/"
   },
   /*
    ** vuetify module configuration
@@ -68,7 +67,7 @@ export default {
     },
     theme: {
       options: {
-        customProperties: true,
+        customProperties: true
       },
       light: true, //you don't actually need this line as it's for default
       themes: {
@@ -77,12 +76,11 @@ export default {
           secondary: "#779f98",
           secondaryLight: "#ccdbd8", // TODO: Use Vuetify theme's existing capabilities for light variants.
           info: "#779f98",
-          warning: '#BF3F4A',
+          warning: "#BF3F4A"
 
           //accent: '#82B1FF',
           //error: '#FF5252',
           //success: '#4CAF50',
-
         }
       }
     }

@@ -415,11 +415,13 @@
           >
           can strongly impact results:
         </p>
-        <ul style="list-style:decimal">
-          <li>Reduction in overall transmission through social distancing</li>
-          <li>Testing rate and time to diagnosis</li>
-          <li>Contact tracing accuracy</li>
-        </ul>
+        <p>
+          <ul style="list-style:decimal">
+            <li>Reduction in overall transmission through social distancing</li>
+            <li>Testing rate and time to diagnosis</li>
+            <li>Contact tracing accuracy</li>
+          </ul>
+        </p>
 
         <p>
           <a class="anchor" id="blueToothModel"></a>

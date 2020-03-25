@@ -2,9 +2,7 @@
   <v-layout column class="covid19heatmap">
     <v-row>
       <v-col cols="12">
-        <v-tabs class="map-container-tabber"
-            centered
-            color="primary">
+        <v-tabs class="map-container-tabber" centered color="primary">
           <v-tab>
             Map
           </v-tab>
@@ -249,8 +247,7 @@
                 :key="iGroup"
                 class="param-slider-tab"
               >
-                <span class="d-none d-sm-flex"
-                >
+                <span class="d-none d-sm-flex">
                   {{ group.name }}
                 </span>
                 <v-icon>{{ group.icon }}</v-icon>
@@ -548,7 +545,6 @@
 }
 
 html {
-  scroll-behavior: smooth;
 }
 
 .v-tabs-bar--is-mobile {
@@ -876,7 +872,7 @@ export default {
       // so we don't have to be too concerned with throttle.
       if (param.requires_reset) {
         this.resetWithData();
-     }
+      }
     }
   },
 

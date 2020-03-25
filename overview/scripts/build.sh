@@ -2,11 +2,11 @@
 
 #! chmod +x ./scripts/build.sh
 
-#!push to staging at http://staging.covid-watch.org/articles/index.html:
+#!push to staging at http://staging.covid-watch.org/:
     #! ./scripts/build.sh staging default
 
-#!push to production at http://www.covid-watch.org/articles/index.html:
-    #! ./overview/scripts/build.sh live default
+#!push to production at http://www.covid-watch.org/:
+    #! ./scripts/build.sh live default
 
 
 CLOUDFRONT_INVALIDATION_ID=E3DTRHAKABXKO3

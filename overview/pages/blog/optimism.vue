@@ -169,7 +169,19 @@
             <p></p>
           </div>
         </section>
+        <SubscribeForm></SubscribeForm>
       </v-col>
     </v-row>
   </v-container>
 </template>
+
+<script>
+  import SubscribeForm from '../../components/SubscribeForm.vue'
+
+  export default {
+    components: {
+      SubscribeForm
+    }
+  }
+
+</script>

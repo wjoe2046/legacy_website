@@ -2,10 +2,10 @@
 
 #! chmod +x ./scripts/build.sh
 
-#!push to staging at http://staging.covid-watch.org/articles/index.html:
+#!push to staging at http://staging.covid-watch.org/:
     #! ./scripts/build.sh staging default
 
-#!push to production at http://www.covid-watch.org/articles/index.html:
+#!push to production at http://www.covid-watch.org/:
     #! ./scripts/build.sh live default
 
 

@@ -598,7 +598,19 @@
           Thanks for reading, and don&rsquo;t forget to wash your hands!<br />
           The COVID-19 Risk App team
         </p>
+        <SubscribeForm></SubscribeForm>
       </v-col>
     </v-row>
   </v-container>
 </template>
+
+<script>
+  import SubscribeForm from '../../components/SubscribeForm.vue'
+
+  export default {
+    components: {
+      SubscribeForm
+    }
+  }
+
+</script>

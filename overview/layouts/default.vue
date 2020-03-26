@@ -95,12 +95,12 @@
         small
         color="primary"
         class="toc-closer"
-        @click="tocShow = false"
+        @click="tocShow = !tocShow"
       >
         <v-icon>mdi-close-circle</v-icon>
       </v-btn>
 
-      <div class="px-1" ref="toc"></div>
+      <TableOfContents></TableOfContents>
     </v-navigation-drawer>
 
     <v-content>
@@ -222,11 +222,16 @@
 
 
 <script>
+import TableOfContents from "~/components/TableOfContents.vue";
+
 export default {
   data() {
     return {
       tocShow: null
     };
+  },
+  components: {
+    TableOfContents
   }
 };
 </script>

@@ -116,9 +116,9 @@
       </v-btn>
 
 
-      <v-row>
+      <v-row style="border-bottom: .5px lightgray solid;">
         <!-- may be better way to center this than inline margin-left to be more responsive via Vuetify -->
-        <v-col cols="12" lg="10" style="display:flex;justify-content:center;align-items:center;border-bottom: .5px lightgray solid;margin-left:10px;">
+        <v-col cols="12" style="display:flex;justify-content:center;align-items:center;margin-left:10px;">
            <p><strong> In partnership with: </strong></p>
            <img src="~/assets/images/stanford_logo.png" alt="" style="width:200px;"/>
            <!-- other logos if we want <img src="~/assets/images/IMAGEIMAGE" alt="" style="width:200px;"/> -->

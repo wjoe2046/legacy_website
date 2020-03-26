@@ -51,7 +51,7 @@
                   <p>
                     At the same time, with the number of confirmed COVID-19
                     cases now over 100 000...<br />
-                    <nuxt-link class="read-more" to="/bluetooth"
+                    <nuxt-link class="read-more" to="/blog/bluetooth"
                       >Read More...</nuxt-link
                     >
                   </p>
@@ -72,7 +72,7 @@
                     internal document. Much of the technical content mentioned
                     has been covered in other blog posts: instead, the insight
                     here is how our project organises and plans...<br />
-                    <nuxt-link class="read-more" to="/insight2"
+                    <nuxt-link class="read-more" to="/blog/insight2"
                       >Read More...</nuxt-link
                     >
                   </p>
@@ -90,7 +90,7 @@
                     of proximity-based transmission and our latest information
                     about COVID-19. It uses these simulations to generate a risk
                     heatmap...<br />
-                    <nuxt-link class="read-more" to="/progress2"
+                    <nuxt-link class="read-more" to="/blog/progress2"
                       >Read More...</nuxt-link
                     >
                   </p>
@@ -109,7 +109,7 @@
                     the name suggests they will hopefully provide some insight
                     into the state of the project.<br />
                     Today&#39;s post comes from James Petrie...<br />
-                    <nuxt-link class="read-more" to="insight1"
+                    <nuxt-link class="read-more" to="/blog/insight1"
                       >Read More...</nuxt-link
                     >
                   </p>
@@ -133,7 +133,7 @@
                     support rolling in.<br />
                     As you may expect...
                   </div>
-                  <nuxt-link class="read-more" to="progress1"
+                  <nuxt-link class="read-more" to="/blog/progress1"
                     >Read More...</nuxt-link
                   >
                 </div>

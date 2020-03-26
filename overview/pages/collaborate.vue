@@ -102,6 +102,8 @@
 
             <p>(8) Experience with Bluetooth on Android and iOS</p>
 
+            <p>(9) Electrical Engineers</p>
+
             <h3>Applying</h3>
 
             <p>

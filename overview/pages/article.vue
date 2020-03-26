@@ -304,10 +304,9 @@
             individuals who have previously been in contact with infected
             individuals are quarantined.
           </p>
-          <div
-            class="centerImage"
-            style="display:flex;flex-direction:column;align-items:center;"
-          >
+        <div
+          style="display:flex; flex-direction:column; align-items:center;"
+        >
             <img
               style="width:70%"
               src="../assets/images/Contact_Tracing_Map.png"

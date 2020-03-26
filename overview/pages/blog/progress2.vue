@@ -123,7 +123,7 @@
 </template>
 
 <script>
-  import SubscribeForm from '../components/SubscribeForm.vue'
+  import SubscribeForm from '../../components/SubscribeForm.vue'
 
   export default {
     components: {

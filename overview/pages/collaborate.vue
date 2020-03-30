@@ -18,7 +18,7 @@
               and slow the spread of COVID-19.
             </p>
 
-            <h3>Positions Wanted</h3>
+            <h2>Most Wanted Positions</h2>
 
             <p>
               (1) Volunteer Coordinator - coordinate the efforts, schedules,
@@ -49,6 +49,8 @@
               (6) Marketing Expert - assist with mailing campaigns,
                branding, and media outreach.
             </p>
+
+            <br>
 
             <h3>Support Roles</h3>
 

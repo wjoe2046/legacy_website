@@ -9,6 +9,31 @@
 
               <div class="blog-item">
                 <div class="blog-item-content">
+                  <h2>Progress Post: 29th of March 2020</h2>
+
+                  <p>
+                    Firstly, progress so far:
+                    We have an app! It’s in closed beta testing at the moment, but it exists and it (so far) works
+                    on both iOS and Android. Additionally, we have our first $1000 (USD) in funding, courtesy of
+                    the <a href="https://www.1517fund.com/">1517 Fund</a>, as well as AWS credits. We’ve had our first
+                    <nuxt-link to="/medialist">media coverage</nuxt-link>, and we’re in talks
+                    with multiple health agencies and other groups across the world about implementing our Bluetooth
+                    contact tracing system.
+                  </p>
+
+                  <p>
+                    Secondly, as our team has grown and we’ve reached out to connections across the tech world,
+                    we’ve encountered several other teams working on similar efforts...
+                  <p>
+                    <nuxt-link class="read-more" to="/blog/progress3"
+                    >Read More...</nuxt-link
+                    >
+                  </p>
+                </div>
+              </div>
+
+              <div class="blog-item">
+                <div class="blog-item-content">
                   <h2>Summary Article: 20th of March 2020</h2>
 
                   <p>

@@ -631,7 +631,7 @@
             This model has been successfully implemented as a proof-of-concept, as
             shown below:
           </p>
-          
+
           <div style="text-align: center">
             <iframe
               width="70%"
@@ -1207,6 +1207,10 @@
         </v-col>
       </v-row>
       <br />
+
+      <h3>This paper was published on the 20th of March, 2020. It was
+         last updated with minor alterations on the 29th of March 2020.</h3>
+
       <a class="anchor" id="contributors"></a>
       <h2 class="titleLine" style="border-top: lightgray 1px solid;">
         <br />
@@ -1390,6 +1394,17 @@
               </v-col>
               <v-col>
                 <div>Stanford University, USA</div>
+              </v-col>
+            </v-row>
+            <v-row no-gutters>
+              <v-col>
+                <div class="name">Helen Xue</div>
+              </v-col>
+              <v-col>
+                <div>Volunteer</div>
+              </v-col>
+              <v-col>
+                <div>California, USA</div>
               </v-col>
             </v-row>
           </v-col>

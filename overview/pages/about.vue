@@ -7,7 +7,7 @@
             <div class="blog-hero"></div>
 
             <h1 style="color:#BF3F4A">Our Mission</h1>
-
+            <br>
             <h3>Our Project</h3>
 
             <p>
@@ -118,15 +118,10 @@
             </p>
 
             <h3>Our People</h3>
-
+            <br>
             <p>
-              For a non-exhaustive list of our team members, click
-              <nuxt-link to="/team">here</nuxt-link>.
-            </p>
-
-            <p>
-              For a list of our academic advisors, click
-              <nuxt-link to="/advisors">here</nuxt-link>.
+              An overview of many members of our team, including our advisors, can be found
+              <b><a href="/article#contributors">here</a></b>.
             </p>
 
             <p></p>
@@ -142,7 +137,7 @@
           </div>
         </section>
 
-
+        <a id="comparison"></a>
         <ProjectComparison> </ProjectComparison>
 
 

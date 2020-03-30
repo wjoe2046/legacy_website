@@ -45,11 +45,8 @@
                     >
                   </v-list-item>
                   <v-list-item>
-                    <nuxt-link
-                      class="link"
-                      :to="{ path: '/article', hash: 'heatmapImplementation' }"
-                      style="color:#BF3F4A;"
-                      >Heatmap Demo</nuxt-link
+                    <nuxt-link class="link" to="/faq"
+                    >FAQ</nuxt-link
                     >
                   </v-list-item>
                   <v-list-item>
@@ -82,7 +79,7 @@
         </v-row>
       </v-container>
     </v-app-bar>
-    
+
 
     <v-navigation-drawer
       v-if="$nuxt.$route.name === 'article'"
@@ -123,7 +120,7 @@
            <img src="~/assets/images/stanford_logo.png" alt="" style="width:200px;"/>
            <!-- other logos if we want <img src="~/assets/images/IMAGEIMAGE" alt="" style="width:200px;"/> -->
         </v-col >
-      </v-row> 
+      </v-row>
 
       <nuxt style="min-height: 100vh" />
 
@@ -143,10 +140,8 @@
                 <nuxt-link class="link" to="/article">White Paper</nuxt-link>
               </v-col>
               <v-col class="footerList" cols="12" md="3">
-                <nuxt-link
-                  class="link"
-                  :to="{ path: '/article', hash: 'heatmapImplementation' }"
-                  >Heatmap Demo</nuxt-link
+                <nuxt-link class="link" to="/faq"
+                  >FAQ</nuxt-link
                 >
               </v-col>
               <v-col class="footerList" cols="12" md="3">

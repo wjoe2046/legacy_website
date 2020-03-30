@@ -5,12 +5,12 @@
         <v-row align="center">
           <v-col cols="12" sm="5" style="display:flex;flex-direction:column;align-items:center;">
             <img
-              width="100%"
+              width="50%"
               style="margin-right: 20px;border:1px solid gray;border-radius:2px;"
               alt="COVID Watch"
-              src="~/assets/images/map2.png"
+              src="~/assets/images/mobile/mobile_get_started.png"
             />
-            <p style="color:gray;font-size:1em">Hotspots of COVID-19 risk in our map demo (fake data)</p>
+            <p style="color:gray;font-size:1em">Current app homepage</p>
           </v-col>
 
           <v-col cols="12" sm="7">
@@ -21,10 +21,9 @@
               crowdsourced data.
             </h3>
             <p>
-              We are developing an app that shows individuals their risk of
-              COVID-19 infection based off GPS data, known cases, and Bluetooth
-              proximity networks. We aim to do so in a way that preserves
-              transparency and personal privacy.
+              COVID Watch aims to empower people to protect their communities from COVID-19,
+              without sacrificing their personal privacy. We are building a decentralized,
+              privacy-preserving app that will alert users if they have been exposed to COVID-19.
             </p>
           </v-col>
         </v-row>
@@ -33,36 +32,33 @@
         <h2>Our Plan</h2>
 
         <p>
-          We believe there&#39;s a non-trivial chance that GPS tracking or other
-          sources of location information could reduce the spread of infectious
+          We believe there's a non-trivial chance that crowdsourced proximity
+           data could reduce the spread of infectious
           diseases like COVID-19 by informing individuals of their risk and
           helping implement better self-quarantine measures. We also believe
-          that this can be done in a way that doesn&#39;t sacrifice rights like
+          that this can be done in a way that doesn't sacrifice rights like
           privacy.
         </p>
 
         <p>
-          We&#39;re a group of volunteers researching and designing an
+          We're a group of volunteers researching and designing an
           open-source app to make this idea a reality. Ideally, this app will
-          take the GPS and Bluetooth data of users in an anonymised way, as well
+          take the Bluetooth data of users in an anonymized way, as well
           as some information about their potential or confirmed infection
           status, and use it to the benefit of both them and everybody else.
-          There are several ways this could happen: through secure and anonymous
-          contact tracing, through the creation of a risk
-          <nuxt-link
-            class="link"
-            :to="{ path: '/article', hash: 'heatmapImplementation' }"
-            >heatmap</nuxt-link
-          >
-          , and through more accurate epidemiological modelling.
+          This could happen either through a standalone app, or through the
+           creation of interoperable modules and APIs to help assist the
+          <nuxt-link to="/about#comparison">constellation of other apps</nuxt-link>
+           in this field that ensure that privacy will become standard across the
+          field.
         </p>
 
         <p>
           A more in-depth discussion of our plan is available
-          <nuxt-link to="/article">here</nuxt-link>
+          <nuxt-link to="/article">here</nuxt-link>.
         </p>
         <h2>We Can Make A Difference</h2>
-
+        <br>
         <h3>The Challenge</h3>
 
         <p>
@@ -106,10 +102,11 @@
 
         <p>
           What we are developing is essentially a combination of two things.
-          Firstly, it will act as a preventative: lowering the risk of infection
-          by alerting users of high-risk areas. Secondly, and more significant,
-          it is a high-quality, low-cost filter to aid contact tracing efforts
-          and quickly identify at-risk individuals.
+          Firstly, it is a high-quality, low-cost filter to aid contact tracing efforts
+          and quickly identify at-risk individuals. Secondly, it is a cluster
+           of modules that will allow health agencies and private projects
+           around the world to securely and anonymously implement programs
+           of their own, while sharing data in a privacy-maintaining way.
         </p>
 
         <p>
@@ -149,7 +146,7 @@
           don&#39;t reach that goal, however, our heatmap functionality is
           designed to provide value to our users even at extremely low adoption
           rates. This ensures that even if we do fall short of our ultimate
-          goal, we still capture the significant benefit of <em>slowing </em>the
+          goal, we still capture the significant benefit of <em>slowing</em> the
           spread of the virus.
         </p>
 

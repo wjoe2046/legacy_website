@@ -141,7 +141,23 @@
             </p>
           </div>
         </section>
+
+
+        <ProjectComparison> </ProjectComparison>
+
+
       </v-col>
-    </v-row></v-container
-  >
+    </v-row>
+  </v-container>
 </template>
+
+<script>
+
+  import ProjectComparison from '../components/ProjectComparison.vue'
+
+  export default {
+    components: {
+      ProjectComparison
+    }
+  }
+</script>

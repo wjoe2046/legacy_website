@@ -13,7 +13,7 @@
                 alt=""
             /></a>
             <a class="logoMobile logo d-flex d-md-none" href="#"
-              ><img class="logoImg" src="../assets/images/logo/logo.png" alt=""
+              ><img class="logoImg" src="../assets/images/logo/new_logo_march_29.png" alt=""
             /></a>
 
             <div class="rightNav">

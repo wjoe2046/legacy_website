@@ -11,7 +11,7 @@
                 <img style="width:140px;margin-right:20px;max-height:150px;" src="../assets/images/logo/new_logo_march_29.png" alt="">
                 <div>
                     <h4>COVID Watch</h4>
-                    <p>Our project! An app for voluntary, decentralized, privacy-preserving alert system which is an intervention that is expected to have the same benefits as contact tracing. The initial launch will have two stages: the first version will implement a Bluetooth proximity network system to notify users of potential close contact exposure, and the second stage will incorporate anonymized GPS data to develop a geographic heatmap of estimated risk. <nuxt-link to="/article">Check out our white paper</nuxt-link> for more information.</p>
+                    <p>Our project! A decentralized, privacy-preserving app that will alert users if they have been exposed to COVID-19. The initial launch will have two stages: the first version will implement a Bluetooth proximity network system to notify users of potential close contact exposure, and the second will incorporate anonymized GPS data to develop a geographic heatmap of estimated risk. <nuxt-link to="/article">Check out our white paper</nuxt-link> for more information.</p>
                 </div>
             </div>
 

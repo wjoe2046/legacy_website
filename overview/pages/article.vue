@@ -654,8 +654,8 @@
  However, GPS anonymization has proven to be a far more challenging problem than Bluetooth
  anonymization. GPS likely requires significant privacy trade-offs. Also, based on feedback
  from contact tracers, fomite risk is considerably lower than close contact risk, and it's
- unlikely to be captured prior to testing confirmation. So, we have decided not to implement
- this unless we are confident we can do so in a way that preserves the privacy of our users.]</h3>
+ unlikely to be captured prior to testing confirmation. As such, GPS data has become a lowe priority for us, and we have decided not to implement
+ this component until we are confident we can do so in a way that preserves the privacy of our users.]</h3>
           <p>
             <a class="anchor" id="heatmapDesc"></a>
             <span class="subTitleLine">Model Description</span>

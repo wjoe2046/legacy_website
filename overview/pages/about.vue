@@ -24,14 +24,13 @@
             </p>
 
             <p>
-              Many people, however, now carry GPS-enabled smartphones which
-              already track their location over time - most mapping apps, like
-              Google Maps or MapQuest, already collect this data by default. We
-              believe that this information could be used to rapidly and
-              automatically perform a type of contact tracing, helping limit the
-              spread of COVID-19 and other infectious diseases. These phones are
-              usually also Bluetooth-enabled, allowing them to track and record
-              which other phones they&#39;re in proximity to.
+              Many people, however, now carry smartphones, and Bluetooth-enabled phones can see which other
+ phones they're in proximity to. This could be used to rapidly and automatically implement a
+ notification system similar to contact tracing, but anonymous. This would help to limit the
+ spread of COVID-19 and other infectious diseases. We can use Bluetooth connections between users
+ to enact cryptographically secure contact tracing and alerting them if we learn that they have
+ been exposed to COVID-19, without collecting the identities, exposure, or infection status of
+ any users.
             </p>
 
             <p>

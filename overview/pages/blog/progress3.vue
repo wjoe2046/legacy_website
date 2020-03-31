@@ -95,21 +95,17 @@
         <h3>TraceTogether</h3>
         <br>
         <p>
-          Currently the brightest star in the constellation of similar projects, TraceTogether implements the
+          TraceTogether implements the
           familiar-sounding <a href = "https://bluetrace.io/">BlueTrace protocol</a> for mostly-anonymous Bluetooth-based contact tracing. Operating on a
           system extremely similar to that developed by COVID Watch, TraceTogether allows users, combined with
           Singapore’s Ministry of Health, to perform the exact type of contact tracing outlined elsewhere on this website.
         </p>
 
         <p>
-          The key difference between TraceTogether and COVID Watch is the centralized nature of the app. In the case
-          of TraceTogether, user phone numbers are uploaded to a central MoH server along with user IDs, which are then
-          used to contact potentially infected users. A key plank of COVID Watch’s design is that phone numbers or
-          similarly identifying information doesn’t leave the phone. <b>To be clear, there is no indication that
-          TraceTogether’s database has been compromised or misused:</b> their team takes their work extremely seriously and
-          this information is highly protected. The information they collect and release is extremely limited compared
-          to comparable efforts in China and South Korea, for which we commend them. Despite this, the TraceTogether
-          model is not one that fits entirely comfortably with the COVID Watch ethos.
+          This app is the first nationwide deployment of Bluetooth-enabled contact tracing. It was released by the Singaporean
+          government on March 20, 2020. The app uses a similar technical approach to COVID Watch, but a difference privacy model.
+          We have been in touch with the TraceTogether team and are ready to compare their code with our project as soon as it
+          is open-sourced.
         </p>
 
         <p>

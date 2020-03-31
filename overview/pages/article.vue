@@ -650,6 +650,12 @@
             <a class="anchor" id="heatmapTitle"></a>
             <span class="subTitleLine"> Part 2: GPS Heatmap</span>
           </p>
+          <h3>[31-MAR-2020: At the time of this White Paper, we initially planned to create a GPS-based risk heatmap.
+ However, GPS anonymization has proven to be a far more challenging problem than Bluetooth
+ anonymization. GPS likely requires significant privacy trade-offs. Also, based on feedback
+ from contact tracers, fomite risk is considerably lower than close contact risk, and it's
+ unlikely to be captured prior to testing confirmation. As such, GPS data has become a lowe priority for us, and we have decided not to implement
+ this component until we are confident we can do so in a way that preserves the privacy of our users.]</h3>
           <p>
             <a class="anchor" id="heatmapDesc"></a>
             <span class="subTitleLine">Model Description</span>
@@ -1209,7 +1215,7 @@
       <br />
 
       <h3>This paper was published on the 20th of March, 2020. It was
-         last updated with minor alterations on the 29th of March 2020.</h3>
+         last updated with minor alterations on the 31st of March 2020.</h3>
 
       <a class="anchor" id="contributors"></a>
       <h2 class="titleLine" style="border-top: lightgray 1px solid;">

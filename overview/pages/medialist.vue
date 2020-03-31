@@ -9,6 +9,12 @@
         <p>
           As our project has grown, we've begun to gain some media coverage, listed here:
         </p>
+        
+        <p>
+          <i><a href="https://www.krellinst.org/csgf/about-doe-csgf/news-events/white-covid-watch">
+            Fellow Working to Devise COVID-19 Contact Tracking Tool
+          </a></i> by the Department of Energy Computational Science Graduate Fellowship.
+        </p>
 
         <p>
           <i><a href="https://news.yahoo.com/privacy-rights-may-become-next-victim-killer-pandemic-014627271.html">

@@ -33,18 +33,6 @@
  any users.
             </p>
 
-            <p>
-              We believe that together, these two pieces of information can be
-              used to inform and empower our users in a range of ways. Firstly,
-              we can generate heatmaps of high-risk areas from demographic data,
-              known cases, and epidemiological modelling, allowing users to
-              adjust their behaviour accordingly. Secondly, we can use Bluetooth
-              connections between users to enact cryptographically secure
-              contact tracing and alerting them if we learn that they have been
-              exposed to COVID-19, without revealing the identities or infection
-              status of any other users.
-            </p>
-
             <h3>Our Principles</h3>
 
             <p>

@@ -25,12 +25,12 @@
 
             <p>
               Many people, however, now carry smartphones, and Bluetooth-enabled phones can see which other
- phones they're in proximity to. This could be used to rapidly and automatically implement a
- notification system similar to contact tracing, but anonymous. This would help to limit the
- spread of COVID-19 and other infectious diseases. We can use Bluetooth connections between users
- to enact cryptographically secure contact tracing and alerting them if we learn that they have
- been exposed to COVID-19, without collecting the identities, exposure, or infection status of
- any users.
+              phones they're in proximity to. This could be used to rapidly and automatically implement a
+              notification system similar to contact tracing, but anonymous. This would help to limit the
+              spread of COVID-19 and other infectious diseases. We can use Bluetooth connections between users
+              to enact cryptographically secure contact tracing and alerting them if we learn that they have
+              been exposed to COVID-19, without collecting the identities, exposure, or infection status of
+              any users.
             </p>
 
             <h3>Our Principles</h3>

@@ -117,7 +117,7 @@
             class="centerImage"
             style="display:flex;flex-direction:column;align-items:center;"
           >
-            <img src="~/assets/images/CasesTrendIntl.png" alt="" />
+            <img style="border-radius:4px;text-align:center;" src="~/assets/images/CasesTrendIntl.png" alt="" />
             <p style="color:gray;">
               <span>FT Graphic: @jburnmurdoch 19th March &nbsp;</span>
               <a href="https://www.ft.com/coronavirus-latest"
@@ -653,7 +653,7 @@
           <h3>[31-MAR-2020: At the time of this White Paper, we initially planned to create a GPS-based risk heatmap.
  However, GPS anonymization has proven to be a far more challenging problem than Bluetooth
  anonymization. GPS likely requires significant privacy trade-offs. Also, based on feedback
- from contact tracers, fomite risk is considerably lower than close contact risk, and it's
+ from contact tracers, fomite risk (transmission of infectious dsease by ojects like door handles, etc.) is considerably lower than close contact risk, and it's
  unlikely to be captured prior to testing confirmation. As such, GPS data has become a lower priority for us, and we have decided not to implement
  this component until we are confident we can do so in a way that preserves the privacy of our users.]</h3>
           </br>
@@ -874,7 +874,7 @@
           <p>&nbsp;</p>
           <a class="anchor" id="scopeDesign"></a>
           <h3>
-            User Interface Design: COVID Watch Transmission Map and Phone Log
+            User Interface Design: New User Onboarding Workflow
           </h3>
 
           <v-container>
@@ -882,21 +882,21 @@
               <v-col cols="12" md="4" style="justify-content:space-evenly;">
                 <img
                   style="border:1px solid gray;"
-                  src="../assets/images/mobile/mobile_get_started.png"
+                  src="../assets/images/mobile/Android_1.svg"
                   alt=""
                 />
               </v-col>
               <v-col cols="12" md="4" style="justify-content:space-evenly;">
                 <img
                   style="border:1px solid gray;"
-                  src="../assets/images/mobile/mobile_heat_map.png"
+                  src="../assets/images/mobile/Android_2.svg"
                   alt=""
                 />
               </v-col>
               <v-col cols="12" md="4" style="justify-content:space-evenly;">
                 <img
                   style="border:1px solid gray;"
-                  src="../assets/images/mobile/mobile_transmission_log.png"
+                  src="../assets/images/mobile/Android_3.svg"
                   alt=""
                 />
               </v-col>
@@ -904,40 +904,42 @@
           </v-container>
           <div style="border:1px solid black;border-radius:4px;padding: 10px;">
             <p>
-              <strong>Figure 1: COVID-19 Transmission Map and Phone Log</strong>.
-              The transmission map will utilize Bluetooth proximity network and a
+              <strong>Figure 1: New User Onboarding Workflow</strong>.
+              Downloading and using COVID Watch does NOT require any sign up of email, password, etc. of any kind.  The only requirement is to enable COVID Watch to access bluetooth on your smartphone in order to detect other smartphones in close proximity to log a 'contact event'.  If no other smartphones you have been in contact with are associated with a positive case COVID-19, COVID Watch informs you that you have <strong>not</strong> been in contact with COVID-19.  
+              <!-- OLD TEXT:
+                The transmission map will utilize Bluetooth proximity network and a
               confirmed contact event number provided by health authorities. When
               a confirmed COVID-19 is identified, notifications are sent to users
               who may have been in close proximity to the confirmed case based on
               the phone’s Bluetooth and GPS system. Users are able to determine
               when they may have contracted the viruses based on the user’s
               transmission phone log. In addition, a user is able to self-report
-              symptoms of illness or positive COVID-19 lab results.
+              symptoms of illness or positive COVID-19 lab results. -->
             </p>
           </div>
 
           <p>&nbsp;</p>
-          <h3>Design: CDC Information and Symptoms Survey</h3>
+          <h3>Design: Contact Alert and Reporting</h3>
           <v-container>
             <v-row>
-              <v-col cols="12" md="4" style="justify-content:space-evenly;">
+              <v-col cols="12" md="4">
                 <img
                   style="border:1px solid gray;"
-                  src="../assets/images/mobile/mobile_cdc.png"
+                  src="../assets/images/mobile/Android_4.png"
                   alt=""
                 />
               </v-col>
-              <v-col cols="12" md="4" style="justify-content:space-evenly;">
+              <v-col cols="12" md="4">
                 <img
                   style="border:1px solid gray;"
-                  src="../assets/images/mobile/mobile_symptoms.png"
+                  src="../assets/images/mobile/Android_5.svg"
                   alt=""
                 />
               </v-col>
-              <v-col cols="12" md="4" style="justify-content:space-evenly;">
+              <v-col cols="12" md="4">
                 <img
                   style="border:1px solid gray;"
-                  src="../assets/images/mobile/mobile_symptoms_survey.png"
+                  src="../assets/images/mobile/Android_6.svg"
                   alt=""
                 />
               </v-col>
@@ -945,13 +947,14 @@
           </v-container>
           <div style="border:1px solid black;border-radius:4px;padding: 10px;">
             <p>
-              <strong
-                >Figure 2: COVID-19 CDC Information and Symptoms Survey</strong
-              >. Users are given information, resources, and advice from the
+              <strong>Figure 2: Contact Alert and Reporting</strong>.
+              If COVID Watch detects another smartphone within bluetooth proximity that is associated with a positive COVID-19 case, you are alerted that you may have been exposed  COVID Watch suggests steps of (1) monitoring your health and (2) isolate yourself.  Additionally, you may update your own status as confirmed or not tested, along with the first date of symptoms.
+              <!-- <strong>Figure 2: COVID-19 CDC Information and Symptoms Survey</strong>. 
+              Users are given information, resources, and advice from the
               Centers for Disease Control and Prevention (CDC) about COVID-19. In
               addition, users are able to fill a travel/symptoms questionnaire to
               better tailor their advice and assess their risk level. This data
-              will only be stored locally on the user’s phone to preserve privacy.
+              will only be stored locally on the user’s phone to preserve privacy. -->
             </p>
           </div>
           <p>&nbsp;</p>
@@ -1690,7 +1693,6 @@ img {
 .centerImage {
   display: flex;
   justify-content: center;
-  max-width: 90%;
 }
 
 .stepsVisual {

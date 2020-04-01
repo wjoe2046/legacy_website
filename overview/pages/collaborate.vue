@@ -7,6 +7,7 @@
             <div class="blog-hero"></div>
 
             <h1 style="color:#BF3F4A">Join Our Team</h1>
+            <br>
 
             <p>
               We&#39;ve grown from a pair of researchers from Stanford
@@ -18,7 +19,12 @@
               and slow the spread of COVID-19.
             </p>
 
-            <h2>Most Wanted Positions</h2>
+            <h2>Most Wanted Positions!</h2>
+            <p>(1) Strategic Partnerships - outreach and relationship management with healthcare organizations, similar projects, etc.</p>
+            <p>(2) Experienced (2+ yrs) mobile app developers</p>
+
+
+            <h3>Wanted Positions</h3>
 
             <p>
               (1) Volunteer Coordinator - coordinate the efforts, schedules,
@@ -46,7 +52,7 @@
             </p>
 
             <p>
-              (6) Marketing Expert - assist with mailing campaigns,
+              (6) Marketing Manager - assist with mailing campaigns,
                branding, and media outreach.
             </p>
 

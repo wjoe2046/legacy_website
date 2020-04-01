@@ -5,7 +5,7 @@
 
 
         <h1 style="color:#bf3f4a">Media Coverage</h1>
-
+        <br>
         <p>
           As our project has grown, we've begun to gain some media coverage, listed here:
         </p>

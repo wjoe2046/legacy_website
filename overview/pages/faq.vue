@@ -98,7 +98,7 @@
               It’s not inevitable that COVID-19 will spread to every person, and slowing the spread is still
               extremely important. One major risk of COVID-19 in all countries is that it could overwhelm
               health systems, limiting their ability to care for people who desperately need it. By reducing
-              infection rates we space cases out slowly enough that hospitals worldwide can deal with them as
+              infection rates we can space cases out slowly enough that hospitals worldwide can deal with them as
               they come, saving lives (often referred to as "Flattening/Slowing The Curve").
               Furthermore, by enabling people to come out of lockdown, contact tracing could potentially reduce
               the severe negative economic consequences of COVID-19 that are materialising around the world.
@@ -178,7 +178,7 @@
               These countries have introduced mobile applications for contact tracing, and Singapore’s
               TraceTogether app uses a similar Bluetooth approach. However, there are important differences.
               Singapore’s app allows health officials to track down individual users who have been diagnosed
-              with or exposed to SARS-CoV-2. In COVID Watch, we have introduced important privacy-preserving
+              with or exposed to SARS-CoV-2. With COVID Watch, we have introduced important privacy-preserving
               mechanisms, such as never centrally storing contact events. While our users can volunteer to
               share their health information, they are never forced to.
             </p>
@@ -230,7 +230,7 @@
             <h3>Who owns the data that is collected and will you sell it?</h3>
             <br>
             <p>
-              We will also not sell what is uploaded to the database. It wouldn’t be worth anything,
+              The data is anonymized and we will not sell what is uploaded to the database. It wouldn’t be worth anything,
               and we can’t use it for research because the database is so anonymized it is effectively
               uninterpretable, besides by the individual phones involved in each individual contact event.
               Data from old events will also be deleted every 2-3 weeks.

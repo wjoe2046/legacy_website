@@ -5,7 +5,7 @@
             <section class="text-content">
               <div class="container">
                 <div class="blog-hero">
-                  <h1 style="color:#BF3F4A">Subscribe to our newsletter</h1>
+                  <h2 style="color:#BF3F4A">Subscribe to our newsletter</h2>
                   <p>
                     To receive periodic updates, sign up for
                     our newsletter by entering your email below.

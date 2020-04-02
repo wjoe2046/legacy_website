@@ -12,9 +12,6 @@
         <p>Or don't. I'm an error page, not your boss.</p>
 
 
-
-
-
       </v-col>
     </v-row>
   </v-container>

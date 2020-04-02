@@ -3,60 +3,69 @@
     <v-row justify="center">
       <v-col cols="12" lg="10">
         <v-row align="center">
-          <v-col cols="12" sm="5" style="display:flex;flex-direction:column;align-items:center;">
+          <v-col cols="12" sm="5" class="hand_image">
             <img
-              width="50%"
+              alt="COVID Watch"
+              src="~/assets/images/mobile/hand_with_app_covid_watch.png"
+            />
+            <div class="fade"></div>
+            <!-- <img
+              width="100%"
               style="margin-right: 20px;border:1px solid gray;border-radius:2px;"
               alt="COVID Watch"
-              src="~/assets/images/mobile/mobile_get_started.png"
+              src="~/assets/images/mobile/iphone_empty.png"
             />
-            <p style="color:gray;font-size:1em">Current app homepage</p>
+            <p style="color:gray;font-size:1em">Current app homepage</p> -->
           </v-col>
 
           <v-col cols="12" sm="7">
             <h1 style="color:#BF3F4A">Our Mission</h1>
-            <br />
-            <h3>
+            <br>
+            <h2>
               Slow the spread of infectious diseases like COVID-19 with
               crowdsourced data.
-            </h3>
+            </h2>
+            <br>
             <p>
               COVID Watch aims to empower people to protect their communities from COVID-19,
               without sacrificing their personal privacy. We are building a decentralized,
               privacy-preserving app that will alert users if they have been exposed to COVID-19.
             </p>
+            <br>
+            <h2 style="color:#BF3F4A">Our Plan</h2>
+            <br>
+            <p>
+              We believe there's a non-trivial chance that crowdsourced proximity
+              data could reduce the spread of infectious
+              diseases like COVID-19 by informing individuals of their risk and
+              helping implement better self-quarantine measures. We also believe
+              that this can be done in a way that doesn't sacrifice rights like
+              privacy.
+            </p>
+
+            <p> <strong>
+              We're a group of volunteers researching and designing an
+              open-source app to make this idea a reality.</strong> Ideally, this app will
+              take the Bluetooth data of users in an anonymized way, as well
+              as some information about their potential or confirmed infection
+              status, and use it to the benefit of both them and everybody else.
+              This could happen either through a standalone app, or through the
+              creation of interoperable modules and APIs to help assist the
+              <nuxt-link to="/about#comparison">constellation of other apps</nuxt-link>
+              in this field that ensure that privacy will become standard across the
+              field.
+            </p>
+
+            <p>
+              A more in-depth discussion of our plan is available
+              <nuxt-link to="/article">here</nuxt-link>.
+            </p>
           </v-col>
         </v-row>
-        <br />
+        <br>
+        <br>
+        <br>
 
-        <h2>Our Plan</h2>
-
-        <p>
-          We believe there's a non-trivial chance that crowdsourced proximity
-           data could reduce the spread of infectious
-          diseases like COVID-19 by informing individuals of their risk and
-          helping implement better self-quarantine measures. We also believe
-          that this can be done in a way that doesn't sacrifice rights like
-          privacy.
-        </p>
-
-        <p>
-          We're a group of volunteers researching and designing an
-          open-source app to make this idea a reality. Ideally, this app will
-          take the Bluetooth data of users in an anonymized way, as well
-          as some information about their potential or confirmed infection
-          status, and use it to the benefit of both them and everybody else.
-          This could happen either through a standalone app, or through the
-           creation of interoperable modules and APIs to help assist the
-          <nuxt-link to="/about#comparison">constellation of other apps</nuxt-link>
-           in this field that ensure that privacy will become standard across the
-          field.
-        </p>
-
-        <p>
-          A more in-depth discussion of our plan is available
-          <nuxt-link to="/article">here</nuxt-link>.
-        </p>
         <h2>We Can Make A Difference</h2>
         <br>
         <h3>The Challenge</h3>
@@ -162,6 +171,7 @@
 
         <p style="text-align: center;">
           <img
+            style="border-radius:4px;"
             width="80%"
             alt="CC BY 2.0 Esther Kim &amp; Carl T. Bergstrom"
             src="~/assets/images/SlowPeaks.jpeg"
@@ -211,6 +221,32 @@
     </v-row>
   </v-container>
 </template>
+
+<style lang="scss">
+  .hand_image { 
+    position: relative; 
+    // height: 80vh;
+  }
+  
+  .hand_image img { 
+    display: block; 
+    position: relative; 
+    z-index: 1; 
+    width: 80%; 
+    height: auto;
+    max-width: 80%;
+  }
+  
+  .hand_image .fade { 
+    position: absolute; 
+    bottom: 0; 
+    width: 80%; 
+    height: 15vh; 
+    z-index: 2; 
+    background: rgba(255, 255, 255, 0) linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 80%) repeat scroll 0 0;  
+  }
+
+</style>
 
 <script>
   import SubscribeForm from '../components/SubscribeForm.vue'

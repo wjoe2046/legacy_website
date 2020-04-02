@@ -1536,6 +1536,19 @@
             </v-row>
             <v-row no-gutters>
               <v-col md="2">
+                <div class="name">Plinio Morita</div>
+              </v-col>
+              <v-col md="8">
+                <div>
+                  PhD, Public Health and Health Systems Specialist
+                </div>
+              </v-col>
+              <v-col>
+                <div>Waterloo, Canada</div>
+              </v-col>
+            </v-row>
+            <v-row no-gutters>
+              <v-col md="2">
                 <div class="name">Julie Parsonnet</div>
               </v-col>
               <v-col md="8">

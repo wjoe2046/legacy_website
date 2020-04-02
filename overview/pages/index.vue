@@ -66,6 +66,7 @@
         <br>
         <br>
 
+
         <h2>We Can Make A Difference</h2>
         <br>
         <h3>The Challenge</h3>
@@ -79,7 +80,7 @@
         </p>
 
         <p>
-          What we need to do is build a system that is capable of rapidly
+          We need to build a system that is capable of rapidly
           containing local transmission, wherever and whenever it appears. By
           doing this, and implementing it in our communities, we can continue to
           interact with the rest of the world and any newly introduced cases
@@ -104,7 +105,7 @@
           thousands of healthcare workers to do this manually (as is the current
           approach in China) the process will be essentially cost-free. Because
           the system will be so accurate, a majority of people can continue to
-          live their lives without the need for increased social distancing.
+          live their lives without needing to increase social distancing.
         </p>
 
         <h3>Our Contribution</h3>
@@ -187,7 +188,7 @@
 
         <p>
           We&#39;re not there quite yet at the level of directly aiding these
-          efforts - but we&#39;re close. By the end of March we aim to have a
+          efforts - but we&#39;re close. By mid-April we aim to have a
           basic app ready to go to live, and with your support and cooperation,
           we can use it to beat this disease and keep our communities safe.
         </p>

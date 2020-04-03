@@ -1221,8 +1221,8 @@
       <h3>This paper was published on the 20th of March, 2020. It was
          last updated with minor alterations on the 31st of March 2020.</h3>
 
-      <a class="anchor" id="contributors"></a>
-      <h2 class="titleLine" style="border-top: lightgray 1px solid;">
+      <!-- <a class="anchor" ></a> -->
+      <h2 id="contributors" class="titleLine" style="border-top: lightgray 1px solid;">
         <br />
         Contributors, Advisors, and Acknowledgements
       </h2>
@@ -1584,7 +1584,9 @@
       </p>
 
       <p>&nbsp;</p>
-      <a class="link" href="#">Back to Top</a>
+
+      <p> <a href="/article#aboutUs">Back to Top</a> </p>
+
     </v-container>
   </no-ssr>
 </template>

@@ -32,6 +32,8 @@
               privacy-preserving app that will alert users if they have been exposed to COVID-19.
             </p>
             <br>
+          </v-col>
+        </v-row>
             <h3>Our Project</h3>
 
             <p>
@@ -155,8 +157,6 @@
 
 
         <SubscribeForm></SubscribeForm>
-      </v-col>
-    </v-row>
       </v-col>
     </v-row>
   </v-container>

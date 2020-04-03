@@ -6,6 +6,7 @@
 
         <h1 style="color:#bf3f4a">Media Coverage</h1>
         <br>
+
         
         <div>
           <div>April 3, 2020</div>
@@ -19,17 +20,22 @@
          <br>
 
         <div>
+
           <div>April 2, 2020</div>
           <i><a target="_blank" href="https://venturebeat.com/2020/04/02/surveillance-ai-and-saving-lives-top-agenda-at-coronavirus-conference/">
             Surveillance, AI, and saving lives top agenda at coronavirus conference
-          </a></i> by VentureBeat.
+
+          </a></i> by <a href="https://twitter.com/kharijohnson">Khari Johnson</a>, VentureBeat.
         </div>
          <br>
 
+
         <div>
           <div>March 31, 2020</div>
+
           <i><a target="_blank" href="https://www.krellinst.org/csgf/about-doe-csgf/news-events/white-covid-watch">
             Fellow Working to Devise COVID-19 Contact Tracking Tool
+
           </a></i> by the Department of Energy Computational Science Graduate Fellowship.
         </div>
          <br>
@@ -85,3 +91,4 @@
   }
 
 </script>
+

@@ -91,14 +91,13 @@
             </p>
 
             <p>
-              <strong>One to Two Weeks (by 24-MAR-2020): </strong>Further refine
-              our epidemiological modelling and heatmap functionality,
-              addressing privacy issues around data reidentification.&nbsp;
-              Finalise the beta app.
+              <strong>One to Two Weeks (by mid-April 2020): </strong>Further refine
+              our beta app. Liaise with public health agencies to implement systems
+              to validate diagnoses. Finalize inter-app standards.
             </p>
 
             <p>
-              <strong>Two to Four Weeks (by mid-April 2020): </strong>Roll out
+              <strong>Two to Four Weeks (by May 2020): </strong>Roll out
               the app in impacted communities as a pilot program in conjunction
               with public health agencies, refining and adding functionality as
               needed. Assess efficacy and make adjustments as needed.

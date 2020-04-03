@@ -9,18 +9,18 @@
         <p>
           As our project has grown, we've begun to gain some media coverage, listed here:
         </p>
-        
+
         <p>
           <div>April 2, 2020</div>
           <i><a href="https://venturebeat.com/2020/04/02/surveillance-ai-and-saving-lives-top-agenda-at-coronavirus-conference/">
             Surveillance, AI, and saving lives top agenda at coronavirus conference
-          </a></i> by VentureBeat.
+          </a></i> by <a href="https://twitter.com/kharijohnson">Khari Johnson</a>, VentureBeat.
         </p>
 
         <p>
           <div>March 31, 2020</div>
           <i><a href="https://www.krellinst.org/csgf/about-doe-csgf/news-events/white-covid-watch">
-            Fellow Working to Devise COVID-19 Contact Tracking Tool
+            Fellow Working to Devise COVID-19 Contact Alert Tool
           </a></i> by the Department of Energy Computational Science Graduate Fellowship.
         </p>
 
@@ -71,3 +71,4 @@
   }
 
 </script>
+

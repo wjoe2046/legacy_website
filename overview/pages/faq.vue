@@ -20,9 +20,6 @@
               an app for initial use in the USA, the team is based around the world.
             </p>
 
-            <p>
-             Check our <nuxt-link to="/about">"About Us"</nuxt-link> page for more information.
-            </p>
 
             <h3>Why are you doing this?</h3>
             <br>

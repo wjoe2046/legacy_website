@@ -68,11 +68,6 @@
                     >
                   </v-list-item>
                   <v-list-item>
-                    <nuxt-link class="link" style="color:#BF3F4A;" to="/about"
-                      >About</nuxt-link
-                    >
-                  </v-list-item>
-                  <v-list-item>
                     <nuxt-link class="link" style="color:#BF3F4A;" to="/medialist"
                       >Media</nuxt-link
                     >
@@ -159,9 +154,6 @@
               </v-col>
               <v-col class="footerList" cols="12" md="3">
                 <nuxt-link class="link" to="/donate">Donate</nuxt-link>
-              </v-col>
-              <v-col class="footerList" cols="12" md="3">
-                <nuxt-link class="link" to="/about">About</nuxt-link>
               </v-col>
               <v-col class="footerList" cols="12" md="3">
                 <nuxt-link class="link" to="/medialist">Media</nuxt-link>
@@ -253,3 +245,6 @@ export default {
   }
 };
 </script>
+
+
+

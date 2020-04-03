@@ -11,18 +11,28 @@
         </p>
         
         <p>
+          <div>April 2, 2020</div>
+          <i><a href="https://venturebeat.com/2020/04/02/surveillance-ai-and-saving-lives-top-agenda-at-coronavirus-conference/">
+            Surveillance, AI, and saving lives top agenda at coronavirus conference
+          </a></i> by VentureBeat.
+        </p>
+
+        <p>
+          <div>March 31, 2020</div>
           <i><a href="https://www.krellinst.org/csgf/about-doe-csgf/news-events/white-covid-watch">
             Fellow Working to Devise COVID-19 Contact Tracking Tool
           </a></i> by the Department of Energy Computational Science Graduate Fellowship.
         </p>
 
         <p>
+          <div>March 28, 2020</div>
           <i><a href="https://news.yahoo.com/privacy-rights-may-become-next-victim-killer-pandemic-014627271.html">
             Privacy rights may become next victim of killer pandemic
           </a></i> by <a href="https://twitter.com/rleverafp">Rob Lever</a>, AFP.
         </p>
 
         <p>
+          <div>March 13, 2020</div>
           <i><a href="https://youtu.be/7N0jC6UGzGY?t=8129">
             Radio interview
           </a></i> with the <a href="https://twitter.com/FaultLinesRadio">Fault Lines</a> team, Radio Sputnik.

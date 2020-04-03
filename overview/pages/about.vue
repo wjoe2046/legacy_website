@@ -7,7 +7,7 @@
             <div class="blog-hero"></div>
 
             <h1 style="color:#BF3F4A">Our Mission</h1>
-
+            <br>
             <h3>Our Project</h3>
 
             <p>
@@ -24,26 +24,13 @@
             </p>
 
             <p>
-              Many people, however, now carry GPS-enabled smartphones which
-              already track their location over time - most mapping apps, like
-              Google Maps or MapQuest, already collect this data by default. We
-              believe that this information could be used to rapidly and
-              automatically perform a type of contact tracing, helping limit the
-              spread of COVID-19 and other infectious diseases. These phones are
-              usually also Bluetooth-enabled, allowing them to track and record
-              which other phones they&#39;re in proximity to.
-            </p>
-
-            <p>
-              We believe that together, these two pieces of information can be
-              used to inform and empower our users in a range of ways. Firstly,
-              we can generate heatmaps of high-risk areas from demographic data,
-              known cases, and epidemiological modelling, allowing users to
-              adjust their behaviour accordingly. Secondly, we can use Bluetooth
-              connections between users to enact cryptographically secure
-              contact tracing and alerting them if we learn that they have been
-              exposed to COVID-19, without revealing the identities or infection
-              status of any other users.
+              Many people, however, now carry smartphones, and Bluetooth-enabled phones can see which other
+              phones they're in proximity to. This could be used to rapidly and automatically implement a
+              notification system similar to contact tracing, but anonymous. This would help to limit the
+              spread of COVID-19 and other infectious diseases. We can use Bluetooth connections between users
+              to enact cryptographically secure contact tracing and alerting them if we learn that they have
+              been exposed to COVID-19, without collecting the identities, exposure, or infection status of
+              any users.
             </p>
 
             <h3>Our Principles</h3>
@@ -104,29 +91,23 @@
             </p>
 
             <p>
-              <strong>One to Two Weeks (by 24-MAR-2020): </strong>Further refine
-              our epidemiological modelling and heatmap functionality,
-              addressing privacy issues around data reidentification.&nbsp;
-              Finalise the beta app.
+              <strong>One to Two Weeks (by mid-April 2020): </strong>Further refine
+              our beta app. Liaise with public health agencies to implement systems
+              to validate diagnoses. Finalize inter-app standards.
             </p>
 
             <p>
-              <strong>Two to Four Weeks (by mid-April 2020): </strong>Roll out
+              <strong>Two to Four Weeks (by May 2020): </strong>Roll out
               the app in impacted communities as a pilot program in conjunction
               with public health agencies, refining and adding functionality as
               needed. Assess efficacy and make adjustments as needed.
             </p>
 
             <h3>Our People</h3>
-
+            <br>
             <p>
-              For a non-exhaustive list of our team members, click
-              <nuxt-link to="/team">here</nuxt-link>.
-            </p>
-
-            <p>
-              For a list of our academic advisors, click
-              <nuxt-link to="/advisors">here</nuxt-link>.
+              An overview of many members of our team, including our advisors, can be found
+              <b><a href="/article#contributors">here</a></b>.
             </p>
 
             <p></p>
@@ -141,7 +122,23 @@
             </p>
           </div>
         </section>
+
+        <a id="comparison"></a>
+        <ProjectComparison> </ProjectComparison>
+
+
       </v-col>
-    </v-row></v-container
-  >
+    </v-row>
+  </v-container>
 </template>
+
+<script>
+
+  import ProjectComparison from '../components/ProjectComparison.vue'
+
+  export default {
+    components: {
+      ProjectComparison
+    }
+  }
+</script>

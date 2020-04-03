@@ -13,7 +13,7 @@
                 alt=""
             /></a>
             <a class="logoMobile logo d-flex d-md-none" href="#"
-              ><img class="logoImg" src="../assets/images/logo/logo.png" alt=""
+              ><img class="logoImg" src="../assets/images/logo/new_logo_march_29.png" alt=""
             /></a>
 
             <div class="rightNav">
@@ -45,11 +45,8 @@
                     >
                   </v-list-item>
                   <v-list-item>
-                    <nuxt-link
-                      class="link"
-                      :to="{ path: '/article', hash: 'heatmapImplementation' }"
-                      style="color:#BF3F4A;"
-                      >Heatmap Demo</nuxt-link
+                    <nuxt-link class="link" to="/faq"
+                    >FAQ</nuxt-link
                     >
                   </v-list-item>
                   <v-list-item>
@@ -71,8 +68,8 @@
                     >
                   </v-list-item>
                   <v-list-item>
-                    <nuxt-link class="link" style="color:#BF3F4A;" to="/about"
-                      >About</nuxt-link
+                    <nuxt-link class="link" style="color:#BF3F4A;" to="/medialist"
+                      >Media</nuxt-link
                     >
                   </v-list-item>
                 </v-list>
@@ -82,6 +79,7 @@
         </v-row>
       </v-container>
     </v-app-bar>
+
 
     <v-navigation-drawer
       v-if="$nuxt.$route.name === 'article'"
@@ -95,12 +93,12 @@
         small
         color="primary"
         class="toc-closer"
-        @click="tocShow = false"
+        @click="tocShow = !tocShow"
       >
         <v-icon>mdi-close-circle</v-icon>
       </v-btn>
 
-      <div class="px-1" ref="toc"></div>
+      <TableOfContents></TableOfContents>
     </v-navigation-drawer>
 
     <v-content>
@@ -113,6 +111,16 @@
       >
         <v-icon>mdi-table-of-contents</v-icon>
       </v-btn>
+
+
+      <v-row style="border-bottom: .5px lightgray solid;">
+        <!-- may be better way to center this than inline margin-left to be more responsive via Vuetify -->
+        <v-col cols="12" style="display:flex;justify-content:center;align-items:center;margin-left:10px;">
+           <p><strong> In partnership with: </strong></p>
+           <img src="~/assets/images/stanford_logo.png" alt="" style="width:200px;"/>
+           <!-- other logos if we want <img src="~/assets/images/IMAGEIMAGE" alt="" style="width:200px;"/> -->
+        </v-col >
+      </v-row>
 
       <nuxt style="min-height: 100vh" />
 
@@ -132,10 +140,8 @@
                 <nuxt-link class="link" to="/article">White Paper</nuxt-link>
               </v-col>
               <v-col class="footerList" cols="12" md="3">
-                <nuxt-link
-                  class="link"
-                  :to="{ path: '/article', hash: 'heatmapImplementation' }"
-                  >Heatmap Demo</nuxt-link
+                <nuxt-link class="link" to="/faq"
+                  >FAQ</nuxt-link
                 >
               </v-col>
               <v-col class="footerList" cols="12" md="3">
@@ -150,7 +156,7 @@
                 <nuxt-link class="link" to="/donate">Donate</nuxt-link>
               </v-col>
               <v-col class="footerList" cols="12" md="3">
-                <nuxt-link class="link" to="/about">About</nuxt-link>
+                <nuxt-link class="link" to="/medialist">Media</nuxt-link>
               </v-col>
             </v-row>
           </v-container>
@@ -217,16 +223,28 @@
 .logoDesktop {
   width: 25% !important;
 }
+
+h1 {
+  font-size: 36px;
+}
 </style>
 
 
 
 <script>
+import TableOfContents from "~/components/TableOfContents.vue";
+
 export default {
   data() {
     return {
       tocShow: null
     };
+  },
+  components: {
+    TableOfContents
   }
 };
 </script>
+
+
+

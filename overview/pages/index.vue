@@ -29,12 +29,13 @@
             <p>
               COVID Watch aims to empower people to protect their communities from COVID-19,
               without sacrificing their personal privacy. We are building a decentralized,
-              privacy-preserving app that will alert users if they have been exposed to COVID-19.
+              privacy-preserving smartphone app that will alert users if they have been exposed to COVID-19. Our open source code can be found <a href="https://github.com/covid19risk">here</a>.
             </p>
             <br>
           </v-col>
         </v-row>
-            <h3>Our Project</h3>
+            <h2>Our Project</h2>
+            <br>
 
             <p>
               COVID-19 has a relatively long infectious incubation period,
@@ -59,46 +60,10 @@
               any users.
             </p>
 
-            <h3>Our Principles</h3>
+            
 
-            <p>
-              <b>(1) Privacy: </b>Tracking is a sensitive issue, especially in a
-              project like ours that necessitates some degree of data sharing to
-              be effective. This is why we&#39;re absolutely committed to
-              building an app that goes out of its way to respect and preserve
-              your privacy.<br />
-              In fact, that&#39;s a big part of why we&#39;re building this app
-              in the first place. Superficially similar (but far more invasive)
-              projects are already being trialled around the world - we decided
-              that it would be a good idea to have a transparent, not-for-profit
-              alternative that has privacy baked into it from the very
-              beginning.
-            </p>
-
-            <p>
-              <b>(2) Efficacy: </b>With such high stakes, we want to be
-              absolutely sure that we&#39;re using our time and energy wisely.
-              We aren&#39;t aiming to take focus away from more directly
-              impactful work like vaccine development or front-line healthcare,
-              and we recommend that you only help our project if it doesn&#39;t
-              detract from more important work elsewhere. Additionally,
-              we&#39;re on the lookout for overlapping work by groups with
-              similar values, to avoid reinventing the wheel.
-            </p>
-
-            <p>
-              <b>(3) Altruism: </b>This project has its roots in
-              <b
-              ><a href="https://www.effectivealtruism.org/"
-              >effective altruism</a
-              ></b
-              >: doing the most good that we can with what we have. We&#39;re
-              not here to make a profit, get famous, or push an ideology.
-              We&#39;re a group of volunteers doing this out of a desire to make
-              the world a better place - for us, and for you.
-            </p>
-
-            <h3>Our Timeline</h3>
+            <h2>Our Timeline</h2>
+            <br>
 
             <p>
               We&#39;ve recruited a strong team, successfully developed an
@@ -121,14 +86,15 @@
               needed. Assess efficacy and make adjustments as needed.
             </p>
 
-            <h3>Our People</h3>
+            <h2>Our People</h2>
             <br>
-            <p>
-              An overview of many members of our team, including our advisors, can be found
-              <b><a href="/article#contributors">here</a></b>.
-            </p>
 
-            <p></p>
+            <p>
+              Our team is comprised of a collection of academics, volunteers, and professional technologists. An overview of many members of our team, including our advisors, can be found
+              <b><nuxt-link to="/article#contributors">on our Whitepaper page</nuxt-link></b>.
+
+              We have new volunteers joining our effort every day and contributing meaningfully so our team is very fluid.
+            </p>
 
             <p>
               If you&#39;re interested in joining us or helping out, have a look
@@ -137,10 +103,101 @@
               page for more information.
             </p>
 
+            <p> <strong>Our three co-founders are:</strong> </p>
+
+            <div class="ourPeople">
+                <div class="peopleProfile">
+                     <img
+                      alt="Tina White"
+                      src="~/assets/images/team/TWhite.png"
+                    />
+
+                    <p><strong>Tina White - Co-Founder</strong></p>
+
+                    <p>Tina is involved in leadership,
+                      outreach, and research guidance and communication.</p>
+
+                    <p>Tina is currently enrolled at the Stanford   University as a PhD candidate.
+                      For her dissertation, she has designed several neural network architectures
+                      that are biased to break problems into parts while learning to make aerodynamics
+                      predictions from very few examples. She has developed two novel machine learning
+                      methods for faster and more accurate reduced order models. She has also invented
+                      and patented a method for eliminating transonic flutter in turbomachinery at Honeywell.</p>
+                </div>
+
+                <div class="peopleProfile">
+                  <img
+                    alt="Rhys Fenwick"
+                    src="~/assets/images/team/RFenwick.jpg"
+                  />
+
+                  <p style="margin-top:11px;"><strong >Rhys Fenwick - Co-Founder</strong></p>
+
+                  <p>Rhys is involved in communication
+                    and web design, as well as the administrative and programming aspects of the project.</p>
+
+                  <p>Rhys is a science communicator from the University of Wollongong, Australia
+                    with a background in medical biotechnology and software development.
+                    He currently works at Science Space, Wollongong as well as doing freelance science communication.</p>
+                </div>
+
+                <div class="peopleProfile">
+                    <img
+                      alt="James Petrie"
+                      src="~/assets/images/team/JPetrie.jpg"
+                    />
+
+                    <p><strong>James Petrie - Co-Founder</strong></p>
+
+                    <p>James is involved in the numerical modelling
+                      and research aspects of the project.</p>
+
+                    <p>James is currently a PhD candidate in the field of Applied Mathematics
+                      at the University of Waterloo. His research has focused on applications
+                      of numerical modelling, machine learning, and optimization to fracture mechanics
+                      and autonomous robotics. James has a master&rsquo;s degree in Computational Mathematics
+                      from the University of Waterloo and a bachelor&rsquo;s degree in Engineering Physics
+                      from the University of British Columbia.</p>
+                </div>
+            </div>
+
+
+
             <a id="comparison"></a>
             <ProjectComparison> </ProjectComparison>
 
+            <h2>Our Principles</h2>
+            <br>
 
+            <p>
+              <b>(1) Privacy: </b>Tracking is a sensitive issue, especially in a
+              project like ours that necessitates some degree of data sharing to
+              be effective. This is why we&#39;re absolutely committed to
+              building an app that goes out of its way to respect and preserve
+              your privacy.<br />
+              In fact, that&#39;s a big part of why we&#39;re building this app
+              in the first place. Superficially similar (but far more invasive)
+              projects are already being trialled around the world - we decided
+              that it would be a good idea to have a transparent, not-for-profit
+              alternative that has privacy baked into it from the very
+              beginning.
+            </p>
+
+            <p>
+              <b>(2) Efficacy: </b>With such high stakes, we want to be sure that everyone's time and energy is used wisely. We recommended when we started that our volunteers only spend their time on mobile app development efforts if it didn't detract from urgent vaccine development or other front-line work in which they may have expertise. Additionally, we've been on the lookout for overlapping work by groups with similar values to avoid reinventing the wheel. We've found many such groups and have been collaborating and sharing resources.
+            </p>
+
+            <p>
+              <b>(3) Altruism: </b>This project has its roots in
+              <b
+              ><a href="https://www.effectivealtruism.org/"
+              >effective altruism</a
+              ></b
+              >: doing the most good that we can with what we have. We&#39;re
+              not here to make a profit, get famous, or push an ideology.
+              We&#39;re a group of volunteers doing this out of a desire to make
+              the world a better place - for us, and for you.
+            </p>
             <p>
           For all inquiries, please contact us at
           <b
@@ -186,29 +243,46 @@
     background: rgba(255, 255, 255, 0) linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 80%) repeat scroll 0 0;
   }
 
+  .ourPeople {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .peopleProfile {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+      border-radius: 4px;
+      box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.15), 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
+    }
+
+    p {
+      font-size: 12px;
+    }
+
+    strong {
+      font-size: 18px;
+    }
+  }
+
 </style>
 
 <script>
   import SubscribeForm from '../components/SubscribeForm.vue'
-
-  export default {
-    components: {
-      SubscribeForm
-    }
-  }
-
-</script>
-
-<script>
-
   import ProjectComparison from '../components/ProjectComparison.vue'
 
   export default {
     components: {
+      SubscribeForm,
       ProjectComparison
     }
   }
+
 </script>
+
 
 
 

@@ -21,7 +21,7 @@
         />
         </p>
 
-        <p><strong>Tina White - Co-Founder</strong></p>
+        <div><strong>Tina White - Co-Founder</strong></div>
 
         <p>Tina is a co-founder of COVID Watch. She is involved in leadership,
           outreach, and research guidance and communication.</p>

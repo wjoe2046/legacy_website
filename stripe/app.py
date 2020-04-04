@@ -24,3 +24,7 @@ def checkout():
     response.headers.add('Access-Control-Allow-Origin',
                          os.getenv('CORS_ORIGIN_URL'))
     return response
+
+
+if __name__ == "__main__":
+    app.run(host='0.0.0.0')

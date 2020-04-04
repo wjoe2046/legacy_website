@@ -90,23 +90,24 @@ export default {
       if (!this.$refs.form.validate()) {
         return;
       }
-      fetch("http://127.0.0.1:5000/?amount=" + this.donationAmount).then(
-        resp => {
-          resp.json().then(data => {
-            console.log(data.session_id);
-            var stripe = Stripe("pk_test_6ypP8JjNOpTbNSTOIi00o8ot00B1IWWkjr");
-            stripe
-              .redirectToCheckout({
-                sessionId: data.session_id
-              })
-              .then(function(result) {
-                // If `redirectToCheckout` fails due to a browser or network
-                // error, display the localized error message to your customer
-                // using `result.error.message`.
-              });
-          });
-        }
-      );
+      fetch(
+        "https://covidwatch-stripe-integration.herokuapp.com/?amount=" +
+          this.donationAmount
+      ).then(resp => {
+        resp.json().then(data => {
+          console.log(data.session_id);
+          var stripe = Stripe("pk_test_6ypP8JjNOpTbNSTOIi00o8ot00B1IWWkjr");
+          stripe
+            .redirectToCheckout({
+              sessionId: data.session_id
+            })
+            .then(function(result) {
+              // If `redirectToCheckout` fails due to a browser or network
+              // error, display the localized error message to your customer
+              // using `result.error.message`.
+            });
+        });
+      });
     }
   }
 };

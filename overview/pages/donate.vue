@@ -24,14 +24,8 @@
             </v-row>
           </v-container>
 
-          <v-checkbox
-            v-model="checkbox"
-            label="Make this a recurring monthly donation"
-            class="monthly-checkbox"
-          ></v-checkbox>
-
-          <v-btn :disabled="!valid" color="info" class="mr-4" @click="validate">
-            Validate
+          <v-btn :disabled="!valid" color="info" class="mr-4" @click="checkout">
+            Donate
           </v-btn>
         </v-form>
         <br />
@@ -56,8 +50,13 @@ export default {
       donationAmountRules: [
         v => this.inputToValidDollarAmount(v) != null || "Invalid dollar amount"
       ],
-      checkbox: false
+      session_id: ""
     };
+  },
+  mounted() {
+    let stripeScript = document.createElement("script");
+    stripeScript.setAttribute("src", "https://js.stripe.com/v3/");
+    document.head.appendChild(stripeScript);
   },
 
   methods: {
@@ -75,11 +74,11 @@ export default {
           return value;
         }
         if (value.match(noDecimalPlacesWithDecimal)) {
-          //add two decimal places
+          // wrong
           return null;
         }
         if (value.match(oneDecimalPlace)) {
-          //ad one decimal place
+          // wrong
           return null;
         }
         //else there is no decimal places and no decimal
@@ -87,14 +86,27 @@ export default {
       }
       return null;
     },
-    validate() {
-      this.$refs.form.validate();
-    },
-    reset() {
-      this.$refs.form.reset();
-    },
-    resetValidation() {
-      this.$refs.form.resetValidation();
+    async checkout() {
+      if (!this.$refs.form.validate()) {
+        return;
+      }
+      fetch("http://127.0.0.1:5000/?amount=" + this.donationAmount).then(
+        resp => {
+          resp.json().then(data => {
+            console.log(data.session_id);
+            var stripe = Stripe("pk_test_6ypP8JjNOpTbNSTOIi00o8ot00B1IWWkjr");
+            stripe
+              .redirectToCheckout({
+                sessionId: data.session_id
+              })
+              .then(function(result) {
+                // If `redirectToCheckout` fails due to a browser or network
+                // error, display the localized error message to your customer
+                // using `result.error.message`.
+              });
+          });
+        }
+      );
     }
   }
 };

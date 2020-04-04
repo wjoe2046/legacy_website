@@ -21,8 +21,8 @@ def checkout():
         cancel_url='https://covid-watch.org/donate',
     )
     response = jsonify({'session_id': session.id})
-    response.headers.add('Access-Control-Allow-Origin',
-                         os.getenv('CORS_ORIGIN_URL'))
+    # response.headers.add('Access-Control-Allow-Origin', os.getenv('CORS_ORIGIN_URL'))
+    response.headers.add('Access-Control-Allow-Origin', '*')
     return response
 
 

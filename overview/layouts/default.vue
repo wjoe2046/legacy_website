@@ -1,7 +1,8 @@
 <template>
   <v-app id="covid19app">
-      <!-- Desktop menu -->
+      <!-- Header that persists across pages --> 
       <v-app-bar
+        app
         dense
         flat
         clipped-left

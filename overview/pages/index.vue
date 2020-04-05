@@ -66,8 +66,8 @@
             <p>
               We know that COVID watch is just one of a constellation of other apps in this
               space. We're collaborating with teams around the world, exchanging code and ensuring
-              system and data interoperability. <a href="">Read more on how we relate to other
-              projects in the space</a>.
+              system and data interoperability. <nuxt-link to="/about#comparison">Read more on how
+              we relate to other projects in the space</nuxt-link>.
             </p>
           </v-col>
         </v-row>

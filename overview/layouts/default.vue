@@ -1,55 +1,65 @@
 <template>
   <v-app id="covid19app">
-    <v-app-bar id="navBar" fixed app clipped-left color="#A2C5BF">
-      <!-- this is the header that persists across pages -->
-      <v-container class="navbarContainer">
-        <!-- if by using Vuetify we can improve the below somehow to be more responsive, etc. please let me know, I'm new to Vuetify and eager to learn! - Jesse -->
-        <v-row class="navbarRow">
-          <v-col class="navbarColumn">
-            <a class="logoDesktop logo d-none d-md-flex" href="#"
-              ><img
-                class="logoImg"
-                src="../assets/images/logo/banner_1.png"
-                alt=""
-            /></a>
-            <a class="logoMobile logo d-flex d-md-none" href="#"
-              ><img class="logoImg" src="../assets/images/logo/new_logo_march_29.png" alt=""
-            /></a>
-
-            <div class="rightNav">
-              <v-btn color="primary" class="white--text">
-                <nuxt-link style="color:white;" to="/subscribe"
-                  >Sign Up</nuxt-link
-                >
+      <!-- Desktop menu -->
+      <v-app-bar
+        dense
+        flat
+        clipped-left
+        color="#A2C5BF"
+      >
+        <v-toolbar-title>
+          <!-- Logos -->
+          <a class="logoDesktop logo d-none d-md-flex" href="#">
+            <v-img
+              class="logoImg"
+              :src="require('../assets/images/logo/banner_1.png')"
+              alt="COVID Watch"
+            />
+          </a>
+          <a class="logoMobile logo d-flex d-md-none" href="#">
+            <v-img
+              class="logoImg"
+              :src="require('../assets/images/logo/new_logo_march_29.png')"
+              alt="COVID Watch"
+              max-height="40px"
+              contain
+            />
+          </a>
+        </v-toolbar-title>
+        <v-spacer></v-spacer>
+        <!-- Desktop menu -->
+        <v-toolbar-items class="d-none d-md-flex">
+          <v-btn
+            v-for="link in navLinks"
+            :key="link.icon"
+            :title="link.title"
+            :to="link.href"
+            nuxt
+            text
+          >{{ link.title }}</v-btn>
+        </v-toolbar-items>
+        <!-- Mobile menu -->
+        <v-toolbar-items class="d-flex d-md-none">
+          <v-menu offset-y >
+            <template v-slot:activator="{ on }">
+              <v-btn text v-on="on">  
+                <v-icon>mdi-menu</v-icon>
               </v-btn>
-
-              <v-menu offset-y>
-                <template v-slot:activator="{ on }">
-                  <v-btn text color="gray" v-on="on">
-                    <span class="d-none d-md-flex">
-                      <v-icon left>mdi-chevron-down</v-icon>
-                      <span>Menu</span>
-                    </span>
-                    <v-icon class="d-flex d-md-none">mdi-menu</v-icon>
-                  </v-btn>
-                </template>
-                <v-list>
-                  <v-list-item v-for="link in navLinks" :key="link.title">
-                    <nuxt-link
-                      class="link"
-                      style="color:#BF3F4A;"
-                      :to="link.href"
-                    >
-                        {{ link.title }}
-                    </nuxt-link>
-                  </v-list-item>
-                </v-list>
-              </v-menu>
-            </div>
-          </v-col>
-        </v-row>
-      </v-container>
-    </v-app-bar>
+            </template>
+            <v-list>
+              <v-list-item v-for="link in navLinks" :key="link.title">
+                <nuxt-link
+                  class="link"
+                  style="color:#BF3F4A;"
+                  :to="link.href"
+                >
+                    {{ link.title }}
+                </nuxt-link>
+              </v-list-item>
+            </v-list>
+          </v-menu>
+        </v-toolbar-items>
+      </v-app-bar>
 
 
     <v-navigation-drawer

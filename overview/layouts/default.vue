@@ -112,88 +112,58 @@
         <v-icon>mdi-table-of-contents</v-icon>
       </v-btn>
 
-
-      <v-row style="border-bottom: .5px lightgray solid;">
-        <!-- may be better way to center this than inline margin-left to be more responsive via Vuetify -->
-        <v-col cols="12" style="display:flex;justify-content:center;align-items:center;margin-left:10px;">
-           <p><strong> In partnership with: </strong></p>
-           <img src="~/assets/images/stanford_logo.png" alt="" style="width:200px;"/>
-           <!-- other logos if we want <img src="~/assets/images/IMAGEIMAGE" alt="" style="width:200px;"/> -->
-        </v-col >
-      </v-row>
-
       <nuxt style="min-height: 100vh" />
 
-      <v-footer color="#A2C5BF" :elevation="6">
-        <v-card
-          flat
-          tile
-          class="lighten-1 white--text text-center"
-          color="#A2C5BF"
-        >
-          <v-container>
-            <v-row>
-              <v-col class="footerList" cols="12" md="3">
-                <nuxt-link class="link" to="/">Home</nuxt-link>
-              </v-col>
-              <v-col class="footerList" cols="12" md="3">
-                <nuxt-link class="link" to="/article">White Paper</nuxt-link>
-              </v-col>
-              <v-col class="footerList" cols="12" md="3">
-                <nuxt-link class="link" to="/faq"
-                  >FAQ</nuxt-link
-                >
-              </v-col>
-              <v-col class="footerList" cols="12" md="3">
-                <nuxt-link class="link" to="/collaborate"
-                  >Get Involved</nuxt-link
-                >
-              </v-col>
-              <v-col class="footerList" cols="12" md="3">
-                <nuxt-link class="link" to="/blog">Blog</nuxt-link>
-              </v-col>
-              <v-col class="footerList" cols="12" md="3">
-                <nuxt-link class="link" to="/donate">Donate</nuxt-link>
-              </v-col>
-              <v-col class="footerList" cols="12" md="3">
-                <nuxt-link class="link" to="/medialist">Media</nuxt-link>
-              </v-col>
-            </v-row>
-          </v-container>
-
-          <v-divider></v-divider>
-
-          <v-card-text class="gray--text">
-            <img src="~/assets/images/logo/banner_1.png" alt="" />
-          </v-card-text>
-          <v-card-text>
-            <a
-              style="margin-right:100px;"
-              href="https://www.facebook.com/CovidWatch2020"
-              target="_blank"
+      <v-footer
+        color="#A2C5BF"
+        padless
+      >
+          <v-row
+            justify="center"
+            no-gutters
+          >
+            <v-btn
+              v-for="link in navLinks"
+              :key="link.title"
+              text
+              class="my-2"
+              nuxt
+              :href="link.href"
             >
-              <img
-                style="width: 5em;"
-                src="~/assets/images/footer_assets/facebook-white.png"
-                alt="Like us on Facebook"
-              />
-            </a>
-            <a href="https://twitter.com/COVIDWatchApp" target="_blank">
-              <img
-                style="width: 5em;"
-                src="~/assets/images/footer_assets/twitter-white.png"
-                alt="Like us on Twitter"
-              />
-            </a>
-          </v-card-text>
-          <v-card-text class="gray--text">
-            Licensed
-            <a href="https://creativecommons.org/licenses/by-nc/2.0/"
-              >CC-BY-NC</a
+              {{ link.title }}
+            </v-btn>
+          </v-row>
+          <v-row
+            justify="center"
+          >
+            <v-col
+              v-for="social in socialIcons"
+              :key="social.alt"
+              class="d-flex justify-center"
+              cols="1"
             >
-            - COVID Watch
-          </v-card-text>
-        </v-card>
+              <a
+                :href="social.href"
+                target="_blank"
+              >
+                <v-img
+                  :src="social.img"
+                  height="24px"
+                  width="24px"
+                  alt="social.alt"
+                  contain
+                ></v-img>
+              </a>
+            </v-col>
+            <v-col
+              class="text-center caption"
+              cols="12"
+            >
+              {{ new Date().getFullYear() }} — 
+              Licensed <a href="https://creativecommons.org/licenses/by-nc/2.0/">CC-BY-NC</a>  — 
+              <strong>COVID Watch</strong> in partnership with Stanford University
+            </v-col>
+          </v-row>
       </v-footer>
     </v-content>
   </v-app>
@@ -235,11 +205,59 @@ h1 {
 import TableOfContents from "~/components/TableOfContents.vue";
 
 export default {
-  data() {
-    return {
-      tocShow: null
-    };
-  },
+  data: () => ({
+    tocShow: null,
+    navLinks: [
+      {
+        title: "Home",
+        href: "/",
+      },
+      {
+        title: "About Us",
+        href: "/about",
+      },
+      {
+        title: "White Paper",
+        href: "/article",
+      },
+      {
+        title: "FAQ",
+        href: "/faq",
+      },
+      {
+        title: "Get Involved",
+        href: "/collaborate",
+      },
+      {
+        title: "Blog",
+        href: "/blog",
+      },
+      {
+        title: "Media",
+        href: "/media",
+      },
+    ],
+    socialIcons: [
+      {
+        "alt": "Follow our progress on Github",
+        "img": require('~/assets/images/footer_assets/github-white.png'),
+        "href": "https://github.com/covid19risk",
+        
+      },
+      {
+        "alt": "Follow us on Twitter",
+        "img": require('~/assets/images/footer_assets/twitter-white.png'),
+        "href": "https://twitter.com/COVIDWatchApp",
+        
+      },
+      {
+        "alt": "Like us on Facebook",
+        "img": require('~/assets/images/footer_assets/facebook-white.png'),
+        "href": "https://www.facebook.com/CovidWatch2020",
+        
+      },
+    ]
+  }),
   components: {
     TableOfContents
   }

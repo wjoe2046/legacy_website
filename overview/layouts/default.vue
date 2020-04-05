@@ -34,43 +34,14 @@
                   </v-btn>
                 </template>
                 <v-list>
-                  <v-list-item>
-                    <nuxt-link class="link" style="color:#BF3F4A;" to="/"
-                      >Home</nuxt-link
-                    >
-                  </v-list-item>
-                  <v-list-item>
-                    <nuxt-link class="link" to="/article" style="color:#BF3F4A;"
-                      >White Paper</nuxt-link
-                    >
-                  </v-list-item>
-                  <v-list-item>
-                    <nuxt-link class="link" to="/faq"
-                    >FAQ</nuxt-link
-                    >
-                  </v-list-item>
-                  <v-list-item>
+                  <v-list-item v-for="link in navLinks" :key="link.title">
                     <nuxt-link
                       class="link"
                       style="color:#BF3F4A;"
-                      to="/collaborate"
-                      >Get Involved</nuxt-link
+                      :to="link.href"
                     >
-                  </v-list-item>
-                  <v-list-item>
-                    <nuxt-link class="link" style="color:#BF3F4A;" to="/blog"
-                      >Blog</nuxt-link
-                    >
-                  </v-list-item>
-                  <v-list-item>
-                    <nuxt-link class="link" style="color:#BF3F4A;" to="/donate"
-                      >Donate</nuxt-link
-                    >
-                  </v-list-item>
-                  <v-list-item>
-                    <nuxt-link class="link" style="color:#BF3F4A;" to="/medialist"
-                      >Media</nuxt-link
-                    >
+                        {{ link.title }}
+                    </nuxt-link>
                   </v-list-item>
                 </v-list>
               </v-menu>

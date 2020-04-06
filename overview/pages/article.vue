@@ -653,7 +653,7 @@
           <h3>[31-MAR-2020: At the time of this White Paper, we initially planned to create a GPS-based risk heatmap.
  However, GPS anonymization has proven to be a far more challenging problem than Bluetooth
  anonymization. GPS likely requires significant privacy trade-offs. Also, based on feedback
- from contact tracers, fomite risk (transmission of infectious dsease by ojects like door handles, etc.) is considerably lower than close contact risk, and it's
+ from contact tracers, fomite risk (transmission of infectious disease by objects like door handles, etc.) is considerably lower than close contact risk, and it's
  unlikely to be captured prior to testing confirmation. As such, GPS data has become a lower priority for us, and we have decided not to implement
  this component until we are confident we can do so in a way that preserves the privacy of our users.]</h3>
           </br>

@@ -23,6 +23,7 @@
             :src="require('../assets/images/logo/new_logo_march_29.png')"
             alt="COVID Watch"
             max-height="40px"
+            max-width="40px"
             contain
           />
         </a>
@@ -43,7 +44,7 @@
       <v-toolbar-items class="d-flex d-md-none">
         <v-menu offset-y >
           <template v-slot:activator="{ on }">
-            <v-btn text v-on="on">  
+            <v-btn text v-on="on">
               <v-icon>mdi-menu</v-icon>
             </v-btn>
           </template>
@@ -87,7 +88,9 @@
       <!-- Affiliations --->
       <v-row align="center" justify="center" no-gutters>
         <v-col cols="6" sm="auto" class="text-center caption">
-            a project in partnership with
+            <div class="px-1">
+              a project in partnership with
+            </div>
         </v-col>
         <v-col cols="6" sm="auto" class="text-center">
             <v-img

@@ -96,7 +96,7 @@ export default {
       ).then(resp => {
         resp.json().then(data => {
           console.log(data.session_id);
-          var stripe = Stripe("pk_test_6ypP8JjNOpTbNSTOIi00o8ot00B1IWWkjr");
+          var stripe = Stripe("pk_live_HrLwKzzj7L3KHj5QOPUATfus00HUh7F1NY");
           stripe
             .redirectToCheckout({
               sessionId: data.session_id

@@ -1,68 +1,68 @@
 <template>
   <v-app id="covid19app">
-      <!-- Header that persists across pages --> 
-      <v-app-bar
-        app
-        dense
-        flat
-        clipped-left
-        color="#A2C5BF"
-      >
-        <v-toolbar-title>
-          <!-- Logos -->
-          <a class="logoDesktop logo d-none d-md-flex" href="#">
-            <v-img
-              class="logoImg"
-              :src="require('../assets/images/logo/banner_1.png')"
-              alt="COVID Watch"
-            />
-          </a>
-          <a class="logoMobile logo d-flex d-md-none" href="#">
-            <v-img
-              class="logoImg"
-              :src="require('../assets/images/logo/new_logo_march_29.png')"
-              alt="COVID Watch"
-              max-height="40px"
-              contain
-            />
-          </a>
-        </v-toolbar-title>
-        <v-spacer></v-spacer>
-        <!-- Desktop menu -->
-        <v-toolbar-items class="d-none d-md-flex">
-          <v-btn
-            v-for="link in navLinks"
-            :key="link.icon"
-            :title="link.title"
-            :to="link.href"
-            nuxt
-            text
-          >{{ link.title }}</v-btn>
-        </v-toolbar-items>
-        <!-- Mobile menu -->
-        <v-toolbar-items class="d-flex d-md-none">
-          <v-menu offset-y >
-            <template v-slot:activator="{ on }">
-              <v-btn text v-on="on">  
-                <v-icon>mdi-menu</v-icon>
-              </v-btn>
-            </template>
-            <v-list>
-              <v-list-item v-for="link in navLinks" :key="link.title">
-                <nuxt-link
-                  class="link"
-                  style="color:#BF3F4A;"
-                  :to="link.href"
-                >
-                    {{ link.title }}
-                </nuxt-link>
-              </v-list-item>
-            </v-list>
-          </v-menu>
-        </v-toolbar-items>
-      </v-app-bar>
+    <!-- Header that persists across pages --> 
+    <v-app-bar
+      app
+      dense
+      flat
+      clipped-left
+      color="#A2C5BF"
+    >
+      <v-toolbar-title>
+        <!-- Logos -->
+        <a class="logoDesktop logo d-none d-md-flex" href="#">
+          <v-img
+            class="logoImg"
+            :src="require('../assets/images/logo/banner_1.png')"
+            alt="COVID Watch"
+          />
+        </a>
+        <a class="logoMobile logo d-flex d-md-none" href="#">
+          <v-img
+            class="logoImg"
+            :src="require('../assets/images/logo/new_logo_march_29.png')"
+            alt="COVID Watch"
+            max-height="40px"
+            contain
+          />
+        </a>
+      </v-toolbar-title>
+      <v-spacer></v-spacer>
+      <!-- Desktop menu -->
+      <v-toolbar-items class="d-none d-md-flex">
+        <v-btn
+          v-for="link in navLinks"
+          :key="link.icon"
+          :title="link.title"
+          :to="link.href"
+          nuxt
+          text
+        >{{ link.title }}</v-btn>
+      </v-toolbar-items>
+      <!-- Mobile menu -->
+      <v-toolbar-items class="d-flex d-md-none">
+        <v-menu offset-y >
+          <template v-slot:activator="{ on }">
+            <v-btn text v-on="on">  
+              <v-icon>mdi-menu</v-icon>
+            </v-btn>
+          </template>
+          <v-list>
+            <v-list-item v-for="link in navLinks" :key="link.title">
+              <nuxt-link
+                class="link"
+                style="color:#BF3F4A;"
+                :to="link.href"
+              >
+                  {{ link.title }}
+              </nuxt-link>
+            </v-list-item>
+          </v-list>
+        </v-menu>
+      </v-toolbar-items>
+    </v-app-bar>
 
-
+    <!-- Navigation drawer (i.e. Table of Contents) for the article page --->
     <v-navigation-drawer
       v-if="$nuxt.$route.name === 'article'"
       clipped
@@ -84,6 +84,27 @@
     </v-navigation-drawer>
 
     <v-content>
+      <!-- Affiliations --->
+      <v-row align="center" justify="center" no-gutters>
+        <v-col cols="6" sm="auto" class="text-center caption">
+            a project in partnership with
+        </v-col>
+        <v-col cols="6" sm="auto" class="text-center">
+            <v-img
+              :src="require('../assets/images/logo/stanford_wordmark.png')"
+              alt="Stanford University"
+              max-height="48px"
+              max-width="200px"
+              contain
+              class="d-flex"
+            />
+        </v-col>
+        <v-col cols="12" sm="12">
+          <v-divider></v-divider>
+        </v-col>
+      </v-row>
+
+      <!-- Button to show / hide table of contents --->
       <v-btn
         v-if="$nuxt.$route.name === 'article'"
         class="toc-hamburger"
@@ -94,8 +115,10 @@
         <v-icon>mdi-table-of-contents</v-icon>
       </v-btn>
 
+      <!-- Page content provided by nuxt --->
       <nuxt style="min-height: 100vh" />
 
+      <!-- Footer that persists across pages-->
       <v-footer
         color="#A2C5BF"
         padless
@@ -143,7 +166,7 @@
             >
               {{ new Date().getFullYear() }} — 
               Licensed <a href="https://creativecommons.org/licenses/by-nc/2.0/">CC-BY-NC</a>  — 
-              <strong>COVID Watch</strong> in partnership with Stanford University
+              <strong>COVID Watch</strong>
             </v-col>
           </v-row>
       </v-footer>

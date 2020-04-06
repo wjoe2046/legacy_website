@@ -1,7 +1,8 @@
 <template>
     <v-container>
         <v-row>
-          <v-col>
+            <!-- this inline padding:0px is to override VGrid CSS reset of 12px.  Probably a better way to do this - Jesse -->
+          <v-col style="padding:0px;">
             <h2 style="color:#BF3F4A">Similar Projects</h2>
             <br>
 
@@ -51,7 +52,7 @@
             <p>We wanted to contrast COVID Watch with a few other projects, but in the course of compiling this page it’s become clear that we won’t be able to successfully maintain a list of all the rapidly-proliferating projects in this space. For some efforts that are trying to do that, please see:</p>
             <ul>
                 <li><a href="https://docs.google.com/document/d/1n5dMHVZ9fRfQZTD1IJ_hGJkaFvM5N5IZeY5dLgCqXq8/edit#">Covid19 - Contact tracing - Ecosystem survey</a>, a document compiled by Mitra Ardron</li>    
-                <li> <a href="Shared research on privacy preserving contact tracing apps, a document compiled by stop-covid.tech">Shared research on privacy preserving contact tracing apps, a document compiled by stop-covid.tech</a>Shared research on privacy preserving contact tracing apps, a document compiled by stop-covid.tech </li>
+                <li><a href="https://docs.google.com/document/d/16Kh4_Q_tmyRh0-v452wiul9oQAiTRj8AdZ5vcOJum9Y/edit#">Shared research on privacy preserving contact tracing apps</a>, a document compiled by stop-covid.tech  </li>
                 <li>The crowdsourced list of <a href="https://github.com/shankari/covid-19-tracing-projects">covid-19-tracing-projects on GitHub</a> </li>
             </ul>   
 

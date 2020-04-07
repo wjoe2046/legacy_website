@@ -89,7 +89,7 @@
       <v-row align="center" justify="center" no-gutters>
         <v-col cols="6" sm="auto" class="text-center caption">
             <div class="px-1">
-              a project in partnership with
+              a project in collaboration with
             </div>
         </v-col>
         <v-col cols="6" sm="auto" class="text-center">

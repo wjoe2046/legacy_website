@@ -145,7 +145,7 @@
             <br>
             <p>
               We don’t know, but it might need less traction than you imagine. Our modelling suggests
-              that even a 40% adoption rate has the potential to stop the spread of the virus. Even if
+              that even a 60% adoption rate has the potential to stop the spread of the virus. Even if
               our app doesn’t succeed, we’re actively collaborating with other teams around the world,
               exchanging code and ensuring system and data interoperability. Our hope is that any progress
               made by COVID Watch will benefit many projects.

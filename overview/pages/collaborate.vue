@@ -27,32 +27,22 @@
             <h3>Wanted Positions</h3>
 
             <p>
-              (1) Volunteer Coordinator - coordinate the efforts, schedules,
-              tasks among 10-30 remote volunteers in various roles
-            </p>
-
-            <p>
-              (2) Project Manager - coordinate the tasks and workflow for group
+              (1) Project Manager - coordinate the tasks and workflow for group
               of software engineers
             </p>
 
             <p>
-              (3) Personal Assistant - assist Executive Director with various
+              (2) Personal Assistant - assist Executive Director with various
               admin tasks
             </p>
 
             <p>
-              (4) Volunteer Recruiter - get the word out, bring more people onto
-              our team, then get them situated and productive quickly
-            </p>
-
-            <p>
-              (5) System Administrator - help manage our website and backend.
+              (3) System Administrator - help manage our website and backend.
                Familiarity with AWS (specifically S3 and Cloudfront) ideal.
             </p>
 
             <p>
-              (6) Marketing Manager - assist with mailing campaigns,
+              (4) Marketing Manager - assist with mailing campaigns,
                branding, and media outreach.
             </p>
 

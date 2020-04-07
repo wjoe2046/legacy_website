@@ -1,6 +1,6 @@
 <template>
   <v-app id="covid19app">
-    <!-- Header that persists across pages --> 
+    <!-- Header that persists across pages -->
     <v-app-bar
       app
       dense
@@ -89,7 +89,7 @@
       <v-row align="center" justify="center" no-gutters>
         <v-col cols="6" sm="auto" class="text-center caption">
             <div class="px-1">
-              a project in partnership with
+              a project in collaboration with
             </div>
         </v-col>
         <v-col cols="6" sm="auto" class="text-center">
@@ -167,8 +167,8 @@
               class="text-center caption"
               cols="12"
             >
-              {{ new Date().getFullYear() }} — 
-              Licensed <a href="https://creativecommons.org/licenses/by-nc/2.0/">CC-BY-NC</a>  — 
+              {{ new Date().getFullYear() }} —
+              Licensed <a href="https://creativecommons.org/licenses/by-nc/2.0/">CC-BY-NC</a>  —
               <strong>COVID Watch</strong>
             </v-col>
           </v-row>
@@ -242,7 +242,11 @@ export default {
       },
       {
         title: "Media",
-        href: "/media",
+        href: "/medialist",
+      },
+      {
+        title: "Donate",
+        href: "/donate",
       },
     ],
     socialIcons: [
@@ -250,19 +254,19 @@ export default {
         "alt": "Follow our progress on Github",
         "img": require('~/assets/images/footer_assets/github-white.png'),
         "href": "https://github.com/covid19risk",
-        
+
       },
       {
         "alt": "Follow us on Twitter",
         "img": require('~/assets/images/footer_assets/twitter-white.png'),
         "href": "https://twitter.com/COVIDWatchApp",
-        
+
       },
       {
         "alt": "Like us on Facebook",
         "img": require('~/assets/images/footer_assets/facebook-white.png'),
         "href": "https://www.facebook.com/CovidWatch2020",
-        
+
       },
     ]
   }),

@@ -19,7 +19,7 @@ def checkout():
             'currency': 'usd',
             'quantity': 1,
         }],
-        success_url='https://covid-watch.org/',
+        success_url='https://covid-watch.org/thankyou',
         cancel_url='https://covid-watch.org/donate',
     )
 

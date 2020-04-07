@@ -4,8 +4,7 @@
       <v-col cols="12" lg="8">
         <h2>Donations</h2>
         <p>
-          We're still in the process of setting up a donations system. Check
-          back here in a few days!
+          NOTE: All donations are denominated in USD
         </p>
         <v-form ref="form" v-model="valid" lazy-validation>
           <v-container>

@@ -242,7 +242,7 @@ export default {
       },
       {
         title: "Media",
-        href: "/media",
+        href: "/medialist",
       },
       {
         title: "Donate",

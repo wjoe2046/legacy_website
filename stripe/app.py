@@ -5,6 +5,8 @@ import stripe
 stripe.api_key = os.getenv('STRIPE_SECRET_KEY')
 app = Flask(__name__)
 
+VALID_ORIGINS = ["https://covid-watch.org", "https://www.covid-watch.org"]
+
 
 @app.route('/')
 def checkout():
@@ -20,10 +22,14 @@ def checkout():
         success_url='https://covid-watch.org/',
         cancel_url='https://covid-watch.org/donate',
     )
+
     response = jsonify({'session_id': session.id})
-    response.headers.add('Access-Control-Allow-Origin',
-                         os.getenv('CORS_ORIGIN_URL'))
-    # response.headers.add('Access-Control-Allow-Origin', '*')
+    if request.environ.get('HTTP_ORIGIN') in VALID_ORIGINS:
+        response.headers.add('Access-Control-Allow-Origin',
+                             request.environ.get('HTTP_ORIGIN'))
+    else:
+        response.headers.add('Access-Control-Allow-Origin', VALID_ORIGINS[0])
+
     return response
 
 

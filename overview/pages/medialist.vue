@@ -94,7 +94,7 @@
         },
         {
           "date": "March 31, 2020",
-          "title": "Fellow Working to Devise COVID-19 Contact Tracking Tool",
+          "title": "Fellow Working to Devise COVID-19 Alert Application",
           "href": "https://www.krellinst.org/csgf/about-doe-csgf/news-events/white-covid-watch",
           "credit": "news release from Department of Energy Computational Science Graduate Fellowship"
         },

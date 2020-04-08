@@ -72,15 +72,22 @@
               the world a better place - for us, and for you.
             </p>
 
-            <h3>Our Timeline</h3>
+            <h2>Timeline</h2>
 
-            <p>
-              We&#39;ve recruited a strong team, successfully developed an
-              internal proof of concept, and formalised a strong theoretical
-              basis for what we want to do. Our next steps are tentatively
-              planned as follows, contingent on no insurmountable obstacles
-              appearing:
-            </p>
+            <v-timeline dense>
+              <v-timeline-item
+                v-for="(timelineItem, i) in timelineItems"
+                :key="i"
+                small
+              >
+                <div class="py-4">
+                  <h2 class="headline font-weight-light mb-4 ">{{ timelineItem.date }}</h2>
+                  <div>
+                    {{ timelineItem.event }}
+                  </div>
+                </div>
+              </v-timeline-item>
+            </v-timeline>
 
             <p>
               <strong>One Week (by 17-MAR-2020): </strong>Have a beta app
@@ -139,6 +146,32 @@
   export default {
     components: {
       ProjectComparison
-    }
+    },
+    data: () => ({
+      timelineItems: [
+        {
+          date: "February 20",
+          event: "Tina publishes post on Effective Altruism forum",
+        },
+        {
+          date: "March ??",
+        },
+        {
+          date: "March ??",
+        },
+        {
+          date: "April 5",
+          event: "TCN Coalition is formed",
+        },
+        {
+          date: "April 17",
+          event: "Target release date for TCN library",
+        },
+        {
+          date: "April 24",
+          event: "Target release date for Covid Watch App",
+        },
+      ],
+    }),
   }
 </script>

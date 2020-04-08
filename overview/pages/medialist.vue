@@ -56,6 +56,13 @@
     },
     data: () => ({
       mediaList: [
+          {
+          "date": "April 8, 2020",
+          "title": "Clever Cryptography Could Protect Privacy in Covid-19 Contact-Tracing Apps",
+          "href": "https://www.wired.com/story/covid-19-contact-tracing-apps-cryptography/",
+          "credit": "<a href=\"https://www.wired.com/author/andy-greenberg/\">Andy Greenberg</a> for <i><a target=\"_blank\" " +
+          "href=\"https://www.wired.com/\">Wired</a></i>"
+        },
         {
           "date": "April 7, 2020",
           "title": "Behind the global efforts to make a privacy-first coronavirus tracking app",

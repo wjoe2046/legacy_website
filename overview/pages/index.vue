@@ -211,7 +211,7 @@
       partners: [
         {
           name: "Stanford University",
-          link: "https://tcn-coalition.org/",
+          link: "https://stanford.edu",
           img: require('~/assets/images/logo/stanford_logo_square.png'),
         },
         {

@@ -216,7 +216,7 @@
         },
         {
           name: "TCN Coalition",
-          link: "https://www.coepi.org/",
+          link: "https://tcn-coalition.org/",
           img: require('~/assets/images/logo/tcn_coalition.png'),
         },
         {

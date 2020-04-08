@@ -82,7 +82,7 @@
                 <v-col
                   :key="i"
                   cols="12"
-                  sm="4"
+                  sm="3"
                   class="text-center"
                 >
                   <v-card
@@ -106,6 +106,7 @@
         </v-row>
         <br/>
         <v-alert
+          style="display:flex;justify-content:center;"
           outlined
           icon="mdi-email"
           dense
@@ -210,8 +211,13 @@
       partners: [
         {
           name: "Stanford University",
-          link: "https://stanford.edu/",
+          link: "https://tcn-coalition.org/",
           img: require('~/assets/images/logo/stanford_logo_square.png'),
+        },
+        {
+          name: "TCN Coalition",
+          link: "https://www.coepi.org/",
+          img: require('~/assets/images/logo/tcn_coalition.png'),
         },
         {
           name: "Community Epidemiology in Action",

@@ -57,6 +57,20 @@
     data: () => ({
       mediaList: [
         {
+          "date": "April 7, 2020",
+          "title": "Behind the global efforts to make a privacy-first coronavirus tracking app",
+          "href": "https://www.nbcnews.com/tech/tech-news/behind-global-efforts-make-privacy-first-coronavirus-tracking-app-n1177871",
+          "credit": "<a href=\"https://twitter.com/David_Ingram\">David Ingram</a> and <a href=\"https://twitter.com/byjacobward\">Jacob Ward</a> for <i><a target=\"_blank\" " +
+          "href=\"https://www.nbcnews.com/\">NBC News</a></i>"
+        },
+        {
+          "date": "April 6, 2020",
+          "title": "Contact Tracing and the Fight Against Covid-19: How Digital Tools Can Help",
+          "href": "https://institute.global/policy/contact-tracing-and-fight-against-covid-19-how-digital-tools-can-help",
+          "credit": "<a href=\"https://twitter.com/BJMCooney\">Benedict Macon-Cooney</a> for <i><a target=\"_blank\" " +
+          "href=\"https://institute.global/\">Institute for Global Change</a></i>"
+        },
+        {
           "date": "April 3, 2020",
           "title": "US and Europe race to develop ‘contact tracing’ apps",
           "href": "https://drive.google.com/file/d/1VH9uwJJliheVy5unCXtAHQbEdsuJdYD7/view?usp=sharing",
@@ -67,7 +81,8 @@
           "date": "April 2, 2020",
           "title": "Surveillance, AI, and saving lives top agenda at coronavirus conference",
           "href": "https://venturebeat.com/2020/04/02/surveillance-ai-and-saving-lives-top-agenda-at-coronavirus-conference/",
-          "credit": "<a href=\"https://twitter.com/kharijohnson\">Khari Johnson</a> for VentureBeat"
+          "credit": "<a href=\"https://twitter.com/kharijohnson\">Khari Johnson</a> for <i><a target=\"_blank\" " +
+          "href=\"https://venturebeat.com/\">VentureBeat</a></i>"
         },
         {
           "date": "April 1, 2020",
@@ -99,7 +114,7 @@
         {
           "date": "March 13, 2020",
           "title": "Radio Interview",
-          "href": "https://www.youtube.com/watch?v=AWkXrL3Y09s",
+          "href": "https://www.youtube.com/watch?v=7N0jC6UGzGY&feature=youtu.be&t=8129",
           "credit": "with the <a href=\"https://twitter.com/FaultLinesRadio\">Fault Lines</a> team, Radio Sputnik"
         }
       ],

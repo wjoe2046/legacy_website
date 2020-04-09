@@ -714,7 +714,7 @@
           <div class="centerImage">
             <img
               style="width: 70%"
-              src="../assets/images/overview_article_imgs/Infection_state_diagram.png"
+              src="../assets/images/overview_article_imgs/Infection_State_Diagram.png"
               alt=""
             />
           </div>

@@ -5,6 +5,15 @@
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138209632-4"></script>
+
+    <!-- note: the <meta> line below is not quite right but getting closer to solving the Stripe checkout font error -->
+    <!-- some possibly helpful resources:
+            https://stackoverflow.com/questions/56616150/how-to-fix-a-cors-error-for-a-custom-font
+            https://stackoverflow.com/questions/42723902/how-to-set-font-face-data-in-a-content-security-policy-meta-tag
+            https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/font-src
+            https://stackoverflow.com/questions/35489518/stripe-checkout-css-content-policy-error
+    -->
+    <meta http-equiv="Content-Security-Policy" content="font-src 'self' data:;">
     
     <script>
         window.dataLayer = window.dataLayer || [];

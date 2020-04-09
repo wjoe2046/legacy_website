@@ -5,11 +5,14 @@ name: Check Spelling
 on:
   pull_request:
     paths:
-    - '**.js'
-    - '**.vue'
-    - '**.txt'
     - '**.html'
+    - '**.js'
     - '**.md'
+    - '**.txt'
+    - '**.vue'
+    -!**/node_modules/**'
+    -!**/.nuxt/**'
+    -!**/plugins/**'
 jobs:
   spelling:
     runs-on: ubuntu-latest

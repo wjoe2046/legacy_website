@@ -14,8 +14,6 @@ jobs:
   spelling:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2b
-      with:
-        ref: ${{ github.head_ref }}
+    - uses: actions/checkout@v2
     - name: Check Spelling
       uses: UnicornGlobal/spellcheck-github-actions@master

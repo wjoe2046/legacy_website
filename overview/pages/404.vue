@@ -6,8 +6,10 @@
 
         <h1 style="color:#bf3f4a">404: Page Not Found</h1>
 
-        <p>Oops! It looks like you've wandered onto a non-existent page.
-         Check the URL that sent you here and try again.</p>
+        <p>Oops! It looks like you've wandered onto a non-existent page.</p>
+        <br>
+        <nuxt-link to="/"><v-btn color="primary">Back to Home Page</v-btn></nuxt-link>
+        <br>
         <br>
         <p>Or don't. I'm an error page, not your boss.</p>
 

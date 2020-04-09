@@ -1,0 +1,21 @@
+# Action from the Github actions marketplace
+# https://github.com/marketplace/actions/check-spelling-js-vue-html-markdown-text
+
+name: Check Spelling
+on:
+  pull_request:
+    paths:
+    - '**.js'
+    - '**.vue'
+    - '**.txt'
+    - '**.html'
+    - '**.md'
+jobs:
+  spelling:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2b
+      with:
+        ref: ${{ github.head_ref }}
+    - name: Check Spelling
+      uses: UnicornGlobal/spellcheck-github-actions@master

@@ -199,7 +199,7 @@
 }
 
 .logoDesktop {
-  width: 25% !important;
+  width: 30% !important;
 }
 
 h1 {

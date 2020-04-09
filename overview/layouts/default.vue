@@ -87,15 +87,25 @@
     <v-content>
       <!-- Affiliations --->
       <v-row align="center" justify="center" no-gutters>
-        <v-col cols="6" sm="auto" class="text-center caption">
+        <v-col cols="4" sm="auto" class="text-center caption">
             <div class="px-1">
               a project in collaboration with
             </div>
         </v-col>
-        <v-col cols="6" sm="auto" class="text-center">
+        <v-col cols="4" sm="auto" class="text-center">
             <v-img
               :src="require('../assets/images/logo/stanford_wordmark.png')"
               alt="Stanford University"
+              max-height="48px"
+              max-width="200px"
+              contain
+              class="d-flex"
+            />
+        </v-col>
+        <v-col cols="4" sm="auto" class="text-center">
+            <v-img
+              :src="require('../assets/images/logo/waterloo_wordmark.png')"
+              alt="University of Waterloo"
               max-height="48px"
               max-width="200px"
               contain

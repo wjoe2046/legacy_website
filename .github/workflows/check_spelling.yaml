@@ -10,9 +10,9 @@ on:
     - '**.md'
     - '**.txt'
     - '**.vue'
-    - '!overview/node_modules/**'
-    - '!overview/.nuxt/**'
-    - '!overview/plugins/**'
+    - '!**overview/node_modules/**'
+    - '!**overview/.nuxt/**'
+    - '!**overview/plugins/**'
 jobs:
   spelling:
     runs-on: ubuntu-latest

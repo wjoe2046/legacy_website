@@ -56,7 +56,14 @@
     },
     data: () => ({
       mediaList: [
-          {
+        {
+          "date": "April 10, 2020",
+          "title": "How Apple and Google Are Enabling Covid-19 Contact-Tracing",
+          "href": "https://www.wired.com/story/apple-google-bluetooth-contact-tracing-covid-19/",
+          "credit": "<a href=\"https://www.wired.com/author/andy-greenberg/\">Andy Greenberg</a> for <i><a target=\"_blank\" " +
+          "href=\"https://www.wired.com/\">Wired</a></i>"
+        },
+        {
           "date": "April 9, 2020",
           "title": "Stanford researchers help develop privacy-focused coronavirus alert app",
           "href": "https://news.stanford.edu/2020/04/09/stanford-researchers-help-develop-privacy-focused-coronavirus-alert-app/",

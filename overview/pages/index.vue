@@ -73,7 +73,7 @@
         </v-row>
         <v-row justify="center">
           <v-col cols="12" sm="9" class="text-center">
-           <h3>Some of our partners include:</h3>
+           <h3>Some of our collaborators include:</h3>
           </v-col>
         </v-row>
         <v-row justify="center">

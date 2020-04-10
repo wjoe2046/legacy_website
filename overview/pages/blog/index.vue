@@ -9,6 +9,24 @@
 
               <div class="blog-item">
                 <div class="blog-item-content">
+                  <h2>Press Release: 10th of March 2020</h2>
+
+                  <p>
+                    <strong>Covid Watch in Support of Apple and Google’s Digital Contact Tracing Partnership Announcement</strong> 
+                  </p>
+
+                  <p>
+                    Covid Watch, a non-profit, in collaboration with Stanford University, has been working for two months now on a contact tracing protocol that will protect users' privacy while tracing the spread of Covid-19. Today, the world’s tech giants joined that mission.
+                  <p>
+                    <nuxt-link class="read-more" to="/blog/press_release"
+                    >Read Full Press Release...</nuxt-link
+                    >
+                  </p>
+                </div>
+              </div>
+
+              <div class="blog-item">
+                <div class="blog-item-content">
                   <h2>Progress Post: 29th of March 2020</h2>
 
                   <p>

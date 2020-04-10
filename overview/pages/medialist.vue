@@ -57,6 +57,13 @@
     data: () => ({
       mediaList: [
           {
+          "date": "April 9, 2020",
+          "title": "Stanford researchers help develop privacy-focused coronavirus alert app",
+          "href": "https://news.stanford.edu/2020/04/09/stanford-researchers-help-develop-privacy-focused-coronavirus-alert-app/",
+          "credit": "for <i><a target=\"_blank\" " +
+          "href=\"https://news.stanford.edu/\">Stanford News</a></i>"
+        },
+        {
           "date": "April 8, 2020",
           "title": "Clever Cryptography Could Protect Privacy in Covid-19 Contact-Tracing Apps",
           "href": "https://www.wired.com/story/covid-19-contact-tracing-apps-cryptography/",

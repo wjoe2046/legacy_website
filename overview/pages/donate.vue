@@ -4,7 +4,7 @@
       <v-col cols="12" lg="8">
         <h2>Donations</h2>
         <p>
-          NOTE: All donations are denominated in USD
+          NOTE: All donations are denominated in USD. If the donate button isn't working, it may be an unintended consequence of your adblocking software. Please switch it off and try again.
         </p>
         <v-form ref="form" v-model="valid" lazy-validation>
           <v-container>

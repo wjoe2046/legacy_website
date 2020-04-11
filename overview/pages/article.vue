@@ -714,7 +714,7 @@
           <div class="centerImage">
             <img
               style="width: 70%"
-              src="../assets/images/overview_article_imgs/Infection_state_diagram.png"
+              src="../assets/images/overview_article_imgs/Infection_State_Diagram.png"
               alt=""
             />
           </div>
@@ -905,7 +905,7 @@
           <div style="border:1px solid black;border-radius:4px;padding: 10px;">
             <p>
               <strong>Figure 1: New User Onboarding Workflow</strong>.
-              Downloading and using COVID Watch does NOT require any sign up of email, password, etc. of any kind.  The only requirement is to enable COVID Watch to access bluetooth on your smartphone in order to detect other smartphones in close proximity to log a 'contact event'.  If no other smartphones you have been in contact with are associated with a positive case COVID-19, COVID Watch informs you that you have <strong>not</strong> been in contact with COVID-19.  
+              Downloading and using Covid Watch does NOT require any sign up of email, password, etc. of any kind.  The only requirement is to enable Covid Watch to access bluetooth on your smartphone in order to detect other smartphones in close proximity to log a 'contact event'.  If no other smartphones you have been in contact with are associated with a positive case COVID-19, Covid Watch informs you that you have <strong>not</strong> been in contact with COVID-19.  
               <!-- OLD TEXT:
                 The transmission map will utilize Bluetooth proximity network and a
               confirmed contact event number provided by health authorities. When
@@ -948,7 +948,7 @@
           <div style="border:1px solid black;border-radius:4px;padding: 10px;">
             <p>
               <strong>Figure 2: Contact Alert and Reporting</strong>.
-              If COVID Watch detects another smartphone within bluetooth proximity that is associated with a positive COVID-19 case, you are alerted that you may have been exposed  COVID Watch suggests steps of (1) monitoring your health and (2) isolate yourself.  Additionally, you may update your own status as confirmed or not tested, along with the first date of symptoms.
+              If Covid Watch detects another smartphone within bluetooth proximity that is associated with a positive COVID-19 case, you are alerted that you may have been exposed  Covid Watch suggests steps of (1) monitoring your health and (2) isolate yourself.  Additionally, you may update your own status as confirmed or not tested, along with the first date of symptoms.
               <!-- <strong>Figure 2: COVID-19 CDC Information and Symptoms Survey</strong>. 
               Users are given information, resources, and advice from the
               Centers for Disease Control and Prevention (CDC) about COVID-19. In
@@ -1579,7 +1579,7 @@
       <p>
         We would also like to thank all the other volunteers and helpers and
         anyone else we might have missed who showed up and contributed time to the
-        COVID Watch project. We couldn’t have done this without you. Look for the
+        Covid Watch project. We couldn’t have done this without you. Look for the
         helpers.
       </p>
 

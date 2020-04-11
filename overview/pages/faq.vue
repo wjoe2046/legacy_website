@@ -45,7 +45,7 @@
             <p>
               We also want to provide a way for individuals to, on a volunteer basis, help reduce
               the painful impacts of COVID-19. That’s what all of the people working on this project
-              were looking for, and we hope that users who participate in COVID Watch will feel they
+              were looking for, and we hope that users who participate in Covid Watch will feel they
               have been given a tool with which to protect their community and loved ones.
             </p>
 
@@ -76,7 +76,7 @@
 
             <p>
               Now that many people carry smartphones, it’s possible to perform an intervention like contact
-              tracing automatically. Many groups, including COVID Watch, are working to make this a reality.
+              tracing automatically. Many groups, including Covid Watch, are working to make this a reality.
               However, our system does not strictly perform contact tracing. Users are not followed or tracked,
               and they are warned in an anonymous way.
             </p>
@@ -148,13 +148,13 @@
               that even a 60% adoption rate has the potential to stop the spread of the virus. Even if
               our app doesn’t succeed, we’re actively collaborating with other teams around the world,
               exchanging code and ensuring system and data interoperability. Our hope is that any progress
-              made by COVID Watch will benefit many projects.
+              made by Covid Watch will benefit many projects.
             </p>
 
             <h3>Is this just another app that will record my symptoms?</h3>
             <br>
             <p>
-              No. Our main purpose is local containment. COVID Watch alerts users if they may have been
+              No. Our main purpose is local containment. Covid Watch alerts users if they may have been
               exposed to COVID-19 based on Bluetooth . While we may eventually try to integrate with COVID-19
               symptom screening apps, that is not our initial aim.
             </p>
@@ -167,7 +167,7 @@
 
             <p>
               The relative success of these countries in slowing the rate of COVID-19 transmission
-              is part of why we believe COVID Watch will work. For example, Taiwan has a population
+              is part of why we believe Covid Watch will work. For example, Taiwan has a population
               of 23.8 million, but at time of writing (29-MAR-2020) only 298 cases of COVID-19 and 2 deaths.
             </p>
 
@@ -175,7 +175,7 @@
               These countries have introduced mobile applications for contact tracing, and Singapore’s
               TraceTogether app uses a similar Bluetooth approach. However, there are important differences.
               Singapore’s app allows health officials to track down individual users who have been diagnosed
-              with or exposed to SARS-CoV-2. With COVID Watch, we have introduced important privacy-preserving
+              with or exposed to SARS-CoV-2. With Covid Watch, we have introduced important privacy-preserving
               mechanisms, such as never centrally storing contact events. While our users can volunteer to
               share their health information, they are never forced to.
             </p>
@@ -188,7 +188,7 @@
 
             <p>
               Hong Kong have introduced electronic-tracking wristbands in order to ensure that people
-              suspected to have COVID-19 adhere to a quarantine. COVID Watch cannot be used to track or
+              suspected to have COVID-19 adhere to a quarantine. Covid Watch cannot be used to track or
               monitor people. Your location is never stored; instead, anonymized contact event numbers
               are stored on your own device; the aim is to enable contact-tracing in a way that preserves privacy.
             </p>
@@ -271,7 +271,7 @@
             <h3>Will this app snoop on me?</h3>
             <br>
             <p>
-              One of the key reasons we started COVID Watch is that we were worried that a contact tracing solution
+              One of the key reasons we started Covid Watch is that we were worried that a contact tracing solution
               which failed to respect the privacy of its users might be adopted. We’re concerned about ways in
               which this pandemic may increase unwanted surveillance, and this is why we’ve carefully designed
               a decentralized and voluntary solution. We’re currently collaborating on privacy guidelines with
@@ -304,7 +304,7 @@
             <h3>Who are your app’s collaborators? Are you working with the government?</h3>
             <br>
             <p>
-              A critical part of COVID Watch is buy-in from some relevant healthcare authorities.
+              A critical part of Covid Watch is buy-in from some relevant healthcare authorities.
               We need a confirmation number from a healthcare database for self-reported diagnoses.
               We’re reaching out to the CDC to give us permission numbers to validate self-reports,
               so we don’t send out false positives. We’re also going to start reaching out to state

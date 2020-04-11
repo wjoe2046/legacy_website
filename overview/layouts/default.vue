@@ -14,14 +14,14 @@
           <v-img
             class="logoImg"
             :src="require('../assets/images/logo/banner_1.png')"
-            alt="COVID Watch"
+            alt="Covid Watch"
           />
         </a>
         <a class="logoMobile logo d-flex d-md-none" href="#">
           <v-img
             class="logoImg"
             :src="require('../assets/images/logo/new_logo_march_29.png')"
-            alt="COVID Watch"
+            alt="Covid Watch"
             max-height="40px"
             max-width="40px"
             contain
@@ -179,7 +179,7 @@
             >
               {{ new Date().getFullYear() }} —
               Licensed <a href="https://creativecommons.org/licenses/by-nc/2.0/">CC-BY-NC</a>  —
-              <strong>COVID Watch</strong>
+              <strong>Covid Watch</strong>
             </v-col>
           </v-row>
       </v-footer>

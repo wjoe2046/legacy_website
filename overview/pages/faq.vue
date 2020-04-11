@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-row justify="center">
-      <v-col cols="12" lg="8">
+      <v-col cols="12" lg="10">
         <section class="text-content">
           <div class="container">
             <div class="blog-hero"></div>
@@ -47,6 +47,13 @@
               the painful impacts of COVID-19. That’s what all of the people working on this project
               were looking for, and we hope that users who participate in COVID Watch will feel they
               have been given a tool with which to protect their community and loved ones.
+            </p>
+
+
+            <h3>Aren’t Google and Apple working on something similar?</h3>
+            <br>
+            <p>
+              There are! We have been in contact with them since late March 2020.  You can read our full perspective on their efforts in our  <nuxt-link to="/press_releases/google_apple_press_release">April 10, 2020 press release here</nuxt-link> .
             </p>
 
             <h3>Aren’t there a lot of people working on this already?</h3>
@@ -309,6 +316,12 @@
               We’re reaching out to the CDC to give us permission numbers to validate self-reports,
               so we don’t send out false positives. We’re also going to start reaching out to state
               health agencies since they keep state records with their confirmation numbers as well.
+            </p>
+
+            <h3>How can I get involved?</h3>
+            <br>
+            <p>
+              We are always looking for talented people worldwide to join this effort as volunteers.  See our <nuxt-link to="/collaborate">Join Our Team page</nuxt-link> for the roles we are looking to fill and how to join our group.
             </p>
 
 

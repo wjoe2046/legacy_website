@@ -1,8 +1,10 @@
 <template>
   <v-container>
     <v-row justify="center">
-      <v-col cols="12" lg="8">
-        <h2>Donations</h2>
+      <v-col cols="12" lg="10">
+        <h1 style="color:#BF3F4A">Donations</h1>
+        <br>
+
         <p>
           NOTE: All donations are denominated in USD. The checkout page may take several seconds to load. 
         </p>

@@ -15,5 +15,3 @@ Any files in the ./overview/articles/pages directory will render at this path: h
 3. `npm install`
 4. `npm run dev`
 5. in your browser go to URL: localhost:3000/articles/index.html.  Change index.html to any other relevant path ending to render that Vue component.  Note: we are working to improve this and set a better home page/navigation structure. 
-
-You may hit an error "Can't resolve '~/secret.json'".  If you do, create a file in the /overview directory called 'secret.json'.  Reach out to others involved with this project for the necessary credentials to paste there.

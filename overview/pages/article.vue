@@ -3,26 +3,42 @@
     <v-container class="overviewContainer">
       <v-row justify="center">
         <v-col cols="12" lg="10">
-            <div class="mainTitle">
-              <img src="~/assets/images/logo/banner_1.png" alt="" />
-            </div>
-          <p>&nbsp;</p>
-          <div class="mainSubTitle">
-            <p style="font-size:30px;">
-              <strong>Help stop COVID-19 with crowdsourced data</strong>
-            </p>
-          </div>
+          <span
+            :class="{'subtitle-1': $vuetify.breakpoint.smAndDown, 'headline': $vuetify.breakpoint.mdAndUp}"
+          >
+            March 20, 2020
+          </span>
+          <h1
+            :class="{'headline': $vuetify.breakpoint.smAndDown, 'display-3': $vuetify.breakpoint.mdAndUp, 'mainSubTitle': true}"
+          >
+            Slowing the spread of infectious diseases using crowdsourced data
+          </h1>
+          <span
+            :class="{'caption': $vuetify.breakpoint.smAndDown, 'body-1': $vuetify.breakpoint.mdAndUp}"
+          >
+            {{ contributorNames }}
+          </span>
+
+          <v-alert
+            outlined
+            dense
+            class="mt-5 text--secondary"
+          >
+          This white paper was last updated with minor formatting alterations on April 8, 2020.
+          The last minor alterations to its content were made on March 31, 2020.
+        </v-alert>
+
           <br />
           <!--About Us-->
           <a class="anchor" id="aboutUs"></a>
           <h2>
-            <span class="titleLine">About Us</span>
+            <span class="titleLine">Introduction</span>
           </h2>
           <p>&nbsp;</p>
 
           <p>
             <a class="anchor" id="mission"></a>
-            <span class="subTitleLine"> Mission Statement </span>
+            <span class="subTitleLine">Covid Watch Mission Statement </span>
           </p>
 
           <p>
@@ -650,13 +666,23 @@
             <a class="anchor" id="heatmapTitle"></a>
             <span class="subTitleLine"> Part 2: GPS Heatmap</span>
           </p>
-          <h3>[31-MAR-2020: At the time of this White Paper, we initially planned to create a GPS-based risk heatmap.
- However, GPS anonymization has proven to be a far more challenging problem than Bluetooth
- anonymization. GPS likely requires significant privacy trade-offs. Also, based on feedback
- from contact tracers, fomite risk (transmission of infectious disease by objects like door handles, etc.) is considerably lower than close contact risk, and it's
- unlikely to be captured prior to testing confirmation. As such, GPS data has become a lower priority for us, and we have decided not to implement
- this component until we are confident we can do so in a way that preserves the privacy of our users.]</h3>
-          </br>
+          <v-alert
+            type="info"
+            outlined
+            class="mt-5"
+          >
+            March 31, 2020 update: We initially planned to create a GPS-based risk heatmap, as
+            described in this section. However, GPS anonymization has proven to be a far more
+            challenging problem than Bluetooth anonymization. GPS likely requires significant
+            privacy trade-offs. Also, based on feedback from contact tracers, fomite risk
+            (transmission of infectious disease by objects like door handles, etc.) is considerably
+            lower than close contact risk, and it's unlikely to be captured prior to testing
+            confirmation. As such, GPS data has become a lower priority for us, and we have decided
+            not to implement this component until we are confident we can do so in a way that
+            preserves the privacy of our users.
+          </v-alert>
+
+          <br />
           <p>
             <a class="anchor" id="heatmapDesc"></a>
             <span class="subTitleLine">Model Description</span>
@@ -687,18 +713,27 @@
             social distancing measures.
           </p>
 
-          <p>&nbsp;</p>
           <p>
-            <a class="anchor" id="heatmapImplementation"></a>
-            <span class="subTitleLine">Implementation</span>
+            Here is an example heatmap created by running our epidemiology model
+            using simulated data:
           </p>
-          <Heatmap class="heatMap"></Heatmap>
+          <div class="centerImage">
+            <img
+              style="width: 70%"
+              src="../assets/images/map2.png"
+              alt=""
+            />
+          </div>
           <p>&nbsp;</p>
 
           <p>
             <a class="anchor" id="heatmapEpidemiology"></a>
             <span class="subTitleLine">Heatmap Epidemiology Model</span>
           </p>
+          <p>You can run your own simulation using the interactive model below:</p>
+
+          <HeatmapModelInteractive class="heatMap"></HeatmapModelInteractive>
+
           <p>
             The source code at time of writing [19-MAR-2020] of the
             epidemiological model can be found and is available open source
@@ -1218,9 +1253,6 @@
       </v-row>
       <br />
 
-      <h3>This paper was published on the 20th of March, 2020. It was
-         last updated with minor alterations on the 31st of March 2020.</h3>
-
       <!-- <a class="anchor" ></a> -->
       <h2 id="contributors" class="titleLine" style="border-top: lightgray 1px solid;">
         <br />
@@ -1241,182 +1273,19 @@
                 <h4>Location</h4>
               </v-col>
             </v-row>
-            <v-row no-gutters>
-              <v-col>
-                <div class="name">Isaiah Becker-Mayer</div>
-              </v-col>
-              <v-col>
-                <div>Software Engineer</div>
-              </v-col>
-              <v-col>
-                <div>California, USA</div>
-              </v-col>
-            </v-row>
-            <v-row no-gutters>
-              <v-col>
-                <div class="name">Daniel Blank</div>
-              </v-col>
-              <v-col>
-                <div>Software Engineer - Heatmap</div>
-              </v-col>
-              <v-col>
-                <div>Berkeley, USA</div>
-              </v-col>
-            </v-row>
-            <v-row no-gutters>
-              <v-col>
-                <div class="name">Jesse Colligan</div>
-              </v-col>
-              <v-col>
-                <div>Software Engineer</div>
-              </v-col>
-              <v-col>
-                <div>New York, USA</div>
-              </v-col>
-            </v-row>
-            <v-row no-gutters>
-              <v-col>
-                <div class="name">Rhys Fenwick</div>
-              </v-col>
-              <v-col>
-                <div>Head of Communications</div>
-              </v-col>
-              <v-col>
-                <div>Wollongong, Australia</div>
-              </v-col>
-            </v-row>
-            <v-row no-gutters>
-              <v-col>
-                <div class="name">Mike Hittle</div>
-              </v-col>
-              <v-col>
-                <div>Heat Map Team Epidemiologist</div>
-              </v-col>
-              <v-col>
-                <div>Stanford University, USA</div>
-              </v-col>
-            </v-row>
-            <v-row no-gutters>
-              <v-col>
-                <div class="name">Mark Ingle</div>
-              </v-col>
-              <v-col>
-                <div>Bluetooth Team Software Engineer</div>
-              </v-col>
-              <v-col>
-                <div>South Carolina, USA</div>
-              </v-col>
-            </v-row>
-            <v-row no-gutters>
-              <v-col>
-                <div class="name">Oliver Nash</div>
-              </v-col>
-              <v-col>
-                <div>Software Engineer</div>
-              </v-col>
-              <v-col>
-                <div>London, United Kingdom</div>
-              </v-col>
-            </v-row>
-            <v-row no-gutters>
-              <v-col>
-                <div class="name">Victoria Nguyen</div>
-              </v-col>
-              <v-col>
-                <div>UI Designer</div>
-              </v-col>
-              <v-col>
-                <div>California, United States</div>
-              </v-col>
-            </v-row>
-            <v-row no-gutters>
-              <v-col>
-                <div class="name">James Petrie</div>
-              </v-col>
-              <v-col>
-                <div>Head of Research</div>
-              </v-col>
-              <v-col>
-                <div>University of Waterloo, Canada</div>
-              </v-col>
-            </v-row>
-            <v-row no-gutters>
-              <v-col>
-                <div class="name">Jeff Schwaber</div>
-              </v-col>
-              <v-col>
-                <div>Software Engineer</div>
-              </v-col>
-              <v-col>
-                <div>VP of Engineering at Bigtincan, USA</div>
-              </v-col>
-            </v-row>
-            <v-row no-gutters>
-              <v-col>
-                <div class="name">Zsombor Szabo</div>
-              </v-col>
-              <v-col>
-                <div>Bluetooth Team Lead</div>
-              </v-col>
-              <v-col>
-                <div>Budapest, Romania</div>
-              </v-col>
-            </v-row>
-            <v-row no-gutters>
-              <v-col>
-                <div class="name">Akhil Veeraghanta</div>
-              </v-col>
-              <v-col>
-                <div>Bluetooth Team Software Engineer</div>
-              </v-col>
-              <v-col>
-                <div>University of British Columbia, Canada</div>
-              </v-col>
-            </v-row>
-            <v-row no-gutters>
-              <v-col>
-                <div class="name">Mikhail Voloshin</div>
-              </v-col>
-              <v-col>
-                <div>Heat Map Team Lead</div>
-              </v-col>
-              <v-col>
-                <div>North Carolina, United States</div>
-              </v-col>
-            </v-row>
-            <v-row no-gutters>
-              <v-col>
-                <div class="name">Sydney Von Arx</div>
-              </v-col>
-              <v-col>
-                <div>Human Resources</div>
-              </v-col>
-              <v-col>
-                <div>Stanford University, USA</div>
-              </v-col>
-            </v-row>
-            <v-row no-gutters>
-              <v-col>
-                <div class="name">Tina White</div>
-              </v-col>
-              <v-col>
-                <div>Executive Director</div>
-              </v-col>
-              <v-col>
-                <div>Stanford University, USA</div>
-              </v-col>
-            </v-row>
-            <v-row no-gutters>
-              <v-col>
-                <div class="name">Helen Xue</div>
-              </v-col>
-              <v-col>
-                <div>Volunteer</div>
-              </v-col>
-              <v-col>
-                <div>California, USA</div>
-              </v-col>
-            </v-row>
+            <template v-for="(contributor, i) in contributors">
+              <v-row :key="i" no-gutters>
+                <v-col>
+                  <span class="name">{{ contributor.name }}</span>
+                </v-col>
+                <v-col>
+                  <div>{{ contributor.role }}</div>
+                </v-col>
+                <v-col>
+                  <div>{{ contributor.location }}</div>
+                </v-col>
+              </v-row>
+            </template>
           </v-col>
         </v-row>
       </v-container>
@@ -1780,11 +1649,102 @@ img {
 </style>
 
 <script>
-import Heatmap from "~/components/Heatmap.vue";
+import HeatmapModelInteractive from "~/components/HeatmapModelInteractive.vue";
 
 export default {
   components: {
-    Heatmap
+    HeatmapModelInteractive
+  },
+  data: () => ({
+    contributors: [
+      {
+          "name": "Tina White",
+          "role": "Executive Director",
+          "location": "Stanford University, USA",
+      },
+      {
+          "name": "Rhys Fenwick",
+          "role": "Head of Communications",
+          "location": "Wollongong, Australia",
+      },
+      {
+          "name": "Isaiah Becker-Mayer",
+          "role": "Software Engineer",
+          "location": "California, USA",
+      },
+      {
+          "name": "James Petrie",
+          "role": "Head of Research",
+          "location": "University of Waterloo, Canada",
+      },
+      {
+          "name": "Zsombor Szabo",
+          "role": "Bluetooth Team Lead",
+          "location": "Budapest, Romania",
+      },
+      {
+          "name": "Daniel Blank",
+          "role": "Software Engineer - Heatmap",
+          "location": "Berkeley, USA",
+      },
+      {
+          "name": "Jesse Colligan",
+          "role": "Software Engineer",
+          "location": "New York, USA",
+      },
+      {
+          "name": "Mike Hittle",
+          "role": "Heat Map Team Epidemiologist",
+          "location": "Stanford University, USA",
+      },
+      {
+          "name": "Mark Ingle",
+          "role": "Bluetooth Team Software Engineer",
+          "location": "South Carolina, USA",
+      },
+      {
+          "name": "Oliver Nash",
+          "role": "Software Engineer",
+          "location": "London, United Kingdom",
+      },
+      {
+          "name": "Victoria Nguyen",
+          "role": "UI Designer",
+          "location": "California, United States",
+      },
+      {
+          "name": "Jeff Schwaber",
+          "role": "Software Engineer",
+          "location": "VP of Engineering at Bigtincan, USA",
+      },
+      {
+          "name": "Akhil Veeraghanta",
+          "role": "Bluetooth Team Software Engineer",
+          "location": "University of British Columbia, Canada",
+      },
+      {
+          "name": "Mikhail Voloshin",
+          "role": "Heat Map Team Lead",
+          "location": "North Carolina, United States",
+      },
+      {
+          "name": "Sydney Von Arx",
+          "role": "Human Resources",
+          "location": "Stanford University, USA",
+      },
+      {
+          "name": "Helen Xue",
+          "role": "Volunteer",
+          "location": "California, USA",
+      },
+    ]
+  }),
+  computed: {
+    contributorNames() {
+      return this.contributors.map(x => x.name).sort(
+        (a, b) => a.split(" ").slice(-1) > b.split(" ").slice(-1)
+      ).join(", ");
+    }
   }
 };
 </script>

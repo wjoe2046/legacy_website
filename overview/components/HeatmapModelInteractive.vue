@@ -3,31 +3,45 @@
     <v-row>
       <v-col cols="12">
         <v-tabs class="map-container-tabber" centered color="primary">
+          <!-- Plot Tab -->
           <v-tab>
-            Map
+            Plot
           </v-tab>
           <v-tab-item :transition="false" :reverse-transition="false">
-            <div class="map-container">
-              <v-progress-circular
-                indeterminate
-                color="primary"
-                v-if="!trajectoryModel.isDataLoaded"
-                class="circular-loader"
-                size="55"
-                width="5"
-              ></v-progress-circular>
-              <GmapMap
-                ref="mapRef"
-                v-if="trajectoryModel.isDataLoaded"
-                :center="mapInitCenter"
-                :zoom="11"
-                map-type-id="roadmap"
-                style="width: 100%; height: 100%"
-              >
-              </GmapMap>
-            </div>
+            <v-row>
+              <v-container>
+                <v-row>
+                  <v-col cols="12" md="6" lg="3">
+                    <v-data-table
+                      class="conditionreport-table"
+                      :headers="conditionReportHeaders"
+                      :items="epidemiologyModel.conditionReport"
+                      :items-per-page="25"
+                      :dense="true"
+                    >
+                      <template v-slot:item.popfrac="{ item }">
+                        <span> {{ Math.floor(item.popfrac * 100) }}% </span>
+                      </template>
+                    </v-data-table>
+                  </v-col>
+                  <v-col style="position:relative; min-height:25em;">
+                    <div class="plotlyholder">
+                      <vue-plotly
+                        ref="plotlygraph"
+                        v-if="epidemiologyModel.totalSeconds > 0"
+                        :data="plotlydata"
+                        :layout="plotlylayout"
+                        :autoResize="true"
+                        :display-mode-bar="false"
+                      ></vue-plotly>
+                    </div>
+                  </v-col>
+                </v-row>
+              </v-container>
+            </v-row>
           </v-tab-item>
 
+          <!-- Data Tab -->
           <v-tab>
             Data
           </v-tab>
@@ -106,43 +120,6 @@
                     </span>
                   </template>
                 </v-data-table>
-              </v-container>
-            </v-row>
-          </v-tab-item>
-
-          <v-tab>
-            Plot
-          </v-tab>
-          <v-tab-item :transition="false" :reverse-transition="false">
-            <v-row>
-              <v-container>
-                <v-row>
-                  <v-col cols="12" md="6" lg="3">
-                    <v-data-table
-                      class="conditionreport-table"
-                      :headers="conditionReportHeaders"
-                      :items="epidemiologyModel.conditionReport"
-                      :items-per-page="25"
-                      :dense="true"
-                    >
-                      <template v-slot:item.popfrac="{ item }">
-                        <span> {{ Math.floor(item.popfrac * 100) }}% </span>
-                      </template>
-                    </v-data-table>
-                  </v-col>
-                  <v-col style="position:relative; min-height:25em;">
-                    <div class="plotlyholder">
-                      <vue-plotly
-                        ref="plotlygraph"
-                        v-if="epidemiologyModel.totalSeconds > 0"
-                        :data="plotlydata"
-                        :layout="plotlylayout"
-                        :autoResize="true"
-                        :display-mode-bar="false"
-                      ></vue-plotly>
-                    </div>
-                  </v-col>
-                </v-row>
               </v-container>
             </v-row>
           </v-tab-item>
@@ -388,7 +365,6 @@
     background: #ccc;
     border: 1px solid #444;
     border-radius: 1.1ex;
-    overflow: hidden; // Otherwise the rectangular Google Map object clips the corners.
     width: 100%;
     height: calc(100vh - 35em);
     min-height: 20em;
@@ -587,8 +563,6 @@ export default {
       trajectoryModel,
       epidemiologyModel,
 
-      googleMapObject: null,
-
       currentTime: 0,
       timeIncrement: 2 * 60 * 60, // Advance by this many seconds at a time
       isPlaying: false,
@@ -663,11 +637,7 @@ export default {
       this.currentTime = 0;
       this.isPlaying = false;
 
-      this.mapMarkersByTrajId = {};
-      this.heatmapObj = null;
-
       this.currentTime = 0;
-      this.mapInitCenter = { lat: 39.95, lng: 116.4 };
 
       this.plotlydata = [];
 
@@ -683,12 +653,6 @@ export default {
 
       epidemiologyModel.infectPatientZeroes();
       epidemiologyModel.preContaminateCells();
-
-      this.mapMarkersByTrajId = {};
-
-      if (this.heatmapObj) {
-        this.heatmapObj.setData([]);
-      }
 
       this.plotlydata = epidemiologyModel.INFECTION_STAGES_ORDER.map(k => {
         const infectionStage = epidemiologyModel.INFECTION_STAGES[k];
@@ -717,121 +681,8 @@ export default {
         })
         .then(() => {
           this.resetWithData();
-
-          // We have to do this silly timeout trick because we can't
-          // grab a reference to the mapRef element because it doesn't
-          // exist yet because the v-if hasn't processed yet.
-          // And we can't make it exist before the v-if because there's
-          // a bug in the component that throws an annoying DOM error.
-          this.$nextTick(() => {
-            this.$refs.mapRef.$mapPromise.then(map => {
-              this.googleMapObject = map;
-              this.createHeatmap();
-
-              this.updateMapThrottled();
-              this.updatePlotlyThrottled();
-            });
-          }, 0);
+          this.updatePlotlyThrottled();
         });
-    },
-
-    createHeatmap() {
-      this.heatmapObj = new google.maps.visualization.HeatmapLayer({
-        data: [],
-        dissipating: true,
-        radius: 30,
-        opacity: 0.9,
-        maxIntensity: 30,
-        gradient: [
-          "rgba(255, 255, 0, 0)",
-          "rgba(255, 255, 0, 1)",
-          "rgba(255, 0, 0, 1)",
-          "rgba(180, 0, 0, 1)",
-          "rgba(150, 0, 0, 1)",
-          "rgba(80, 0, 0, 1)"
-        ]
-      });
-      this.heatmapObj.setMap(this.googleMapObject);
-    },
-
-    getOrCreateMapMarker(trajId) {
-      let mapMarker = this.mapMarkersByTrajId[trajId];
-      if (!mapMarker) {
-        mapMarker = new google.maps.Marker({
-          position: null,
-          icon: {
-            path: google.maps.SymbolPath.CIRCLE,
-            scale: 3
-          },
-          draggable: false,
-          title: `User ${trajId}`,
-          map: this.googleMapObject
-        });
-        this.mapMarkersByTrajId[trajId] = mapMarker;
-      }
-      return mapMarker;
-    },
-
-    updateMarkers() {
-      if (!this.googleMapObject) {
-        return;
-      }
-
-      // We can't necessarily use *all* of the locations, because that could
-      // be far too many points to show on the map at any one time.
-      // Google Maps could end up eating an insane amount of CPU. Just show
-      // the first n, and computationally track the rest without actually
-      // showing them on the map.
-      // We'll slowly rotate through the ones we actually show.
-      // We have to remember to remove the no-longer-used markers, though!
-      const trajLocations = trajectoryModel.locations;
-      const numLocTotal = Object.keys(trajLocations).length;
-
-      const nLocations = 7;
-      const secNextFirst = 60 * 60 * 24;
-      const nFirst =
-        Math.floor(this.currentTime / secNextFirst) %
-        Math.max(1, numLocTotal - nLocations);
-      // We don't have any logic to restart from the beginning of the list.
-      // At the end of all rotations, we just "flip" back to the beginning
-      // all at once.
-
-      const mapMarkersToRemove = new Set([
-        ...Object.keys(this.mapMarkersByTrajId)
-      ]);
-
-      const locationsToUse = Object.entries(trajLocations).slice(
-        nFirst,
-        nFirst + nLocations
-      );
-
-      locationsToUse.forEach(([trajId, location]) => {
-        const mapMarker = this.getOrCreateMapMarker(trajId);
-        mapMarker.setPosition(
-          new google.maps.LatLng(location.lat, location.lng)
-        );
-
-        // This map marker is still in use. Don't remove it.
-        mapMarkersToRemove.delete(trajId);
-      });
-
-      [...mapMarkersToRemove].forEach(trajId => {
-        this.mapMarkersByTrajId[trajId].setMap(null);
-        delete this.mapMarkersByTrajId[trajId];
-      });
-    },
-
-    updateHeatmap() {
-      if (!this.googleMapObject || !this.heatmapObj) {
-        return;
-      }
-      const heatmapPointsData = epidemiologyModel.heatmapPoints;
-      this.heatmapObj.setData(heatmapPointsData);
-    },
-
-    updateMap() {
-      //this.updateMarkers();
-      this.updateHeatmap();
     },
 
     updatePlotly() {
@@ -849,7 +700,6 @@ export default {
       trajectoryModel.advanceTime(this.timeIncrement);
       epidemiologyModel.advanceTime(this.timeIncrement);
 
-      this.updateMapThrottled();
       this.updatePlotlyThrottled();
     },
 
@@ -877,9 +727,6 @@ export default {
   mounted() {
     this.updatePlotlyThrottled = throttle(1000, () => {
       this.updatePlotly();
-    });
-    this.updateMapThrottled = throttle(200, () => {
-      this.updateMap();
     });
 
     this.loadData();

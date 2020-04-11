@@ -8,7 +8,7 @@ export default {
    ** Headers of the page
    */
   head: {
-    titleTemplate: "%s | COVID Watch",
+    titleTemplate: "%s | Covid Watch",
     title: metaHeaders.title,
     meta: [
       metaHeaders,

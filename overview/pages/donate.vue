@@ -1,10 +1,15 @@
 <template>
   <v-container>
     <v-row justify="center">
-      <v-col cols="12" lg="8">
-        <h2>Donations</h2>
+      <v-col cols="12" lg="10">
+        <h1 style="color:#BF3F4A">Donations</h1>
+        <br>
+
         <p>
-          NOTE: All donations are denominated in USD
+          NOTE: All donations are denominated in USD. The checkout page may take several seconds to load. 
+        </p>
+        <p>
+          If the donate button isn't working, it may be an unintended consequence of your adblocking software. Please temporarily disable it and try again.
         </p>
         <v-form ref="form" v-model="valid" lazy-validation>
           <v-container>

@@ -35,7 +35,7 @@
           <br />
           Turning on this function will not result in the collection of any personal
           or identifiable information, although it may allow other phone users to see
-          that you have installed the COVID Watch app.</p>
+          that you have installed the Covid Watch app.</p>
 
         <h2>Health Information</h2>
 

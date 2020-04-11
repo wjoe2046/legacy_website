@@ -8,7 +8,7 @@
 
         <p>Given how ambitious and potentially impactful our project is, we want to make sure we do it correctly. A poorly-executed app could easily do more harm than good: warning our users away from areas with no need to while directing them towards high-risk ones, causing unnecessary panic, or lulling people into a dangerously false sense of security.<br />
           <br />
-          To avoid that, we&#39;ve sought out expert advice from subject-matter experts from the very inception of the project. The following academics have gone above and beyond in assisting us, providing advice and support that has helped get COVID Watch this far.</p>
+          To avoid that, we&#39;ve sought out expert advice from subject-matter experts from the very inception of the project. The following academics have gone above and beyond in assisting us, providing advice and support that has helped get Covid Watch this far.</p>
 
         <h2>Professor Julie Parsonnet</h2>
 

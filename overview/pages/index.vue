@@ -2,10 +2,28 @@
   <v-container>
     <v-row justify="center">
       <v-col cols="12" lg="10">
+        <v-row align="center" justify="center">
+            <nuxt-link  to="/press_releases/google_apple_press_release">
+              <v-hover v-slot:default="{ hover }" > 
+                <v-alert 
+                  outlined 
+                  dense 
+                  dismissable 
+                  color="info" 
+                  type="info"
+                  :elevation="hover ? 2 : 0"
+                  :class="{ 'on-hover': hover }"
+                  class="d-flex pa-2 mx-10"
+                  >
+                    Read our press release: "Covid Watch Celebrates Apple and Google’s COVID-19 Contact Tracing Announcement"
+                  </v-alert>
+              </v-hover>
+            </nuxt-link>
+        </v-row>
         <v-row align="center">
           <v-col cols="12" sm="5" class="hand_image">
             <img
-              alt="COVID Watch"
+              alt="Covid Watch"
               src="~/assets/images/mobile/hand_with_app_covid_watch.png"
             />
             <div class="fade"></div>
@@ -15,7 +33,7 @@
             <h2 style="color:#BF3F4A">Reduce the spread of COVID-19 without increasing the spread of surveillance.</h2>
             <br />
             <p>
-              COVID Watch aims to empower people to protect their communities from COVID-19
+              Covid Watch aims to empower people to protect their communities from COVID-19
               without sacrificing their personal privacy.
             </p>
             <p>
@@ -73,7 +91,7 @@
         </v-row>
         <v-row justify="center">
           <v-col cols="12" sm="9" class="text-center">
-           <h3>Some of our partners include:</h3>
+           <h3>Some of our collaborators include:</h3>
           </v-col>
         </v-row>
         <v-row justify="center">
@@ -204,7 +222,7 @@
           title: "Get Involved",
           link: "/collaborate",
           subtitle: "If you're working on a similar project, or if you're interested in " +
-          "contributing to COVID Watch, we'd love to hear from you. Find out how to volunteer, " +
+          "contributing to Covid Watch, we'd love to hear from you. Find out how to volunteer, " +
           "and what skills we currently need the most.",
         }
       ],

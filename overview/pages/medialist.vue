@@ -1,9 +1,12 @@
 <template>
-  <v-container>
+  <v-container class="mediaList">
+    <v-row >
+      <v-col class="d-flex justify-end" cols="12" lg="10">
+        <nuxt-link to="/press_releases">Press Releases</nuxt-link>
+      </v-col>
+    </v-row>
     <v-row justify="center">
       <v-col cols="12" lg="10">
-
-
         <h1 style="color:#bf3f4a">Media Coverage</h1>
         <br>
 
@@ -15,7 +18,7 @@
             <br />
             <span class="title"><a target="_blank" :href="media.href">{{ media.title }}</a></span>
             <br />
-            <span v-html="media.credit"></span>.
+            <span class="credit" v-html="media.credit"></span>.
           </div>
         </template>
 
@@ -47,6 +50,8 @@
   </v-container>
 </template>
 
+
+
 <script>
   import SubscribeForm from '../components/SubscribeForm.vue'
 
@@ -56,7 +61,21 @@
     },
     data: () => ({
       mediaList: [
-          {
+        {
+          "date": "April 10, 2020",
+          "title": "How Apple and Google Are Enabling Covid-19 Contact-Tracing",
+          "href": "https://www.wired.com/story/apple-google-bluetooth-contact-tracing-covid-19/",
+          "credit": "<a href=\"https://www.wired.com/author/andy-greenberg/\">Andy Greenberg</a> for <i><a target=\"_blank\" " +
+          "href=\"https://www.wired.com/\">Wired</a></i>"
+        },
+        {
+          "date": "April 9, 2020",
+          "title": "Stanford researchers help develop privacy-focused coronavirus alert app",
+          "href": "https://news.stanford.edu/2020/04/09/stanford-researchers-help-develop-privacy-focused-coronavirus-alert-app/",
+          "credit": "for <i><a target=\"_blank\" " +
+          "href=\"https://news.stanford.edu/\">Stanford News</a></i>"
+        },
+        {
           "date": "April 8, 2020",
           "title": "Clever Cryptography Could Protect Privacy in Covid-19 Contact-Tracing Apps",
           "href": "https://www.wired.com/story/covid-19-contact-tracing-apps-cryptography/",

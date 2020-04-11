@@ -20,8 +20,7 @@
     "random-normal": "^1.0.0",
     "shuffle-array": "^1.0.1",
     "throttle-debounce": "^2.1.0",
-    "vue-pdf": "^4.0.8",
-    "vue2-google-maps": "^0.10.7"
+    "vue-pdf": "^4.0.8"
   },
   "devDependencies": {
     "@nuxtjs/vuetify": "^1.0.0"

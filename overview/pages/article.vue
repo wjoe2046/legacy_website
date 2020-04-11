@@ -713,18 +713,27 @@
             social distancing measures.
           </p>
 
-          <p>&nbsp;</p>
           <p>
-            <a class="anchor" id="heatmapImplementation"></a>
-            <span class="subTitleLine">Implementation</span>
+            Here is an example heatmap created by running our epidemiology model
+            using simulated data:
           </p>
-          <Heatmap class="heatMap"></Heatmap>
+          <div class="centerImage">
+            <img
+              style="width: 70%"
+              src="../assets/images/map2.png"
+              alt=""
+            />
+          </div>
           <p>&nbsp;</p>
 
           <p>
             <a class="anchor" id="heatmapEpidemiology"></a>
             <span class="subTitleLine">Heatmap Epidemiology Model</span>
           </p>
+          <p>You can run your own simulation using the interactive model below:</p>
+
+          <HeatmapModelInteractive class="heatMap"></HeatmapModelInteractive>
+
           <p>
             The source code at time of writing [19-MAR-2020] of the
             epidemiological model can be found and is available open source
@@ -740,7 +749,7 @@
           <div class="centerImage">
             <img
               style="width: 70%"
-              src="../assets/images/overview_article_imgs/Infection_state_diagram.png"
+              src="../assets/images/overview_article_imgs/Infection_State_Diagram.png"
               alt=""
             />
           </div>
@@ -1640,11 +1649,11 @@ img {
 </style>
 
 <script>
-import Heatmap from "~/components/Heatmap.vue";
+import HeatmapModelInteractive from "~/components/HeatmapModelInteractive.vue";
 
 export default {
   components: {
-    Heatmap
+    HeatmapModelInteractive
   },
   data: () => ({
     contributors: [

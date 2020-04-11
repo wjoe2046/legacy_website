@@ -1,30 +1,20 @@
 <template>
   <v-container>
+      <v-row >
+        <v-col class="d-flex justify-end" cols="12" lg="10">
+          <nuxt-link to="/press_releases">Press Releases</nuxt-link>
+        </v-col>
+      </v-row>
+
     <v-row justify="center">
-      <v-col cols="12" lg="8">
+      <v-col cols="12" lg="10">
         <section class="text-content">
           <div class="container">
+            <h1 style="color:#BF3F4A">Blog</h1>
+            <br>
             <div class="blog-hero">
-              <h1 style="color:#BF3F4A">Blog Posts</h1>
 
-              <div class="blog-item">
-                <div class="blog-item-content">
-                  <h2>Press Release: 10th of March 2020</h2>
-
-                  <p>
-                    <strong>Covid Watch in Support of Apple and Google’s Digital Contact Tracing Partnership Announcement</strong> 
-                  </p>
-
-                  <p>
-                    Covid Watch, a non-profit, in collaboration with Stanford University, has been working for two months now on a contact tracing protocol that will protect users' privacy while tracing the spread of Covid-19. Today, the world’s tech giants joined that mission.
-                  <p>
-                    <nuxt-link class="read-more" to="/blog/press_release"
-                    >Read Full Press Release...</nuxt-link
-                    >
-                  </p>
-                </div>
-              </div>
-
+           
               <div class="blog-item">
                 <div class="blog-item-content">
                   <h2>Progress Post: 29th of March 2020</h2>
@@ -163,24 +153,24 @@
                 <div class="blog-item-content">
                   <h2>Progress Post: 27th of February 2020</h2>
 
-                  <div class="blog-item-excerpt">
-                    Phew! What a week.<br />
+                  <p>
+                    Phew! What a week.<br>
                     We&rsquo;ve gone from two researchers and a
-                    <b
-                      ><a
-                        href="https://forum.effectivealtruism.org/posts/8chk6DHZXctGHtNoz/covid-19-risk-assessment-app-idea-for-vetting-and-discussion"
-                        >forum post</a
-                      ></b
-                    >
+                    
+                    <a href="https://forum.effectivealtruism.org/posts/8chk6DHZXctGHtNoz/covid-19-risk-assessment-app-idea-for-vetting-and-discussion">
+                      forum post
+                    </a>
+                    
                     to a team of over a dozen, with expert academic advice and
-                    support rolling in.<br />
-                    As you may expect...
-                  </div>
-                  <nuxt-link class="read-more" to="/blog/progress1"
-                    >Read More...</nuxt-link
-                  >
+                    support rolling in. As you may expect, much of our effort has gone into keeping on top of the organisational aspects of the project: onboarding new members...
+                  </p>
+                  <nuxt-link class="read-more" to="/blog/progress1">
+                    Read More...
+                  </nuxt-link>
+                  
                 </div>
               </div>
+
             </div>
           </div>
         </section>

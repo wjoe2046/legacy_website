@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-row justify="center">
-      <v-col cols="12" lg="8">
+      <v-col cols="12" lg="10">
         <div class="blog-hero">
           <!---<img src="images/blog-image.jpg" alt="Full width blog image" /> --->
           <h1>Insight Post: 28th of February 2020</h1>

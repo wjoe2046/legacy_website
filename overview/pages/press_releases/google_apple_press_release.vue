@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-row justify="center">
-      <v-col cols="12" lg="8">
+      <v-col cols="12" lg="10">
         <section class="text-content">
           <div class="container">
             <nuxt-link to="/press_releases">Back to Press Releases</nuxt-link>
@@ -70,7 +70,7 @@
             </p>
 
             <br>
-            
+
             <p><strong>Contact:</strong></p>
             <p>Rhys Fenwick, PR/Communications</p> 
             <p>

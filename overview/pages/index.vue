@@ -2,6 +2,24 @@
   <v-container>
     <v-row justify="center">
       <v-col cols="12" lg="10">
+        <v-row align="center" justify="center">
+            <nuxt-link  to="/press_releases/google_apple_press_release">
+              <v-hover v-slot:default="{ hover }" > 
+                <v-alert 
+                  outlined 
+                  dense 
+                  dismissable 
+                  color="info" 
+                  type="info"
+                  :elevation="hover ? 2 : 0"
+                  :class="{ 'on-hover': hover }"
+                  class="d-flex pa-2 mx-10"
+                  >
+                    Read our press release: "Covid Watch Celebrates Apple and Google’s COVID-19 Contact Tracing Announcement"
+                  </v-alert>
+              </v-hover>
+            </nuxt-link>
+        </v-row>
         <v-row align="center">
           <v-col cols="12" sm="5" class="hand_image">
             <img

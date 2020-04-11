@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-row justify="center">
-      <v-col cols="12" lg="8">
+      <v-col cols="12" lg="10">
         <div class="blog-hero">
           <h1>Insight Post: 6th of March 2020</h1>
         </div>

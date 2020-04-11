@@ -1,9 +1,12 @@
 <template>
-  <v-container>
+  <v-container class="mediaList">
+    <v-row >
+      <v-col class="d-flex justify-end" cols="12" lg="10">
+        <nuxt-link to="/press_releases">Press Releases</nuxt-link>
+      </v-col>
+    </v-row>
     <v-row justify="center">
       <v-col cols="12" lg="10">
-
-
         <h1 style="color:#bf3f4a">Media Coverage</h1>
         <br>
 
@@ -15,7 +18,7 @@
             <br />
             <span class="title"><a target="_blank" :href="media.href">{{ media.title }}</a></span>
             <br />
-            <span v-html="media.credit"></span>.
+            <span class="credit" v-html="media.credit"></span>.
           </div>
         </template>
 
@@ -46,6 +49,8 @@
     </v-row>
   </v-container>
 </template>
+
+
 
 <script>
   import SubscribeForm from '../components/SubscribeForm.vue'

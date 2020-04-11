@@ -5,7 +5,10 @@ import stripe
 stripe.api_key = os.getenv('STRIPE_SECRET_KEY')
 app = Flask(__name__)
 
-VALID_ORIGINS = ["https://covid-watch.org", "https://www.covid-watch.org"]
+VALID_ORIGINS = [
+    "https://covid-watch.org", "https://www.covid-watch.org",
+    "https://staging.covid-watch.org"
+]
 
 
 @app.route('/')

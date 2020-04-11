@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-row justify="center">
-      <v-col cols="12" lg="8">
+      <v-col cols="12" lg="10">
         <section class="text-content">
           <div class="container">
             <div class="blog-hero"></div>
@@ -20,8 +20,9 @@
             </p>
 
             <h2>Most Wanted Positions!</h2>
-            <p>(1) Strategic Partnerships - outreach and relationship management with healthcare organizations, similar projects, etc.</p>
-            <p>(2) Experienced (2+ yrs) mobile app developers</p>
+            <p>(1) Communications Manager - own aspects of marketing, outreach for media, fundraising, etc.  </p>
+            <p>(2) Strategic Partnerships - outreach and relationship management with healthcare organizations, similar projects, etc.</p>
+            <p>(3) Experienced (2+ yrs) mobile app developers</p>
 
 
             <h3>Wanted Positions</h3>

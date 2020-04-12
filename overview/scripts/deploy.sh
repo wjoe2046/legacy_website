@@ -1,31 +1,41 @@
 #! /bin/bash
 
-
-# Check the branch that initated the action
+# GITHUB_REF is the branch that triggered the action
+# It is only set when the action is triggered on a push
 if [[ ${GITHUB_REF##*/} == "prod" ]]; then
-    LIVE_OR_STAGING="live"
+  BUCKETNAME=covidwatch
+  CLOUDFRONT_INVALIDATION_ID=E3DTRHAKABXKO3
 else
-    LIVE_OR_STAGING="staging"
+  BUCKETNAME=covidwatch-staging
+  CLOUDFRONT_INVALIDATION_ID=ERB7Y0Z7SNYIM
 fi
 
-# Create a profile for github-action
-aws configure --profile s3-sync-action <<-EOF > /dev/null 2>&1
-${AWS_ACCESS_KEY_ID}
-${AWS_SECRET_ACCESS_KEY}
-${AWS_REGION}
-text
-EOF
+echo
+echo Deploying to $BUCKETNAME
+echo
 
-# Call build script to deploy to aws
-# -- For now commented out for testing --
-# ./scripts/build.sh $LIVE_OR_STAGING s3-sync-action nobuild
-echo ${GITHUB_REF##*/}
-echo $LIVE_OR_STAGING
+FOLDERNAME=website
 
-# Destroy configuration
-aws configure --profile s3-sync-action <<-EOF > /dev/null 2>&1
-null
-null
-null
-text
-EOF
+S3_BUILDFOLDER_SUFFIX=`date +%s`
+S3_TARGET_URI="s3://$BUCKETNAME/$FOLDERNAME/"
+S3_BUILD_URI="s3://$BUCKETNAME/$FOLDERNAME--build-$S3_BUILDFOLDER_SUFFIX/"
+S3_DEPRECATE_URI="s3://$BUCKETNAME/$FOLDERNAME--deprecate-$S3_BUILDFOLDER_SUFFIX/"
+
+# -- Commented out for testing --
+# aws s3 cp --recursive dist/ "$S3_BUILD_URI" --acl public-read --cache-control max-age=31557600,public --metadata-directive REPLACE --expires 2034-01-01T00:00:00Z
+#  
+#  
+# aws s3 mv "$S3_TARGET_URI" "$S3_DEPRECATE_URI" --recursive
+# aws s3 mv "$S3_BUILD_URI" "$S3_TARGET_URI" --recursive
+# aws s3 rm "$S3_DEPRECATE_URI" --recursive
+# 
+# 
+# 
+# if [ ! -z "$CLOUDFRONT_INVALIDATION_ID" ]; then
+#    aws cloudfront create-invalidation \
+#        --distribution-id $CLOUDFRONT_INVALIDATION_ID \
+#        --invalidation-batch "{\"Paths\": {\"Items\": [\"/*\"], \"Quantity\": 1}, \"CallerReference\":\"`date`\"}"
+# fi
+
+
+

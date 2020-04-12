@@ -6,9 +6,9 @@ name: Build and Deploy
 
 on:
   push:
-    branches: [ master, prod ]
+    branches: [ master ]
   pull_request:
-    branches: [ master, prod ]
+    branches: [ master ]
 
 jobs:
   build:
@@ -21,10 +21,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+
     - name: Build node app
       working-directory: ./overview
       env:
@@ -32,16 +34,19 @@ jobs:
       run: |
         npm ci
         npm run generate
+
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-2
+
     - name: Deploy to S3
       working-directory: ./overview
       run: |
-        chmod +x ./scripts/build.sh
-        chmod +x ./scripts/deploy.sh
-        ./scripts/deploy.sh 
-      env:
-        AWS_ACCESS_KEY_ID: "key_id"
-        AWS_SECRET_ACCESS_KEY: "access_key"
-        AWS_REGION: "region"
-        
+          chmod +x ./scripts/deploy.sh
+          ./scripts/deploy.sh 
 
-      
+
+

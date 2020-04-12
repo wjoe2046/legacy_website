@@ -188,7 +188,7 @@
 
 <style lang="scss">
 
-#covid19app .text--primary {
+h1 {
   color: var(--v-primary-base);
 }
 

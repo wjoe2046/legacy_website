@@ -3,7 +3,7 @@
     <v-row justify="center">
       <v-col cols="12" lg="10">
 
-        <h1 class="primary--text">Terms and Conditions</h1>
+        <h1>Terms and Conditions</h1>
 
         <p>
           This is where we would put our terms and conditions...if we had any. Check back here soon for more!

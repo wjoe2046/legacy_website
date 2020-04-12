@@ -4,7 +4,7 @@
       <v-col cols="12" lg="10">
 
 
-        <h1 class="primary--text">Thank you for your donation!</h1>
+        <h1>Thank you for your donation!</h1>
 
         <p>
           Thanks to your generosity, we can continue to develop and run Covid Watch.

@@ -7,7 +7,7 @@
     </v-row>
     <v-row justify="center">
       <v-col cols="12" lg="10">
-        <h1 class="primary--text">Media Coverage</h1>
+        <h1>Media Coverage</h1>
         <br>
 
         <template

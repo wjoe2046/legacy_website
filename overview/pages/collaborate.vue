@@ -6,7 +6,7 @@
           <div class="container">
             <div class="blog-hero"></div>
 
-            <h1 class="primary--text">Join Our Team</h1>
+            <h1>Join Our Team</h1>
             <br>
 
             <p>

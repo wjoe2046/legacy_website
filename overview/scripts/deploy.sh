@@ -2,10 +2,10 @@
 
 
 # Check the branch that initated the action
-if [[ $BRANCH == *"master"* ]]; then
-    LIVE_OR_STAGING="staging"
-else
+if [[ ${GITHUB_REF##*/} == "prod" ]]; then
     LIVE_OR_STAGING="live"
+else
+    LIVE_OR_STAGING="staging"
 fi
 
 # Create a profile for github-action
@@ -19,7 +19,7 @@ EOF
 # Call build script to deploy to aws
 # -- For now commented out for testing --
 # ./scripts/build.sh $LIVE_OR_STAGING s3-sync-action nobuild
-echo $BRANCH
+echo ${GITHUB_REF##*/}
 echo $LIVE_OR_STAGING
 
 # Destroy configuration

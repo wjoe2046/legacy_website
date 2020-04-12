@@ -42,7 +42,6 @@ jobs:
         AWS_ACCESS_KEY_ID: "key_id"
         AWS_SECRET_ACCESS_KEY: "access_key"
         AWS_REGION: "region"
-        BRANCH: ${{ GITHUB_REF##*/ }}
         
 
       

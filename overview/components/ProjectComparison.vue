@@ -1,9 +1,8 @@
 <template>
     <v-container>
         <v-row>
-            <!-- this inline padding:0px is to override VGrid CSS reset of 12px.  Probably a better way to do this - Jesse -->
-          <v-col style="padding:0px;">
-            <h2 style="color:#BF3F4A">Similar Projects</h2>
+          <v-col class="pa-0">
+            <h2 class="primary--text">Similar Projects</h2>
             <br>
 
             <p>Our project is one of a constellation of efforts exploring apps for community contact tracing. We are actively collaborating with other teams around the world, exchanging code and ensuring system and data interoperability. Our hope is that any progress made by Covid Watch will benefit many projects.</p>
@@ -63,13 +62,8 @@
     </v-container>
 </template>
 
-<style lang="scss">
-
-</style>
-
 <script>
   export default {
     name: 'SubscribeForm'
   }
-
 </script>

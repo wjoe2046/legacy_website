@@ -341,7 +341,7 @@
           app:
         </p>
 
-        <h2 style="text-align: center;">
+        <h2 class="text-center">
           You don&rsquo;t have to trust us or anyone else for the system to
           work.
         </h2>

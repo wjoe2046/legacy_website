@@ -6,7 +6,7 @@
           <div class="container">
             <div class="blog-hero"></div>
 
-            <h1 style="color:#BF3F4A">Together, We Can Beat COVID-19.</h1>
+            <h1>Together, We Can Beat COVID-19.</h1>
 
             <p>
               From a technical perspective, pandemics present a complex
@@ -112,7 +112,7 @@
 
             <p>The question for us, then, is this:</p>
 
-            <p style="text-align: center;">
+            <p class="text-center">
               <strong
                 >&ldquo;Can an effective contact tracing program reduce local
                 transmission so that sustained local spread does not

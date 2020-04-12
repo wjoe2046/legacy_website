@@ -3,7 +3,7 @@
     <v-row justify="center">
       <v-col cols="12" lg="10">
           
-        <h1 style="color:#bf3f4a">Press Releases</h1>
+        <h1>Press Releases</h1>
         <br>
         <template
             v-for="(press, i) in pressList"

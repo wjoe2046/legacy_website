@@ -6,7 +6,7 @@
           <div class="container">
             <div class="blog-hero"></div>
 
-            <h1 style="color:#BF3F4A">Join Our Team</h1>
+            <h1>Join Our Team</h1>
             <br>
 
             <p>

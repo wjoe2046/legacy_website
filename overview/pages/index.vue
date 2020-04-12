@@ -30,7 +30,7 @@
           </v-col>
 
           <v-col cols="12" sm="7">
-            <h2 style="color:#BF3F4A">Reduce the spread of COVID-19 without increasing the spread of surveillance.</h2>
+            <h2 class="primary--text">Reduce the spread of COVID-19 without increasing the spread of surveillance.</h2>
             <br />
             <p>
               Covid Watch aims to empower people to protect their communities from COVID-19
@@ -68,7 +68,7 @@
                   nuxt
                   :to="section.link"
                 >
-                  <v-card-title style="color:#BF3F4A" class="headline mb-1">
+                  <v-card-title class="primary--text headline mb-1">
                     {{ section.title }}
                   </v-card-title>
                   <v-card-subtitle>{{ section.subtitle }}</v-card-subtitle>
@@ -78,7 +78,7 @@
           </template>
         </v-row>
         <br/>
-        <h2 style="color:#BF3F4A">We're pursuing a collaborative approach</h2>
+        <h2 class="primary--text">We're pursuing a collaborative approach</h2>
         <v-row justify="center">
           <v-col cols="12" sm="12" class="text-justify">
             <p>
@@ -96,9 +96,11 @@
         </v-row>
         <v-row justify="center">
           <template v-for="(partner, i) in partners">
-              <v-hover v-slot:default="{ hover }">
+              <v-hover
+                :key="i"
+                v-slot:default="{ hover }"
+              >
                 <v-col
-                  :key="i"
                   cols="12"
                   sm="3"
                   class="text-center"
@@ -124,7 +126,7 @@
         </v-row>
         <br/>
         <v-alert
-          style="display:flex;justify-content:center;"
+          class="d-flex justify-center"
           outlined
           icon="mdi-email"
           dense

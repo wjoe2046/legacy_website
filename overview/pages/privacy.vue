@@ -3,7 +3,7 @@
     <v-row justify="center">
       <v-col cols="12" lg="10">
         
-        <h1 style="color:#bf3f4a">Privacy</h1>
+        <h1>Privacy</h1>
 
         <p>We put a high priority on your privacy.<br />
           Firstly, we&#39;re not commercial. Your data will never be sold to third parties,

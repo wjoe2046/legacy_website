@@ -3,7 +3,7 @@
     <v-row justify="center">
       <v-col cols="12" lg="10">
         
-        <h1 style="color:#BF3F4A">Our Team</h1>
+        <h1>Our Team</h1>
         <br />
         <p>We&#39;ve grown from a pair of concerned researchers into a rapidly growing group of
           over fifty volunteers from a range of backgrounds, spread over multiple continents.

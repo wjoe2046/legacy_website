@@ -6,7 +6,7 @@
       dense
       flat
       clipped-left
-      color="#A2C5BF"
+      color="secondaryLight"
     >
       <v-toolbar-title>
         <!-- Logos -->
@@ -51,8 +51,7 @@
           <v-list>
             <v-list-item v-for="link in navLinks" :key="link.title">
               <nuxt-link
-                class="link"
-                style="color:#BF3F4A;"
+                class="link primary--text"
                 :to="link.href"
               >
                   {{ link.title }}
@@ -165,7 +164,7 @@
 
       <!-- Footer that persists across pages-->
       <v-footer
-        color="#A2C5BF"
+        color="secondaryLight"
         padless
       >
           <v-row
@@ -220,6 +219,7 @@
 </template>
 
 <style lang="scss">
+
 .v-navigation-drawer {
   max-width: 95vw;
 
@@ -247,7 +247,9 @@
 
 h1 {
   font-size: 36px;
+  color: var(--v-primary-base);
 }
+
 </style>
 
 

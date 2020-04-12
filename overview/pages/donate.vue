@@ -2,7 +2,7 @@
   <v-container>
     <v-row justify="center">
       <v-col cols="12" lg="10">
-        <h1 style="color:#BF3F4A">Donations</h1>
+        <h1>Donations</h1>
         <br>
 
         <p>
@@ -17,7 +17,7 @@
               <v-col cols="1" class="dolla-sign" justify="end">
                 $
               </v-col>
-              <v-col cols="11" md="3" style="padding-left:0"
+              <v-col cols="11" md="3" class="pl-0"
                 ><v-text-field
                   v-model="donationAmount"
                   :rules="donationAmountRules"

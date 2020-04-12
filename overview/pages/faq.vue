@@ -58,7 +58,7 @@ export default {
         "question": "Who are you?",
         "questionId": "who-are-you",
         "response": "<p>We’re a non-profit group of researchers, programmers security experts and public health professionals. Starting from a forum post on February 19, our team, led by researchers from Stanford University and the University of Waterloo, has grown to a group of around 10-15 core contributors, as well as many more part-time volunteers and advisors. Although we are aiming to develop an app for initial use in the USA, the team is based around the world.",
-        "nuxtLink": "/team",
+        "nuxtLink": "/about#team",
         "linkTitle": "Read more about our team here.",
       },
       {
@@ -113,7 +113,7 @@ export default {
         "response": 
           "<p> Yes.</p>" +
           "<p> We take privacy and security extremely seriously; conserving privacy is one of the cornerstones of this work, and we will be fully compliant with GDPR and HIPAA laws. Our engineers have worked at major research institutions such as Stanford University, University College London, and University of Waterloo, and companies like Apple, Google, and Change.org. We understand the importance of data security, and we will be adhering to health privacy laws for the regions in which the app is available. </p>" +
-          "<p> In fact, Covid Watch is a founding member of the <a href='https://tcn-coalition.org/'>TCN Coalition</a>, a global coalition of similar COVID-19-related tech efforts worldwide to standardize and commit to a privacy-first digital contact tracing protocol. ('TCN' stands for 'Tracing Contact Numbers', a decentralized, privacy-first contact tracing protocol developed by the TCN Coalition). </p>"+        
+          "<p> In fact, Covid Watch is a founding member of the <a href='https://tcn-coalition.org/'>TCN Coalition</a>, a global coalition of similar COVID-19-related tech efforts worldwide to standardize and commit to a privacy-first digital contact tracing protocol. ('TCN' stands for 'Temporary Contact Number', a decentralized, privacy-first contact tracing protocol developed by the TCN Coalition). </p>"+        
           "<a href='https://github.com/TCNCoalition/TCN'>You can find TCN Coalition's open source work here.</a>",        
         "nuxtLink": "",
       },

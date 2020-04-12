@@ -1,0 +1,48 @@
+# Builds node app and deploys to AWS S3
+# Master branch deploys to staging 
+# Prod branch deploys to production
+
+name: Build and Deploy
+
+on:
+  push:
+    branches: [ master, prod ]
+  pull_request:
+    branches: [ master, prod ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [10.x, 12.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Build node app
+      working-directory: ./overview
+      env:
+        CI: true
+      run: |
+        npm ci
+        npm run generate
+    -name: Deploy to S3
+      working-directory: ./overview
+      run: 
+        chmod +x ./scripts/build.sh
+        chmod +x ./scripts/deploy.sh
+        ./scripts/deploy.sh 
+      env:
+        AWS_ACCESS_KEY_ID: "key_id"
+        AWS_SECRET_ACCESS_KEY: "access_key"
+        AWS_REGION: "region"
+        BRANCH: ${{ GITHUB_REF##*/ }}
+        
+
+      

@@ -2,7 +2,7 @@
     <v-container>
         <v-row>
           <v-col class="pa-0">
-            <h2 color="primary">Similar Projects</h2>
+            <h2 class="primary--text">Similar Projects</h2>
             <br>
 
             <p>Our project is one of a constellation of efforts exploring apps for community contact tracing. We are actively collaborating with other teams around the world, exchanging code and ensuring system and data interoperability. Our hope is that any progress made by Covid Watch will benefit many projects.</p>

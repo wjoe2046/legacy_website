@@ -51,7 +51,7 @@
           <v-list>
             <v-list-item v-for="link in navLinks" :key="link.title">
               <nuxt-link
-                class="link text--primary"
+                class="link primary--text"
                 :to="link.href"
               >
                   {{ link.title }}
@@ -188,10 +188,6 @@
 
 <style lang="scss">
 
-h1 {
-  color: var(--v-primary-base);
-}
-
 .v-navigation-drawer {
   max-width: 95vw;
 
@@ -218,6 +214,7 @@ h1 {
 
 h1 {
   font-size: 36px;
+  color: var(--v-primary-base);
 }
 
 </style>

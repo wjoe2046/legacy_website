@@ -54,6 +54,11 @@
           operate as a 501(c)(3) charitable organization and are eligible to
           receive tax deductible, charitable contributions.
         </p>
+
+        <br>
+        <h2>Where does your money go?</h2>
+        <br>
+        <p>Funding for this project will be used primarily for app development and marketing. In terms of product development, funds will be used to support team members who are experiencing financial hardship and who require support to be able to continue working on app development, beta testing, and technical support; this would ensure more dedicated hours spent by developers on this project, resulting in higher-quality work being produced as soon as possible.</p> 
       </v-col>
     </v-row>
   </v-container>

@@ -9,6 +9,7 @@
             <h1>Our Mission</h1>
             <br>
             <h3>Our Project</h3>
+            <br>
 
             <p>
               COVID-19 has a relatively long infectious incubation period,
@@ -33,7 +34,9 @@
               any users.
             </p>
 
+            <br>
             <h3>Our Principles</h3>
+            <br>
 
             <p>
               <b>(1) Privacy: </b>Tracking is a sensitive issue, especially in a
@@ -72,7 +75,9 @@
               the world a better place - for us, and for you.
             </p>
 
+            <br>
             <h3>Our Timeline</h3>
+            <br>
 
             <p>
               We&#39;ve recruited a strong team, successfully developed an
@@ -103,6 +108,7 @@
               needed. Assess efficacy and make adjustments as needed.
             </p>
 
+            <br>
             <h3>Our People</h3>
             <br>
             <p>

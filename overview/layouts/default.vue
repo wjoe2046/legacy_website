@@ -91,6 +91,7 @@
       :width="350"
       v-model="tocShow"
     >
+
       <v-btn
         icon
         small
@@ -98,10 +99,11 @@
         class="toc-closer"
         @click="tocShow = !tocShow"
       >
-        <v-icon>mdi-close-circle</v-icon>
+        <v-icon >mdi-close-circle</v-icon>
       </v-btn>
 
       <FAQTableOfContents></FAQTableOfContents>
+
     </v-navigation-drawer>
 
     <v-content>
@@ -227,6 +229,7 @@
     position: absolute;
     top: 1em;
     right: 1em;
+    z-index: 10;
   }
 }
 

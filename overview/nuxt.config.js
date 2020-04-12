@@ -60,7 +60,6 @@ export default {
    ** https://github.com/nuxt-community/vuetify-module
    */
   vuetify: {
-    customVariables: ["~/assets/variables.scss"],
     defaultAssets: {
       icons: "mdi"
     },
@@ -68,18 +67,16 @@ export default {
       options: {
         customProperties: true
       },
-      light: true, //you don't actually need this line as it's for default
       themes: {
         light: {
           primary: "#BF3F4A",
-          secondary: "#779f98",
-          secondaryLight: "#ccdbd8", // TODO: Use Vuetify theme's existing capabilities for light variants.
-          info: "#779f98",
-          warning: "#BF3F4A"
-
-          //accent: '#82B1FF',
-          //error: '#FF5252',
-          //success: '#4CAF50',
+          secondary: "#779F98",
+          accent: '#779f98',
+          secondaryLight: "#CCDBD8",
+          info: "#779F98",
+          warning: "#BF3F4A",
+          error: '#FF5252',
+          success: '#66d983',
         }
       }
     }

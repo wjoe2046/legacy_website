@@ -9,7 +9,7 @@
           NOTE: All donations are denominated in USD. The checkout page may take several seconds to load. 
         </p>
         <p>
-          If the donate button isn't working, it may be an unintended consequence of your adblocking software. Please temporarily disable it and try again.
+          If the donate button is not taking you to our checkout page, it may be an unintended consequence of browser extension(s) (ad blockers, Grammarly, etc). Please open up an <a href="https://www.computerworld.com/article/3356840/how-to-go-incognito-in-chrome-firefox-safari-and-edge.html">incognito window in your browser</a> (this pauses all extensions) or temporarily disable your browser extensions and try again.
         </p>
         <v-form ref="form" v-model="valid" lazy-validation>
           <v-container>
@@ -31,8 +31,21 @@
           <v-btn :disabled="!valid" color="info" class="mr-4" @click="checkout">
             Donate
           </v-btn>
+
         </v-form>
         <br />
+        <div id="stripe-error-message" class="hide">
+          <p>It is likely that a browser extension is causing errors with our checkout process.</p>
+
+          <p>
+            Please open up an incognito window in your browser (this pauses all extensions) or temporarily disable your browser extensions and try again. 
+          </p> 
+
+          <p>
+            <a href="https://www.computerworld.com/article/3356840/how-to-go-incognito-in-chrome-firefox-safari-and-edge.html">Here is a link showing how to open an incognito browser</a>   if you are not sure how.
+          </p>
+        </div>
+
         <p>
           We have been approved as a not-for-profit organization in the state of
           Arizona. We have submitted the required application with the IRS, and
@@ -110,6 +123,8 @@ export default {
               // error, display the localized error message to your customer
               // using `result.error.message`.
               console.log(result.error.message);
+              var errorMessage = document.getElementById("stripe-error-message");
+              errorMessage.setAttribute("class", "show");
             });
         });
       });
@@ -129,5 +144,22 @@ export default {
 .monthly-checkbox {
   margin-top: 0;
   padding-top: 0;
+}
+
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+#stripe-error-message p {
+  color: #BF3F4A;
+}
+
+#stripe-error-message a {
+  text-decoration: underline;
 }
 </style>

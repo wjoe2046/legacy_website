@@ -74,7 +74,7 @@
             <p><strong>Contact:</strong></p>
             <p>Rhys Fenwick, PR/Communications</p> 
             <p>
-                <a style="color:#BF3F4A" href="mailto: contact@covid-watch.org"
+                <a class="primary--text" href="mailto: contact@covid-watch.org"
                   >contact@covid-watch.org
                 </a>
             </p>

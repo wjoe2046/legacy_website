@@ -10,7 +10,7 @@
       <v-col cols="12" lg="10">
         <section class="text-content">
           <div class="container">
-            <h1 style="color:#BF3F4A">Blog</h1>
+            <h1 class="primary--text">Blog</h1>
             <br>
             <div class="blog-hero">
 

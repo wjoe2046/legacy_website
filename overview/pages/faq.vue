@@ -6,7 +6,7 @@
           <div class="container">
             <div class="blog-hero"></div>
 
-            <h1 style="color:#BF3F4A">Frequently Asked Questions</h1>
+            <h1 class="primary--text">Frequently Asked Questions</h1>
             <br>
 
             <h3>Who are you?</h3>

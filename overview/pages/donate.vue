@@ -2,7 +2,7 @@
   <v-container>
     <v-row justify="center">
       <v-col cols="12" lg="10">
-        <h1 style="color:#BF3F4A">Donations</h1>
+        <h1 class="primary--text">Donations</h1>
         <br>
 
         <p>

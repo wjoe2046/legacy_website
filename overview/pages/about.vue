@@ -6,7 +6,7 @@
           <div class="container">
             <div class="blog-hero"></div>
 
-            <h1 style="color:#BF3F4A">Our Mission</h1>
+            <h1 class="primary--text">Our Mission</h1>
             <br>
             <h3>Our Project</h3>
 

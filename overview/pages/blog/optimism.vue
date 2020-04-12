@@ -6,7 +6,7 @@
           <div class="container">
             <div class="blog-hero"></div>
 
-            <h1 style="color:#BF3F4A">Together, We Can Beat COVID-19.</h1>
+            <h1 class="primary--text">Together, We Can Beat COVID-19.</h1>
 
             <p>
               From a technical perspective, pandemics present a complex

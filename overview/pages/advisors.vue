@@ -4,7 +4,7 @@
       <v-col cols="12" lg="10">
         
 
-        <h1 style="color:#bf3f4a">Our Advisors</h1>
+        <h1 class="primary--text">Our Advisors</h1>
 
         <p>Given how ambitious and potentially impactful our project is, we want to make sure we do it correctly. A poorly-executed app could easily do more harm than good: warning our users away from areas with no need to while directing them towards high-risk ones, causing unnecessary panic, or lulling people into a dangerously false sense of security.<br />
           <br />

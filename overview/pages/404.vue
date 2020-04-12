@@ -4,7 +4,7 @@
       <v-col cols="12" lg="10">
 
 
-        <h1 style="color:#bf3f4a">404: Page Not Found</h1>
+        <h1 class="primary--text">404: Page Not Found</h1>
 
         <p>Oops! It looks like you've wandered onto a non-existent page.</p>
         <br>

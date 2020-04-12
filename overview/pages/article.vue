@@ -134,7 +134,7 @@
             style="display:flex;flex-direction:column;align-items:center;"
           >
             <img style="border-radius:4px;text-align:center;" src="~/assets/images/CasesTrendIntl.png" alt="" />
-            <p style="color:gray;">
+            <p class="grey--text">
               <span>FT Graphic: @jburnmurdoch 19th March &nbsp;</span>
               <a href="https://www.ft.com/coronavirus-latest"
                 ><span> John Hopkins data</span></a
@@ -181,7 +181,7 @@
             style="display:flex;flex-direction:column;align-items:center;"
           >
             <img src="~/assets/images/ROKDailyCases.png" alt="" />
-            <p style="color:gray;">
+            <p class="grey--text">
               <span>South Korean&nbsp;</span>
               <a
                 href="https://www.worldometers.info/coronavirus/country/south-korea/"
@@ -328,7 +328,9 @@
               src="../assets/images/Contact_Tracing_Map.png"
               alt=""
             />
-            <p style="color:gray;">Contact Network</p>
+            <p class="grey--text">
+              Contact Network
+            </p>
           </div>
 
           <p>
@@ -1104,7 +1106,7 @@
             style="display:flex;flex-direction:column;align-items:center;"
           >
             <img src="~/assets/images/ProportionTraced.png" alt="" />
-            <p style="color:gray;">
+            <p class="grey--text">
               Transmission Detection vs. App Usage curves for testing rates [0.05,
               0.1, 0.2, 0.4, 0.8]. BLE_Acc gives the detection rate of
               transmission events between app users. Work derived from this
@@ -1142,7 +1144,7 @@
             </v-col>
           </v-row>
           <v-row>
-            <p style="color:gray;">
+            <p class="grey--text">
               Expected infections for total population (1st) and app population
               (2nd) adjusted for relative population size.
             </p>

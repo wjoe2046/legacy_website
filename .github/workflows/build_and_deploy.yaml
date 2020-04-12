@@ -34,7 +34,7 @@ jobs:
         npm run generate
     - name: Deploy to S3
       working-directory: ./overview
-      run: 
+      run: |
         chmod +x ./scripts/build.sh
         chmod +x ./scripts/deploy.sh
         ./scripts/deploy.sh 

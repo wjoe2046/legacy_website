@@ -112,7 +112,7 @@
 
             <p>The question for us, then, is this:</p>
 
-            <p style="text-align: center;">
+            <p class="text-center">
               <strong
                 >&ldquo;Can an effective contact tracing program reduce local
                 transmission so that sustained local spread does not

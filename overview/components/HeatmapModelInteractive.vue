@@ -69,9 +69,7 @@
                   <template v-slot:item.complicationRisk="{ item }">
                     <span
                       class="siminfo-complicationrisk"
-                      :style="{
-                        color: gradientGreenYellowRed(item.complicationRisk)
-                      }"
+                      :color="gradientGreenYellowRed(item.complicationRisk)"
                     >
                       {{ Math.floor(item.complicationRisk * 100) }}%
                     </span>

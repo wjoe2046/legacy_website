@@ -96,9 +96,11 @@
         </v-row>
         <v-row justify="center">
           <template v-for="(partner, i) in partners">
-              <v-hover v-slot:default="{ hover }">
+              <v-hover
+                :key="i"
+                v-slot:default="{ hover }"
+              >
                 <v-col
-                  :key="i"
                   cols="12"
                   sm="3"
                   class="text-center"
@@ -124,7 +126,7 @@
         </v-row>
         <br/>
         <v-alert
-          style="display:flex;justify-content:center;"
+          class="d-flex justify-center"
           outlined
           icon="mdi-email"
           dense

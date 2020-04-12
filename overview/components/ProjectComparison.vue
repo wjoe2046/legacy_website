@@ -1,8 +1,7 @@
 <template>
     <v-container>
         <v-row>
-            <!-- this inline padding:0px is to override VGrid CSS reset of 12px.  Probably a better way to do this - Jesse -->
-          <v-col style="padding:0px;">
+          <v-col class="pa-0">
             <h2 color="primary">Similar Projects</h2>
             <br>
 

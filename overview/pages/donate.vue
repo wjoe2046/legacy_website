@@ -17,7 +17,7 @@
               <v-col cols="1" class="dolla-sign" justify="end">
                 $
               </v-col>
-              <v-col cols="11" md="3" style="padding-left:0"
+              <v-col cols="11" md="3" class="pl-0"
                 ><v-text-field
                   v-model="donationAmount"
                   :rules="donationAmountRules"

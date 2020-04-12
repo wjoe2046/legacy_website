@@ -17,3 +17,7 @@ There are further instructions and commands commented at the top of build.sh.  Y
 3. `npm install`
 4. `npm run dev`
 5. in your browser go to URL: localhost:3000.
+
+### Collaborations with other groups:
+- [TCN Coaltion](https://github.com/TCNCoalition/TCN)
+- [CoEpi](https://github.com/Co-Epi/CEN)

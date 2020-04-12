@@ -131,9 +131,8 @@
           </p>
           <div
             class="centerImage"
-            style="display:flex;flex-direction:column;align-items:center;"
           >
-            <img style="border-radius:4px;text-align:center;" src="~/assets/images/CasesTrendIntl.png" alt="" />
+            <img src="~/assets/images/CasesTrendIntl.png" alt="" />
             <p class="grey--text">
               <span>FT Graphic: @jburnmurdoch 19th March &nbsp;</span>
               <a href="https://www.ft.com/coronavirus-latest"
@@ -178,7 +177,6 @@
           </p>
           <div
             class="centerImage"
-            style="display:flex;flex-direction:column;align-items:center;"
           >
             <img src="~/assets/images/ROKDailyCases.png" alt="" />
             <p class="grey--text">
@@ -273,7 +271,7 @@
             on privacy requirements and the needs of specific public health
             authorities a subset of these capabilities could be utilized.
           </p>
-          <ul style="list-style:decimal">
+          <ul class="decimal">
             <li>
               Automated contact tracing at scale using anonymized Bluetooth
               proximity sensing
@@ -321,7 +319,7 @@
             individuals are quarantined.
           </p>
         <div
-          style="display:flex; flex-direction:column; align-items:center;"
+          class="centerImage"
         >
             <img
               style="width:70%"
@@ -355,7 +353,7 @@
             can strongly impact results:
           </p>
           <p>
-            <ul style="list-style:decimal">
+            <ul class="decimal">
               <li>Reduction in overall transmission through social distancing</li>
               <li>Testing rate and time to diagnosis</li>
               <li>Contact tracing accuracy</li>
@@ -618,7 +616,7 @@
             depending on the operating systems of the devices involved. The key
             challenges are:
           </p>
-          <ul style="list-style:decimal">
+          <ul class="decimal">
             <li>
               iOS devices acting as “peripherals” in the background can only be
               found by “centrals” that are scanning for their specific service
@@ -650,7 +648,7 @@
             shown below:
           </p>
 
-          <div style="text-align: center">
+          <div class="text--center">
             <iframe
               width="70%"
               height="350px"
@@ -804,8 +802,7 @@
           </p>
           <p>
             The first server, Server A, will handle anonymization using the
-            methods described in the
-            <span style="font-style:italic">Heatmap Privacy Model</span> section
+            methods described in the <em>Heatmap Privacy Model</em> section
             above. Users will send their GPS data to Server A first without any
             other information, and Server A will return the now-anonymized data to
             them.
@@ -916,30 +913,30 @@
 
           <v-container>
             <v-row>
-              <v-col cols="12" md="4" style="justify-content:space-evenly;">
+              <v-col cols="12" md="4">
                 <img
-                  style="border:1px solid gray;"
+                  class="border-grey"
                   src="../assets/images/mobile/Android_1.svg"
                   alt=""
                 />
               </v-col>
-              <v-col cols="12" md="4" style="justify-content:space-evenly;">
+              <v-col cols="12" md="4">
                 <img
-                  style="border:1px solid gray;"
+                  class="border-grey"
                   src="../assets/images/mobile/Android_2.svg"
                   alt=""
                 />
               </v-col>
-              <v-col cols="12" md="4" style="justify-content:space-evenly;">
+              <v-col cols="12" md="4">
                 <img
-                  style="border:1px solid gray;"
+                  class="border-grey"
                   src="../assets/images/mobile/Android_3.svg"
                   alt=""
                 />
               </v-col>
             </v-row>
           </v-container>
-          <div style="border:1px solid black;border-radius:4px;padding: 10px;">
+          <div class="figure-caption">
             <p>
               <strong>Figure 1: New User Onboarding Workflow</strong>.
               Downloading and using Covid Watch does NOT require any sign up of email, password, etc. of any kind.  The only requirement is to enable Covid Watch to access bluetooth on your smartphone in order to detect other smartphones in close proximity to log a 'contact event'.  If no other smartphones you have been in contact with are associated with a positive case COVID-19, Covid Watch informs you that you have <strong>not</strong> been in contact with COVID-19.  
@@ -961,28 +958,28 @@
             <v-row>
               <v-col cols="12" md="4">
                 <img
-                  style="border:1px solid gray;"
+                  class="border-grey"
                   src="../assets/images/mobile/Android_4.png"
                   alt=""
                 />
               </v-col>
               <v-col cols="12" md="4">
                 <img
-                  style="border:1px solid gray;"
+                  class="border-grey"
                   src="../assets/images/mobile/Android_5.svg"
                   alt=""
                 />
               </v-col>
               <v-col cols="12" md="4">
                 <img
-                  style="border:1px solid gray;"
+                  class="border-grey"
                   src="../assets/images/mobile/Android_6.svg"
                   alt=""
                 />
               </v-col>
             </v-row>
           </v-container>
-          <div style="border:1px solid black;border-radius:4px;padding: 10px;">
+          <div class="figure-caption">
             <p>
               <strong>Figure 2: Contact Alert and Reporting</strong>.
               If Covid Watch detects another smartphone within bluetooth proximity that is associated with a positive COVID-19 case, you are alerted that you may have been exposed  Covid Watch suggests steps of (1) monitoring your health and (2) isolate yourself.  Additionally, you may update your own status as confirmed or not tested, along with the first date of symptoms.
@@ -1103,7 +1100,6 @@
 
           <div
             class="centerImage"
-            style="display:flex;flex-direction:column;align-items:center;"
           >
             <img src="~/assets/images/ProportionTraced.png" alt="" />
             <p class="grey--text">
@@ -1192,7 +1188,7 @@
             and (2) funding for, at a minimum, cloud services.
           </p>
           <p>The app will be implemented and launched in two parts:</p>
-          <ul style="list-style:decimal">
+          <ul class="decimal">
             <li>
               The first version will implement a GPS/Bluetooth proximity network
               system to develop a heatmap to track and notify users of potential
@@ -1255,8 +1251,8 @@
       </v-row>
       <br />
 
-      <!-- <a class="anchor" ></a> -->
-      <h2 id="contributors" class="titleLine" style="border-top: lightgray 1px solid;">
+      <v-divider></v-divider>
+      <h2 id="contributors" class="titleLine">
         <br />
         Contributors, Advisors, and Acknowledgements
       </h2>
@@ -1484,6 +1480,14 @@
 
 img {
   max-width: 100%;
+
+  &.border-grey {
+    border: 1px solid gray;
+  }
+}
+
+ul.decimal {
+  list-style: decimal;
 }
 
 .mainTitle {
@@ -1576,9 +1580,17 @@ img {
   //color: '#779F98'
 }
 
-.centerImage {
+div.centerImage {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+div.figure-caption {
+  border: 1px solid black;
+  border-radius:4px;
+  padding: 10px;
 }
 
 .stepsVisual {

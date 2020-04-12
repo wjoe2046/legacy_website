@@ -9,6 +9,16 @@
             <h1 style="color:#BF3F4A">Frequently Asked Questions</h1>
             <br>
 
+
+            <!-- Jesse note: 
+            
+            I started to use the code below but ran into some challenges that we can update later.  For refactoring:
+            - nuxt-links can't be stored in the faqList object
+            - vertical spacing between <p> elements in a single faq.response
+             -->
+
+
+
             <!-- <template
               v-for="(faq, i) in faqList"
             >

@@ -4,7 +4,7 @@
       <v-col cols="12" lg="8">
         <section class="text-content">
           <div class="container">
-            <h1>Get Involved</h1>
+            <h1>Collaborate with Covid Watch</h1>
             <v-alert 
               class="d-flex justify-center"
               outlined
@@ -38,7 +38,10 @@
 
             <h3 class="headline">Most Wanted Volunteers</h3>
 
-            <ul class="title font-weight-regular">
+            <ul
+              :class="{'subtitle-1': $vuetify.breakpoint.smAndDown, 'title': $vuetify.breakpoint.mdAndUp}"
+              class="font-weight-regular"
+            >
               <li>
                 Mobile app developers with 2+ years of experience with iOS and Android native development 
               </li>
@@ -82,10 +85,10 @@
               <li>Electrical engineering</li>
             </ul>
 
-            <h2>Other Ways to help</h2>
+            <h2>Other Ways to Get Involved</h2>
 
             <p>
-              You don't need to join our team to help out the project! It would also really Help
+              You don't need to join our team to help out the project! It would also help us out
               if you'd consider:</p>
             <ul>
               <li>Taking <a href="https://covidapp.typeform.com/to/FnlXep">a quick survey</a> to

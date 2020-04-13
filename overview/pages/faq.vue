@@ -1,5 +1,35 @@
 <template>
   <v-container>
+    <!-- Navigation drawer (i.e. Table of Contents) for the FAQ page --->
+    <v-navigation-drawer
+      clipped
+      app
+      :width="350"
+      v-model="tocShow"
+    >
+      <v-btn
+        icon
+        small
+        color="primary"
+        class="toc-closer"
+        @click="tocShow = false"
+      >
+        <v-icon>mdi-close-circle</v-icon>
+      </v-btn>
+
+      <FAQTableOfContents :tocItems="tocItems"></FAQTableOfContents>
+    </v-navigation-drawer>
+
+    <!-- Button to show / hide table of contents --->
+    <v-btn
+      class="toc-hamburger"
+      color="primary"
+      v-show="!tocShow"
+      @click="tocShow = true"
+    >
+      <v-icon>mdi-table-of-contents</v-icon>
+    </v-btn>
+
     <v-row justify="center">
       <v-col cols="12" lg="10">
         <section class="text-content">
@@ -27,7 +57,6 @@
                   <div v-html="faq.response"></div>
 
                   <nuxt-link v-if="faq.linkTitle" :to="faq.nuxtLink">{{faq.linkTitle}}</nuxt-link>
-                  
 
                 </v-card>
               </v-hover>
@@ -37,8 +66,8 @@
           </div>
         </section>
       </v-col>
-    </v-row></v-container
-  >
+    </v-row>
+    </v-container>
 </template>
 
 
@@ -51,8 +80,14 @@
 </style>
 
 <script>
+import FAQTableOfContents from "~/components/FAQTableOfContents.vue";
+
 export default {
+  components: {
+    FAQTableOfContents,
+  },
   data: () => ({
+    tocShow: null,
     faqList: [
       {
         "question": "Who are you?",
@@ -232,6 +267,14 @@ export default {
         "linkTitle": "See our Join Our Team page here for the roles we are looking to fill."
       },
     ]
-  })
+  }),
+  computed: {
+    tocItems() {
+      return this.faqList.map(x => ({
+        title: x.question,
+        link: `/faq#${x.questionId}`,
+      }));
+    }
+  },
 }
 </script>

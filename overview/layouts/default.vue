@@ -83,29 +83,6 @@
       <TableOfContents></TableOfContents>
     </v-navigation-drawer>
 
-    <!-- Navigation drawer (i.e. Table of Contents) for the FAQ page --->
-    <v-navigation-drawer
-      v-if="$nuxt.$route.name === 'faq'"
-      clipped
-      app
-      :width="350"
-      v-model="tocShow"
-    >
-
-      <v-btn
-        icon
-        small
-        color="primary"
-        class="toc-closer"
-        @click="tocShow = !tocShow"
-      >
-        <v-icon >mdi-close-circle</v-icon>
-      </v-btn>
-
-      <FAQTableOfContents></FAQTableOfContents>
-
-    </v-navigation-drawer>
-
     <v-content>
       <!-- Affiliations --->
       <v-row align="center" justify="center" no-gutters>
@@ -138,17 +115,6 @@
           <v-divider></v-divider>
         </v-col>
       </v-row>
-
-        <!-- Button to show / hide table of contents --->
-      <v-btn
-        v-if="$nuxt.$route.name === 'faq'"
-        class="toc-hamburger"
-        color="primary"
-        v-show="!tocShow"
-        @click="tocShow = !tocShow"
-      >
-        <v-icon>mdi-table-of-contents</v-icon>
-      </v-btn>
 
       <!-- Button to show / hide table of contents --->
       <v-btn
@@ -259,7 +225,6 @@ h1 {
 
 <script>
 import TableOfContents from "~/components/TableOfContents.vue";
-import FAQTableOfContents from "~/components/FAQTableOfContents.vue";
 
 export default {
   data: () => ({
@@ -321,7 +286,6 @@ export default {
   }),
   components: {
     TableOfContents,
-    FAQTableOfContents
   }
 };
 </script>

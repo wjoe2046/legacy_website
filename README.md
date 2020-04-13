@@ -1,4 +1,4 @@
-![](https://github.com/covid19risk/articles/workflows/Check%20Spelling/badge.svg)
+![](https://github.com/covid19risk/articles/workflows/Build%20Node.js/badge.svg)
 
 ![](https://github.com/covid19risk/articles/workflows/Build%20and%20Deploy/badge.svg)
 

@@ -1,6 +1,6 @@
 ![](https://github.com/covid19risk/articles/workflows/Check%20Spelling/badge.svg)
 
-![](https://github.com/covid19risk/articles/workflows/Node.js%20Build/badge.svg)
+![](https://github.com/covid19risk/articles/workflows/Build%20and%20Deploy/badge.svg)
 
 ### Possible Environments:
   * LOCAL: localhost:3000/articles/index.html

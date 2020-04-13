@@ -2,6 +2,7 @@
   <v-container>
     <v-row justify="center">
       <v-col cols="12" lg="10">
+
         <div class="container">
           <div class="blog-hero"></div>
 

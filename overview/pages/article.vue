@@ -1463,7 +1463,7 @@
   // Please put CSS in here.
   // FYI, there's a wrapper element with id="covid19riskapp", but that's outside
   // of this page, in the layout code. Don't worry about it.
-
+  
   .overviewContainer {
     //background-color: #ffffff;
     background-color: #779f98;
@@ -1560,13 +1560,10 @@ ul.decimal {
 
 .titleLine {
   font-weight: bold;
-  // color: 'red';
-  font-size: 28px;
-  padding-top: 10px;
-  padding-bottom: 25px;
+  font-size: 26px;
   color: #779f98;
-  // #8C1620
-  //color: '#779F98'
+  padding-top: 9px;
+  padding-bottom: 2px;
 }
 
 .subTitleLine {

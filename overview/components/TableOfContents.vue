@@ -1,8 +1,10 @@
 <template>
   <span id="tableOfContents">
     <div class="tableOfContentsContainer">
-      <h2 class="titleLine">Table of Contents</h2>
-      <ol class="outerList">
+      <div class="toc-header">
+        <h2 class="titleLine">Table of Contents</h2>
+      </div>
+      <ol class="outerList firstOuterList">
         <li>
           <strong><a href="/article#aboutUs">About Us</a></strong>
           <ol class="innerList">
@@ -82,30 +84,37 @@
   display: flex;
   justify-content: baseline;
   width: 100%;
-  // padding-top: 50px;
-  // border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  // padding-bottom: 40px;
+
+  .toc-header {
+    position: absolute;
+    background-color: white;
+    width: 104%;
+    display: flex;
+    justify-content: center;
+  }
 
   .tableOfContentsContainer {
-    // border: gray 1px solid;
-    // margin-left: 1vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding-left: 10px;
     padding-right: 10px;
-    // border-radius: 4px;
 
     .outerList {
       list-style: none;
-      // font-size: 22px;
+      margin-top: 70px;
     }
 
     .innerList {
       list-style: none;
-      // font-size: 18px;
+    }
+
+    .firstOuterList {
+      margin-top: 70px;
     }
 
     .nestedInnerList {
       list-style: none;
-      // font-size: 16px;
     }
   }
 }

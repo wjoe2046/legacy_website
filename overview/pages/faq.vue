@@ -1,41 +1,51 @@
 <template>
   <v-container>
     <v-row justify="center">
-      <v-col cols="12" lg="10">
-        <section class="text-content">
-          <div class="container FAQcontainer">
-            <div class="blog-hero"></div>
+      <v-col cols="10">
+        
+          <div class="FAQcontainer">
 
-            <h1>Frequently Asked Questions</h1>
+            <h1 id="faq">Frequently Asked Questions</h1>
             <br>
 
-            <template
-              v-for="(faq, i) in faqList"
+            <v-expansion-panels 
+              hover
+              multiple
             >
-               <v-hover
+
+
+      <!-- played w a lot of options, using a v-card instead of v-row, v-col and got very close to desired result a few different ways: https://codepen.io/pen/?&editable=true&editors=101=https%3A%2F%2Fvuetifyjs.com%2Fen%2Fstyles%2Fflex%2F
+      
+      https://codepen.io/anon/pen/mKrjjY
+       -->
+
+       <!-- <v-row justify="center" >
+         <v-col cols="4" class="d-flex flex-wrap"> -->
+
+           <!-- add this to expansion panel component: v-bind:style="{ maxWidth: maxWidth + '%' }" -->
+              <v-expansion-panel 
+                v-for="(faq, i) in faqList"
                 :key="i"
-                v-slot:default="{ hover }"
+                class="my-2"
               >
-                <v-card 
-                  :elevation="hover ? 2 : 0"
-                  :class="{ 'on-hover': hover }"
-                  class="pa-4 my-4"
-                >
-                  <h3 :id="faq.questionId">{{faq.question}}</h3>
-                  <br>
-
-                  <div v-html="faq.response"></div>
-
-                  <nuxt-link v-if="faq.linkTitle" :to="faq.nuxtLink">{{faq.linkTitle}}</nuxt-link>
+                  <v-expansion-panel-header><h3 :id="faq.questionId">{{faq.question}}</h3></v-expansion-panel-header>
                   
+                  <!-- <v-card max-width="800"> -->
+                  <!-- <v-card> -->
+                    <v-expansion-panel-content>
+                        <br>
+                        <div v-html="faq.response"></div>
+                        <nuxt-link v-if="faq.linkTitle" :to="faq.nuxtLink">{{faq.linkTitle}}</nuxt-link>
+                    </v-expansion-panel-content>
+                  <!-- </v-card> -->
+              </v-expansion-panel >
+         <!-- </v-col>
+        </v-row > -->
 
-                </v-card>
-              </v-hover>
-            </template>
+            </v-expansion-panels>
 
 
           </div>
-        </section>
       </v-col>
     </v-row></v-container
   >
@@ -53,6 +63,7 @@
 <script>
 export default {
   data: () => ({
+    maxWidth: 40,
     faqList: [
       {
         "question": "Who are you?",
@@ -66,7 +77,7 @@ export default {
         "questionId": "why-do-this",
         "response": 
           "<p>We don’t expect a COVID-19 vaccine to be developed for at least a year, which means we must build a system that is capable of rapidly containing local transmission wherever and whenever it appears. By doing this, and implementing it in our communities, we can lessen lockdowns and other restrictions in the world while preventing the majority of the population from getting sick.</p>" +
-          "<p> If we build a system that can identify contagious individuals and the people they had contact with, then we can ask only those who have been exposed to COVID-19 to self-isolate. We’ve modelled how such a system can significantly reduce the rate of viral transmission; <a href='/article'> check out our whitepaper </a>. We believe that, combined with a comprehensive testing program, our filter may be powerful enough to protect our communities from COVID-19 becoming endemic.</p>" +
+          "<p> If we build a system that can identify contagious individuals and the people they had contact with, then we can ask only those who have been exposed to COVID-19 to self-isolate. We’ve modelled how such a system can significantly reduce the rate of viral transmission; <a target='_blank' href='/article'> check out our whitepaper </a>. We believe that, combined with a comprehensive testing program, our filter may be powerful enough to protect our communities from COVID-19 becoming endemic.</p>" +
           "<p> We also want to provide a way for individuals to, on a volunteer basis, help reduce the painful impacts of COVID-19. That’s what all of the people working on this project were looking for, and we hope that users who participate in Covid Watch will feel they have been given a tool with which to protect their community and loved ones.</p>"
         ,
         "nuxtLink": "/article",
@@ -83,7 +94,7 @@ export default {
         "question": "What is contact tracing?",
         "questionId": "what-is-contact-tracing",
         "response": 
-            "<p> The World Health Organisation (WHO) <a href='https://www.who.int/features/qa/contact-tracing/en/'>defines</a> contact tracing as the identification and monitoring of people who may have come into close contact with a person infected with a contagious disease in order to help the contacts to get relevant care and treatment. </p>" +
+            "<p> The World Health Organisation (WHO) <a target='_blank' href='https://www.who.int/features/qa/contact-tracing/en/'>defines</a> contact tracing as the identification and monitoring of people who may have come into close contact with a person infected with a contagious disease in order to help the contacts to get relevant care and treatment. </p>" +
             "<p> Contact tracing is a crucial part of epidemiological containment. It is traditionally done through patient interviews—when someone is diagnosed, that patient will be asked where they travelled and whom they saw while contagious. </p>" +
             "<p> Now that many people carry smartphones, it’s possible to perform an intervention like contact tracing automatically. Many groups, including Covid Watch, are working to make this a reality. However, our system does not strictly perform contact tracing. Users are not followed or tracked, and they are warned in an anonymous way. </p>" +
             "<p> We believe this will provide many of the benefits of contact tracing, as well as some additional ones. For example, we can more easily alert people when they have been in close contact with someone they don’t know (say, because you were riding a bus with them). However, we are not providing the kind of historical and identifying data that epidemiologists need for traditional contact tracing. </p>",
@@ -93,7 +104,7 @@ export default {
       {
         "question": "If COVID-19 is going to become widespread anyway, why bother delaying the inevitable?",
         "questionId": "delay-inevitable",
-        "response": "<p> It’s not inevitable that COVID-19 will spread to every person, and slowing the spread is still extremely important. One major risk of COVID-19 in all countries is that it could overwhelm health systems, limiting their ability to care for people who desperately need it. By reducing infection rates we can space cases out slowly enough that hospitals worldwide can deal with them as they come, saving lives (often referred to as <a href='https://www.flattenthecurve.com/'>'Flattening The Curve'</a>). Furthermore, by enabling people to come out of lockdown, contact tracing could potentially reduce the severe negative economic consequences of COVID-19 that are materialising around the world. </p>",
+        "response": "<p> It’s not inevitable that COVID-19 will spread to every person, and slowing the spread is still extremely important. One major risk of COVID-19 in all countries is that it could overwhelm health systems, limiting their ability to care for people who desperately need it. By reducing infection rates we can space cases out slowly enough that hospitals worldwide can deal with them as they come, saving lives (often referred to as <a target='_blank' href='https://www.flattenthecurve.com/'>'Flattening The Curve'</a>). Furthermore, by enabling people to come out of lockdown, contact tracing could potentially reduce the severe negative economic consequences of COVID-19 that are materialising around the world. </p>",
         "nuxtLink": "/article#impact",
         "linkTitle": "Read more in our Whitepaper on our quantitative analysis of the impact smartphone-enabled contact tracing can have, if you want to get really geeky!",
       },
@@ -103,7 +114,7 @@ export default {
         "response": 
           "<p> We want to help bring you out of lockdown. Right now, the virus is spreading rapidly, and we must do our best to prevent hospital systems from becoming terribly overwhelmed. We don’t expect a vaccine for COVID-19 to be ready for at least a year, but we think it will be possible to end the lockdowns sooner than that. </p>" +
           "<p> If we build a system that can trace contagious individuals and the people they had contact with, then we can ask only those who have been exposed to COVID-10 to self-isolate. We’ve modelled how a system like ours can significantly reduce the rate of viral transmission; check out our whitepaper. </p>" +
-          "<p> If you don’t want to take our word for it, check out <a href = 'https://github.com/BDI-pathogens/covid-19_instant_tracing/blob/master/Manuscript%20-%20Modelling%20instantaneous%20digital%20contact%20tracing.pdf'> Quantifying dynamics of SARS-CoV-2 transmission suggests that epidemic control and avoidance is feasible through instantaneous digital contact tracing</a>, a preprint published by University of Oxford researchers on March 16 (just under a month after we started work on the project). Trevor Bedford <a href='https://twitter.com/trvrb/status/1240444821593944064'>cited this model</a> as one of the strategies that he believed could bring the pandemic under control. </p>",
+          "<p> If you don’t want to take our word for it, check out <a target='_blank' href = 'https://github.com/BDI-pathogens/covid-19_instant_tracing/blob/master/Manuscript%20-%20Modelling%20instantaneous%20digital%20contact%20tracing.pdf'> Quantifying dynamics of SARS-CoV-2 transmission suggests that epidemic control and avoidance is feasible through instantaneous digital contact tracing</a>, a preprint published by University of Oxford researchers on March 16 (just under a month after we started work on the project). Trevor Bedford <a target='_blank' href='https://twitter.com/trvrb/status/1240444821593944064'>cited this model</a> as one of the strategies that he believed could bring the pandemic under control. </p>",
         "nuxtLink": "article#impact",
         "linkTitle": "Read a more detailed explanation here in our whitepaper.",
       },
@@ -113,16 +124,16 @@ export default {
         "response": 
           "<p> Yes.</p>" +
           "<p> We take privacy and security extremely seriously; conserving privacy is one of the cornerstones of this work, and we will be fully compliant with GDPR and HIPAA laws. Our engineers have worked at major research institutions such as Stanford University, University College London, and University of Waterloo, and companies like Apple, Google, and Change.org. We understand the importance of data security, and we will be adhering to health privacy laws for the regions in which the app is available. </p>" +
-          "<p> In fact, Covid Watch is a founding member of the <a href='https://tcn-coalition.org/'>TCN Coalition</a>, a global coalition of similar COVID-19-related tech efforts worldwide to standardize and commit to a privacy-first digital contact tracing protocol. ('TCN' stands for 'Temporary Contact Number', a decentralized, privacy-first contact tracing protocol developed by the TCN Coalition). </p>"+        
-          "<a href='https://github.com/TCNCoalition/TCN'>You can find TCN Coalition's open source work here.</a>",        
+          "<p> In fact, Covid Watch is a founding member of the <a target='_blank' href='https://tcn-coalition.org/'>TCN Coalition</a>, a global coalition of similar COVID-19-related tech efforts worldwide to standardize and commit to a privacy-first digital contact tracing protocol. ('TCN' stands for 'Temporary Contact Number', a decentralized, privacy-first contact tracing protocol developed by the TCN Coalition). </p>"+        
+          "<a target='_blank' href='https://github.com/TCNCoalition/TCN'>You can find TCN Coalition's open source work here.</a>",        
         "nuxtLink": "",
       },
       {
         "question": "Will this app ever get enough traction to work?",
         "questionId": "traction",
         "response": 
-          "<p> We don’t know, but it might need less traction than you imagine. Our modeling suggests that a 60% adoption rate has the potential to stop the spread of the virus. Even if our app doesn’t succeed, we’re actively collaborating with other technology teams (<a href='https://tcn-coalition.org/'>see the TCN Coalition</a>) and government/health authorities around the world, exchanging code and ensuring system and data interoperability. Our hope is that any progress made by Covid Watch will benefit many projects.</p>" +
-          "<p> <a href='https://www.apple.com/covid19/contacttracing/'>Google and Apple's announcement</a> to work in this space and our enthusiastic support of their work underscores that this is not a zero sum problem and the more interoperable our work is across systems, projects, countries, languages, challenges, the more successful we will all be in our ultimate goal: minimizing the threat of COVID-19.</p>" ,
+          "<p> We don’t know, but it might need less traction than you imagine. Our modeling suggests that a 60% adoption rate has the potential to stop the spread of the virus. Even if our app doesn’t succeed, we’re actively collaborating with other technology teams (<a target='_blank' href='https://tcn-coalition.org/'>see the TCN Coalition</a>) and government/health authorities around the world, exchanging code and ensuring system and data interoperability. Our hope is that any progress made by Covid Watch will benefit many projects.</p>" +
+          "<p> <a target='_blank' href='https://www.apple.com/covid19/contacttracing/'>Google and Apple's announcement</a> to work in this space and our enthusiastic support of their work underscores that this is not a zero sum problem and the more interoperable our work is across systems, projects, countries, languages, challenges, the more successful we will all be in our ultimate goal: minimizing the threat of COVID-19.</p>" ,
         "nuxtLink": "/about#comparison",
         "linkTitle": "Read our full perspective on Apple and Google's efforts in our April 10, 2020 press release here."
       },
@@ -139,8 +150,8 @@ export default {
         "response": 
           "<p> No. </p>" +
           "<p> The relative success of these countries in slowing the rate of COVID-19 transmission is part of why we believe Covid Watch will work. For example, Taiwan has a population of 23.8 million, but at time of writing (29-MAR-2020) only 298 cases of COVID-19 and 2 deaths. </p>" +
-          "<p>These countries have introduced mobile applications for contact tracing, and <a href='https://www.tracetogether.gov.sg/'>Singapore’s TraceTogether app</a> uses a similar Bluetooth approach. However, there are important differences. Singapore’s app allows health officials to track down individual users who have been diagnosed with or exposed to SARS-CoV-2. With Covid Watch, we have introduced important privacy-preserving mechanisms, such as never centrally storing contact events. While our users can volunteer to share their health information, they are never forced to. </p>" +
-          "<a href='https://www.nbcnews.com/tech/tech-news/behind-global-efforts-make-privacy-first-coronavirus-tracking-app-n1177871'>Read more from NBC News here about the global effort to make a privacy-first COVID-19 tracking app.</a>",
+          "<p>These countries have introduced mobile applications for contact tracing, and <a target='_blank' href='https://www.tracetogether.gov.sg/'>Singapore’s TraceTogether app</a> uses a similar Bluetooth approach. However, there are important differences. Singapore’s app allows health officials to track down individual users who have been diagnosed with or exposed to SARS-CoV-2. With Covid Watch, we have introduced important privacy-preserving mechanisms, such as never centrally storing contact events. While our users can volunteer to share their health information, they are never forced to. </p>" +
+          "<a target='_blank' href='https://www.nbcnews.com/tech/tech-news/behind-global-efforts-make-privacy-first-coronavirus-tracking-app-n1177871'>Read more from NBC News here about the global effort to make a privacy-first COVID-19 tracking app.</a>",
       },
       {
         "question": "Is this the same as what Hong Kong has introduced?",
@@ -148,7 +159,7 @@ export default {
         "response": 
           "<p> No. </p>" +
           "<p> Hong Kong have introduced electronic-tracking wristbands in order to ensure that people suspected to have COVID-19 adhere to a quarantine. Covid Watch cannot be used to track or monitor people. Your location is never stored; instead, anonymized contact event numbers are stored on your own device; the aim is to enable contact-tracing in a way that preserves privacy. </p>" +
-          "<a href='https://www.wired.com/story/covid-19-contact-tracing-apps-cryptography/'> Read more in Wired's article here about Covid Watch's privacy-first approach.</a>",
+          "<a target='_blank' href='https://www.wired.com/story/covid-19-contact-tracing-apps-cryptography/'> Read more in Wired's article here about Covid Watch's privacy-first approach.</a>",
       },
       {
         "question": "What is the legal status of your organization?",
@@ -172,7 +183,7 @@ export default {
         "questionId": "data-ownership",
         "response": 
           "<p> The data is anonymized and we will not sell what is uploaded to the database. It wouldn’t be worth anything, and we can’t use it for research because the database is so anonymized it is effectively uninterpretable, besides by the individual phones involved in each individual contact event. Data from old events will also be deleted every 2-3 weeks.</p>" +
-          "<a href='https://tcn-coalition.org/'>Read more here about Covid Watch's commitment to privacy as a founding member of the TCN Coalition.</a>",
+          "<a target='_blank' href='https://tcn-coalition.org/'>Read more here about Covid Watch's commitment to privacy as a founding member of the TCN Coalition.</a>",
 
       },
       {
@@ -198,7 +209,7 @@ export default {
         "questionId": "snoop-dogg",
         "response": 
           "<p>One of the key reasons we started Covid Watch is that we were worried that a contact tracing solution which failed to respect the privacy of its users might be adopted. We’re concerned about ways in which this pandemic may increase unwanted surveillance, and this is why we’ve carefully designed a decentralized and voluntary solution. We’re currently collaborating on privacy guidelines with other contact tracing projects.</p>" +
-          "<a href='https://tcn-coalition.org/'> Read more about our work as a founding member of the privacy-first TCN Coalition open source protocols here.</a>",
+          "<a target='_blank' href='https://tcn-coalition.org/'> Read more about our work as a founding member of the privacy-first TCN Coalition open source protocols here.</a>",
       },
       {
         "question": "How close to finished is the app?",
@@ -227,7 +238,7 @@ export default {
         "question": "How can I get involved?",
         "questionId": "get-involved",
         "response": "<p>We are always looking for talented people worldwide to join this effort as volunteers.  We have volunteers on six continents currently contributing actively.</p>" +
-        "<p>Follow us on social media and share with your friends and family!  Links: <a href='hhttps://www.facebook.com/CovidWatch2020'>Facebook</a>, <a href='https://twitter.com/COVIDWatchAppTwitter'>Twitter</a>, and <a href='https://github.com/covid19risk'>Github</a>.  These links are also at the bottom of our website.</p>",
+        "<p>Follow us on social media and share with your friends and family!  Links: <a target='_blank' href='hhttps://www.facebook.com/CovidWatch2020'>Facebook</a>, <a target='_blank' href='https://twitter.com/COVIDWatchAppTwitter'>Twitter</a>, and <a target='_blank' href='https://github.com/covid19risk'>Github</a>.  These links are also at the bottom of our website.</p>",
         "nuxtLink": "/collaborate",
         "linkTitle": "See our Join Our Team page here for the roles we are looking to fill."
       },

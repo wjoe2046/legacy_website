@@ -40,67 +40,67 @@
 
 
         <li class="firstLi">
-          <a href="/faq#who-are-you">Who are you?</a>
+          <a href="/faq#faq">Who are you?</a>
         </li>
         <li>
-          <a href="/faq#why-do-this">Why are you doing this?</a>
+          <a href="/faq#who-are-you">Why are you doing this?</a>
         </li>
         <li>
-          <a href="/faq#google-and-apple">Aren’t Google and Apple working on something similar?</a>
+          <a href="/faq#why-do-this">Aren’t Google and Apple working on something similar?</a>
         </li>
         <li>
-          <a href="/faq#what-is-contact-tracing">What is contact tracing?</a>
+          <a href="/faq#google-and-apple">What is contact tracing?</a>
         </li>
         <li>
-          <a href="/faq#delay-inevitable">If COVID-19 is going to become widespread anyway, why bother delaying the inevitable?</a>
+          <a href="/faq#what-is-contact-tracing">If COVID-19 is going to become widespread anyway, why bother delaying the inevitable?</a>
         </li>
         <li>
-          <a href="/faq#lockdown-why">There is already a lockdown in my area and we can’t meet other people, so what is the point?</a>
+          <a href="/faq#delay-inevitable">There is already a lockdown in my area and we can’t meet other people, so what is the point?</a>
         </li>
         <li>
-          <a href="/faq#health-privacy">Is this legal given health data privacy laws?</a>
+          <a href="/faq#lockdown-why">Is this legal given health data privacy laws?</a>
         </li>
         <li>
-          <a href="/faq#traction">Will this app ever get enough traction to work?</a>
+          <a href="/faq#health-privacy">Will this app ever get enough traction to work?</a>
         </li>
         <li>
-          <a href="/faq#another-app">Is this just another app that will record my symptoms?</a>
+          <a href="/faq#traction">Is this just another app that will record my symptoms?</a>
         </li>
         <li>
-          <a href="/faq#asian-countries">Is this similar to what South Korea, Taiwan, and Singapore are doing?</a>
+          <a href="/faq#another-app">Is this similar to what South Korea, Taiwan, and Singapore are doing?</a>
         </li>
         <li>
-          <a href="/faq#hong-kong">Is this the same as what Hong Kong has introduced?</a>
+          <a href="/faq#asian-countries">Is this the same as what Hong Kong has introduced?</a>
         </li>
         <li>
-          <a href="/faq#legal-status">What is the legal status of your organization?</a>
+          <a href="/faq#hong-kong">What is the legal status of your organization?</a>
         </li>
         <li>
-          <a href="/faq#data-collection">What data are you collecting?</a>
+          <a href="/faq#legal-status">What data are you collecting?</a>
         </li>
         <li>
-          <a href="/faq#data-ownership">Who owns the data that is collected and will you sell it?</a>
+          <a href="/faq#data-collection">Who owns the data that is collected and will you sell it?</a>
         </li>
         <li>
-          <a href="/faq#bluetooth">Why are you using Bluetooth?</a>
+          <a href="/faq#data-ownership">Why are you using Bluetooth?</a>
         </li>
         <li>
-          <a href="/faq#gps">Why not use GPS as well?</a>
+          <a href="/faq#bluetooth">Why not use GPS as well?</a>
         </li>
         <li>
-          <a href="/faq#snoop-dogg">Will this app snoop on me?</a>
+          <a href="/faq#gps">Will this app snoop on me?</a>
         </li>
         <li>
-          <a href="/faq#finished">How close to finished is the app?</a>
+          <a href="/faq#snoop-dogg">How close to finished is the app?</a>
         </li>
         <li>
-          <a href="/faq#exposed">Will this app tell me where or when I was exposed?</a>
+          <a href="/faq#finished">Will this app tell me where or when I was exposed?</a>
         </li>
         <li>
-          <a href="/faq#collaborators">Who are your app’s collaborators? Are you working with the government?</a>
+          <a href="/faq#exposed">Who are your app’s collaborators? Are you working with the government?</a>
         </li>
         <li>
-          <a href="/faq#get-involved">How can I get involved?</a>
+          <a href="/faq#collaborators">How can I get involved?</a>
         </li>
         
       </ol>

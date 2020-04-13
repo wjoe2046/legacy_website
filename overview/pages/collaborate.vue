@@ -1,147 +1,103 @@
 <template>
   <v-container>
     <v-row justify="center">
-      <v-col cols="12" lg="10">
+      <v-col cols="12" lg="8">
         <section class="text-content">
           <div class="container">
-            <div class="blog-hero"></div>
-
-            <h1>Join Our Team</h1>
-            <br>
-
-            <p>
-              We&#39;ve grown from a pair of researchers from Stanford
-              University and the University of Waterloo into an
-              interdisciplinary team of researchers, software engineers, public
-              health and security experts. But we still need more help. We are
-              looking for more volunteers to join us and help us build an app
-              that uses crowdsourced data to inform individuals of their risk
-              and slow the spread of COVID-19.
-            </p>
-
-            <h2>Most Wanted Positions!</h2>
-            <p>(1) Communications Manager - own aspects of marketing, outreach for media, fundraising, etc.  </p>
-            <p>(2) Strategic Partnerships - outreach and relationship management with healthcare organizations, similar projects, etc.</p>
-            <p>(3) Experienced (2+ yrs) mobile app developers</p>
-
-
-            <h3>Wanted Positions</h3>
-
-            <p>
-              (1) Project Manager - coordinate the tasks and workflow for group
-              of software engineers
-            </p>
-
-            <p>
-              (2) Personal Assistant - assist Executive Director with various
-              admin tasks
-            </p>
-
-            <p>
-              (3) System Administrator - help manage our website and backend.
-               Familiarity with AWS (specifically S3 and Cloudfront) ideal.
-            </p>
-
-            <p>
-              (4) Marketing Manager - assist with mailing campaigns,
-               branding, and media outreach.
-            </p>
-
-            <br>
-
-            <h3>Support Roles</h3>
-
-            <p>
-              Even if you don&#39;t have a skillset directly related to the
-              project&#39;s design or development, there are still ways to help.
-              We&#39;re a rapidly expanding group, and we&#39;re also interested
-              if you have experience in:
-            </p>
-
-            <p>
-              (1) Fundraising and grant applications for not-for-profit
-              organisations
-            </p>
-
-            <p>(2) PR and Outreach</p>
-
-            <p>(3) Blogging, particularly with a scientific background</p>
-
-            <p>(4) Onboarding and orientation into organisations</p>
-
-            <h3>Research Roles</h3>
-
-            <p>
-              We&#39;re currently looking for people with one (or more!) of the
-              following skills or backgrounds:
-            </p>
-
-            <p>(1) General mobile app UI design (iOS and/or Android)</p>
-
-            <p>
-              (2) Advanced web development skills, particularly in interactive
-              visualisations
-            </p>
-
-            <p>(3) Mobile app development skills</p>
-
-            <p>(4) Software project management</p>
-
-            <p>
-              (6) Legal expertise around the handling of personal health
-              information
-            </p>
-
-            <p>
-              (7) Experience in the fields of data re-identification or privacy
-              research and implementation.
-            </p>
-
-            <p>(7) Crypto / security experience</p>
-
-            <p>(8) Experience with Bluetooth on Android and iOS</p>
-
-            <p>(9) Electrical Engineers</p>
-
-            <h3>Applying</h3>
-
-            <p>
-              If you know of anyone who could fill these roles, get them to
-              email us at
-              <b
-                ><a href="mailto: contact@covid-watch.org"
-                  >contact@covid-watch.org
-                </a></b
-              >.
-            </p>
-
-            <p>
-              We recommend you read the
-              <b
-                ><a
-                  href="https://forum.effectivealtruism.org/posts/8chk6DHZXctGHtNoz/covid-19-risk-assessment-app-idea-for-vetting-and-discussion"
-                  >forum post
-                </a></b
+            <h1>Collaborate with Covid Watch</h1>
+            <v-alert 
+              class="d-flex justify-center"
+              outlined
+              dense
+              dismissable 
+              v-model="alert"
+              color="info"
               >
-              to have the context to understand what you&#39;d be working on and
-              the motivations behind the project. The post was optimistic about
-              what could be accomplished in a short time period, and we are no
-              longer sure about providing scores and recommendations, but we
-              think we may be able to build the heat map referenced in the post
-              with help from other researchers.
+                Help us finalize our app design- take <a href="https://covidapp.typeform.com/to/FnlXep">a quick survey</a>!
+              </v-alert>
+            <h2>Volunteering with Covid Watch</h2>
+            <br/>
+            <p>
+              We've grown from a pair of researchers from Stanford University and the University
+              of Waterloo into an interdisciplinary team of more than 100 researchers, software
+              engineers, public health and security experts. In addition to
+              <a href="/about#team">our founders</a>, a number of our volunteers are working
+              full-time on the project. However, there is plenty of room to contribute as a
+              volunteer or advisor even if you can only put in a few hours a week.
             </p>
 
+            <v-alert
+              class="d-flex justify-center" 
+              outlined
+              icon="mdi-email"
+              dense
+            >
+              Know someone who could fill one of the roles below? Please reach out to us at
+              <b><a href="mailto: contact@covid-watch.org">contact@covid-watch.org</a></b>.
+            </v-alert>
+
+            <h3 class="headline">Most Wanted Volunteers</h3>
+
+            <ul
+              :class="{'subtitle-1': $vuetify.breakpoint.smAndDown, 'title': $vuetify.breakpoint.mdAndUp}"
+              class="font-weight-regular"
+            >
+              <li>
+                Mobile app developers with 2+ years of experience with iOS and Android native development 
+              </li>
+              <li>
+                Marketing and Communications managers to lead aspects of marketing, media outreach, and fundraising.
+              </li>
+            </ul>
+
+            <h3 class="headline">Developers</h3>
             <p>
-              If you&#39;re interested in collaborating and have one of the
-              skillsets listed above, please contact us at
-              <b
-                ><a href="mailto: contact@covid-watch.org"
-                  >contact@covid-watch.org
-                </a></b
-              >
-              with the role you would like to fill and a brief (~300 words)
-              introduction with your skills and links to previous work.
+              Developers who want to join our growing effort should feel free to jump in directly
+              by looking at open issues in the <b><a href="https://github.com/covid19risk">Covid
+              Watch</a></b> and <b><a href="https://github.com/TCNCoalition">TCN Coalition</a></b>
+              Github repos. If you'd like an invitation to the Slack that we're using to
+              coordinate, just send a message to
+              <a href="mailto: contact@covid-watch.org">contact@covid-watch.org</a>.
             </p>
+            <p>
+              Some of the skillsets we need:
+            </p>
+            <ul>
+              <li>UI / UX Design</li>
+              <li>iOS and Android native app development</li>
+              <li>Web development, including in interactive visualizations</li>
+              <li>Software project management</li>
+              <li>Experience with mobile Bluetooth APIs</li>
+            </ul>
+
+            <h3 class="headline">Other Roles</h3>
+
+            <p>
+              We have a need for volunteers with a variety of non-developer skills, including:
+            </p>
+            <ul>
+              <li>PR and Outreach</li>
+              <li>Fundraising and grant applications for not-for-profit organisations</li>
+              <li>Blogging, particularly with a scientific background</li>
+              <li>Legal expertise around the handling of personal health information</li>
+              <li>Data re-identification or privacy research and implementation</li>
+              <li>Cryptography and information security</li>
+              <li>Electrical engineering</li>
+            </ul>
+
+            <h2>Other Ways to Get Involved</h2>
+
+            <p>
+              You don't need to join our team to help out the project! It would also help us out
+              if you'd consider:</p>
+            <ul>
+              <li>Taking <a href="https://covidapp.typeform.com/to/FnlXep">a quick survey</a> to
+                help us finalize our app design</li>
+              <li>Spreading the word about our project over
+                <a href="https://twitter.com/COVIDWatchApp">Twitter</a> or
+                <a href="https://www.facebook.com/CovidWatch2020">Facebook</a></li>
+              <li>Making a <a href="">donation to our non-profit</a> to help us support our volunteers</li>
+            </ul>
 
             <p>
               We're also interested if you have information that you think could
@@ -149,16 +105,9 @@
               any other teams that are currently, or were previously, engaged in
               similar efforts.
             </p>
-
-            <h2>Other Ways to Share</h2>
-
-            <h3>Awareness</h3>
-
             <p>
-              Even if you don&#39;t have the ability to directly support us
-              right now, consider sharing our project over social media (<a href="https://twitter.com/COVIDWatchApp">Twitter</a> or <a href="https://www.facebook.com/CovidWatch2020">Facebook</a>) or by
-              word of mouth. To keep up to date with our progress, or to see if
-              a role that suits you becomes available, you can sign up to our
+              To keep up to date with our progress, or to see if
+              a role that suits you becomes available, you can also sign up to our
               newsletter:
             </p>
           </div>
@@ -172,13 +121,35 @@
   </v-container>
 </template>
 
+<style type="scss" scoped>
+
+h2 {
+  border-bottom: 1px solid var(--v-secondary-base);
+  padding: 0.3rem 0rem;
+}
+
+h3 {
+  color: var(--v-secondary-base);
+  padding: 0.3rem 0rem;
+  margin-top: 1rem;
+}
+
+ul {
+  padding-bottom: 1rem;
+}
+
+</style>
+
 <script>
   import SubscribeForm from '../components/SubscribeForm.vue'
 
   export default {
     components: {
       SubscribeForm
-    }
+    },
+    data: () => ({
+      alert: true,
+    })
   }
 
 </script>

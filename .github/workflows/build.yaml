@@ -3,7 +3,7 @@
 name: Build Node.js
 
 on:
-  pull-request:
+  pull_request:
     branches: [ master, prod ]
 
 jobs:

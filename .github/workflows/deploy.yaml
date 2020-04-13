@@ -2,7 +2,7 @@
 # Master branch deploys to staging 
 # Prod branch deploys to production
 
-name: Build and Deploy
+name: Deploy 
 
 on:
   push:

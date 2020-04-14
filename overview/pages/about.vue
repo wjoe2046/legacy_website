@@ -115,7 +115,7 @@
           </p>
 
           <p>
-            <strong>One Week (by 17-MAR-2020): </strong>Have a beta app
+            <strong>One Week (by mid-March 2020): </strong>Have a beta app
             completed, available for external audiences. This will have at
             least Bluetooth contact tracing functionality. Approach public
             health agencies regarding collaboration and authenticating

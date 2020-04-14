@@ -2,7 +2,7 @@
   <v-container class="mediaList">
     <v-row >
       <v-col class="d-flex justify-end" cols="12" lg="10">
-        <nuxt-link to="/press_releases">Press Releases</nuxt-link>
+        <span class="title"><nuxt-link to="/press_releases">Press Releases</nuxt-link></span>
       </v-col>
     </v-row>
     <v-row justify="center">
@@ -61,6 +61,20 @@
     },
     data: () => ({
       mediaList: [
+        {
+          "date": "April 13, 2020",
+          "title": "What privacy-preserving coronavirus tracing apps need to succeed",
+          "href": "https://venturebeat.com/2020/04/13/what-privacy-preserving-coronavirus-tracing-apps-need-to-succeed/",
+          "credit": "<a href=\"https://twitter.com/kharijohnson\">Khari Johnson</a> for <i><a target=\"_blank\" " +
+          "href=\"https://venturebeat.com/\">VentureBeat</a></i>"
+        },
+        {
+          "date": "April 13, 2020",
+          "title": "The importance of Apple and Google’s rare collaboration on contact tracing",
+          "href": "https://www.engadget.com/apple-google-contact-tracing-explainer-170056298.html",
+          "credit": "<a href=\"https://twitter.com/chrisiptw\">Chris Ip</a> for <i><a target=\"_blank\" " +
+          "href=\"https://www.engadget.com/\">Engadget</a></i>"
+        },
         {
           "date": "April 10, 2020",
           "title": "How Apple and Google Are Enabling Covid-19 Contact-Tracing",

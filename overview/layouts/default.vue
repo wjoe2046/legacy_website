@@ -15,6 +15,7 @@
             class="logoImg"
             :src="require('../assets/images/logo/banner_1.png')"
             alt="Covid Watch"
+            contain
           />
         </a>
         <a class="logoMobile logo d-flex d-md-none" href="#">

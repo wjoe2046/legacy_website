@@ -66,6 +66,7 @@
               <li>UI / UX Design</li>
               <li>iOS and Android native app development</li>
               <li>Web development, including in interactive visualizations</li>
+              <li>Animation Experience</li>
               <li>Software project management</li>
               <li>Experience with mobile Bluetooth APIs</li>
             </ul>
@@ -77,6 +78,7 @@
             </p>
             <ul>
               <li>PR and Outreach</li>
+              <li>Social Media Manager</li>
               <li>Fundraising and grant applications for not-for-profit organisations</li>
               <li>Blogging, particularly with a scientific background</li>
               <li>Legal expertise around the handling of personal health information</li>

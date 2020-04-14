@@ -4,16 +4,14 @@
 
 ### Possible Environments:
   * LOCAL: localhost:3000/articles/index.html
-  * STAGING: https://staging.covid-watch.org/articles/index.html
-  * PRODUCTION: www.covid-watch.org/articles/index.html
+  * STAGING: https://staging.covid-watch.org/
+  * PRODUCTION: www.covid-watch.org/
   
 ### Branches:
-- master -> this corresponds to our Staging environment
-- prod -> this corresponds to our production environment
+- master -> this corresponds to our [Staging environment](https://staging.covid-watch.org/)
+- prod -> this corresponds to our [production environment](www.covid-watch.org/)
 
-The script to push to staging and production can be found at ./overview/scripts/build.sh
-
-There are further instructions and commands commented at the top of build.sh.  You will need certain AWS credentials in order to use these build commands successfully.
+When either of these branches are updated, master or prod are updated automatically via Github Actions.
 
 ### To contribute to this repo, run the following commands to run locally:
 1. `git clone <repo URL>`

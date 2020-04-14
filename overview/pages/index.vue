@@ -82,7 +82,7 @@
         <v-row justify="center">
           <v-col cols="12" sm="12" class="text-justify">
             <p>
-              We know that COVID watch is just one of a constellation of other apps in this
+              We know that Covid Watch is just one of a constellation of other apps in this
               space. We're collaborating with teams around the world, exchanging code and ensuring
               system and data interoperability. <nuxt-link to="/about#comparison">Read more on how
               we relate to other projects in the space</nuxt-link>.
@@ -217,7 +217,7 @@
           title: "White Paper",
           link: "/article",
           subtitle: "Read our March 20 white paper, “Slowing the spread of infectious diseases " +
-          "like COVID-19 with crowdsourced data”. Our modelling shows that a system like COVID " + 
+          "like COVID-19 with crowdsourced data”. Our modelling shows that a system like Covid " + 
           "Watch can significantly impact transmission and detection.",
         },
         {

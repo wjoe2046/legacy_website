@@ -21,12 +21,12 @@ S3_TARGET_URI="s3://$BUCKETNAME/$FOLDERNAME/"
 S3_BUILD_URI="s3://$BUCKETNAME/$FOLDERNAME--build-$S3_BUILDFOLDER_SUFFIX/"
 S3_DEPRECATE_URI="s3://$BUCKETNAME/$FOLDERNAME--deprecate-$S3_BUILDFOLDER_SUFFIX/"
 
-aws s3 cp --recursive dist/ "$S3_BUILD_URI" --acl public-read --cache-control max-age=31557600,public --metadata-directive REPLACE --expires 2034-01-01T00:00:00Z
+aws s3 cp --recursive dist/ "$S3_BUILD_URI" --acl public-read --cache-control max-age=31557600,public --metadata-directive REPLACE --expires 2034-01-01T00:00:00Z --only-show-errors
  
  
-aws s3 mv "$S3_TARGET_URI" "$S3_DEPRECATE_URI" --recursive
-aws s3 mv "$S3_BUILD_URI" "$S3_TARGET_URI" --recursive
-aws s3 rm "$S3_DEPRECATE_URI" --recursive
+aws s3 mv "$S3_TARGET_URI" "$S3_DEPRECATE_URI" --recursive --only-show-errors
+aws s3 mv "$S3_BUILD_URI" "$S3_TARGET_URI" --recursive --only-show-errors
+aws s3 rm "$S3_DEPRECATE_URI" --recursive --only-show-errors
 
 
 
@@ -35,6 +35,10 @@ if [ ! -z "$CLOUDFRONT_INVALIDATION_ID" ]; then
        --distribution-id $CLOUDFRONT_INVALIDATION_ID \
        --invalidation-batch "{\"Paths\": {\"Items\": [\"/*\"], \"Quantity\": 1}, \"CallerReference\":\"`date`\"}"
 fi
+
+echo
+echo Done deploying
+echo
 
 
 

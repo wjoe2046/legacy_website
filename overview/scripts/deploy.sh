@@ -28,13 +28,9 @@ aws s3 mv "$S3_TARGET_URI" "$S3_DEPRECATE_URI" --recursive --only-show-errors
 aws s3 mv "$S3_BUILD_URI" "$S3_TARGET_URI" --recursive --only-show-errors
 aws s3 rm "$S3_DEPRECATE_URI" --recursive --only-show-errors
 
-
-
-if [ ! -z "$CLOUDFRONT_INVALIDATION_ID" ]; then
-   aws cloudfront create-invalidation \
-       --distribution-id $CLOUDFRONT_INVALIDATION_ID \
-       --invalidation-batch "{\"Paths\": {\"Items\": [\"/*\"], \"Quantity\": 1}, \"CallerReference\":\"`date`\"}"
-fi
+aws cloudfront create-invalidation \
+    --distribution-id $CLOUDFRONT_INVALIDATION_ID \
+    --invalidation-batch "{\"Paths\": {\"Items\": [\"/*\"], \"Quantity\": 1}, \"CallerReference\":\"`date`\"}" > /dev/null
 
 echo
 echo Done deploying

@@ -87,7 +87,7 @@ export default {
         "question": "Aren’t Google and Apple working on something similar?",
         "questionId": "google-and-apple",
         "response": "<p>There are! We have been in contact with them since late March 2020.  We are very supportive of their efforts and are exicted two leading tech companies are creating a de facto standardized protocol others can refer to.</p>",
-        "nuxtLink": "/about#comparison",
+        "nuxtLink": "/press_releases/google_apple_press_release",
         "linkTitle": "Read our full perspective on their efforts in our April 10, 2020 press release here.",
       },
       {

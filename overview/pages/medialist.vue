@@ -62,6 +62,13 @@
     data: () => ({
       mediaList: [
         {
+          "date": "April 17, 2020",
+          "title": "Does Covid-19 Contact Tracing Pose a Privacy Risk? Your Questions, Answered",
+          "href": "https://www.wired.com/story/apple-google-contact-tracing-strengths-weaknesses/",
+          "credit": "<a href=\"https://www.wired.com/author/andy-greenberg/\">Andy Greenberg</a> for <i><a target=\"_blank\" " +
+          "href=\"https://www.wired.com/\">Wired</a></i>"
+        },
+        {
           "date": "April 15, 2020",
           "title": "Tracking the virus by smartphone: an app to contain the Covid-19 pandemic?",
           "href": "https://www.france24.com/en/20200415-tracking-the-virus-by-smartphone-an-app-to-contain-the-covid-19-pandemic",

@@ -11,7 +11,7 @@
               <div class="blog-item">
                 <div class="blog-item-content">
                   <span class="subtitle">April 18 2020</span>
-                  <h2>You can now see the duration of your contacts, even when the app is in the background</h2>
+                  <h2>The app can now estimate duration and proximity of events, even when it is in the background.</h2>
                   <p>
                       The Covid Watch pilot app hit several major milestones in the past 24 hours:
                       background Temporary Contact Number (<a href="https://github.com/TCNCoalition/TCN#the-tcn-protocol">TCN</a>)

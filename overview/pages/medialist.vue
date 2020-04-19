@@ -62,6 +62,13 @@
     data: () => ({
       mediaList: [
         {
+          "date": "April 16, 2020",
+          "title": "ACLU WHITE PAPER — PRINCIPLES FOR TECHNOLOGY-ASSISTED CONTACT-TRACING",
+          "href": "https://www.aclu.org/report/aclu-white-paper-principles-technology-assisted-contact-tracing#content",
+          "credit": "<a href=\"https://www.aclu.org/news/by/daniel-kahn-gillmor/\">Daniel Kahn Gillmor</a> for <i><a target=\"_blank\" " +
+          "href=\"https://www.aclu.org/\">American Civil Liberties Union (ACLU)</a></i>"
+        },
+        {
           "date": "April 13, 2020",
           "title": "What privacy-preserving coronavirus tracing apps need to succeed",
           "href": "https://venturebeat.com/2020/04/13/what-privacy-preserving-coronavirus-tracing-apps-need-to-succeed/",

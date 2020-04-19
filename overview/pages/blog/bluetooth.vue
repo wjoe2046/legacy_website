@@ -3,10 +3,10 @@
     <v-row justify="center">
       <v-col cols="12" lg="10">
         <div class="blog-hero">
-          <h1>Bluetooth Primer: 7th of March 2020</h1>
+          <h1>Why we're integrating Bluetooth data into our app</h1>
         </div>
 
-        <h3></h3>
+        <h3>March 7 2020</h3>
 
         <p>
           This project is now roughly two and a half weeks old, and in that time

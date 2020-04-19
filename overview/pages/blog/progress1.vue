@@ -4,10 +4,10 @@
       <v-col cols="12" lg="10">
         <div class="blog-hero">
           <!--- <img src="images/blog-image.jpg" alt="Full width blog image" />-->
-          <h1>Progress Post: 27th of February 2020</h1>
+          <h1>Progress during our first week</h1>
         </div>
 
-        <h3>A busy start</h3>
+        <h3>February 27 2020</h3>
 
         <p>
           Phew! What a week.<br />

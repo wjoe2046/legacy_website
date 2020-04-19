@@ -3,12 +3,9 @@
     <v-row justify="center">
       <v-col cols="12" lg="10">
         <div class="blog-hero">
-          <!---<img src="images/blog-image.jpg" alt="Full width blog image" /> --->
-          <h1>Insight Post: 28th of February 2020</h1>
+          <h1>Insights from Co-Founder James Petrie</h1>
         </div>
-        <h3>
-          An Inside View
-        </h3>
+        <h3>February 28 2020</h3>
         <p>
           Welcome to our first insight post!<br /><br />
           In this series, our researchers will share what they're currently

@@ -4,11 +4,11 @@
       <v-col cols="12" lg="10">
         <div class="blog-hero">
           <!--- <img src="images/blog-image.jpg" alt="Full width blog image" />-->
-          <h1>Progress Post: 29th of March 2020</h1>
+          <h1>Closed beta testing and other progress</h1>
           <br>
         </div>
 
-        <h3>Collaboration and Contrast</h3>
+        <h3>March 29 2020</h3>
         <br>
         <p>
           Firstly, progress so far:
@@ -19,6 +19,8 @@
           with multiple health agencies and other groups across the world about implementing our Bluetooth
           contact tracing system.
         </p>
+
+        <h3>Collaboration and Contrast</h3>
 
         <p>
           Secondly, as our team has grown and we’ve reached out to connections across the tech world,

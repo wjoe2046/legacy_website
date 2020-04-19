@@ -4,10 +4,10 @@
       <v-col cols="12" lg="10">
         <div class="blog-hero">
           <!--- <img src="images/blog-image.jpg" alt="Full width blog image" />-->
-          <h1>Progress Post: 4th of March 2020</h1>
+          <h1>GPS-based proof-of-concept and other progress</h1>
         </div>
 
-        <h3>Proof and Challenges</h3>
+        <h3>March 4 2020</h3>
 
         <p>
           The big news first: we have a proof of concept!&nbsp; It takes

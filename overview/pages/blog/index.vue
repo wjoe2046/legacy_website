@@ -1,23 +1,35 @@
 <template>
   <v-container>
-      <v-row >
-        <v-col class="d-flex justify-end" cols="12" lg="10">
-          <nuxt-link to="/press_releases">Press Releases</nuxt-link>
-        </v-col>
-      </v-row>
-
     <v-row justify="center">
-      <v-col cols="12" lg="10">
+      <v-col cols="12" lg="9">
         <section class="text-content">
           <div class="container">
             <h1>Blog</h1>
             <br>
             <div class="blog-hero">
 
-           
               <div class="blog-item">
                 <div class="blog-item-content">
-                  <h2>Progress Post: 29th of March 2020</h2>
+                  <span class="subtitle">April 18 2020</span>
+                  <h2>You can now see the duration of your contacts, even when the app is in the background</h2>
+                  <p>
+                      The Covid Watch pilot app hit several major milestones in the past 24 hours:
+                      background Temporary Contact Number (<a href="https://github.com/TCNCoalition/TCN#the-tcn-protocol">TCN</a>)
+                      exchange and estimating contact duration and proximity. We are on track to release a
+                      beta version of our app before the end of April.
+                  </p>
+                  <p>
+                      <nuxt-link class="read-more" to="/blog/progressbackground"
+                      >Read More...</nuxt-link
+                      >
+                  </p>
+                </div>
+              </div>
+
+              <div class="blog-item">
+                <div class="blog-item-content">
+                  <span class="subtitle">March 29 2020</span>
+                  <h2>Closed beta testing and other progress</h2>
 
                   <p>
                     Firstly, progress so far:
@@ -42,7 +54,8 @@
 
               <div class="blog-item">
                 <div class="blog-item-content">
-                  <h2>Summary Article: 20th of March 2020</h2>
+                  <span class="subtitle">March 20 2020</span>
+                  <h2>White Paper: Slowing the spread of infectious diseases using crowdsourced data</h2>
 
                   <p>
                     Rather than an ordinary blog post, this is what much of our
@@ -60,7 +73,6 @@
                   </p>
 
                   <p>
-                    This article is current as of the 20th of March, 2020.<br />
                     <nuxt-link class="read-more" to="/article"
                       >Read More...</nuxt-link
                     >
@@ -70,7 +82,8 @@
 
               <div class="blog-item">
                 <div class="blog-item-content">
-                  <h2>Bluetooth Primer: 7th of March 2020</h2>
+                  <span class="subtitle">March 7 2020</span>
+                  <h2>Why we're integrating Bluetooth data into our app</h2>
 
                   <p>
                     This project is now roughly two and a half weeks old, and in
@@ -93,7 +106,8 @@
 
               <div class="blog-item">
                 <div class="blog-item-content">
-                  <h2>Insight Post: 6th of March 2020</h2>
+                  <span class="subtitle">March 6 2020</span>
+                  <h2>Insights from Co-Founder Tina White</h2>
 
                   <p>Welcome to our second insight post!</p>
 
@@ -114,7 +128,8 @@
 
               <div class="blog-item">
                 <div class="blog-item-content">
-                  <h2>Progress Post: 4th of March 2020</h2>
+                  <span class="subtitle">March 4 2020</span>
+                  <h2>GPS-based proof-of-concept and other progress</h2>
 
                   <p>
                     The big news first: we have a proof of concept!<br />
@@ -132,7 +147,8 @@
 
               <div class="blog-item">
                 <div class="blog-item-content">
-                  <h2>Insight Post: 28th of February 2020</h2>
+                  <span class="subtitle">February 28 2020</span>
+                  <h2>Insights from Co-Founder James Petrie</h2>
 
                   <p>
                     Welcome to our first insight post!<br />
@@ -151,7 +167,8 @@
 
               <div class="blog-item">
                 <div class="blog-item-content">
-                  <h2>Progress Post: 27th of February 2020</h2>
+                  <span class="subtitle">February 27 2020</span>
+                  <h2>Progress during our first week</h2>
 
                   <p>
                     Phew! What a week.<br>

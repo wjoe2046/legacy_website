@@ -62,6 +62,27 @@
     data: () => ({
       mediaList: [
         {
+          "date": "April 17, 2020",
+          "title": "Does Covid-19 Contact Tracing Pose a Privacy Risk? Your Questions, Answered",
+          "href": "https://www.wired.com/story/apple-google-contact-tracing-strengths-weaknesses/",
+          "credit": "<a href=\"https://www.wired.com/author/andy-greenberg/\">Andy Greenberg</a> for <i><a target=\"_blank\" " +
+          "href=\"https://www.wired.com/\">Wired</a></i>"
+        },
+        {
+          "date": "April 15, 2020",
+          "title": "Tracking the virus by smartphone: an app to contain the Covid-19 pandemic?",
+          "href": "https://www.france24.com/en/20200415-tracking-the-virus-by-smartphone-an-app-to-contain-the-covid-19-pandemic",
+          "credit": "from <i><a target=\"_blank\"" + 
+          "href=\"https://www.france24.com/en/\">France 24</a></i>"
+        },
+        {
+          "date": "April 14, 2020",
+          "title": "Meet the Stanford researchers mobilizing to understand, fight COVID-19",
+          "href": "https://news.stanford.edu/2020/04/14/covid-19-research-roundup/",
+          "credit": "from <i><a target=\"_blank\"" + 
+          "href=\"https.news.stanford.edu/\">Stanford News</a></i>"
+        },
+        {
           "date": "April 13, 2020",
           "title": "What privacy-preserving coronavirus tracing apps need to succeed",
           "href": "https://venturebeat.com/2020/04/13/what-privacy-preserving-coronavirus-tracing-apps-need-to-succeed/",
@@ -127,7 +148,7 @@
         {
           "date": "April 1, 2020",
           "title": "A Mobile App Intervention to Slow COVID-19 Using Crowdsourced Data",
-          "href": "https://www.youtube.com/watch?v=z4105Exe23Q&t=3h36m45s",
+          "href": "https://www.youtube.com/watch?v=l5q8HuH82WE&list=PLYLBSCrrqNXxhUFJJtKauxr5HItq4a3gu&index=16&t=0s",
           "credit": "presentation by Executive Director Tina White at Stanford's " +
             "<a href=\"https://hai.stanford.edu/events/covid-19-and-ai-virtual-conference/overview\">" +
             "COVID-19 and AI: A Virtual Conference</a>"

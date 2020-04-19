@@ -70,7 +70,7 @@
         },
         {
           "date": "April 16, 2020",
-          "title": "ACLU WHITE PAPER — PRINCIPLES FOR TECHNOLOGY-ASSISTED CONTACT-TRACING",
+          "title": "ACLU White Paper - Principles for Technology-Assisted Contact-Tracing",
           "href": "https://www.aclu.org/report/aclu-white-paper-principles-technology-assisted-contact-tracing#content",
           "credit": "<a href=\"https://www.aclu.org/news/by/daniel-kahn-gillmor/\">Daniel Kahn Gillmor</a> for <i><a target=\"_blank\" " +
           "href=\"https://www.aclu.org/\">American Civil Liberties Union (ACLU)</a></i>"

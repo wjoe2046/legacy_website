@@ -69,6 +69,13 @@
           "href=\"https://www.wired.com/\">Wired</a></i>"
         },
         {
+          "date": "April 16, 2020",
+          "title": "ACLU WHITE PAPER — PRINCIPLES FOR TECHNOLOGY-ASSISTED CONTACT-TRACING",
+          "href": "https://www.aclu.org/report/aclu-white-paper-principles-technology-assisted-contact-tracing#content",
+          "credit": "<a href=\"https://www.aclu.org/news/by/daniel-kahn-gillmor/\">Daniel Kahn Gillmor</a> for <i><a target=\"_blank\" " +
+          "href=\"https://www.aclu.org/\">American Civil Liberties Union (ACLU)</a></i>"
+        },
+        {
           "date": "April 15, 2020",
           "title": "Tracking the virus by smartphone: an app to contain the Covid-19 pandemic?",
           "href": "https://www.france24.com/en/20200415-tracking-the-virus-by-smartphone-an-app-to-contain-the-covid-19-pandemic",

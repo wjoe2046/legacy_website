@@ -2,7 +2,7 @@
   <v-container class="mediaList">
     <v-row >
       <v-col class="d-flex justify-end" cols="12" lg="10">
-        <span class="title"><nuxt-link to="/press_releases">Press Releases</nuxt-link></span>
+        <nuxt-link to="/press_releases">Press Releases</nuxt-link>
       </v-col>
     </v-row>
     <v-row justify="center">
@@ -54,10 +54,12 @@
 
 <script>
   import SubscribeForm from '../components/SubscribeForm.vue'
+  import PageFeed from '../components/PageFeed.vue'
 
   export default {
     components: {
-      SubscribeForm
+      SubscribeForm,
+      PageFeed
     },
     data: () => ({
       mediaList: [

@@ -62,18 +62,18 @@
     data: () => ({
       mediaList: [
         {
-          "date": "April 16, 2020",
-          "title": "ACLU WHITE PAPER — PRINCIPLES FOR TECHNOLOGY-ASSISTED CONTACT-TRACING",
-          "href": "https://www.aclu.org/report/aclu-white-paper-principles-technology-assisted-contact-tracing#content",
-          "credit": "<a href=\"https://www.aclu.org/news/by/daniel-kahn-gillmor/\">Daniel Kahn Gillmor</a> for <i><a target=\"_blank\" " +
-          "href=\"https://www.aclu.org/\">American Civil Liberties Union (ACLU)</a></i>"
-        },
-        {
           "date": "April 17, 2020",
           "title": "Does Covid-19 Contact Tracing Pose a Privacy Risk? Your Questions, Answered",
           "href": "https://www.wired.com/story/apple-google-contact-tracing-strengths-weaknesses/",
           "credit": "<a href=\"https://www.wired.com/author/andy-greenberg/\">Andy Greenberg</a> for <i><a target=\"_blank\" " +
           "href=\"https://www.wired.com/\">Wired</a></i>"
+        },
+        {
+          "date": "April 16, 2020",
+          "title": "ACLU WHITE PAPER — PRINCIPLES FOR TECHNOLOGY-ASSISTED CONTACT-TRACING",
+          "href": "https://www.aclu.org/report/aclu-white-paper-principles-technology-assisted-contact-tracing#content",
+          "credit": "<a href=\"https://www.aclu.org/news/by/daniel-kahn-gillmor/\">Daniel Kahn Gillmor</a> for <i><a target=\"_blank\" " +
+          "href=\"https://www.aclu.org/\">American Civil Liberties Union (ACLU)</a></i>"
         },
         {
           "date": "April 15, 2020",

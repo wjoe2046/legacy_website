@@ -3,7 +3,7 @@
     <v-row justify="center">
       <v-col cols="12" lg="10">
         <div class="blog-hero">
-          <h1>You can now see the duration of your contacts, even when the app is in the background</h1>
+          <h1>The Covid Watch app can now estimate duration and proximity of events, even when it is in the background!</h1>
         </div>
 
         <h3>April 18 2020</h3>

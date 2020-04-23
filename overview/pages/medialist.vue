@@ -62,6 +62,27 @@
     data: () => ({
       mediaList: [
         {
+          "date": "April 22, 2020",
+          "title": "UW and Microsoft release contact-tracing app, aiming to battle COVID-19 while preserving privacy",
+          "href": "https://www.geekwire.com/2020/uw-microsoft-release-contact-tracing-app-aiming-battle-covid-19-preserving-privacy/",
+          "credit": "<a href=\"https://www.geekwire.com/author/lisastiffler/\">Lisa Stiffler</a> for <i><a target=\"_blank\" " +
+          "href=\"https://www.geekwire.com/\">Geekwire</a></i>"
+        },
+        {
+          "date": "April 19, 2020",
+          "title": "Who's profiting from the pandemic?",
+          "href": "https://www.abc.net.au/radionational/programs/backgroundbriefing/whos-winning-out-of-the-coronavirus-crisis/12154772",
+          "credit": "from <i><a target=\"_blank\" " +
+          "href=\"https://www.abc.net.au/\">ABC Australia</a></i>"
+        },
+        {
+          "date": "April 19, 2020",
+          "title": "Bluetooth-based contact tracing earns high marks on privacy. But will it work?",
+          "href": "https://www.nationaljournal.com/s/706167/bluetooth-based-contact-tracing-earns-high-marks-on-privacy-but-will-it-work?&unlock=YYCGSQ5LQVL6GN06",
+          "credit": "<a href=\"https://twitter.com/BrendanBordelon\">Brendan Bordelon</a> for <i><a target=\"_blank\" " +
+          "href=\"https://www.nationaljournal.com/\">National Journal</a></i>"
+        },
+        {
           "date": "April 17, 2020",
           "title": "Does Covid-19 Contact Tracing Pose a Privacy Risk? Your Questions, Answered",
           "href": "https://www.wired.com/story/apple-google-contact-tracing-strengths-weaknesses/",

@@ -43,6 +43,9 @@
               class="font-weight-regular"
             >
               <li>
+                Executive or Personal Assistants with consistent full-time or part-time availability 
+              </li>
+              <li>
                 Mobile app developers with 2+ years of experience with iOS and Android native development 
               </li>
               <li>

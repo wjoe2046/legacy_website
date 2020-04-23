@@ -25,5 +25,5 @@ jobs:
         CI: true
       run: |
         npm ci
-        npm build
+        npm run generate --fail-on-error
 

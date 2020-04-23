@@ -27,7 +27,7 @@ jobs:
         CI: true
       run: |
         npm ci
-        npm run generate
+        npm run generate --fail-on-error
 
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v1

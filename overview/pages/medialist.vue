@@ -146,6 +146,13 @@
           "href=\"https://www.wired.com/\">Wired</a></i>"
         },
         {
+          "date": "April 8, 2020",
+          "title": "Review of Mobile Application Technology to Enhance Contact Tracing Capacity for COVID-19",
+          "href": "https://www.centerforhealthsecurity.org/resources/COVID-19/COVID-19-fact-sheets/200408-contact-tracing-factsheet.pdf",
+          "credit": "from <i><a target=\"_blank\" " +
+          "href=\"https://www.centerforhealthsecurity.org/\">Johns Hopkins Bloomberg School of Public Health</a></i>"
+        },
+        {
           "date": "April 7, 2020",
           "title": "Behind the global efforts to make a privacy-first coronavirus tracking app",
           "href": "https://www.nbcnews.com/tech/tech-news/behind-global-efforts-make-privacy-first-coronavirus-tracking-app-n1177871",

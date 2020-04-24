@@ -64,25 +64,27 @@
     </v-app-bar>
 
     <!-- Navigation drawer (i.e. Table of Contents) for the article page --->
-    <v-navigation-drawer
-      v-if="$nuxt.$route.name === 'article'"
-      clipped
-      app
-      :width="350"
-      v-model="tocShow"
-    >
-      <v-btn
-        icon
-        small
-        color="primary"
-        class="toc-closer"
-        @click="tocShow = !tocShow"
+    <transition name="slide-fade">
+      <v-navigation-drawer
+        v-if="$nuxt.$route.name === 'article'"
+        clipped
+        app
+        :width="350"
+        v-model="tocShow"
       >
-        <v-icon>mdi-close-circle</v-icon>
-      </v-btn>
+        <v-btn
+          icon
+          small
+          color="primary"
+          class="toc-closer"
+          @click="tocShow = !tocShow"
+        >
+          <v-icon>mdi-close-circle</v-icon>
+        </v-btn>
 
-      <TableOfContents></TableOfContents>
-    </v-navigation-drawer>
+        <TableOfContents></TableOfContents>
+      </v-navigation-drawer>
+    </transition>
 
     <!-- Navigation drawer (i.e. Table of Contents) for the FAQ page --->
     <!-- commented out in case we want to bring back naviation bar to FAQ at some point -->
@@ -165,7 +167,12 @@
       </v-btn>
 
       <!-- Page content provided by nuxt --->
-      <nuxt style="min-height: 100vh" />
+      <!-- note: transition styling is on the index.vue <style> section - the home page -->
+      <transition name="slide-fade">
+
+        <nuxt style="min-height: 100vh" />
+      
+      </transition>
 
       <!-- Footer that persists across pages-->
       <v-footer
@@ -225,6 +232,8 @@
 
 <style lang="scss">
 
+// note: transition styling for all pages is in index.vue (home page)
+
 .v-navigation-drawer {
   max-width: 95vw;
 
@@ -257,8 +266,6 @@ h1 {
 }
 
 </style>
-
-
 
 <script>
 import TableOfContents from "~/components/TableOfContents.vue";

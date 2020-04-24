@@ -34,12 +34,12 @@
                 >Part 1: Bluetooth Contact Tracing</a
               >
             </li>
-            <li>
+            <!-- <li>
               <a href="/article#heatmapTitle">Part 2: GPS Heatmap</a>
-            </li>
+            </li> -->
             <li>
               <a href="/article#userRecommendations"
-                >Part 3: User Recommendations</a
+                >Part 2: User Recommendations</a
               >
             </li>
           </ol>

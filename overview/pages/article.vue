@@ -276,10 +276,11 @@
               Automated contact tracing at scale using anonymized Bluetooth
               proximity sensing
             </li>
-            <li>
+            <!-- heatmap content commented out -->
+            <!-- <li>
               Heatmap informed by epidemiological models using anonymized GPS data
               to warn users about high risk areas
-            </li>
+            </li> -->
             <li>
               Recommendations from local health authorities and risk-aware
               suggestions about when to get tested
@@ -661,8 +662,10 @@
 
           <p>&nbsp;</p>
 
+          <!-- Jesse, April 24 2020: commmenting out heatmap content per Tina's request but we may want to bring some of it back as some point -->
+
           <!-- Heatmap -->
-          <p>
+          <!-- <p>
             <a class="anchor" id="heatmapTitle"></a>
             <span class="subTitleLine"> Part 2: GPS Heatmap</span>
           </p>
@@ -875,11 +878,11 @@
             The end result is that the trajectories being used to generate our
             heatmap can be mathematically verified to be anonymous, guaranteeing
             the privacy of our users.
-          </p>
+          </p> -->
 
           <p>
             <a class="anchor" id="userRecommendations"></a>
-            <span class="subTitleLine"> Part 3: User Recommendations</span>
+            <span class="subTitleLine"> Part 2: User Recommendations</span>
           </p>
           <p>
             We have designed the app user interface (UI) and are building a beta
@@ -887,7 +890,8 @@
           </p>
           <ul>
             <li>CDC general COVID-19 advice, symptoms, and resources</li>
-            <li>An infection density heat map based on anonymized GPS data</li>
+            <!-- commenting out GPS mentions -->
+            <!-- <li>An infection density heat map based on anonymized GPS data</li> -->
             <li>
               A notification system of potential COVID-19 contact risk via
               Bluetooth proximity networks
@@ -1190,8 +1194,8 @@
           <p>The app will be implemented and launched in two parts:</p>
           <ul class="decimal">
             <li>
-              The first version will implement a GPS/Bluetooth proximity network
-              system to develop a heatmap to track and notify users of potential
+              The first version will implement a Bluetooth proximity
+              system to notify users of potential
               close contact exposure to SARS-CoV-2.
             </li>
             <li>
@@ -1211,8 +1215,7 @@
           <p>
             We also want to emphasize that high user adoption as quickly as
             possible after release will facilitate the best possible outcomes for
-            intervention. The app may not be able to make use of historical GPS
-            data from individuals, and historical data from Bluetooth contact
+            intervention. Historical data from Bluetooth contact
             events doesn’t exist. Therefore, a user needs to download the app in
             order to start the clock and begin benefiting from the system as it
             anonymously logs their Bluetooth contact events.

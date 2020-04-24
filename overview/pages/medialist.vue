@@ -10,17 +10,21 @@
         <h1>Media Coverage</h1>
         <br>
 
-        <template
-          v-for="(media, i) in mediaList"
-        >
-          <div :key="i" class="mb-4">
-            <span class="font-italic font-weight-light">{{ media.date }}</span>
-            <br />
-            <span class="title"><a target="_blank" :href="media.href">{{ media.title }}</a></span>
-            <br />
-            <span class="credit" v-html="media.credit"></span>.
-          </div>
-        </template>
+      
+          <template
+            v-for="(media, i) in mediaList"
+          >
+            <transition-group tag="div" name="slide-up" appear>
+            
+              <div :key="i" class="mb-4">
+                <span class="font-italic font-weight-light">{{ media.date }}</span>
+                <br />
+                <span class="title"><a target="_blank" :href="media.href">{{ media.title }}</a></span>
+                <br />
+                <span class="credit" v-html="media.credit"></span>.
+              </div>
+            </transition-group>
+          </template>
 
         <v-divider></v-divider>
         <br />
@@ -51,6 +55,25 @@
 </template>
 
 
+<style>
+      /* this makes the list of media mentions slide UP into view separately from the whole page.  Subtle */
+     .slide-up-enter {
+       transform: translateY(10px);
+       opacity: 0;
+     }
+    
+    
+     .slide-up-enter-active {
+       transition: all .2s ease-out;
+     }
+
+     .slide-up-move {
+       transition: transform .5s ease-in;
+     }
+    
+  
+</style>
+
 
 <script>
   import SubscribeForm from '../components/SubscribeForm.vue'
@@ -61,6 +84,20 @@
     },
     data: () => ({
       mediaList: [
+        {
+          "date": "April 23, 2020",
+          "title": "Latest weapon in tracing and tracking coronavirus infections: your smartphone",
+          "href": "https://www.sfchronicle.com/business/article/Latest-weapon-in-tracing-and-tracking-coronavirus-15219887.php",
+          "credit": "<a href=\"https://www.sfchronicle.com/author/carolyn-said/\">Carolyn Said</a> for <i><a target=\"_blank\" " +
+          "href=\"https://www.sfchronicle.com/\">San Francisco Chronicle</a></i>"
+        },
+        {
+          "date": "April 23, 2020",
+          "title": "How Coronavirus Could Test California’s Commitment to Privacy",
+          "href": "https://lostcoastoutpost.com/2020/apr/23/how-coronavirus-could-test-californias-commitment/",
+          "credit": "<a href=\"https://lostcoastoutpost.com/author/ben-christopher/\">Ben Christopher</a> for <i><a target=\"_blank\" " +
+          "href=\"https://lostcoastoutpost.com/\">Lost Coast Outpost</a></i>"
+        },
         {
           "date": "April 22, 2020",
           "title": "UW and Microsoft release contact-tracing app, aiming to battle COVID-19 while preserving privacy",

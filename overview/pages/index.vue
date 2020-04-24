@@ -141,6 +141,39 @@
 </template>
 
 <style lang="scss">
+    // alternative page transition: simple fade  
+    // .fade-enter {
+    //   opacity: 0;
+    // }
+    
+    
+    // .fade-enter-active,
+    // .fade-leave-active {
+    //   transition: opacity .5s ease-out;
+    // }
+    
+    // .fade-leave-to {
+    //   opacity: 0;
+    // }
+
+    // this corresponds to the <transition> element in default.vue and stles the fading in effect when a new page is loaded
+    .slide-fade-enter {
+      opacity: 0;
+      transform: translateX(10px);
+    }
+    
+    .slide-fade-enter-active,
+    .slide-fade-leave-active{
+      transition: all .5s ease;
+    }
+    
+    .slide-fade-leave-to {
+      opacity: 0;
+      // normally the line below would make sense, but this creates a jerky effect w the white paper table of contents
+      // transform: translateX(-10px);
+    }
+
+
   .hand_image {
     position: relative;
     // height: 80vh;

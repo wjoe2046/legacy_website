@@ -1,5 +1,6 @@
 <template>
   <div>
+
     <div v-if="!paidFor">
       <h2>Enter the amount to donate:</h2>
 
@@ -20,13 +21,9 @@
                 </v-row>
             </v-container>
 
-            <!-- this copied from Isaiah's original donate.vue file.  at some point we may want to have Paypal buttons appear only AFTER a user inputs a valid dollar amount  -->
 
-
-          <!-- <v-btn :disabled="!valid" color="info" class="mr-4" @click="checkout">
-            Set me up!
-          </v-btn> -->
         </v-form>
+
 
 
     </div>

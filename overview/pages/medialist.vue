@@ -10,21 +10,21 @@
         <h1>Media Coverage</h1>
         <br>
 
-      
-          <template
-            v-for="(media, i) in mediaList"
-          >
-            <transition-group tag="div" name="slide-up" appear>
+            <!-- commented out for general fade in using css -->
+            <!-- <transition-group tag="div" name="slide-up" appear> -->
+
+
+            <!-- using gsap bouncing into place -->
+            <!-- <transition-group appear @before-enter="beforeEnter" @enter="enter" :css="false"> -->
             
-              <div :key="i" class="mb-4">
+              <div v-for="(media, i) in mediaList" :key="i" class="mb-4 mediaCard">
                 <span class="font-italic font-weight-light">{{ media.date }}</span>
                 <br />
                 <span class="title"><a target="_blank" :href="media.href">{{ media.title }}</a></span>
                 <br />
                 <span class="credit" v-html="media.credit"></span>.
               </div>
-            </transition-group>
-          </template>
+            <!-- </transition-group> -->
 
         <v-divider></v-divider>
         <br />
@@ -57,7 +57,7 @@
 
 <style>
       /* this makes the list of media mentions slide UP into view separately from the whole page.  Subtle */
-     .slide-up-enter {
+     /* .slide-up-enter {
        transform: translateY(10px);
        opacity: 0;
      }
@@ -69,18 +69,46 @@
 
      .slide-up-move {
        transition: transform .5s ease-in;
-     }
+     } */
     
-  
 </style>
 
 
 <script>
   import SubscribeForm from '../components/SubscribeForm.vue'
 
+  // note: gsap is a javascript animation/transition library
+  import gsap from 'gsap'
+
   export default {
     components: {
       SubscribeForm
+    },
+    methods: {
+      // beforeEnter() and enter() are for gsap driven more bouncy transitions
+      beforeEnter(el) {
+        el.style.opacity = 0
+        el.style.transform = 'scale(0,0)'
+      },
+      enter(el, done) {
+        gsap.to(el, {
+          duration: 1,
+          opacity: 1,
+          scale: 1,
+          ease: 'bounce.out',
+          onComplete: done
+        })
+      }
+    },
+    mounted() {
+        gsap.from('.mediaCard' , {
+        duration: 0.5,
+        opacity: 0,
+        scale: .8,
+        x: 0,
+        ease: 'power1',
+        stagger: 0.1
+      })
     },
     data: () => ({
       mediaList: [

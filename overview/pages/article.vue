@@ -25,7 +25,7 @@
             class="mt-5 text--secondary"
           >
           This white paper was last updated with minor formatting alterations on April 8, 2020.
-          The last minor alterations to its content were made on March 31, 2020.
+          The last minor alterations to its content were made on April 24, 2020.  
         </v-alert>
 
           <br />

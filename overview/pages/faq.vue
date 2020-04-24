@@ -26,7 +26,7 @@
               <v-expansion-panel 
                 v-for="(faq, i) in faqList"
                 :key="i"
-                class="my-2"
+                class="my-2 faqCard"
               >
                   <v-expansion-panel-header><h3 :id="faq.questionId">{{faq.question}}</h3></v-expansion-panel-header>
                   
@@ -61,7 +61,20 @@
 </style>
 
 <script>
+// note: gsap is a javascript animation/transition library
+import gsap from 'gsap'
+
 export default {
+  mounted() {
+        gsap.from('.faqCard' , {
+        duration: 0.5,
+        opacity: 0,
+        scale: .8,
+        x: 0,
+        ease: 'power1',
+        stagger: 0.1
+      })
+  },
   data: () => ({
     maxWidth: 40,
     faqList: [

@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container id="stripeCheckout">
     <v-row justify="center">
       <v-col cols="12" lg="10">
         <h1>Donations</h1>
@@ -139,32 +139,38 @@ export default {
 </script>
 
 <style>
-.dolla-sign {
-  font-size: 35px;
-  padding-right: 0;
-  padding-left: 0;
-  text-align: center;
-  color: #779f98;
-}
-.monthly-checkbox {
-  margin-top: 0;
-  padding-top: 0;
-}
+/* 
+#stripeCheckout {
+  padding: 0px;
+
+  .dolla-sign {
+    font-size: 35px;
+    padding-right: 0;
+    padding-left: 0;
+    text-align: center;
+    color: #779f98;
+  }
+
+  .monthly-checkbox {
+    margin-top: 0;
+    padding-top: 0;
+  }
 
 
-.show {
-  display: block;
-}
+  .show {
+    display: block;
+  }
 
-.hide {
-  display: none;
-}
+  .hide {
+    display: none;
+  }
 
-#stripe-error-message p {
-  color: #BF3F4A;
-}
+  #stripe-error-message p {
+    color: #BF3F4A;
+  }
 
-#stripe-error-message a {
-  text-decoration: underline;
-}
+  #stripe-error-message a {
+    text-decoration: underline;
+  }
+} */
 </style>

@@ -253,10 +253,10 @@
             for a better trade-off to be maintained in the midst of a pandemic.
           </p>
 
-          <!--Proposed System: Three Parts-->
+          <!--Proposed System: Two Parts-->
           <a class="anchor" id="proposedSystem"></a>
           <h2>
-            <span class="titleLine">Proposed System: Three Parts</span>
+            <span class="titleLine">Proposed System: Two Parts</span>
           </h2>
           <p>&nbsp;</p>
           <p>

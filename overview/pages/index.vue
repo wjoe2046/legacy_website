@@ -89,12 +89,16 @@
             </p>
           </v-col>
         </v-row>
-        <v-row justify="center">
+
+
+        <v-row justify="center" v-intersect="showMoreContent" id="below-the-fold">
           <v-col cols="12" sm="9" class="text-center">
            <h3>Some of our collaborators include:</h3>
           </v-col>
         </v-row>
-        <v-row justify="center">
+
+        
+        <v-row v-if="loadNewContent" justify="center">
           <template v-for="(partner, i) in partners">
               <v-hover
                 :key="i"
@@ -105,6 +109,7 @@
                   sm="3"
                   class="text-center"
                 >
+                
                   <v-card
                     :elevation="hover ? 2 : 0"
                     :class="{ 'on-hover': hover }"
@@ -126,6 +131,7 @@
         </v-row>
         <br/>
         <v-alert
+          v-if="loadNewContent"
           class="d-flex justify-center"
           outlined
           icon="mdi-email"
@@ -134,7 +140,8 @@
           Want to collaborate? Have any questions? Please reach out to us at
           <b><a href="mailto: contact@covid-watch.org">contact@covid-watch.org</a></b>.
         </v-alert>
-        <SubscribeForm></SubscribeForm>
+        <SubscribeForm v-if="loadNewContent"></SubscribeForm>
+        </transition>
       </v-col>
     </v-row>
   </v-container>
@@ -142,19 +149,19 @@
 
 <style lang="scss">
     // alternative page transition: simple fade  
-    // .fade-enter {
-    //   opacity: 0;
-    // }
+    .fade-enter {
+      opacity: 0;
+    }
     
     
-    // .fade-enter-active,
-    // .fade-leave-active {
-    //   transition: opacity .5s ease-out;
-    // }
+    .fade-enter-active,
+    .fade-leave-active {
+      transition: opacity .5s ease-out;
+    }
     
-    // .fade-leave-to {
-    //   opacity: 0;
-    // }
+    .fade-leave-to {
+      opacity: 0;
+    }
 
     // this corresponds to the <transition> element in default.vue and stles the fading in effect when a new page is loaded
     .slide-fade-enter {
@@ -231,7 +238,13 @@
     components: {
       SubscribeForm,
     },
+    methods: {
+      showMoreContent(entries) {
+        this.loadNewContent = entries[0].isIntersecting
+      },
+    },
     data: () => ({
+      loadNewContent: false,
       sections: [
         {
           title: "About Us",

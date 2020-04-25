@@ -43,10 +43,10 @@
               class="font-weight-regular"
             >
               <li>
-                Executive or Personal Assistants with consistent full-time or part-time availability 
+                Web developers to build an organization-facing web app (counties, businesses, health authorities, etc)
               </li>
               <li>
-                Mobile app developers with 2+ years of experience with iOS and Android native development 
+                Executive or Personal Assistants with consistent full-time or part-time availability 
               </li>
               <li>
                 Marketing and Communications managers to lead aspects of marketing, media outreach, and fundraising.

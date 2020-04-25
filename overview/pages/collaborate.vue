@@ -43,13 +43,13 @@
               class="font-weight-regular"
             >
               <li>
-                Web developers to build an organization-facing web app (counties, businesses, health authorities, etc)
+                <strong>Web developers</strong> to build an organization-facing web app (counties, businesses, health authorities, etc)
               </li>
               <li>
-                Executive or Personal Assistants with consistent full-time or part-time availability 
+                <strong>Executive or Personal Assistants</strong> with consistent full-time or part-time availability 
               </li>
               <li>
-                Marketing and Communications managers to lead aspects of marketing, media outreach, and fundraising.
+                <strong>Marketing and Communications managers</strong> to lead aspects of marketing, media outreach, and fundraising.
               </li>
             </ul>
 
